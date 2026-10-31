@@ -19,7 +19,7 @@ Queda fuera de esta EDT la ejecución de las demás fases del Plan Maestro, la a
 
 ```mermaid
 graph TD
-    Obj["Objetivo: Contribuir al desarrollo económico de El Salvador, con énfasis en el sector turístico, mediante el mejoramiento de la conectividad aérea para los pasajeros que utilizan el AIES"] --> C1["1. Obras y adecuaciones"]
+    Obj["Objetivo: Mejorar la conectividad aérea del AIES para el desarrollo turístico"] --> C1["1. Obras y adecuaciones"]
     Obj --> C2["2. Fortalecimiento institucional"]
     Obj --> C3["3. Administración, evaluación y auditorías"]
 

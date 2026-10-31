@@ -1,0 +1,134 @@
+Diagrama general
+
+```mermaid
+graph TD
+    Obj["Objetivo: Mejorar la conectividad aérea del AIES para el desarrollo turístico"] --> C1["1. Obras y adecuaciones"]
+    Obj --> C2["2. Fortalecimiento institucional"]
+    Obj --> C3["3. Administración, evaluación y auditorías"]
+
+    C1 --> N11["1.1 Diseños de las obras aprobados"]
+    C1 --> N12["1.2 Terminal de pasajeros ampliada"]
+    C1 --> N13["1.3 Plataformas de contacto y remotas"]
+    C1 --> N14["1.4 Calle de rodaje Foxtrot"]
+    C1 --> N15["1.5 Estacionamiento y energía solar"]
+    C1 --> N16["1.6 SSEI reubicado y en operación"]
+    C1 --> N17["1.7 Supervisión, PGAS de obra y recepción"]
+
+    C2 --> N21["2.1 Plan estratégico del sistema aeronáutico"]
+    C2 --> N22["2.2 Plan Maestro actualizado y funcionarios capacitados"]
+    C2 --> N23["2.3 Estrategia y capacitación BIM"]
+    C2 --> N24["2.4 Estudio de conectividad terrestre"]
+    C2 --> N25["2.5 Estudio de diversificación de destinos"]
+    C2 --> N26["2.6 Auditoría y capacitación EDGE"]
+    C2 --> N27["2.7 Estudio de separación de flujos"]
+    C2 --> N28["2.8 Estudio de movilidad interna"]
+    C2 --> N29["2.9 Programa de igualdad e inclusión"]
+
+    C3 --> N31["3.1 Condiciones de arranque cumplidas"]
+    C3 --> N32["3.2 Planes de ejecución aprobados"]
+    C3 --> N33["3.3 Condiciones socioambientales y de seguridad operacional"]
+    C3 --> N34["3.4 Contratos del programa firmados"]
+    C3 --> N35["3.5 Control financiero, evaluación y cierre"]
+```
+
+Componente I. Obras y adecuaciones
+
+```mermaid
+graph TD
+    C1["1. Obras y adecuaciones"] --> N11["1.1 Diseños de las obras aprobados"]
+    C1 --> N12["1.2 Terminal de pasajeros ampliada"]
+    C1 --> N13["1.3 Plataformas de contacto y remotas"]
+    C1 --> N14["1.4 Calle de rodaje Foxtrot"]
+    C1 --> N15["1.5 Estacionamiento y energía solar"]
+    C1 --> N16["1.6 SSEI reubicado y en operación"]
+    C1 --> N17["1.7 Supervisión, PGAS de obra y recepción"]
+
+    N11 --> N111["1.1.1 Diseños de la terminal revisados y aprobados"]
+    N11 --> N112["1.1.2 Diseños de plataformas y calle Foxtrot revisados y aprobados"]
+    N11 --> N113["1.1.3 Diseños del estacionamiento y del sistema solar revisados y aprobados"]
+    N11 --> N114["1.1.4 Diseños del SSEI revisados y aprobados"]
+
+    N12 --> N121["1.2.1 Estructura y envolvente de la terminal construidas"]
+    N12 --> N122["1.2.2 Salas de espera, circulación y áreas de apoyo terminadas"]
+    N12 --> N123["1.2.3 Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas"]
+    N12 --> N124["1.2.4 Puentes de abordaje, mobiliario y equipos instalados"]
+    N12 --> N125["1.2.5 Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados"]
+
+    N13 --> N131["1.3.1 Plataforma de posiciones de contacto construida"]
+    N13 --> N132["1.3.2 Plataforma de posiciones remotas construida"]
+    N13 --> N133["1.3.3 Señalización, luces y torres de iluminación de plataforma instaladas"]
+
+    N14 --> N141["1.4.1 Pavimento y hombros de la calle Foxtrot construidos"]
+    N14 --> N142["1.4.2 Señalización y balizamiento de la calle Foxtrot instalados"]
+
+    N15 --> N151["1.5.1 Edificio de estacionamiento construido"]
+    N15 --> N152["1.5.2 Sistemas de acceso, tráfico y áreas de alquiler instalados"]
+    N15 --> N153["1.5.3 Sistema de generación solar instalado"]
+
+    N16 --> N161["1.6.1 Edificio del SSEI y vías de acceso construidos"]
+    N16 --> N162["1.6.2 SSEI en funcionamiento en la nueva ubicación"]
+
+    N17 --> N171["1.7.1 Supervisión de la terminal y del estacionamiento ejecutada"]
+    N17 --> N172["1.7.2 Supervisión de plataformas, calle Foxtrot y SSEI ejecutada"]
+    N17 --> N173["1.7.3 PGAS de construcción implementado"]
+    N17 --> N174["1.7.4 Planos de obra ejecutada y actas de recepción aprobados"]
+```
+
+Componente II. Fortalecimiento institucional
+
+```mermaid
+graph TD
+    C2["2. Fortalecimiento institucional"] --> N21["2.1 Plan estratégico del sistema aeronáutico aprobado"]
+    C2 --> N22["2.2 Plan Maestro actualizado y funcionarios capacitados"]
+    C2 --> N23["2.3 Estrategia y capacitación BIM"]
+    C2 --> N24["2.4 Estudio de conectividad terrestre entregado"]
+    C2 --> N25["2.5 Estudio de diversificación de destinos entregado"]
+    C2 --> N26["2.6 Auditoría y capacitación EDGE"]
+    C2 --> N27["2.7 Estudio de separación de flujos entregado"]
+    C2 --> N28["2.8 Estudio de movilidad interna entregado"]
+    C2 --> N29["2.9 Programa de igualdad e inclusión ejecutado"]
+
+    N22 --> N221["2.2.1 Plan Maestro Aeroportuario actualizado y aprobado"]
+    N22 --> N222["2.2.2 Funcionarios capacitados en planificación, gestión y operación"]
+
+    N23 --> N231["2.3.1 Estrategia BIM aprobada"]
+    N23 --> N232["2.3.2 Personal de ingeniería capacitado en BIM"]
+
+    N26 --> N261["2.6.1 Auditoría para la certificación EDGE realizada"]
+    N26 --> N262["2.6.2 Personal capacitado en certificación EDGE"]
+```
+
+Administración, evaluación y auditorías
+
+```mermaid
+graph TD
+    C3["3. Administración, evaluación y auditorías"] --> N31["3.1 Condiciones de arranque cumplidas"]
+    C3 --> N32["3.2 Planes de ejecución aprobados"]
+    C3 --> N33["3.3 Condiciones socioambientales y de seguridad operacional"]
+    C3 --> N34["3.4 Contratos del programa firmados"]
+    C3 --> N35["3.5 Control financiero, evaluación y cierre"]
+
+    N31 --> N311["3.1.1 Unidad ejecutora conformada y en funciones"]
+    N31 --> N312["3.1.2 Reglamento operativo vigente"]
+    N31 --> N313["3.1.3 Convenio de transferencia de recursos vigente"]
+    N31 --> N314["3.1.4 Cuenta especial aperturada"]
+
+    N32 --> N321["3.2.1 Plan de ejecución plurianual aprobado"]
+    N32 --> N322["3.2.2 Planes operativos anuales aprobados"]
+    N32 --> N323["3.2.3 Plan de adquisiciones aprobado"]
+
+    N33 --> N331["3.3.1 Sistema de gestión ambiental y social y plan de acción vigentes"]
+    N33 --> N332["3.3.2 Protocolo de seguridad operacional aprobado por la AAC"]
+    N33 --> N333["3.3.3 Mecanismo de quejas y reclamos en operación"]
+    N33 --> N334["3.3.4 Informes de cumplimiento socioambiental presentados"]
+
+    N34 --> N341["3.4.1 Contratos de obras del Componente I firmados"]
+    N34 --> N342["3.4.2 Contrato de supervisión firmado"]
+    N34 --> N343["3.4.3 Contratos de consultorías del Componente II firmados"]
+    N34 --> N344["3.4.4 Contratos de la unidad ejecutora, evaluación y auditoría firmados"]
+
+    N35 --> N351["3.5.1 Desembolsos justificados e informes financieros presentados"]
+    N35 --> N352["3.5.2 Auditorías externas emitidas"]
+    N35 --> N353["3.5.3 Evaluaciones de medio término y de cierre realizadas"]
+    N35 --> N354["3.5.4 Informe de terminación y cierre administrativo del programa"]
+```
