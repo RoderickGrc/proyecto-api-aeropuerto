@@ -4,7 +4,14 @@ Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173
 
 La EDT descompone el alcance completo del programa en entregables. El nombre de cada elemento describe un resultado terminado. No incluye actividades, duraciones, costos ni recursos: las actividades se definirán en el cronograma, a partir de los paquetes de trabajo.
 
-La jerarquía sigue la lógica de la clase: objetivo, componentes, productos, entregables y paquetes de trabajo. El primer corte corresponde a los tres componentes del préstamo. El paquete de trabajo es el último nivel: es estimable, se puede controlar y tiene un responsable. Donde un producto ya tiene ese tamaño, el producto y el paquete coinciden.
+El primer nivel es el objetivo del proyecto, el impacto esperado del conjunto de componentes. De ese objetivo se desprenden los tres componentes del préstamo; debajo están los productos y, en el último nivel, los paquetes de trabajo. El paquete de trabajo es estimable, se puede controlar y tiene un responsable. Donde un producto ya tiene ese tamaño, el producto y el paquete coinciden.
+
+| Nivel | Contenido en esta EDT |
+|---|---|
+| 1 | Objetivo del proyecto |
+| 2 | Componentes |
+| 3 | Productos |
+| 4 | Paquetes de trabajo |
 
 Queda fuera de esta EDT la ejecución de las demás fases del Plan Maestro, la apertura de rutas o frecuencias aéreas y cualquier adquisición de tierras o reasentamiento. Esas exclusiones están en el acta de constitución.
 
@@ -12,9 +19,9 @@ Queda fuera de esta EDT la ejecución de las demás fases del Plan Maestro, la a
 
 ```mermaid
 graph TD
-    Root["Programa de Modernización del AIES"] --> C1["1. Obras y adecuaciones"]
-    Root --> C2["2. Fortalecimiento institucional"]
-    Root --> C3["3. Administración, evaluación y auditorías"]
+    Obj["Objetivo: Contribuir al desarrollo económico de El Salvador, con énfasis en el sector turístico, mediante el mejoramiento de la conectividad aérea para los pasajeros que utilizan el AIES"] --> C1["1. Obras y adecuaciones"]
+    Obj --> C2["2. Fortalecimiento institucional"]
+    Obj --> C3["3. Administración, evaluación y auditorías"]
 
     C1 --> N11["1.1 Diseños de las obras aprobados"]
     C1 --> N12["1.2 Terminal de pasajeros ampliada"]
@@ -43,7 +50,7 @@ graph TD
 
 ## 2. Componente I. Obras y adecuaciones
 
-Cubre los productos P1.1.1 a P1.4.3. Los diseños de la fase 2 ya existen; el paquete correspondiente es su revisión y aprobación antes de licitar, no un diseño nuevo del aeropuerto. La supervisión queda en este componente porque la matriz de resultados la registra como producto del Componente I.
+Este componente es el segundo nivel de la EDT y cuelga del objetivo del proyecto. Cubre los productos P1.1.1 a P1.4.3. Los diseños de la fase 2 ya existen; el paquete correspondiente es su revisión y aprobación antes de licitar, no un diseño nuevo del aeropuerto. La supervisión queda en este componente porque la matriz de resultados la registra como producto del Componente I.
 
 ```mermaid
 graph TD
@@ -88,7 +95,7 @@ graph TD
 
 ## 3. Componente II. Fortalecimiento institucional
 
-Cubre los productos P2.1 a P2.9. Cada estudio o plan es un entregable de consultoría. Se separan plan y capacitación solo cuando la matriz pide los dos resultados por separado.
+Este componente es el segundo nivel de la EDT y cuelga del objetivo del proyecto. Cubre los productos P2.1 a P2.9. Cada estudio o plan es un entregable de consultoría. Se separan plan y capacitación solo cuando la matriz pide los dos resultados por separado.
 
 ```mermaid
 graph TD
@@ -114,7 +121,7 @@ graph TD
 
 ## 4. Administración, evaluación y auditorías
 
-Cubre la dirección del programa, las condiciones previas al desembolso y a las obras, los contratos, el control financiero, las auditorías y el cierre. Estos elementos consumen recursos del programa y forman parte del alcance.
+Este componente es el segundo nivel de la EDT y cuelga del objetivo del proyecto. Cubre la dirección del programa, las condiciones previas al desembolso y a las obras, los contratos, el control financiero, las auditorías y el cierre. Estos elementos consumen recursos del programa y forman parte del alcance.
 
 ```mermaid
 graph TD
@@ -226,6 +233,6 @@ La EDT no fija el orden de ejecución. La dependencia entre el SSEI y la platafo
 
 ## 6. Lectura de la EDT
 
-Hay 54 paquetes de trabajo: 23 de obras y adecuaciones, 12 de fortalecimiento institucional y 19 de administración, evaluación y auditorías. Los elementos de los niveles superiores agrupan esos paquetes y no se ejecutan por sí mismos.
+El nivel 1 tiene un solo elemento: el objetivo del proyecto. No es un paquete de trabajo. Hay 54 paquetes de trabajo: 23 de obras y adecuaciones, 12 de fortalecimiento institucional y 19 de administración, evaluación y auditorías. Los elementos de los niveles superiores agrupan esos paquetes y no se ejecutan por sí mismos.
 
 Cada paquete del Componente I y del Componente II apunta a un producto de la matriz de resultados. Los del tercer componente cubren las condiciones del préstamo y la gestión que el programa necesita para llegar a esos productos. El cronograma, la curva S, las adquisiciones, los riesgos, las comunicaciones y la matriz RACI deben salir de esta lista, sin agregar obras ni estudios que no estén aquí.
