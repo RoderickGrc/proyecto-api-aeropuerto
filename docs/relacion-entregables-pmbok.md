@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones y la estructura de funciones, y se completará con la EDT, el cronograma, la matriz de riesgos y la matriz de asignación de responsabilidades.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones y la matriz de riesgos, y se completará con la EDT, el cronograma y la matriz de asignación de responsabilidades.
 
 ## Acta de constitución del proyecto
 
@@ -85,3 +85,18 @@ La estructura (`docs/estructura-organizacional.md`) documenta los roles, la jera
 - **Equipo:** define composición, dependencia jerárquica y funcional, y límites entre UEP, supervisión y contratistas.
 - **Planificación:** alinea los perfiles del préstamo con los paquetes de trabajo y con las áreas requirentes de las adquisiciones.
 - **Interesados:** sitúa a CEPA, BID, AAC y ejecutores contratados en la línea de mando o fuera de ella.
+
+## Matriz de riesgos
+
+**Procesos relacionados:** 11.2. Identificar los Riesgos; 11.3. Realizar el Análisis Cualitativo de Riesgos; 11.5. Planificar la Respuesta a los Riesgos.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Riesgos del Proyecto.
+
+La matriz (`docs/matriz-riesgos.md`) corresponde a esos tres procesos. Identifica diecisiete riesgos de la sección III de la Propuesta de Préstamo (11.2), los califica con probabilidad e impacto de 1 a 5 y obtiene el nivel como producto de ambos (11.3), y asigna a cada uno una estrategia y un responsable. El plan de respuesta, con acciones, momento y efecto esperado (11.5), se desarrolla para tres: la reubicación del SSEI, la seguridad operacional del lado aire y los cambios de diseño durante la ejecución. Esos tres pueden detener el Componente I o las obras del lado aire. Las acciones usan paquetes y precedencias que ya están en la EDT y en el cronograma.
+
+La matriz no sustituye el análisis cuantitativo de costos ni la reserva de contingencia de la línea base. Esa reserva sigue siendo la salida de la estimación de costos; aquí solo se indica cuál riesgo ayuda a absorber.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Incertidumbre:** identifica amenazas del Componente I y del lado aire, las prioriza y fija la respuesta de cada una.
+- **Planificación:** enlaza cada riesgo con paquetes de la EDT, hitos del cronograma y roles de la UEP.
