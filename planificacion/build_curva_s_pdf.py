@@ -39,10 +39,12 @@ CORTE = date.fromisoformat(RES['corte'])  # fecha a reportar
 hitos = {h['id']: h for h in csv.DictReader((HERE / 'hitos.csv').open(encoding='utf-8-sig'))}
 FIN = list(csv.DictReader((HERE / 'requisitos_financiamiento.csv').open(encoding='utf-8-sig')))
 ACTS = list(csv.DictReader((HERE / 'cronograma_actividades.csv').open(encoding='utf-8-sig')))
-SEM_END = [date(2026 + i // 2, 6 if i % 2 == 0 else 12, 30 if i % 2 == 0 else 31) for i in range(len(FIN))]
-# Desembolsos previstos del BID en el PEP y requisitos de financiamiento con anticipo y reserva de gestión (acumulados al cierre de cada semestre)
-PEP = [(d, float(r['desembolso_pep_acum_musd'])) for d, r in zip(SEM_END, FIN)]
-FUND = [(d, float(r['requisito_con_anticipo_acum_musd'])) for d, r in zip(SEM_END, FIN)]
+SEM_START = [date(2026 + i // 2, 1 if i % 2 == 0 else 7, 1) for i in range(len(FIN))]
+# Desembolsos previstos del BID en el PEP y requisitos de financiamiento con anticipo y reserva de gestión: el acumulado
+# que se necesita al cierre de cada semestre debe estar disponible desde su inicio (clase 6, figura de línea base,
+# gastos y requisitos de financiamiento: el financiamiento va en escalones por delante del gasto).
+PEP = [(d, float(r['desembolso_pep_acum_musd'])) for d, r in zip(SEM_START, FIN)]
+FUND = [(d, float(r['requisito_con_anticipo_acum_musd'])) for d, r in zip(SEM_START, FIN)]
 
 
 def jy(items) -> str:
@@ -117,13 +119,13 @@ def make_chart(w_pt: float, h_pt: float) -> bytes:
         ax.text(hd + timedelta(days=12), 6, k, color=PURPLE, fontsize=7.5, fontweight='bold', va='bottom')
     ax.plot(xs, ys_sc, color=GRAY, lw=1.6, ls=(0, (5, 2)), zorder=2, label='Estimación PERT (sin reserva)')
     ax.plot(xs, ys, color=BLUE, lw=2.2, zorder=3, label='Línea base (BAC, con reserva de contingencia)')
-    # Escalón: el acumulado de un semestre aparece al fin de ese semestre y se mantiene hasta el fin del siguiente.
-    fx = [START] + [d for d, _ in FUND] + [x1]
-    fy = [0.0] + [v for _, v in FUND] + [FUND[-1][1]]
-    ax.step(fx, fy, where='post', color='#0d9488', lw=1.1, alpha=0.9, zorder=2, label='Requisitos de financiamiento con anticipo y reserva de gestión (acumulado al fin de cada semestre)')
-    px = [START] + [d for d, _ in PEP] + [x1]
-    py = [0.0] + [v for _, v in PEP] + [PEP[-1][1]]
-    ax.step(px, py, where='post', color='#b45309', lw=1.1, ls=(0, (3, 1.5)), alpha=0.85, zorder=2, label='Desembolsos previstos del BID en el PEP (acumulado al fin de cada semestre)')
+    # Escalón: el acumulado que se necesita al cierre de cada semestre, disponible desde el inicio del semestre.
+    fx = [d for d, _ in FUND] + [x1]
+    fy = [v for _, v in FUND] + [FUND[-1][1]]
+    ax.step(fx, fy, where='post', color='#0d9488', lw=1.1, alpha=0.9, zorder=2, label='Requisitos de financiamiento con anticipo y reserva de gestión (disponible desde el inicio de cada semestre)')
+    px = [d for d, _ in PEP] + [x1]
+    py = [v for _, v in PEP] + [PEP[-1][1]]
+    ax.step(px, py, where='post', color='#b45309', lw=1.1, ls=(0, (3, 1.5)), alpha=0.85, zorder=2, label='Desembolsos previstos del BID en el PEP (desde el inicio de cada semestre)')
     ax.axvline(CORTE, color=INK, lw=0.8, ls=(0, (1, 1.5)), zorder=1)
     ax.text(CORTE + timedelta(days=8), 60, 'Fecha a reportar\n31-10-2026', fontsize=7, color=INK, va='bottom')
     ax.text(FINISH + timedelta(days=12), ys[-1] + 2, f'US${ys[-1]:.1f} M', color=INK, fontsize=7.5, fontweight='bold', va='bottom')
