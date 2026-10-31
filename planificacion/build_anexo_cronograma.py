@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Genera el anexo del cronograma (tabla de actividades, duraciones, fechas, predecesoras, holgura y ruta critica) en PDF A4 horizontal.
+"""Genera el anexo del cronograma (tabla jerarquica de actividades, duraciones, fechas, predecesoras, holgura y ruta critica) en PDF A4 horizontal.
 
-Lee los archivos que produce build_planificacion.py (cronograma_paquetes.csv, hitos.csv y cronograma_ES-L1173.xml) y escribe
+Lee los archivos que produce build_planificacion.py (cronograma_actividades.csv, cronograma_paquetes.csv, hitos.csv y cronograma_ES-L1173.xml) y escribe
 cronograma_ES-L1173_anexo_tabla.pdf en esta carpeta. Requiere PyMuPDF (fitz).
 """
 from __future__ import annotations
@@ -19,10 +19,14 @@ HERE = Path(__file__).resolve().parent
 NS = {'m': 'http://schemas.microsoft.com/project'}
 
 pk = {r['code']: r for r in csv.DictReader((HERE / 'cronograma_paquetes.csv').open(encoding='utf-8-sig'))}
+acts = {r['code']: r for r in csv.DictReader((HERE / 'cronograma_actividades.csv').open(encoding='utf-8-sig'))}
 hitos = list(csv.DictReader((HERE / 'hitos.csv').open(encoding='utf-8-sig')))
 tasks = ET.parse(HERE / 'cronograma_ES-L1173.xml').getroot().find('m:Tasks', NS).findall('m:Task', NS)
+# Grupos de la EDT (resumen que no son paquetes), en el orden jerarquico del XML.
 summaries = {t.findtext('m:WBS', namespaces=NS): (t.findtext('m:Name', namespaces=NS), t.findtext('m:Start', namespaces=NS)[:10], t.findtext('m:Finish', namespaces=NS)[:10])
-             for t in tasks if t.findtext('m:Summary', namespaces=NS) == '1' and t.findtext('m:WBS', namespaces=NS) not in (None, 'H')}
+             for t in tasks if t.findtext('m:Summary', namespaces=NS) == '1' and (t.findtext('m:WBS', namespaces=NS) or '')[:1].isdigit()
+             and t.findtext('m:WBS', namespaces=NS) not in pk}
+order = [t.findtext('m:WBS', namespaces=NS) for t in tasks]
 
 
 def d(s: str) -> date:
@@ -38,39 +42,47 @@ def workdays(a: date, b: date) -> int:
 
 
 def preds(deps: str) -> str:
+    """Predecesoras: 'pred' (FI sin desfase) o 'pred TIPO+desfase' (por ejemplo 1.2.1-02 II+40)."""
     out = []
     for part in filter(None, deps.split(',')):
         code, _, rel = part.partition(':')
-        out.append(f'{code} CC{rel[2:]}d' if rel.startswith('SS') and '+' in rel else (f'{code} CC' if rel.startswith('SS') else code))
+        if rel in ('', 'FI', 'FI+0'):
+            out.append(code)
+        else:
+            out.append(f'{code} {rel.replace("+0", "") if rel.endswith("+0") else rel}')
     return ', '.join(out) or '-'
 
 
-def key(code: str):
-    return [int(p) for p in code.split('.')]
+def hol(v: str) -> str:
+    return str(int(float(v))) if v not in ('', None) else ''
 
 
-codes = sorted(set(pk) | set(summaries), key=lambda c: (key(c), 0 if c in summaries else 1))
 rows = []
-for c in codes:
+for c in order:
     if c in summaries:
         name, s, f = summaries[c]
-        level = c.count('.')
-        rows.append(f'<tr class="g{min(level, 1)}"><td class="k">{c}</td><td>{escape(name)}</td><td class="n">{workdays(d(s), d(f))}</td>'
+        rows.append(f'<tr class="g{min(c.count("."), 1)}"><td class="k">{c}</td><td>{escape(name)}</td><td class="n">{workdays(d(s), d(f))}</td>'
                     f'<td>{fmt(s)}</td><td>{fmt(f)}</td><td></td><td></td><td></td></tr>')
-    else:
+    elif c in pk:
         r = pk[c]
         crit = r['critical'] == 'si'
-        rows.append(f'<tr class="{"c" if crit else "p"}"><td class="k">{c}</td><td>{escape(r["name"])}</td><td class="n">{r["dur"]}</td>'
+        rows.append(f'<tr class="{"pc" if crit else "pk"}"><td class="k">{c}</td><td>{escape(r["name"])}</td><td class="n">{r["dur"]}</td>'
                     f'<td>{fmt(r["start"])}</td><td>{fmt(r["finish"])}</td><td>{preds(r["deps"])}</td>'
-                    f'<td class="n{"" if crit else " h"}">{int(float(r["float"]))}</td><td class="n s">{"Sí" if crit else ""}</td></tr>')
-
-hrows = []
+                    f'<td class="n{"" if crit else " h"}">{hol(r["float"])}</td><td class="n s">{"Sí" if crit else ""}</td></tr>')
+    elif c in acts:
+        r = acts[c]
+        crit = r['critical'] == 'si'
+        rows.append(f'<tr class="{"c" if crit else "a"}"><td class="k">{c}</td><td>{escape(r["name"])}</td><td class="n">{r["dur"]}</td>'
+                    f'<td>{fmt(r["start"])}</td><td>{fmt(r["finish"])}</td><td>{preds(r["deps"])}</td>'
+                    f'<td class="n{"" if crit else " h"}">{hol(r["float"])}</td><td class="n s">{"Sí" if crit else ""}</td></tr>')
+rows.append('<tr class="g0"><td class="k"></td><td>Hitos del programa</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>')
 for h in hitos:
-    hrows.append(f'<tr class="m"><td class="k">{h["id"]}</td><td>{escape(h["name"])}</td><td>{fmt(h["date"])}</td><td>{h["preds"].replace(",", ", ")}</td></tr>')
+    rows.append(f'<tr class="m"><td class="k">{h["id"]}</td><td>{escape(h["name"])}</td><td class="n">0</td><td>{fmt(h["date"])}</td><td>{fmt(h["date"])}</td>'
+                f'<td>{preds(h["preds"])}</td><td></td><td></td></tr>')
 
-crit_n = sum(1 for r in pk.values() if r['critical'] == 'si')
+crit_n = sum(1 for r in acts.values() if r['critical'] == 'si')
+crit_pk = sum(1 for r in pk.values() if r['critical'] == 'si')
 RES = json.loads((HERE / 'resumen.json').read_text(encoding='utf-8'))
-LOE_TXT = '1.7.1 a 1.7.3, 3.2.2, 3.3.3, 3.3.4, 3.4.4 y 3.5.1 a 3.5.3'
 # Paleta tomada del Gantt exportado de Open Planner Studio: ruta critica, normal, resumen e hito, holgura.
 RED, BLUE, PURPLE, MINT = '#dc2626', '#2563eb', '#7c3aed', '#b7e3d8'
 CSS = f'''
@@ -79,51 +91,62 @@ h1 {{ font-size: 13pt; margin: 0 0 2pt 0; color: #1f2430; }}
 h2 {{ font-size: 10pt; margin: 8pt 0 3pt 0; color: #1f2430; }}
 p {{ margin: 0 0 3pt 0; }}
 p.nota {{ font-size: 7pt; color: #5b6270; }}
-table {{ border-collapse: collapse; width: 100%; }}
+table {{ border-collapse: collapse; width: 100%; table-layout: fixed; }}
 th {{ background-color: #f1f3f6; color: #444a57; text-align: left; padding: 3pt 3pt; font-size: 7.4pt; border-bottom: 1pt solid #9ca3af; }}
 td {{ padding: 2pt 3pt; border-bottom: 0.4pt solid #e3e6ea; vertical-align: top; }}
 td.n {{ text-align: right; }}
 td.k {{ font-weight: bold; }}
-tr.p td.k {{ color: {BLUE}; }}
+tr.a td.k {{ font-weight: normal; }}
+tr.pk td {{ background-color: #eef3fd; font-weight: bold; }}
+tr.pk td.k {{ color: {BLUE}; }}
+tr.pc td {{ background-color: #fdeaea; font-weight: bold; }}
+tr.pc td.k {{ color: {RED}; }}
 tr.c td {{ background-color: #fdeaea; }}
-tr.c td.k, tr.c td.s {{ color: {RED}; font-weight: bold; }}
+tr.c td.k, tr.c td.s, tr.pc td.s {{ color: {RED}; font-weight: bold; }}
 tr.g0 td, tr.g1 td {{ background-color: #f3effd; color: {PURPLE}; font-weight: bold; }}
 tr.m td.k {{ color: {PURPLE}; }}
+tr.m td {{ background-color: #f8f6fe; }}
 td.h {{ background-color: #e4f4ef; }}
 td.sw {{ width: 9pt; border-bottom: 0; padding: 0; }}
 td.lg {{ border-bottom: 0; padding: 0 10pt 0 3pt; font-size: 7pt; color: #5b6270; }}
 '''
-LEGEND = (f'<table style="width:60%"><tr>'
+LEGEND = (f'<table style="width:75%"><tr>'
           f'<td class="sw" style="background-color:{RED}">&nbsp;</td><td class="lg">Ruta crítica</td>'
-          f'<td class="sw" style="background-color:{BLUE}">&nbsp;</td><td class="lg">Paquete de trabajo</td>'
+          f'<td class="sw" style="background-color:{BLUE}">&nbsp;</td><td class="lg">Paquete de trabajo (resumen)</td>'
           f'<td class="sw" style="background-color:{PURPLE}">&nbsp;</td><td class="lg">Grupo de la EDT e hito</td>'
           f'<td class="sw" style="background-color:{MINT}">&nbsp;</td><td class="lg">Holgura</td></tr></table>')
-HEAD = '<tr><th style="width:5%">EDT</th><th style="width:36%">Actividad (paquete de trabajo)</th><th style="width:6%">Dur. (dl)</th><th style="width:9%">Inicio</th><th style="width:9%">Fin</th><th style="width:21%">Predecesoras</th><th style="width:7%">Holgura (dl)</th><th style="width:7%">Crítica</th></tr>'
+HEAD = '<tr><th style="width:7%">EDT</th><th style="width:41%">Actividad (paquete de trabajo)</th><th style="width:5%">Dur. (dl)</th><th style="width:8%">Inicio</th><th style="width:8%">Fin</th><th style="width:19%">Predecesoras</th><th style="width:6%">Holg. (dl)</th><th style="width:6%">Crítica</th></tr>'
 INTRO = f'''<h1>Anexo. Cronograma del programa ES-L1173: actividades, duraciones, predecesoras y ruta crítica</h1>
-<p>Inicio: {fmt(RES["inicio"])}. Fin: {fmt(RES["fin"])}. Duración total: {RES["dias_laborables"]:,} días laborables (dl), con calendario de lunes a viernes, jornada de 8 horas y sin feriados.</p>
-<p class="nota"><b>Notas.</b> Predecesoras: salvo indicación, la relación es fin a comienzo (FC): la actividad inicia cuando termina su predecesora. CC indica comienzo a comienzo con un desfase en dl; por ejemplo, 1.2.1 CC+150d significa que la actividad inicia 150 dl después del inicio de 1.2.1. Holgura: dl que una actividad puede retrasarse sin modificar la fecha de fin del programa (holgura total). Ruta crítica: actividades con holgura cero ({crit_n} paquetes de trabajo). Los paquetes de seguimiento ({LOE_TXT}) duran lo mismo que las actividades que acompañan: la supervisión, el PGAS, el mecanismo de quejas y los informes socioambientales terminan con las obras; los planes operativos, desembolsos y auditorías anuales, con la recepción; las evaluaciones, con el informe final; y 3.4.4, con la firma del contrato de la evaluación final. 1.7.2 y 1.7.3 tienen holgura cero porque acompañan a la cadena crítica del lado aire hasta la señalización de plataformas (1.3.3).</p>
+<p>Inicio: {fmt(RES["inicio"])}. Fin: {fmt(RES["fin"])}. Duración total: {RES["dias_laborables"]:,} días laborables (dl), con calendario de lunes a viernes, jornada de 8 horas y sin feriados. El programa tiene {len(acts)} actividades en {len(pk)} paquetes de trabajo y {len(hitos)} hitos; {crit_n} actividades son críticas (en {crit_pk} paquetes).</p>
+<p class="nota"><b>Notas.</b> La tabla sigue la EDT: grupos en morado, cada paquete de trabajo como fila resumen en negrita y, debajo, sus actividades; los hitos van al final. Predecesoras: salvo indicación, la relación es fin a inicio (FI) sin desfase. Los otros tipos se escriben después del código: II es inicio a inicio, FF es fin a fin e IF es inicio a fin; el desfase va en dl, por ejemplo 1.2.1-02 II+40 significa que la actividad inicia 40 dl después del inicio de 1.2.1-02. Holgura: dl que una actividad puede retrasarse sin modificar la fecha de fin del programa (holgura total). Ruta crítica: actividades con holgura cero, resaltadas en rojo.</p>
 {LEGEND}
-<h2>Hitos</h2>
-<table><tr><th style="width:6%">Hito</th><th style="width:56%">Descripción</th><th style="width:12%">Fecha</th><th style="width:26%">Se alcanza al terminar</th></tr>{''.join(hrows)}</table>
 <h2>Actividades</h2>'''
 
 mediabox = fitz.paper_rect('a4-l')
 where = mediabox + (30, 28, -30, -34)
 
 
+WIDTHS = [round(750 * w / 100, 1) for w in (7, 41, 5, 8, 8, 19, 6, 6)]
+
+
+def sized(row: str) -> str:
+    parts = row.split('<td')
+    return parts[0] + ''.join(f'<td style="width:{WIDTHS[k]}pt"' + x for k, x in enumerate(parts[1:]))
+
+
 def page_html(first: bool, chunk: list[str]) -> str:
-    return f'<html><head><style>{CSS}</style></head><body>{INTRO if first else ""}<table>{HEAD}{"".join(chunk)}</table></body></html>'
+    return f'<html><head><style>{CSS}</style></head><body>{INTRO if first else ""}<table style="width:750pt">{HEAD}{"".join(sized(r) for r in chunk)}</table></body></html>'
 
 
 def fits(html: str) -> bool:
-    more, _ = fitz.Story(html=html).place(where)
-    return not more
+    more, filled = fitz.Story(html=html).place(where)
+    return not more and filled[3] <= where.y1 + 0.01
 
 
 pages_html, i = [], 0
 while i < len(rows):
     first = not pages_html
-    n = len(rows) - i
+    n = min(len(rows) - i, 60)
     while n > 1 and not fits(page_html(first, rows[i:i + n])):
         n -= 1
     pages_html.append(page_html(first, rows[i:i + n]))
@@ -147,4 +170,4 @@ for k, page in enumerate(doc, start=1):
 n_pages = len(doc)
 doc.save(str(out))
 doc.close()
-print(f'{out.name}: {n_pages} páginas, {len(pk)} paquetes, {len(summaries)} grupos, {len(hitos)} hitos, {crit_n} críticos')
+print(f'{out.name}: {n_pages} páginas, {len(acts)} actividades, {len(pk)} paquetes, {len(summaries)} grupos, {len(hitos)} hitos, {crit_n} críticos')

@@ -24,6 +24,20 @@ El acta constituye el marco de referencia para los siete entregables de planific
 
 **Fuentes:** Propuesta de Préstamo ES-L1173; Reglamento Operativo del Programa (EEO#1); Teoría del Cambio (EER#1); Plan de Monitoreo, Evaluación y Aprendizaje (EER#2); material de clase «Inicio del proyecto»; Guía del PMBOK (sexta y séptima ediciones).
 
+## Listado de actividades y cronograma
+
+**Procesos relacionados:** 6.2. Definir las Actividades; 6.3. Secuenciar las Actividades; 6.4. Estimar la Duración de las Actividades; 6.5. Desarrollar el Cronograma.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión del Cronograma del Proyecto.
+
+El listado de actividades (`docs/listado-actividades.md`) es la salida de los procesos 6.2 a 6.4: descompone cada paquete de trabajo de la EDT en actividades nombradas con verbos de acción, les asigna fase y responsable, estima su duración por tres valores (PERT) con la técnica y la fuente de cada estimación y registra sus dependencias (tipo de relación, desfase y clase). El cronograma (`docs/cronograma-y-curva-s.md`, `planificacion/cronograma_ES-L1173_gantt.pdf` y el anexo en tabla) es la salida del proceso 6.5: calcula fechas, holguras y ruta crítica, fija los hitos y la reserva de contingencia del cronograma, y es la referencia del proceso 6.6, Controlar el Cronograma.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Planificación:** actividades, duraciones, secuencia e hitos.
+- **Incertidumbre:** estimación de tres valores y reserva de tiempo calculada con la desviación de la ruta crítica.
+- **Medición:** la línea base del cronograma es la referencia para medir el avance durante la ejecución.
+
 ## Estimación de costos y curva S
 
 **Procesos relacionados:** 7.1. Planificar la Gestión de los Costos; 7.2. Estimar los Costos; 7.3. Determinar el Presupuesto.
@@ -32,7 +46,7 @@ El acta constituye el marco de referencia para los siete entregables de planific
 
 La estimación (`docs/estimacion-costos.md`) corresponde al proceso 7.2: obtiene el costo de cada paquete de trabajo de la EDT con estimación análoga, paramétrica, por determinación de tarifas, ascendente y de tres puntos, y documenta sus bases, supuestos y rango. Las reglas de moneda, escalamiento, unidades, reservas y actualización que fija el documento son el plan de gestión de costos del proceso 7.1.
 
-La curva S (`docs/cronograma-y-curva-s.md`) es la salida del proceso 7.3: suma los costos de los paquetes según el cronograma, agrega la reserva de contingencia y fija la línea base de costos. La reserva de gestión queda fuera de la línea base y forma, con ella, el presupuesto del proyecto y los requisitos de financiamiento. Una vez aprobada, la curva es la referencia del proceso 7.4, Controlar los Costos, en el que se compara con el costo real y el valor ganado en cada fecha de corte.
+La curva S (`docs/cronograma-y-curva-s.md`) es la salida del proceso 7.3: asigna el costo de cada paquete a sus actividades, suma mes a mes el costo de las actividades según el cronograma, agrega la reserva de contingencia y fija la línea base de costos; además compara los requisitos de financiamiento con los desembolsos previstos del préstamo. La reserva de gestión queda fuera de la línea base y forma, con ella, el presupuesto del proyecto y los requisitos de financiamiento. Una vez aprobada, la curva es la referencia del proceso 7.4, Controlar los Costos, en el que se compara con el costo real y el valor ganado en cada fecha de corte.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 

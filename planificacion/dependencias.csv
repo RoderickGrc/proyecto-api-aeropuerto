@@ -1,5 +1,5 @@
 ﻿sucesora,predecesora,tipo,desfase,clase,justificacion
-1.1.1-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado para revisar
+1.1.1-01,3.1.1-05,FI,0,Obligatoria,El especialista en ingeniería aeroportuaria debe estar contratado para revisar
 1.1.1-02,1.1.1-01,FI,0,Obligatoria,Los ajustes responden a las observaciones de la revisión
 1.1.1-03,1.1.1-01,II,10,Discrecional,La revisión BIM arranca con la revisión técnica avanzada
 1.1.1-03,1.1.1-02,FF,0,Discrecional,La revisión BIM termina con los ajustes
@@ -9,21 +9,21 @@
 1.1.1-04,1.2.5-02,FI,0,Discrecional,Metas EDGE verificadas antes de aprobar (EDT 1.2.5)
 1.1.1-05,1.1.1-04,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
 1.1.2-01,3.1.1-05,FI,0,Obligatoria,Servicio contratado por la UEP
-1.1.2-02,1.1.1-01,FI,0,Discrecional,Mismo especialista técnico: primero la terminal
-1.1.2-02,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.2-02,1.1.1-01,FI,0,Discrecional,Mismo especialista en ingeniería aeroportuaria: primero la terminal
+1.1.2-02,3.1.1-05,FI,0,Obligatoria,El especialista en ingeniería aeroportuaria debe estar contratado
 1.1.2-03,1.1.2-02,FI,0,Obligatoria,La AAC revisa la geometría ya revisada por CEPA
 1.1.2-04,1.1.2-01,FI,0,Obligatoria,El sondeo alimenta el diseño de pavimentos
 1.1.2-04,1.1.2-03,FI,0,Obligatoria,Se incorporan observaciones de la AAC
 1.1.2-05,1.1.2-04,FI,0,Obligatoria,Se aprueba el diseño ajustado
 1.1.2-06,1.1.2-05,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
-1.1.3-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.3-01,3.1.1-05,FI,0,Obligatoria,El especialista en ingeniería aeroportuaria debe estar contratado
 1.1.3-02,1.1.3-01,II,10,Discrecional,La revisión fotovoltaica arranca con la revisión técnica avanzada
 1.1.3-03,1.1.3-01,FI,0,Obligatoria,Los ajustes responden a las observaciones
 1.1.3-03,1.1.3-02,FI,0,Obligatoria,Los ajustes incluyen el sistema fotovoltaico
 1.1.3-04,1.1.3-03,FI,0,Obligatoria,Se aprueba el diseño ajustado
 1.1.3-05,1.1.3-04,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
-1.1.4-01,1.1.3-01,FI,0,Discrecional,Mismo especialista técnico: primero el estacionamiento
-1.1.4-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.4-01,1.1.3-01,FI,0,Discrecional,Mismo especialista en ingeniería aeroportuaria: primero el estacionamiento
+1.1.4-01,3.1.1-05,FI,0,Obligatoria,El especialista en ingeniería aeroportuaria debe estar contratado
 1.1.4-02,1.1.4-01,FI,0,Obligatoria,La AAC valida el diseño ya revisado
 1.1.4-03,1.1.4-02,FI,0,Obligatoria,Se incorporan observaciones de la AAC
 1.1.4-04,1.1.4-03,FI,0,Obligatoria,Se aprueba el diseño ajustado
@@ -68,8 +68,6 @@
 1.2.5-01,1.1.1-02,FI,0,Obligatoria,Se verifica el diseño ajustado
 1.2.5-02,1.1.1-02,FI,0,Obligatoria,Se verifica el diseño ajustado
 1.2.5-03,1.2.2-01,II,30,Discrecional,Verificación por frentes
-1.2.5-03,1.2.2-02,FF,10,Obligatoria,Se verifica al cierre de los acabados
-1.2.5-04,1.2.3-02,FI,0,Obligatoria,Se verifican los equipos ya instalados
 1.2.5-04,1.2.3-04,FF,5,Obligatoria,Se verifica con las instalaciones en marcha
 1.3.1-01,1.1.2-06,FI,0,Obligatoria,Diseño aprobado antes de construir
 1.3.1-01,1.7.2-01,II,5,Obligatoria,La supervisión debe estar movilizada antes de la orden de inicio
@@ -391,9 +389,7 @@
 3.4.3-15,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-15,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-16,3.4.3-15,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-17,3.4.3-16,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-18,3.4.3-17,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-19,3.4.3-18,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-20,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-20,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-21,3.4.3-20,FI,0,Externa,Secuencia del proceso
@@ -404,33 +400,23 @@
 3.4.3-26,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-26,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-27,3.4.3-26,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-28,3.4.3-27,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-29,3.4.3-28,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-30,3.4.3-29,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-31,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-31,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-32,3.4.3-31,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-33,3.4.3-32,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-34,3.4.3-33,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-35,3.4.3-34,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-36,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-36,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-37,3.4.3-36,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-38,3.4.3-37,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-39,3.4.3-38,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-40,3.4.3-39,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-41,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-41,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-42,3.4.3-41,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-43,3.4.3-42,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-44,3.4.3-43,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-45,3.4.3-44,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-46,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.3-46,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
 3.4.3-47,3.4.3-46,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-48,3.4.3-47,FI,0,Obligatoria,Secuencia del proceso
 3.4.3-49,3.4.3-48,FI,0,Obligatoria,Secuencia del proceso
-3.4.3-50,3.4.3-49,FI,0,Obligatoria,Secuencia del proceso
 3.4.4-02,3.4.4-01,FI,0,Externa,Secuencia 3CV del ROP
 3.4.4-03,3.4.4-02,FI,0,Obligatoria,Secuencia 3CV del ROP
 3.4.4-04,3.4.4-03,FI,0,Externa,Secuencia 3CV del ROP
@@ -468,15 +454,11 @@
 3.4.4-31,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.4-31,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
 3.4.4-32,3.4.4-31,FI,0,Obligatoria,Secuencia SCC
-3.4.4-33,3.4.4-32,FI,0,Obligatoria,Secuencia SCC
 3.4.4-34,3.4.4-33,FI,0,Obligatoria,Secuencia SCC
-3.4.4-35,3.4.4-34,FI,0,Obligatoria,Secuencia SCC
 3.4.4-36,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
 3.4.4-36,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
 3.4.4-37,3.4.4-36,FI,0,Obligatoria,Secuencia SCC
-3.4.4-38,3.4.4-37,FI,0,Obligatoria,Secuencia SCC
 3.4.4-39,3.4.4-38,FI,0,Obligatoria,Secuencia SCC
-3.4.4-40,3.4.4-39,FI,0,Obligatoria,Secuencia SCC
 3.5.1-01,3.1.1-05,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
 3.5.1-01,3.1.2-03,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
 3.5.1-01,3.1.3-03,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
@@ -558,7 +540,6 @@
 1.3.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
 1.5.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
 1.6.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
-3.5.3-01,3.2.2-03,II,0,Discrecional,La proyección del hito se hace al elaborar el POA 2028
 3.4.4-31,3.5.3-01,FI,0,Obligatoria,La contratación se inicia con el hito proyectado
 3.1.3-01,3.1.1-05,FI,0,Discrecional,La UEP conformada redacta el convenio en paralelo con el ROP
 3.5.2-01,3.1.4-03,FI,0,Obligatoria,Los estados financieros del programa parten de la cuenta especial
@@ -583,3 +564,115 @@
 3.5.4-06,3.5.1-08,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
 3.5.4-06,3.5.1-09,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
 3.5.4-06,3.5.1-10,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.2.3-06,3.2.3-02,FI,0,Obligatoria,El aviso general resume el Plan de Adquisiciones aprobado
+3.4.1-03,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.1-09,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.1-15,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.1-21,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.2-01,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.2-07,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.2-13,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.2-19,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-16,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-27,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-32,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-37,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-42,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.3-47,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.4-32,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+3.4.4-37,3.2.3-06,FI,0,Obligatoria,Todo aviso específico y toda solicitud de expresiones de interés siguen al Aviso General de Adquisiciones (GN-2349-15 y GN-2350-15)
+1.1.1-06,3.4.1-12,FI,10,Obligatoria,El contratista diseña desde la orden de inicio del contrato de obra
+1.1.1-07,1.1.1-06,FI,0,Obligatoria,Se revisa el diseño terminado
+1.1.1-07,1.7.1-01,FI,0,Obligatoria,La supervisión del diseño la hace la firma de supervisión de la terminal ya movilizada
+1.1.1-08,1.1.1-07,FI,0,Obligatoria,Se aprueba el diseño revisado
+1.2.4-01,1.1.1-08,FI,0,Obligatoria,Los planos de taller de los puentes de abordaje dependen del diseño aprobado de la fachada sur
+1.2.1-05,1.1.1-08,FI,0,Obligatoria,Las fachadas se instalan con el diseño aprobado de la fachada sur
+1.2.5-05,1.2.5-01,FI,0,Obligatoria,Los recorridos se construyen según el diseño verificado
+1.2.5-05,1.2.2-01,II,30,Discrecional,Se construyen por frentes al avanzar las divisiones y los cielos
+1.2.5-05,1.2.2-02,FF,5,Obligatoria,Los recorridos terminan con los acabados de los pasillos y las salas
+1.2.5-06,1.2.5-02,FI,0,Obligatoria,Se instalan las medidas del diseño verificado
+1.2.5-06,1.2.1-05,FI,0,Obligatoria,El control solar y el aislamiento se instalan sobre las fachadas ya montadas
+1.2.5-06,1.2.3-02,II,20,Discrecional,"Iluminación, griferías y controles se instalan con los equipos de las instalaciones"
+1.2.5-03,1.2.5-05,FF,5,Obligatoria,Se verifica al terminar la construcción de los recorridos y los espacios
+1.2.5-04,1.2.5-06,FI,0,Obligatoria,Se verifican las medidas ya instaladas
+1.6.2-05,1.6.1-05,II,20,Discrecional,El equipamiento se instala al avanzar los acabados y los sistemas del edificio
+1.6.2-06,1.6.2-05,FI,0,Obligatoria,Se prueba lo instalado
+1.6.2-06,1.6.1-05,FI,0,Obligatoria,Se prueba con el edificio ya probado
+1.6.2-03,1.6.2-06,FI,0,Obligatoria,El traslado requiere el equipamiento probado
+3.4.3-51,3.4.3-16,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-17,3.4.3-51,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-52,3.4.3-18,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-19,3.4.3-52,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-53,3.4.3-27,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-28,3.4.3-53,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-54,3.4.3-29,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-30,3.4.3-54,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-55,3.4.3-32,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-33,3.4.3-55,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-56,3.4.3-34,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-35,3.4.3-56,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-57,3.4.3-37,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-38,3.4.3-57,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-58,3.4.3-39,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-40,3.4.3-58,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-59,3.4.3-42,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-43,3.4.3-59,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-60,3.4.3-44,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-45,3.4.3-60,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-61,3.4.3-47,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-48,3.4.3-61,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-62,3.4.3-49,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.3-50,3.4.3-62,FI,0,Obligatoria,Secuencia del proceso
+3.4.4-41,3.4.4-32,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.4-33,3.4.4-41,FI,0,Obligatoria,Secuencia SCC
+3.4.4-42,3.4.4-34,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.4-35,3.4.4-42,FI,0,Obligatoria,Secuencia SCC
+3.4.4-43,3.4.4-37,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.4-38,3.4.4-43,FI,0,Obligatoria,Secuencia SCC
+3.4.4-44,3.4.4-39,FI,0,Externa,No objeción del BID (revisión ex ante)
+3.4.4-40,3.4.4-44,FI,0,Obligatoria,Secuencia SCC
+3.5.3-01,3.4.1-18,FI,0,Discrecional,"Con los contratos de obra del estacionamiento, la terminal y el SSEI firmados (87% del monto de las obras) se proyecta cuándo se cumple el 50% del tiempo de ejecución y del desembolso, a tiempo para presentar el informe antes del plazo"
+3.5.3-01,3.4.2-18,FI,0,Discrecional,Con la supervisión del SSEI firmada ya están los cronogramas de las tres primeras obras para proyectar el hito
+3.1.1-06,3.1.1-01,II,0,Obligatoria,La administración del programa empieza con la incorporación real del personal clave
+3.4.4-45,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-45,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-46,3.4.4-45,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-47,3.4.4-46,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-48,3.4.4-47,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-49,3.4.4-48,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-49,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.4.4-50,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-50,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-51,3.4.4-50,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-52,3.4.4-51,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-53,3.4.4-52,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-54,3.4.4-53,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-54,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.4.4-55,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-55,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-56,3.4.4-55,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-57,3.4.4-56,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-58,3.4.4-57,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-59,3.4.4-58,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-59,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.4.4-60,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-60,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-61,3.4.4-60,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-62,3.4.4-61,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-63,3.4.4-62,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-64,3.4.4-63,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-64,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.4.4-65,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-65,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-66,3.4.4-65,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-67,3.4.4-66,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-68,3.4.4-67,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-69,3.4.4-68,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-69,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.4.4-70,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-70,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-71,3.4.4-70,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-72,3.4.4-71,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-73,3.4.4-72,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-74,3.4.4-73,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.5.4-06,3.4.4-74,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado

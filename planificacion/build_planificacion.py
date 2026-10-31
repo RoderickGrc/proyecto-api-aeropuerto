@@ -10,9 +10,12 @@ curva_s.png, cronograma_ES-L1173.xml, resumen.json. Sin red, sin dependencias sa
    restricciones "no comenzar antes de" y actividades de nivel de esfuerzo (empiezan con sus predecesoras y terminan con
    la ultima actividad de termina_con, sin empujarla).
 2. Los paquetes de trabajo de la EDT son filas resumen: empiezan con su primera actividad y terminan con la ultima.
-3. Costos: estimacion propia por paquete (estimacion_costos.py), distribuida sobre las fechas del paquete. La curva S es
-   la linea base de costos: estimacion PERT mas la reserva de contingencia (P80) asignada a cada paquete. La reserva de
-   gestion y el monto del prestamo (US$195M) se muestran como referencia.
+3. Costos: estimacion propia por elemento y por paquete (estimacion_costos.py), asignada a las actividades de quien cobra el
+   contrato con pesos por elemento y por actividad segun el recurso (regla en estimacion_costos.py); el costo indirecto de la
+   UEP lo lleva 3.1.1-06. La curva S es el valor planificado de la linea base de costos (estimacion PERT mas la reserva de
+   contingencia, P80): cada actividad se prorratea en su duracion, sin anticipos ni pagos contra entrega. La logica de pagos
+   (anticipos por contrato segun el PEP) solo esta en los requisitos de financiamiento, que suman la reserva de gestion y se
+   comparan con los desembolsos del PEP. Tambien verifica los plazos de las evaluaciones (clausula 5.03 del contrato).
 Calendario lunes a viernes, 8 h/dia, sin feriados.
 """
 from __future__ import annotations
@@ -214,75 +217,77 @@ milestones = []
 for hid, name, preds in HITOS:
     milestones.append({'id': hid, 'name': name, 'preds': preds, 'date': workday(max(EF[p] for p in preds) - 1)})
 
-# ---- costos: estimacion propia (estimacion_costos.py) con la reserva de contingencia asignada por incertidumbre ----
-is_works = lambda c: any(c.startswith(f'1.{i}.') for i in range(2, 7))
-COST = estimacion_costos.estimate({r['code']: (r['start'], r['finish']) for r in rows}, PROJECT_START, PROJECT_END)
-estimacion_costos.write_outputs(COST, OUT, {r['code']: (r['start'], r['finish']) for r in rows}, PROJECT_START, PROJECT_END)
+# ---- costos por actividad (clase 6: EDT > paquetes > actividades > costo de las actividades) ----
+# El costo de cada elemento de la estimación (estimacion_costos.py) llega a sus paquetes y, dentro de cada paquete, a las
+# actividades de quien cobra el contrato (contratista, firma de supervisión, firma consultora, auditor), con pesos por elemento
+# y por actividad según el recurso (regla en estimacion_costos.py). Las actividades de la UEP, CEPA, el BID y la AAC no tienen
+# costo propio; la única excepción es el costo indirecto de la UEP (3.1.1), que lleva la actividad de nivel de esfuerzo
+# 3.1.1-06. Si un paquete con costo no tiene actividades de quien cobra, el reparto falla con assert.
+SUP_CONTRACT, SUP_WORKS = estimacion_costos.SUP_CONTRACT, estimacion_costos.SUP_WORKS
+SUP_WORD = {'T': 'terminal', 'E': 'estacionamiento', 'P': 'plataformas', 'S': 'SSEI'}
+assert all(SUP_WORD[g] in act[c]['actividad'] for c, g in SUP_CONTRACT.items())
+INDIRECT, INDIRECT_ACT = '3.1.1', estimacion_costos.UEP_INDIRECT
+assert act[INDIRECT_ACT]['tecnica'] == 'Nivel de esfuerzo' and act[INDIRECT_ACT]['paquete'] == INDIRECT
+
+tech_sign = next(c for c, a in act.items() if a['actividad'].startswith('Firmar el contrato del técnico de apoyo'))
+CTX = {'acts': {c: {'pkg': r['package'], 'name': r['name'], 'dur': r['dur'], 'start': r['start'], 'finish': r['finish'], 'owner': r['owner']}
+                for c, r in abyid.items()},
+       'uep': {'start': abyid[INDIRECT_ACT]['start'], 'end': abyid[INDIRECT_ACT]['finish'], 'tech_start': abyid[tech_sign]['finish'],
+               'lot_sign': {code: abyid[code]['finish'] for _, code, _ in estimacion_costos.PLANTILLA}}}
+COST = estimacion_costos.estimate(CTX)
+estimacion_costos.write_outputs(COST, OUT, CTX)
+ALLOC = estimacion_costos.allocate(COST, CTX)
 for r in rows:
     c = r['code']
     r['base'] = COST['packages'].get(c, 0.0) / 1e6
     r['contingency'] = COST['package_reserve'].get(c, 0.0) / 1e6
     r['budget'] = r['base'] + r['contingency']
+    r['profile'] = 'escalonado por puestos' if c == INDIRECT else 'lineal'
 TOTAL_MUSD = COST['linea_base'] / 1e6
 CONTINGENCY_MUSD = COST['contingencia'] / 1e6
 assert abs(sum(r['budget'] for r in rows) - TOTAL_MUSD) < 1e-7
 assert abs(sum(r['contingency'] for r in rows) - CONTINGENCY_MUSD) < 1e-7
 assert set(COST['packages']) <= set(byid), set(COST['packages']) - set(byid)
-
-# Perfiles de distribucion del valor planificado (fundamento en docs/estimacion-costos.md):
-# civil: 3t^2 - 2t^3, aproximacion simetrica al logit de Kenley y Wilson (alfa 0, beta ~1.5); DHSS como sensibilidad.
-# equipment: suministro (70 %) reconocido a la entrega, escalonada entre el 30 y el 60 % del paquete, e instalacion (30 %) lineal
-#   (WB SBD Plant 2015).
-# consulting: pagos contra productos (GN-2350-15 4.1): 20 % al 25 % del plazo, 40 % al 65 % y 40 % al final.
-# audit: un escalon por ejercicio auditado, al vencer el plazo de los estados financieros (30 de abril).
-# operations: lineal, honorarios mensuales (GN-2350-15 4.2 y 4.9).
-SUPPLY = {'1.2.4', '1.3.3', '1.4.2', '1.5.2', '1.5.3', '1.6.2'}
-ONGOING = {'1.7.1', '1.7.2', '1.7.3', '1.7.4', '3.3.4', '3.3.3', '3.1.1'}
-for r in rows:
+for r in arows:
     c = r['code']
-    typ = 'civil' if is_works(c) else ('consulting' if c.startswith('2.') else 'operations')
-    if c in SUPPLY: typ = 'equipment'
-    if c in ONGOING: typ = 'operations'
-    if c == '3.5.2': typ = 'audit'
-    if c == '3.5.4': typ = 'consulting'
-    r['profile'] = typ
-    # la UEP se paga durante todo el programa, no solo los 50 dias de su conformacion
-    r['cf_es'], r['cf_ef'] = (0, END) if c == '3.1.1' else (r['es'], r['ef'])
+    r['base'], r['contingency'] = ALLOC['base'].get(c, 0.0) / 1e6, ALLOC['cont'].get(c, 0.0) / 1e6
+    r['budget'] = r['base'] + r['contingency']
+    tot = sum(ALLOC['parts'].get(c, {}).values())
+    r['cost_elements'] = '; '.join(f'{e} {v / tot:.0%}' for e, v in sorted(ALLOC['parts'].get(c, {}).items(), key=lambda x: -x[1])) if tot else ''
+    r['profile'] = 'escalonado por puestos' if c == INDIRECT_ACT else 'lineal'
+for r in rows:
+    assert abs(sum(a['budget'] for a in arows if a['package'] == r['code']) - r['budget']) < 1e-9, r['code']
+assert abs(sum(a['budget'] for a in arows) - TOTAL_MUSD) < 1e-7
+assert all(a['budget'] == 0 or a['owner'] in estimacion_costos.PAYEES or a['code'] == INDIRECT_ACT for a in arows)
+UEP_ACT = abyid[INDIRECT_ACT]
+UEP_PARTS = {e['id']: (e['E'] / 1e6, e['reserve'] / 1e6) for e in COST['elements'] if e['id'] in estimacion_costos.UEP_ELEMENTS}
+assert abs(sum(v[0] + v[1] for v in UEP_PARTS.values()) - UEP_ACT['budget']) < 1e-9
 
-def apr30(y):
-    d = date(y, 4, 30)
-    while d.weekday() >= 5: d -= timedelta(days=1)
-    return d
-# los estados financieros auditados de cada ejercicio se entregan al terminar 3.5.2-03, -06 y -09
-AUDIT_DATES = [abyid[c]['finish'] for c in ('3.5.2-03', '3.5.2-06', '3.5.2-09')]
+# Costo real estimado al corte: honorarios mensuales de los contratos de la UEP en ejecución (siete consultores clave, PA 2026-2)
+# por los meses transcurridos desde su inicio. Es un costo incurrido estimado, no un desembolso del BID.
+CORTE = date(2026, 10, 31)
+AC_CORTE_MUSD = sum(p['M'] * estimacion_costos.months_from(p['inicio'], CORTE) for p in COST['uep']['posts'][:7]) / 1e6
 
-def piece(t, anchors):
-    if t <= 0: return 0
-    if t >= 1: return 1
-    for (x0, y0), (x1, y1) in zip(anchors, anchors[1:]):
-        if t <= x1: return y0 + (y1 - y0) * (t - x0) / (x1 - x0)
-    return 1
+# ---- curva S: valor planificado ----
+# Cada actividad se prorratea de forma lineal en su duración (fabricaciones, consultorías, auditorías y evaluaciones incluidas):
+# la curva no incluye anticipos ni pagos contra entrega; esa lógica de pagos solo está en los requisitos de financiamiento.
+# Excepción: el costo indirecto de la UEP (3.1.1-06) sigue la incorporación de sus puestos (costo mensual por puesto desde su
+# contratación real) en lugar de un prorrateo lineal, porque es un flujo mensual por plaza y no un producto.
+def dhss(t):  # Hudson (1978), banda de contratos grandes (Kenley 2003, tabla 3.11): C = 0.063, K = 3.344
+    C, K = 0.063, 3.344
+    return t + C * (t * t - t) - (6 * t ** 3 - 9 * t * t + 3 * t) / K
 
-def civil_curve(t, model):
-    if model == 'dhss':  # Hudson (1978), banda de contratos grandes (Kenley 2003, tabla 3.11): C = 0.063, K = 3.344
-        C, K = 0.063, 3.344
-        return t + C * (t * t - t) - (6 * t ** 3 - 9 * t * t + 3 * t) / K
-    return t * t * (3 - 2 * t)
+def done_days(d: date) -> int:
+    """Dias laborables completados al cierre del dia d (en sábado o domingo, incluido el viernes anterior)."""
+    return wd_index(d) + 1
 
-def profile(r, t, model='smooth'):
-    p = r['profile']
-    if t <= 0: return 0.0
-    if t >= 1: return 1.0
-    if p == 'civil': return civil_curve(t, model)
-    if p == 'equipment': return 0.3 * t + 0.7 * min(1.0, max(0.0, (t - 0.3) / 0.3))
-    if p == 'consulting': return piece(t, [(0, 0), (.249, 0), (.25, .2), (.649, .2), (.65, .6), (.999, .6), (1, 1)])
-    return t
+def linear(r, done: int) -> float:
+    return max(0.0, min(1.0, (done - r['es']) / max(1, r['ef'] - r['es'])))
 
-def frac(r, d: date) -> float:
-    """Fraccion transcurrida del paquete al cierre del dia d (en dias laborables)."""
-    idx = wd_index(d) + 1 if d.weekday() < 5 else wd_index(d)  # dias laborables completados al cierre de d
-    span = r['cf_ef'] - r['cf_es']
-    return max(0.0, min(1.0, (idx - r['cf_es']) / span))
+# Contratos de obra: actividades del contratista de cada obra y su plazo completo (para la sensibilidad DHSS)
+OBRA_ACTS = {g: [r for r in arows if r['budget'] and r['owner'] == 'Contratista de obra' and r['package'].startswith(pre)] for g, pre in SUP_WORKS.items()}
+OBRA_SPAN = {g: (min(r['es'] for r in v), max(r['ef'] for r in v)) for g, v in OBRA_ACTS.items()}
+OBRA_OF = {r['code']: g for g, v in OBRA_ACTS.items() for r in v}
 
 months = []
 y, m = PROJECT_START.year, PROJECT_START.month
@@ -292,23 +297,31 @@ while (y, m) <= (PROJECT_END.year, PROJECT_END.month):
 
 def month_end(y, m): return date(y + (m == 12), 1 if m == 12 else m + 1, 1) - timedelta(days=1)
 
-def build_monthly(eval_idx, model='smooth'):
-    """Curva mensual. El costo de 3.5.3 se reparte por mitades al presentar cada informe de evaluacion y el de 3.5.2 por
-    partes iguales en cada fecha de entrega de estados financieros auditados."""
+def frac(r, done: int, model: str) -> float:
+    if model == 'dhss' and r['code'] in OBRA_OF:
+        a, b = OBRA_SPAN[OBRA_OF[r['code']]]
+        return dhss(max(0.0, min(1.0, (done - a) / max(1, b - a))))
+    return linear(r, done)
+
+def build_monthly(model='lineal'):
+    """Curva mensual: suma del costo de las actividades que corresponde al avance de cada mes (clase 6)."""
     out, prev = [], 0.0
     for y, m in months:
-        last = month_end(y, m)
-        done = wd_index(last) + 1 if last.weekday() < 5 else wd_index(last)
+        d = month_end(y, m)
+        done = done_days(d)
         comp = {k: 0.0 for k in '123'}
         base = cont = 0.0
-        for r in rows:
-            if r['code'] == '3.5.3':
-                f = sum(0.5 for i in eval_idx if done > i)
-            elif r['profile'] == 'audit':
-                f = sum(1 for d in AUDIT_DATES if d <= last) / len(AUDIT_DATES)
-            else:
-                f = profile(r, frac(r, last), model)
-            comp[r['code'][0]] += r['budget'] * f
+        uf = estimacion_costos.uep_fraction(COST['uep'], d)
+        ub = sum(UEP_PARTS[e][0] * uf[e] for e in UEP_PARTS)
+        uc = sum(UEP_PARTS[e][1] * uf[e] for e in UEP_PARTS)
+        comp['3'] += ub + uc
+        base += ub
+        cont += uc
+        for r in arows:
+            if not r['budget'] or r['code'] == INDIRECT_ACT:
+                continue
+            f = frac(r, done, model)
+            comp[r['package'][0]] += r['budget'] * f
             base += r['base'] * f
             cont += r['contingency'] * f
         total = sum(comp.values())
@@ -324,27 +337,16 @@ def build_monthly(eval_idx, model='smooth'):
         prev = total
     return out
 
-def last_workday(d: date) -> int:
-    while d.weekday() >= 5: d -= timedelta(days=1)
-    return wd_index(d)
-
-# Informes de evaluacion (3.5.3-03 y 3.5.3-05): el costo de 3.5.3 se reconoce por mitades al presentarlos.
-eval_idx = (EF['3.5.3-03'] - 1, EF['3.5.3-05'] - 1)
-monthly = build_monthly(eval_idx)
+monthly = build_monthly()
 
 def reached(p):
     y, m = map(int, next(x['mes'] for x in monthly if x['acumulado_linea_base_musd'] >= TOTAL_MUSD * p - 1e-6).split('-'))
     return month_end(y, m)
 
-# Verificacion de la regla del contrato (clausula 5.03) y del MEL con la curva de la linea base
-evals = [{'tipo': 'Medio término', 'firma': workday(EF['3.4.4-35'] - 1), 'informe': workday(eval_idx[0]),
-          'hito': reached(.5), 'limite': reached(.5) + timedelta(days=60)},
-         {'tipo': 'Final', 'firma': workday(EF['3.4.4-40'] - 1), 'informe': workday(eval_idx[1]),
-          'hito': reached(.95), 'limite': reached(.95) + timedelta(days=90)}]
 assert abs(monthly[-1]['acumulado_linea_base_musd'] - TOTAL_MUSD) < 1e-4, monthly[-1]
-assert all(b['acumulado_linea_base_musd'] >= a['acumulado_linea_base_musd'] for a, b in zip(monthly, monthly[1:]))
-# Sensibilidad de la forma de la curva: obras civiles con la curva DHSS en lugar de 3t^2 - 2t^3.
-for x, s in zip(monthly, build_monthly(eval_idx, 'dhss')):
+assert all(b['acumulado_linea_base_musd'] >= a['acumulado_linea_base_musd'] - 1e-9 for a, b in zip(monthly, monthly[1:]))
+# Sensibilidad de la forma de la curva: cada contrato de obra con la curva DHSS en todo su plazo en lugar de lineal.
+for x, s in zip(monthly, build_monthly('dhss')):
     x['acumulado_dhss_musd'] = s['acumulado_linea_base_musd']
 
 def reach(key, p):
@@ -352,11 +354,132 @@ def reach(key, p):
 SENS = {f'{int(p * 100)}%': {'base': reach('acumulado_linea_base_musd', p), 'dhss': reach('acumulado_dhss_musd', p)} for p in (.25, .5, .75, .9)}
 SENS_MAX = max((x['acumulado_dhss_musd'] - x['acumulado_linea_base_musd'] for x in monthly), key=abs)
 
+# ---- requisitos de financiamiento frente al flujo de desembolsos del PEP ----
+# Aquí sí entra la lógica de pagos. PEP (EER#3, nov-2025), hoja Payments Flow Output: pagos estimados del BID por semestre desde la
+# firma prevista del préstamo (31-dic-2025); Sem I = ene-jun 2026. En la hoja Payments, el primer pago de cada contrato cae en el
+# semestre de su firma y no es uniforme (ver PEP_FIRST). Que sea un anticipo es una inferencia: los avisos de adquisiciones no lo
+# mencionan, pero el pago inicial equivale a un porcentaje del contrato antes de cualquier avance. El escenario con anticipo lo
+# paga en el semestre de la firma y lo amortiza descontando el mismo porcentaje de cada avance, sobre la base sin contingencia (el
+# precio del contrato; la contingencia solo se gasta si ocurren los riesgos). Los requisitos de financiamiento son la línea base
+# más la reserva de gestión (clase 6), esta última en proporción al valor planificado de cada semestre.
+PEP_FLOW_MUSD = [0.608875, 58.365642, 29.448411, 29.149918, 29.407026, 22.578669, 12.625730, 12.815729]
+# (primer pago, monto total) por contrato en US$ del PEP: obras (procesos 1 a 4) y supervisiones (PEP 1.4.1 a 1.4.3)
+PEP_FIRST = {
+    'obra': {'T': (23_697_761, 78_992_537), 'E': (19_260_784, 64_202_613), 'P': (6_786_640 + 3_656_291, 15_081_421 + 8_125_092), 'S': (1_421_036, 9_473_574)},
+    'sup': {'T': (2_147_927, 7_159_759), 'E': (2_147_927, 7_159_759), 'P': (406_114, 1_160_295), 'S': (165_798, 473_709)},
+}
+PEP_PCT = {k: {g: round(a / b, 2) for g, (a, b) in v.items()} for k, v in PEP_FIRST.items()}
+assert all(abs(a / b - PEP_PCT[k][g]) < 0.001 for k, v in PEP_FIRST.items() for g, (a, b) in v.items())
+WORK_SIGN = {'T': '3.4.1-12', 'E': '3.4.1-06', 'P': '3.4.1-24', 'S': '3.4.1-18'}
+SUP_SIGN = {'T': '3.4.2-12', 'E': '3.4.2-06', 'P': '3.4.2-24', 'S': '3.4.2-18'}
+assert all(act[c]['actividad'].startswith('Adjudicar y firmar el contrato de obra') or act[c]['actividad'].startswith('Firmar el contrato de supervisión') for c in [*WORK_SIGN.values(), *SUP_SIGN.values()])
+CONTRACTS = []  # (nombre, firma, porcentaje, actividades)
+for g in 'TEPS':
+    CONTRACTS.append((f'Obra {SUP_WORD[g]}', abyid[WORK_SIGN[g]]['finish'], PEP_PCT['obra'][g], OBRA_ACTS[g]))
+    CONTRACTS.append((f'Supervisión {SUP_WORD[g]}', abyid[SUP_SIGN[g]]['finish'], PEP_PCT['sup'][g], [abyid[c] for c, k in SUP_CONTRACT.items() if k == g]))
+
+def semester(d: date) -> int:
+    return (d.year - 2026) * 2 + (0 if d.month <= 6 else 1)
+
+for _, _, _, v in CONTRACTS:
+    assert all(r['budget'] for r in v)
+n_sem = semester(PROJECT_END) + 1
+GEST_RATE = COST['reserva_gestion'] / COST['linea_base']  # reserva de gestión en proporción al valor planificado
+cash, cash_m, prev_base = [], [], {n: 0.0 for n, *_ in CONTRACTS}
+ADV_TOTAL = 0.0
+for x in monthly:
+    y, mth = map(int, x['mes'].split('-'))
+    d = month_end(y, mth)
+    done = done_days(d)
+    adv = amort = 0.0
+    for name, sign, pct, v in CONTRACTS:
+        b = sum(r['base'] * linear(r, done) for r in v)
+        amort += pct * (b - prev_base[name])
+        prev_base[name] = b
+        if (sign.year, sign.month) == (y, mth):
+            adv += pct * sum(r['base'] for r in v)
+    ADV_TOTAL += adv
+    pv = x['gasto_mensual_musd']
+    cash_m.append({'mes': x['mes'], 'fin': d, 'pv': pv, 'gestion': pv * GEST_RATE, 'desembolso': pv + adv - amort})
+assert abs(sum(c['desembolso'] for c in cash_m) - TOTAL_MUSD) < 1e-4
+pv_sem, cash_sem = [0.0] * n_sem, [0.0] * n_sem
+for c in cash_m:
+    s = semester(c['fin'])
+    pv_sem[s] += c['pv'] * (1 + GEST_RATE)
+    cash_sem[s] += c['desembolso'] + c['gestion']
+financing = []
+acc = {'pep': 0.0, 'pv': 0.0, 'cash': 0.0}
+for i in range(max(n_sem, len(PEP_FLOW_MUSD))):
+    pep = PEP_FLOW_MUSD[i] if i < len(PEP_FLOW_MUSD) else 0.0
+    pv = pv_sem[i] if i < n_sem else 0.0
+    ca = cash_sem[i] if i < n_sem else 0.0
+    acc['pep'] += pep; acc['pv'] += pv; acc['cash'] += ca
+    financing.append({'semestre': f'{2026 + i // 2}-S{i % 2 + 1}', 'desembolso_pep_musd': round(pep, 6), 'desembolso_pep_acum_musd': round(acc['pep'], 6),
+                      'requisito_musd': round(pv, 6), 'requisito_acum_musd': round(acc['pv'], 6),
+                      'requisito_con_anticipo_musd': round(ca, 6), 'requisito_con_anticipo_acum_musd': round(acc['cash'], 6),
+                      'diferencia_con_anticipo_semestre_musd': round(pep - ca, 6), 'diferencia_con_anticipo_acum_musd': round(acc['pep'] - acc['cash'], 6)})
+PRESUPUESTO_MUSD = COST['presupuesto'] / 1e6
+assert abs(acc['cash'] - acc['pv']) < 1e-6 and abs(acc['pv'] - PRESUPUESTO_MUSD) < 1e-4
+
+# Verificación de los plazos de las evaluaciones (contrato, cláusula 5.03).
+# Medio término: a más tardar 60 días después de que se desembolse el 50 % de los recursos o transcurra el 50 % del tiempo de
+# ejecución planificado, lo que ocurra primero. El tiempo de ejecución planificado es el del cronograma (inicio y fin del programa);
+# no se mide sobre el plazo de desembolsos. Un desembolso no es gasto: las Normas Generales (art. 4.07) permiten anticipos de fondos
+# para las necesidades de liquidez de hasta seis meses, así que el 50 % desembolsado podría llegar antes que el 50 % gastado.
+# Final: hasta 90 días después de terminar el plazo original de desembolsos o de desembolsar el 95 %, lo que ocurra primero.
+# Vigencia (cláusula 6.01: plena validez jurídica): supuesto, la ratificación D.L. 505 del 29-ene-2026; se desconoce la fecha de su
+# publicación. Plazo original de desembolsos: cinco años desde la vigencia (cláusula 2.04).
+VIGENCIA = date(2026, 1, 29)
+DISB_END = date(VIGENCIA.year + 5, VIGENCIA.month, VIGENCIA.day)
+LEAD_MESES = 6  # anticipo de fondos: liquidez de hasta seis meses (art. 4.07 de las Normas Generales)
+cum_cash, a_ = [], 0.0
+for c in cash_m:
+    a_ += c['desembolso'] + c['gestion']  # la misma serie de la tabla de requisitos de financiamiento (con anticipo y reserva de gestión)
+    cum_cash.append((c['fin'], a_))
+
+def disbursed(p, lead=0):
+    """Fecha (fin de mes) en que se desembolsa el p del préstamo; con lead, el desembolso incluye la liquidez de los siguientes lead meses."""
+    for i, (d, _) in enumerate(cum_cash):
+        if cum_cash[min(i + lead, len(cum_cash) - 1)][1] >= LOAN_MUSD * p - 1e-6:
+            return d
+    return None
+
+def pep_date(p):
+    cum = 0.0
+    for i, v in enumerate(PEP_FLOW_MUSD):
+        cum += v
+        if cum >= LOAN_MUSD * p - 1e-6:
+            return date(2026 + i // 2, 6 if i % 2 == 0 else 12, 30 if i % 2 == 0 else 31)
+    return None
+
+T50 = PROJECT_START + (PROJECT_END - PROJECT_START) // 2
+mt_inf = workday(EF['3.5.3-03'] - 1)
+mt = {'tipo': 'Medio término', 'firma': workday(EF['3.4.4-35'] - 1), 'informe': mt_inf,
+      'hito_50_tiempo': T50, 'limite_tiempo': T50 + timedelta(days=60),
+      'hito_50_requisito': disbursed(.5), 'hito_50_pep': pep_date(.5), 'hito_50_acelerado': disbursed(.5, LEAD_MESES)}
+for k in ('tiempo', 'requisito', 'pep', 'acelerado'):
+    mt[f'limite_{k}'] = mt[f'hito_50_{k}'] + timedelta(days=60)
+    mt[f'cumple_{k}'] = mt_inf <= mt[f'limite_{k}']
+mt['margen_tiempo_dl'] = wd_index(mt['limite_tiempo']) - wd_index(mt_inf)
+# Plazo que se programa: el primero entre el 50 % del tiempo y el 50 % desembolsado según los requisitos con anticipo. El PEP y el
+# anticipo de fondos de seis meses adelantarían el segundo: son riesgos, no el plan.
+mt['limite'] = min(mt['limite_tiempo'], mt['limite_requisito'])
+mt['margen_dl'] = wd_index(mt['limite']) - wd_index(mt_inf)
+h95 = disbursed(.95)
+fin_inf = workday(EF['3.5.3-05'] - 1)
+fl = {'tipo': 'Final', 'firma': workday(EF['3.4.4-40'] - 1), 'informe': fin_inf, 'hito_95_desembolsado': h95, 'fin_plazo_desembolsos': DISB_END,
+      'limite': min(d for d in (h95, DISB_END) if d) + timedelta(days=90)}
+fl['cumple'] = fin_inf <= fl['limite']
+evals = [mt, fl]
+assert mt['cumple_tiempo'] and mt['cumple_requisito'], mt
+print('margen del informe de medio término (días laborables):', mt['margen_dl'], 'límite', mt['limite'], 'por tiempo', mt['limite_tiempo'], 'por requisitos', mt['limite_requisito'], file=sys.stderr)
+assert fl['cumple'], fl
+
 annual = []
 for yr in sorted({int(x['mes'][:4]) for x in monthly}):
     sub = [x for x in monthly if x['mes'].startswith(str(yr))]
-    annual.append({'anio': yr, 'gasto_anual_musd': round(sum(x['gasto_mensual_musd'] for x in sub), 3),
-                   'acumulado_musd': round(sub[-1]['acumulado_linea_base_musd'], 3), 'avance_pct': round(sub[-1]['avance_pct'], 1)})
+    annual.append({'anio': yr, 'gasto_anual_musd': round(sum(x['gasto_mensual_musd'] for x in sub), 6),
+                   'acumulado_musd': round(sub[-1]['acumulado_linea_base_musd'], 6), 'avance_pct': round(sub[-1]['avance_pct'], 1)})
 
 # ---- CSV ----
 def write_csv(name, fields, data):
@@ -364,8 +487,9 @@ def write_csv(name, fields, data):
         w = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore'); w.writeheader(); w.writerows(data)
 
 write_csv('cronograma_actividades.csv',
-          ['code', 'name', 'package', 'phase', 'owner', 'dur', 'deps', 'start', 'finish', 'float', 'critical'],
-          [{**r, 'critical': 'si' if r['critical'] else ''} for r in arows])
+          ['code', 'name', 'package', 'phase', 'owner', 'dur', 'deps', 'start', 'finish', 'float', 'critical', 'budget', 'base', 'contingency', 'profile', 'cost_elements'],
+          [{**r, 'critical': 'si' if r['critical'] else '', 'budget': f"{r['budget']:.8f}", 'base': f"{r['base']:.8f}",
+            'contingency': f"{r['contingency']:.8f}"} for r in arows])
 write_csv('cronograma_paquetes.csv',
           ['code', 'name', 'activities', 'dur', 'deps', 'start', 'finish', 'float', 'critical', 'budget', 'base', 'contingency', 'profile'],
           [{**r, 'dur': r['dur'], 'float': r['float'], 'critical': 'si' if r['critical'] else '',
@@ -374,6 +498,7 @@ write_csv('hitos.csv', ['id', 'name', 'preds', 'date'],
           [{'id': h['id'], 'name': h['name'], 'preds': ','.join(h['preds']), 'date': h['date']} for h in milestones])
 write_csv('curva_s_mensual.csv', list(monthly[0]), monthly)
 write_csv('curva_s_anual.csv', list(annual[0]), annual)
+write_csv('requisitos_financiamiento.csv', list(financing[0]), financing)
 
 # ---- XML MSPDI para Open Planner Studio / MS Project ----
 # Arbol: componentes y elementos de la EDT (resumen) > paquetes de trabajo (resumen) > actividades.
@@ -480,6 +605,12 @@ summary = {'inicio': PROJECT_START, 'fin': PROJECT_END, 'dias_laborables': END, 
            'evaluaciones': evals,
            'bac_musd': TOTAL_MUSD, 'contingencia_musd': CONTINGENCY_MUSD, 'estimacion_pert_musd': COST['total_E'] / 1e6,
            'reserva_gestion_musd': COST['reserva_gestion'] / 1e6, 'presupuesto_musd': COST['presupuesto'] / 1e6, 'prestamo_musd': LOAN_MUSD,
+           'requisitos_financiamiento': financing, 'anticipo_pct': PEP_PCT, 'anticipo_total_musd': ADV_TOTAL,
+           'reserva_gestion_tasa': GEST_RATE, 'vigencia': VIGENCIA, 'fin_plazo_desembolsos': DISB_END, 'lead_anticipo_meses': LEAD_MESES,
+           'contratos': [{'nombre': n, 'firma': sg, 'anticipo_pct': pc, 'base_musd': sum(r['base'] for r in v), 'inicio': min(r['start'] for r in v),
+                          'fin': max(r['finish'] for r in v)} for n, sg, pc, v in CONTRACTS],
+           'ultimo_desembolso': workday(EF['3.5.4-02'] - 1),
+           'costo_real_corte_musd': AC_CORTE_MUSD, 'corte': CORTE, 'uep_inicio': UEP_ACT['start'], 'uep_fin': UEP_ACT['finish'],
            'sensibilidad_dhss': SENS, 'sensibilidad_dhss_dif_max_musd': SENS_MAX,
            'nota': 'Valor planificado acumulado; no corresponde a desembolsos ni pagos'}
 (OUT / 'resumen.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2, default=str), encoding='utf-8')

@@ -70,13 +70,13 @@ El financiamiento autorizado del programa asciende a US$195,000,000, otorgados p
 
 Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras, que incluyen costos indirectos, IVA e imprevistos por US$15,098,589, y US$8,793,762 para la supervisión (EEO#3, valores de 2025).
 
-La estimación de costos propia del programa (`docs/estimacion-costos.md`) da una línea base de costos de US$151.9 millones y, con la reserva de gestión, un presupuesto del proyecto de US$159.5 millones, dentro del financiamiento autorizado.
+La estimación de costos propia del programa (`docs/estimacion-costos.md`) da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
 
 El período previsto para el desembolso de los recursos es de cinco años. La programación de ejecución se organiza mediante el Plan de Ejecución del Proyecto (PEP), los Planes Operativos Anuales (POA) y el Plan de Adquisiciones (PA). El plazo de desembolso no constituye por sí mismo un cronograma de ejecución de las obras.
 
 Los hitos principales comprenden la conformación de la Unidad Ejecutora, la validación de estudios y diseños, la contratación de obras y servicios, la construcción de infraestructura, la instalación y puesta en funcionamiento de los sistemas, la recepción de las obras y el cierre del programa.
 
-Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero de 2026, fecha estimada de arranque de la contratación de la Unidad Ejecutora según el Anexo III de la Propuesta de Préstamo, y concluye en marzo de 2030, dentro del período de desembolso de cinco años.
+Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero de 2026, fecha estimada de arranque de la contratación de la Unidad Ejecutora según el Anexo III de la Propuesta de Préstamo, y concluye el 1 de abril de 2030, dentro del período de desembolso de cinco años.
 
 ## 6. Principales interesados
 

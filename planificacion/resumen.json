@@ -2,7 +2,7 @@
   "inicio": "2026-02-02",
   "fin": "2030-04-01",
   "dias_laborables": 1086,
-  "actividades": 394,
+  "actividades": 449,
   "ruta_critica": [
     "3.4.1-21",
     "3.4.1-22",
@@ -18,9 +18,11 @@
     "3.4.4-36",
     "1.2.4-05",
     "3.4.4-37",
+    "3.4.4-43",
     "3.4.4-38",
     "1.2.4-06",
     "3.4.4-39",
+    "3.4.4-44",
     "3.4.4-40",
     "3.5.3-04",
     "3.5.3-05",
@@ -33,52 +35,52 @@
     "3.4.4",
     "3.4.1",
     "1.7.3",
+    "3.5.3",
     "1.3.1",
     "1.2.4",
-    "3.5.3",
     "3.5.4"
   ],
   "pico_mensual": {
-    "mes": "2028-05",
-    "gasto_mensual_musd": 12.662582,
-    "acumulado_linea_base_musd": 111.757738,
-    "avance_pct": 74.22,
-    "acumulado_sin_contingencia_musd": 102.760758,
-    "contingencia_acumulada_musd": 8.99698,
-    "c1_acumulado_musd": 106.792234,
-    "c2_acumulado_musd": 3.51077,
-    "c3_acumulado_musd": 1.454734,
-    "acumulado_dhss_musd": 111.058536
+    "mes": "2028-03",
+    "gasto_mensual_musd": 13.411928,
+    "acumulado_linea_base_musd": 95.552699,
+    "avance_pct": 59.61,
+    "acumulado_sin_contingencia_musd": 87.642728,
+    "contingencia_acumulada_musd": 7.909971,
+    "c1_acumulado_musd": 90.288065,
+    "c2_acumulado_musd": 3.386262,
+    "c3_acumulado_musd": 1.878372,
+    "acumulado_dhss_musd": 98.960758
   },
   "anual": [
     {
       "anio": 2026,
-      "gasto_anual_musd": 0.545,
-      "acumulado_musd": 0.545,
-      "avance_pct": 0.4
+      "gasto_anual_musd": 0.4398,
+      "acumulado_musd": 0.439801,
+      "avance_pct": 0.3
     },
     {
       "anio": 2027,
-      "gasto_anual_musd": 63.29,
-      "acumulado_musd": 63.835,
-      "avance_pct": 42.4
+      "gasto_anual_musd": 63.736131,
+      "acumulado_musd": 64.175932,
+      "avance_pct": 40.0
     },
     {
       "anio": 2028,
-      "gasto_anual_musd": 83.745,
-      "acumulado_musd": 147.58,
-      "avance_pct": 98.0
+      "gasto_anual_musd": 93.272169,
+      "acumulado_musd": 157.448103,
+      "avance_pct": 98.2
     },
     {
       "anio": 2029,
-      "gasto_anual_musd": 2.796,
-      "acumulado_musd": 150.376,
-      "avance_pct": 99.9
+      "gasto_anual_musd": 2.568922,
+      "acumulado_musd": 160.017023,
+      "avance_pct": 99.8
     },
     {
       "anio": 2030,
-      "gasto_anual_musd": 0.19,
-      "acumulado_musd": 150.566,
+      "gasto_anual_musd": 0.273734,
+      "acumulado_musd": 160.290757,
       "avance_pct": 100.0
     }
   ],
@@ -130,7 +132,7 @@
       "preds": [
         "1.6.2-04"
       ],
-      "date": "2028-02-15"
+      "date": "2028-02-24"
     },
     {
       "id": "H06",
@@ -138,7 +140,7 @@
       "preds": [
         "1.3.2-05"
       ],
-      "date": "2028-08-22"
+      "date": "2028-08-31"
     },
     {
       "id": "H07",
@@ -178,29 +180,235 @@
       "date": "2030-04-01"
     }
   ],
-  "tareas_xml": 478,
+  "tareas_xml": 533,
   "evaluaciones": [
     {
       "tipo": "Medio término",
-      "firma": "2028-03-21",
-      "informe": "2028-08-01",
-      "hito": "2028-02-29",
-      "limite": "2028-04-29"
+      "firma": "2027-11-01",
+      "informe": "2028-03-13",
+      "hito_50_tiempo": "2028-03-02",
+      "limite_tiempo": "2028-05-01",
+      "hito_50_requisito": "2028-01-31",
+      "hito_50_pep": "2027-12-31",
+      "hito_50_acelerado": "2027-07-31",
+      "cumple_tiempo": true,
+      "limite_requisito": "2028-03-31",
+      "cumple_requisito": true,
+      "limite_pep": "2028-02-29",
+      "cumple_pep": false,
+      "limite_acelerado": "2027-09-29",
+      "cumple_acelerado": false,
+      "margen_tiempo_dl": 35,
+      "limite": "2028-03-31",
+      "margen_dl": 14
     },
     {
       "tipo": "Final",
       "firma": "2029-05-09",
       "informe": "2029-11-15",
-      "hito": "2028-10-31",
-      "limite": "2029-01-29"
+      "hito_95_desembolsado": null,
+      "fin_plazo_desembolsos": "2031-01-29",
+      "limite": "2031-04-29",
+      "cumple": true
     }
   ],
-  "bac_musd": 150.5663603080457,
-  "contingencia_musd": 11.50330434619227,
-  "estimacion_pert_musd": 139.06305596185342,
-  "reserva_gestion_musd": 7.528318015402284,
-  "presupuesto_musd": 158.09467832344797,
+  "bac_musd": 160.29075747191806,
+  "contingencia_musd": 12.099286344318042,
+  "estimacion_pert_musd": 148.1914711276,
+  "reserva_gestion_musd": 8.014537873595902,
+  "presupuesto_musd": 168.30529534551397,
   "prestamo_musd": 195.0,
+  "requisitos_financiamiento": [
+    {
+      "semestre": "2026-S1",
+      "desembolso_pep_musd": 0.608875,
+      "desembolso_pep_acum_musd": 0.608875,
+      "requisito_musd": 0.106744,
+      "requisito_acum_musd": 0.106744,
+      "requisito_con_anticipo_musd": 0.106744,
+      "requisito_con_anticipo_acum_musd": 0.106744,
+      "diferencia_con_anticipo_semestre_musd": 0.502131,
+      "diferencia_con_anticipo_acum_musd": 0.502131
+    },
+    {
+      "semestre": "2026-S2",
+      "desembolso_pep_musd": 58.365642,
+      "desembolso_pep_acum_musd": 58.974517,
+      "requisito_musd": 0.355046,
+      "requisito_acum_musd": 0.46179,
+      "requisito_con_anticipo_musd": 0.355046,
+      "requisito_con_anticipo_acum_musd": 0.46179,
+      "diferencia_con_anticipo_semestre_musd": 58.010596,
+      "diferencia_con_anticipo_acum_musd": 58.512727
+    },
+    {
+      "semestre": "2027-S1",
+      "desembolso_pep_musd": 29.448411,
+      "desembolso_pep_acum_musd": 88.422928,
+      "requisito_musd": 10.729977,
+      "requisito_acum_musd": 11.191767,
+      "requisito_con_anticipo_musd": 44.948125,
+      "requisito_con_anticipo_acum_musd": 45.409915,
+      "diferencia_con_anticipo_semestre_musd": -15.499714,
+      "diferencia_con_anticipo_acum_musd": 43.013013
+    },
+    {
+      "semestre": "2027-S2",
+      "desembolso_pep_musd": 29.149918,
+      "desembolso_pep_acum_musd": 117.572846,
+      "requisito_musd": 56.19296,
+      "requisito_acum_musd": 67.384728,
+      "requisito_con_anticipo_musd": 50.115847,
+      "requisito_con_anticipo_acum_musd": 95.525762,
+      "diferencia_con_anticipo_semestre_musd": -20.965929,
+      "diferencia_con_anticipo_acum_musd": 22.047084
+    },
+    {
+      "semestre": "2028-S1",
+      "desembolso_pep_musd": 29.407026,
+      "desembolso_pep_acum_musd": 146.979872,
+      "requisito_musd": 66.403108,
+      "requisito_acum_musd": 133.787835,
+      "requisito_con_anticipo_musd": 47.807022,
+      "requisito_con_anticipo_acum_musd": 143.332784,
+      "diferencia_con_anticipo_semestre_musd": -18.399996,
+      "diferencia_con_anticipo_acum_musd": 3.647088
+    },
+    {
+      "semestre": "2028-S2",
+      "desembolso_pep_musd": 22.578669,
+      "desembolso_pep_acum_musd": 169.558541,
+      "requisito_musd": 31.53267,
+      "requisito_acum_musd": 165.320505,
+      "requisito_con_anticipo_musd": 22.337023,
+      "requisito_con_anticipo_acum_musd": 165.669807,
+      "diferencia_con_anticipo_semestre_musd": 0.241646,
+      "diferencia_con_anticipo_acum_musd": 3.888734
+    },
+    {
+      "semestre": "2029-S1",
+      "desembolso_pep_musd": 12.62573,
+      "desembolso_pep_acum_musd": 182.184271,
+      "requisito_musd": 1.874483,
+      "requisito_acum_musd": 167.194988,
+      "requisito_con_anticipo_musd": 1.560897,
+      "requisito_con_anticipo_acum_musd": 167.230704,
+      "diferencia_con_anticipo_semestre_musd": 11.064833,
+      "diferencia_con_anticipo_acum_musd": 14.953567
+    },
+    {
+      "semestre": "2029-S2",
+      "desembolso_pep_musd": 12.815729,
+      "desembolso_pep_acum_musd": 195.0,
+      "requisito_musd": 0.822885,
+      "requisito_acum_musd": 168.017873,
+      "requisito_con_anticipo_musd": 0.787169,
+      "requisito_con_anticipo_acum_musd": 168.017873,
+      "diferencia_con_anticipo_semestre_musd": 12.02856,
+      "diferencia_con_anticipo_acum_musd": 26.982127
+    },
+    {
+      "semestre": "2030-S1",
+      "desembolso_pep_musd": 0.0,
+      "desembolso_pep_acum_musd": 195.0,
+      "requisito_musd": 0.287421,
+      "requisito_acum_musd": 168.305294,
+      "requisito_con_anticipo_musd": 0.287421,
+      "requisito_con_anticipo_acum_musd": 168.305294,
+      "diferencia_con_anticipo_semestre_musd": -0.287421,
+      "diferencia_con_anticipo_acum_musd": 26.694706
+    }
+  ],
+  "anticipo_pct": {
+    "obra": {
+      "T": 0.3,
+      "E": 0.3,
+      "P": 0.45,
+      "S": 0.15
+    },
+    "sup": {
+      "T": 0.3,
+      "E": 0.3,
+      "P": 0.35,
+      "S": 0.35
+    }
+  },
+  "anticipo_total_musd": 44.024070221935915,
+  "reserva_gestion_tasa": 0.05,
+  "vigencia": "2026-01-29",
+  "fin_plazo_desembolsos": "2031-01-29",
+  "lead_anticipo_meses": 6,
+  "contratos": [
+    {
+      "nombre": "Obra terminal",
+      "firma": "2027-04-23",
+      "anticipo_pct": 0.3,
+      "base_musd": 77.98615282561558,
+      "inicio": "2027-05-27",
+      "fin": "2029-02-15"
+    },
+    {
+      "nombre": "Supervisión terminal",
+      "firma": "2027-05-19",
+      "anticipo_pct": 0.3,
+      "base_musd": 3.1207458822383836,
+      "inicio": "2027-05-20",
+      "fin": "2029-07-27"
+    },
+    {
+      "nombre": "Obra estacionamiento",
+      "firma": "2027-01-27",
+      "anticipo_pct": 0.3,
+      "base_musd": 36.81651158903555,
+      "inicio": "2027-02-16",
+      "fin": "2028-05-31"
+    },
+    {
+      "nombre": "Supervisión estacionamiento",
+      "firma": "2027-02-03",
+      "anticipo_pct": 0.3,
+      "base_musd": 1.4732740720879058,
+      "inicio": "2027-02-04",
+      "fin": "2028-09-07"
+    },
+    {
+      "nombre": "Obra plataformas",
+      "firma": "2027-07-22",
+      "anticipo_pct": 0.45,
+      "base_musd": 15.96361409532435,
+      "inicio": "2027-08-11",
+      "fin": "2028-12-29"
+    },
+    {
+      "nombre": "Supervisión plataformas",
+      "firma": "2027-07-28",
+      "anticipo_pct": 0.35,
+      "base_musd": 0.6388106240478958,
+      "inicio": "2027-07-29",
+      "fin": "2029-04-25"
+    },
+    {
+      "nombre": "Obra SSEI",
+      "firma": "2027-05-27",
+      "anticipo_pct": 0.15,
+      "base_musd": 4.864795560706455,
+      "inicio": "2027-06-18",
+      "fin": "2028-01-27"
+    },
+    {
+      "nombre": "Supervisión SSEI",
+      "firma": "2027-06-10",
+      "anticipo_pct": 0.35,
+      "base_musd": 0.1946729023542699,
+      "inicio": "2027-06-11",
+      "fin": "2028-03-09"
+    }
+  ],
+  "ultimo_desembolso": "2029-12-13",
+  "costo_real_corte_musd": 0.23834312936344967,
+  "corte": "2026-10-31",
+  "uep_inicio": "2026-04-16",
+  "uep_fin": "2030-03-18",
   "sensibilidad_dhss": {
     "25%": {
       "base": "2027-10",
@@ -215,10 +423,10 @@
       "dhss": "2028-06"
     },
     "90%": {
-      "base": "2028-08",
-      "dhss": "2028-08"
+      "base": "2028-09",
+      "dhss": "2028-10"
     }
   },
-  "sensibilidad_dhss_dif_max_musd": -1.2706700000000026,
+  "sensibilidad_dhss_dif_max_musd": 6.351319000000004,
   "nota": "Valor planificado acumulado; no corresponde a desembolsos ni pagos"
 }

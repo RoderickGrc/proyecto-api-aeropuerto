@@ -6,8 +6,22 @@ determinación de tarifas (meses-persona por tarifa), ascendente (puestos por ho
 E = (O + 4M + P) / 6 y sigma = (P - O) / 6. Los valores de referencia están en US$ de 2025 y salen de fuentes externas
 (SOURCES); las cantidades salen de los documentos del proyecto. No parte de los montos del Anexo III ni del EEO#3:
 se comparan al final; solo se toman de ellos los datos indicados en cada elemento (proporciones, el diseño de CEPA de 2022 y los gastos recurrentes del Anexo III). build_planificacion.py importa estimate() después de calcular el cronograma, porque el
-escalamiento de precios se lleva al punto medio de cada elemento, y write_outputs() escribe estimacion_costos.csv y
+escalamiento de precios se lleva al punto medio de cada elemento (ponderado por las actividades que lo ejecutan) y las
+plazas de la UEP se cuentan desde su contratación real. allocate() reparte el costo de cada elemento entre las actividades de
+quien cobra el contrato, con la regla de pesos documentada junto a RULES; write_outputs() escribe estimacion_costos.csv y
 estimacion_costos.json.
+
+Regla de pesos por actividad (clase 6: EDT, paquetes, actividades, recursos, cantidades y tarifas). Cada elemento de costo
+llega a sus paquetes por su reparto (split) y, dentro de cada paquete, a las actividades de quien cobra el contrato
+(contratista de obra, firma de supervisión, firma consultora, auditor externo). El costo indirecto de la UEP (U1, U2 y U3)
+lo lleva solo la actividad de nivel de esfuerzo 3.1.1-06. Las actividades de la UEP, CEPA, el BID y la AAC no tienen costo
+propio. Dentro de un paquete y de un elemento: 1) las actividades de movilización, de pruebas y de informe final reciben un
+porcentaje pequeño y explícito (AUTO: 2 %, 2 % y 4 %); 2) una regla particular (RULES) fija el peso de las actividades cuyo
+recurso es distinto (por ejemplo, en los puentes 85 % a la fabricación y 11 % a la instalación; los sistemas de la terminal,
+a su instalación); 3) el resto se reparte entre las actividades de construcción en proporción a su duración, porque el listado
+no da cantidades de obra comparables entre actividades de distinta naturaleza (cimentación, estructura, instalaciones).
+allocate() verifica con assert que el costo de las actividades de cada paquete sea el del paquete y que ningún paquete con
+costo carezca de actividades de quien cobra.
 """
 from __future__ import annotations
 import csv
@@ -52,7 +66,8 @@ SOURCES = {
     'CASALCO': 'CASALCO, precios promedio de materiales y mano de obra, Área Metropolitana de San Salvador, 2019 a 2025 (concreto 210 US$135.35/m³, hierro, cemento, bloque, mezcla asfáltica US$97.34/t, obrero calificado US$17.41/día con prestaciones en dic-2025); El Mundo, 27-08-2026, alzas del primer semestre de 2026. https://www.casalco.org.sv/precios-promedio-materiales ; https://diario.elmundo.sv/economia/asfalto-cemento-bloques-y-otros-materiales-de-construccion-reportan-incrementos-entre-en-primer-semestre-del-ano',
     'CEPA2026': 'BID, Anuncio Específico de Adquisiciones IDB-6073OCES-P00001-SPN, 04-sep-2026: LPI de obras del edificio de estacionamiento (ofertas el 16-oct-2026); El Mundo, 07-09-2026: 4 niveles y 2,050 plazas, con US$29,662,050 en el presupuesto de 2026 (primer tramo, no el costo total). https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-93 ; https://diario.elmundo.sv/economia/cepa-licita-construccion-de-nuevo-edificio-de-estacionamiento-en-el-aeropuerto',
     'SEICR': 'Delfino.cr, 12-11-2021: estación SEI del aeropuerto Juan Santamaría (Costa Rica), más de US$9 M por 2,630 m², 7 bahías. https://delfino.cr/2021/11/aeropuerto-internacional-juan-santamaria-estrena-nueva-estacion-de-bomberos',
-    'PA2026': 'BID, Plan de Adquisiciones ES-L1173 2026-2 (15-jul-2026) y PEP/POA/PA (EER#3, nov-2025): contratos de los 7 consultores de la UEP (US$52,000 a 84,500 al año, abril a mayo de 2026), métodos y montos estimados de cada proceso, y plantilla de 19 plazas de la UEP en el PEP. https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-69 ; https://www.iadb.org/es/viewer/EZIDB0003440-654689410-14',
+    'PA2026': 'BID, Plan de Adquisiciones ES-L1173 2026-2 (15-jul-2026): contratos de los 7 consultores de la UEP (US$52,000 a 84,500 al año, abril a mayo de 2026), métodos y montos estimados de cada proceso, y los 21 procesos 3CV de la plantilla ampliada de la UEP (P00011 a P00041, US$1.92 M, firmas estimadas de septiembre de 2026 a septiembre de 2027). https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-69',
+    'PEP': 'BID, PEP/POA/PA (EER#3, nov-2025), hojas Payments y Payments Flow Output: plantilla de 19 plazas de la UEP (US$4.07 M) y pagos estimados por semestre. https://www.iadb.org/es/viewer/EZIDB0003440-654689410-14',
     'SUPSV': 'Contratos de supervisión en El Salvador (Portal de Transparencia): bandas de equipaje del AIES, US$1,131,905 por una obra de US$46,074,937 (Reg. 211014 y 211000, 2025); maternidad El Nido de MINSAL (Reg. 220102 y 214699); CENT (Reg. 199367 y 202701); pavimentos del AIES 2024-2025 (Reg. 205607, 215641 y 214286). Arancel del CFIA de Costa Rica (inspección 3 %, dirección técnica 5 %). https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjExMDE0&inst=211014 ; https://cfia.or.cr/site/wp-content/uploads/2024/pdf/descargas/reglamentos/ejercicio/arancel-de-servicios-profesionales-de-consultoria-para-edificaciones.pdf',
     'TARSV': 'Honorarios en El Salvador: UEP de ES-L1155 (US$3,000 a 3,900 al mes, Plan de Adquisiciones 5620/OC-ES 2026), coordinador de ES-L1151 (US$7,000), consultores de las CT ES-T1289, ES-T1314 y ES-T1315 (US$3,750 a 10,500), tarifas horarias de PwC en la auditoría de ES-L1155 (Reg. 214521). Multiplicador: cargas patronales salvadoreñas (ISSS 7.5 %, AFP 8.75 %, INCAF 1 %, aguinaldo y vacaciones) y estructura del arancel del CFIA (gastos generales y utilidad). https://www.iadb.org/document.cfm?id=EZIDB0000251-1515765089-1993 ; https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjE0NTIx&inst=214521',
     'AUDSV': 'Auditorías en El Salvador: PwC para ES-L1155, US$140,541 por 3 ejercicios con IVA (Reg. 214521, 2025); Cornejo & Umaña para CEPA (CAF), US$87,575 por 2 auditorías (Reg. 214288, 2025); presupuesto de auditoría de ES-L1151, US$400,000 a 5 años. https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjE0Mjg4&inst=214288 ; https://www.iadb.org/document.cfm?id=EZSHARE-1501734583-48',
@@ -70,7 +85,7 @@ SOURCES = {
 }
 
 # Cantidades del proyecto
-TERMINAL_M2 = 16_303  # EEO#3, obras exteriores Fase 2
+TERMINAL_M2 = 18_555  # solicitud de información de jul-2026 y expresión de interés P00024 (el EEO#3 usaba 16,303 m² en la Fase 2)
 BRIDGES = 6  # una manga por sala de la Fase 2 (EEO#3)
 PCC = {'1.3.1': 24_478.50, '1.3.2': 23_159.42}  # EEO#3, cuadro 11: plataformas de concreto hidráulico
 ASPH_APRON = {'1.3.1': 4_119.34 + 9_159.44 + 4_360.17, '1.3.2': 3_210.53}  # rodaje entre plataformas, circulación y bordes
@@ -93,9 +108,9 @@ _tc = {k: sum(v) for k, v in TERMINAL_CHAPTERS.items()}
 TERMINAL_SPLIT = {k: v / sum(_tc.values()) for k, v in _tc.items()}
 
 # Obras exteriores de la Fase 1 (as built de CEPA, cuadro 15 del EEO#3, US$ con IVA de 2017-2018) prorrateadas por área
-# (16,303 / 21,673 m²), sin IVA y llevadas a 2025 con el CPI (1.282). O: redes de agua, colector y planta de tratamiento;
+# (18,555 / 21,673 m²), sin IVA y llevadas a 2025 con el CPI (1.282). O: redes de agua, colector y planta de tratamiento;
 # P: incluye además la subestación eléctrica; M: punto medio (supuesto: la Fase 2 necesita la mitad de esa ampliación eléctrica).
-_ext = (16_303 / 21_673) / 1.13 * 1.282
+_ext = (TERMINAL_M2 / 21_673) / 1.13 * 1.282
 EXT_O = (603_424.99 + 902_062.31 + 1_306_070.19 + 76_832.52) * _ext
 EXT_P = (EXT_O / _ext + 8_422_668.52) * _ext
 EXT_M = (EXT_O + EXT_P) / 2
@@ -117,25 +132,57 @@ def team(intl_mp, nac_mp):
 
 
 # UEP, ocho puestos: los siete clave de la condición previa al primer desembolso (Propuesta de Préstamo; EDT 3.1.1) y el técnico de
-# apoyo administrativo del ROP 3.1.2:
-# honorario mensual (O, M, P) en US$ de 2025, sin prestaciones (consultores individuales)
+# apoyo administrativo del ROP 3.1.2. Honorario mensual (O, M, P) en US$ de 2025, sin prestaciones (consultores individuales), y
+# fecha de inicio real del contrato (PA 2026-2, columna "Start Date Contract"; el técnico de apoyo firma según el cronograma).
 UEP = [
     # O: otras unidades ejecutoras BID y Banco Mundial en El Salvador; M: contratos reales de la UEP de 2026 (Plan de
     # Adquisiciones 2026-2, monto anual / 12); P: M + 15 % por renovaciones y ajustes en cuatro años.
-    ('Coordinador del Programa', (6_000, 7_042, 8_098)),
-    ('Coordinador general de obra', (4_000, 6_733, 7_743)),
-    ('Especialista de adquisiciones', (3_300, 5_509, 6_335)),
-    ('Especialista financiero', (3_000, 4_550, 5_233)),
-    ('Especialista de planificación y monitoreo', (3_000, 4_550, 5_233)),
-    ('Especialista técnico aeroportuario', (3_000, 5_417, 6_229)),
-    ('Especialista socioambiental', (3_200, 4_333, 4_983)),
-    ('Técnico en apoyo administrativo (ROP 3.1.2)', (1_200, 1_500, 2_000)),  # supuesto: sin contrato comparable publicado
+    ('Coordinador del Programa', (6_000, 7_042, 8_098), date(2026, 4, 16)),
+    ('Coordinador general de obra', (4_000, 6_733, 7_743), date(2026, 4, 16)),
+    ('Especialista de adquisiciones', (3_300, 5_509, 6_335), date(2026, 4, 23)),
+    ('Especialista financiero', (3_000, 4_550, 5_233), date(2026, 5, 4)),
+    ('Especialista de planificación y monitoreo', (3_000, 4_550, 5_233), date(2026, 4, 16)),
+    ('Especialista en ingeniería aeroportuaria', (3_000, 5_417, 6_229), date(2026, 5, 4)),
+    ('Especialista socioambiental', (3_200, 4_333, 4_983), date(2026, 5, 4)),
+    ('Técnico en apoyo administrativo (ROP 3.1.2)', (1_200, 1_500, 2_000), None),  # supuesto: sin contrato comparable publicado
 ]
+MONTH_DAYS = 30.4375  # días por mes (365.25 / 12) para convertir fechas en meses de contrato
 # Gastos operativos: M = US$200,000 del Anexo III (gastos recurrentes y de mantenimiento de toda la ejecución); O y P, cálculo
 # ascendente propio (US$1,500 y 4,000 al mes más equipo inicial de US$1,500 y 3,000 por puesto).
 UEP_OPEX = (1_500, None, 4_000)
 UEP_SETUP = (8 * 1_500, None, 8 * 3_000)
 UEP_OPEX_M = 200_000
+
+# Plantilla ampliada de la UEP: procesos 3CV activos del Plan de Adquisiciones 2026-2 (BID, 15-jul-2026; P00019 está cancelado y
+# P00014, el asistente administrativo, es el técnico de apoyo de U1). Cada fila: proceso, puesto, monto estimado del proceso
+# (columna "Estimated Amount") y firma estimada del PA (columna "Signed Contract Estimated Date"). Seis lotes, uno por
+# solicitud de contratación del cronograma (3.4.4-45 a 3.4.4-74); la actividad que firma el lote es la indicada.
+PLANTILLA = [
+    (1, '3.4.4-49', [('P00011', 'Administrador 1 de Proyectos', 220_350.00, date(2026, 9, 7)), ('P00013', 'Especialista Legal', 114_833.33, date(2026, 9, 7)),
+                     ('P00015', 'Ordenanza / Mensajero', 40_191.67, date(2026, 9, 7)), ('P00016', 'Analista en Adquisiciones', 86_125.00, date(2026, 9, 7)),
+                     ('P00017', 'Analista Financiero', 86_125.00, date(2026, 9, 7)), ('P00018', 'Técnico en Planificación y Monitoreo', 78_000.00, date(2026, 9, 7)),
+                     ('P00029', 'Ingeniero Estructurista', 85_800.00, date(2026, 9, 7)), ('P00030', 'Ingeniero Electricista', 85_800.00, date(2026, 9, 7)),
+                     ('P00031', 'Ingeniero Hidráulico', 85_800.00, date(2026, 9, 7)),
+                     ('P00032', 'Especialista en Seguridad Industrial y Salud Ocupacional', 97_500.00, date(2026, 9, 7))]),
+    (2, '3.4.4-54', [('P00040', 'Pavimentos Aeroportuarios', 65_000.00, date(2026, 10, 1))]),
+    (3, '3.4.4-59', [('P00033', 'Analista Social', 46_800.00, date(2026, 10, 15))]),
+    (4, '3.4.4-64', [('P00012', 'Analista Técnico 1', 61_750.00, date(2027, 2, 9)), ('P00020', 'Gestor Documental', 52_000.00, date(2027, 2, 1)),
+                     ('P00039', 'Arquitecto', 85_800.00, date(2027, 2, 9))]),
+    (5, '3.4.4-69', [('P00034', 'Administrador 2 de Proyectos', 156_000.00, date(2027, 4, 16)), ('P00035', 'Analista Técnico 2', 58_500.00, date(2027, 4, 16)),
+                     ('P00036', 'Administrador 3 de Proyectos', 156_000.00, date(2027, 4, 16)), ('P00037', 'Analista Técnico 3', 58_500.00, date(2027, 4, 16)),
+                     ('P00038', 'Ingeniero Mecánico', 85_800.00, date(2027, 4, 16))]),
+    (6, '3.4.4-74', [('P00041', 'Administrador 4 de Proyectos', 113_750.00, date(2027, 9, 23))]),
+]
+PLANTILLA_TOTAL = sum(p[2] for _, _, ps in PLANTILLA for p in ps)
+assert abs(PLANTILLA_TOTAL - 1_920_425.00) < 0.5 and sum(len(ps) for _, _, ps in PLANTILLA) == 21
+# Los montos del PA son por proceso y cubren todo su plazo, no un año: en los seis consultores clave cuyo contrato se firmó al
+# monto estimado, el "Estimated Amount" es el monto anual del contrato (columna "Contract Amount USD") por 56 / 12. P00005 se
+# adjudicó 13 % sobre su estimado y no entra en la prueba.
+KEY_PA = [(394_333.33, 84_500), (254_800.00, 54_600), (308_490.00, 66_105), (254_800.00, 54_600), (303_333.33, 65_000), (242_666.67, 52_000)]
+PA_MONTHS = 56
+assert all(abs(d / q * 12 - PA_MONTHS) < 0.01 for d, q in KEY_PA)
+PA_HORIZON = date(2026, 4, 16) + timedelta(days=PA_MONTHS * MONTH_DAYS)  # fin del plazo que supone el PA para los puestos de la UEP
+PLANTILLA_O, PLANTILLA_P = 0.85, 1.15  # supuesto: O y P de la plantilla ampliada como fracción del monto mensual implícito del PA
 
 # Elementos de estimación. tipo: 'obra' (lleva IVA y escalamiento), 'servicio' (escalamiento), 'pct' (porcentaje de las obras
 # ya escaladas). split: reparto entre paquetes de la EDT. unit: costo unitario O/M/P (US$ 2025, sin IVA) o total si qty es None.
@@ -143,14 +190,14 @@ ELEMENTS = [
     dict(id='T1', name='Edificio de la terminal Fase 2', group='Terminal', tipo='obra', method='Paramétrica (US$/m²)',
          qty=TERMINAL_M2, unit_name='m²', unit=(1_700, 2_250, 2_900), split=TERMINAL_SPLIT, method_override='Análoga local (US$/m²)',
          src=['CEPA2018', 'AIES2025', 'CASALCO', 'MSP'],
-         note=f'Obras de CEPA en el mismo aeropuerto, sin IVA y llevadas a 2025 con el índice de CASALCO: etapa 1 de 2018 (US$1,689/m²), check-in de 2025 (2,073), etapa 1 con su costo total reportado (2,452) y terminal de equipaje de 2025 (2,457); M es la mediana. P: cuatro salas de 2016-2017 y etapa 1 con mobiliario y supervisión (2,891 a 3,134). Contraste internacional: MSP 2023 ajustado a la región, US${MSP_M2 * 0.42:,.0f}/m².'),
+         note=f'Obras de CEPA en el mismo aeropuerto, sin IVA y llevadas a 2025 con el índice de CASALCO: etapa 1 de 2018 (US$1,689/m²), check-in de 2025 (2,073), etapa 1 con su costo total reportado (2,452) y terminal de equipaje de 2025 (2,457); M es la mediana. P: cuatro salas de 2016-2017 y etapa 1 con mobiliario y supervisión (2,891 a 3,134). Contraste internacional: MSP 2023 ajustado a la región, US${MSP_M2 * 0.42:,.0f}/m². Superficie: {TERMINAL_M2:,} m², la de la solicitud de información de julio de 2026 y la expresión de interés P00024 (el EEO#3, de julio de 2025, usaba 16,303 m² para la Fase 2).'),
 
     dict(id='T2', name='Puentes de abordaje', group='Terminal', tipo='obra', method='Paramétrica (US$/unidad)',
          qty=BRIDGES, unit_name='puentes', unit=(1_265_000, 1_640_000, 2_410_000), split={'1.2.4': 1}, src=['PBB', 'MSP', 'LOC'],
          note='Equipo importado: factor de localización 1.00 / 1.05 / 1.10 (PPP de maquinaria del ICP: 1.055). M: promedio de MSP, BWI, Savannah y MIA.'),
     dict(id='T3', name='Obras exteriores de la terminal', group='Terminal', tipo='obra', method='Análoga (as built de la Fase 1)',
          qty=None, unit_name='global', unit=(EXT_O, EXT_M, EXT_P), split={'1.2.1': 1}, src=['CPI'],
-         note='Costo real de las obras exteriores de la Fase 1 (CEPA), prorrateado por área y llevado a 2025. O sin subestación; P con subestación completa. Incluye la intervención y el traslado de redes (agua potable, aguas negras, contra incendio y eléctrica) que la Propuesta pide presupuestar como partida específica (tabla 5).'),
+         note='Costo real de las obras exteriores de la Fase 1 (CEPA), prorrateado por área (18,555 m² de la terminal frente a 21,673 m² de la Fase 1) y llevado a 2025. O sin subestación; P con subestación completa. Incluye la intervención y el traslado de redes (agua potable, aguas negras, contra incendio y eléctrica) que la Propuesta pide presupuestar como partida específica (tabla 5).'),
     dict(id='T4', name='Sistemas de la terminal (equipaje, uso común y escáneres)', group='Terminal', tipo='obra', method='Análoga y paramétrica',
          qty=None, unit_name='global', unit=(1_600_000, 2_000_000 * 1.3 + 2 * 768_000, 3_000_000 * 1.3 + 4 * 768_000), split={'1.2.4': 1},
          src=['EEO3EQ', 'TSA', 'CPI'],
@@ -182,8 +229,8 @@ ELEMENTS = [
          qty=None, unit_name='% de la obra', unit=(0.020, 0.030, 0.050), split=None, src=['SUPSV', 'SUP'],
          note='Supervisiones reales en El Salvador: edificios grandes de 1.9 a 2.5 % (bandas de equipaje del AIES 2025, 2.46 %; maternidad El Nido 1.88 %; CENT 2.19 %) y pavimentos del AIES de 5.7 a 6.5 %. M: 3 %, la inspección del arancel del CFIA, por la mezcla de edificios y lado aire. P: 5 %, la dirección técnica del CFIA y el porcentaje que usa el Plan de Adquisiciones 2026.'),
     dict(id='V2', name='Seguimiento del PGAS de construcción', group='Gestión socioambiental', tipo='pct_obras', method='Paramétrica (% de la obra)',
-         qty=None, unit_name='% de la obra', unit=(0.0033, 0.0072, 0.018), split={'1.7.3': 1}, src=['EAS'],
-         note='Mediana de cuatro préstamos de la región (0.72 %). Las medidas del PGAS las ejecuta el contratista dentro de su precio; este monto cubre su seguimiento dentro del contrato de supervisión. El mecanismo de quejas y los informes socioambientales (3.3.3 y 3.3.4) los lleva el especialista socioambiental de la UEP.'),
+         qty=None, unit_name='% de la obra', unit=(0.0033, 0.0072, 0.018), split=None, src=['EAS'],
+         note='Mediana de cuatro préstamos de la región (0.72 %). Las medidas del PGAS las ejecuta el contratista dentro de su precio; este monto cubre su seguimiento dentro de los contratos de supervisión (1.7.1 y 1.7.2), repartido entre ellos como la supervisión técnica. La revisión del PGAS del contratista (1.7.3), el mecanismo de quejas y los informes socioambientales (3.3.3 y 3.3.4) los lleva el especialista socioambiental de la UEP, cuyo costo está en U1.'),
     dict(id='C1', name='Plan Estratégico del Sistema Aeronáutico', group='Componente II', tipo='servicio', method='Análoga',
          qty=None, unit_name='global', unit=(110_000, 500_000, 1_900_000), split={'2.1': 1}, src=['PEASV'],
          note='O: capítulo de transporte del Plan Maestro de Infraestructura (BID ES-T1289, 2018). M: Plan Maestro Nacional de Aviación Civil de Guyana (BID GY-T1134, 2016). P: Plan Director del Tren del Pacífico (MOPT, Deloitte, 2023).'),
@@ -217,16 +264,19 @@ ELEMENTS = [
          note='2 a 4 meses-persona de experto nacional.'),
     dict(id='U1', name='Personal de la Unidad Ejecutora (8 puestos)', group='Componente III', tipo='servicio', method='Ascendente (puestos × honorario × meses)',
          qty=None, unit_name='global', unit=None, split={'3.1.1': 1}, src=['PROP', 'PA2026', 'HON'],
-         note='Siete puestos clave de la Propuesta de Préstamo, contratados entre abril y mayo de 2026, más el técnico de apoyo administrativo del ROP. El PEP prevé además un especialista legal, 7 administradores de contrato y 7 técnicos de apoyo (19 plazas, US$4.07 M); esa plantilla ampliada no se incluye.'),
+         note='Siete puestos clave de la Propuesta de Préstamo, contratados entre abril y mayo de 2026, más el técnico de apoyo administrativo del ROP. Cada puesto se cuenta desde su contratación real hasta el fin de la actividad de nivel de esfuerzo 3.1.1-06. La plantilla ampliada que prevé el PEP (19 plazas, US$4.07 M) y que el Plan de Adquisiciones 2026-2 desglosa en 21 procesos está en U3.'),
     dict(id='U2', name='Gastos operativos de la Unidad Ejecutora', group='Componente III', tipo='servicio', method='Ascendente (mensual × meses)',
          qty=None, unit_name='global', unit=None, split={'3.1.1': 1}, src=['ROP', 'ANX3'],
          note='Servicios, oficina, combustible, pasajes y equipo (ROP 5.4). M: US$200,000 del Anexo III para gastos recurrentes de toda la ejecución; O y P: cálculo ascendente propio con montos mensuales supuestos.'),
+    dict(id='U3', name='Plantilla ampliada de la Unidad Ejecutora (21 procesos del Plan de Adquisiciones 2026-2)', group='Componente III', tipo='servicio',
+         method='Análoga (monto del Plan de Adquisiciones por mes de contrato)', qty=None, unit_name='global', unit=None, split={'3.1.1': 1}, src=['PA2026', 'PEP'],
+         note='21 procesos 3CV activos del Plan de Adquisiciones 2026-2 (P00011 a P00041 sin P00019 cancelado ni P00014, que es el técnico de apoyo de U1), con firmas estimadas de septiembre de 2026 a septiembre de 2027 y un estimado de US$1.92 M. El "Estimated Amount" de cada proceso cubre todo su plazo, no un año (en los contratos clave es el monto anual por 56 / 12). Se divide entre los meses que van de la firma estimada del PA al fin del plazo que ese plan supone (56 meses desde abril de 2026) y se multiplica por los meses que van de la firma del cronograma al fin de 3.1.1-06. O y P: 0.85 y 1.15 veces ese monto mensual (supuesto: el PA solo da un estimado).'),
     dict(id='U4', name='Auditoría externa de los estados financieros', group='Componente III', tipo='servicio', method='Análoga',
          qty=None, unit_name='global', unit=(148_000, 191_000, 320_000), split={'3.5.2': 0.75, '3.5.4': 0.25}, src=['AUDSV', 'MEL'],
          note='Cuatro ejercicios: tres en 3.5.2 y los estados financieros finales en el cierre (3.5.4). Por ejercicio: O US$36,985 (PwC, ES-L1155, primer año), M US$47,783 (promedio de PwC y de Cornejo & Umaña para CEPA), P US$80,000 (presupuesto de ES-L1151); con IVA. El MEL y el PEP presupuestan US$160,000. El informe de terminación del cierre lo prepara la UEP.'),
     dict(id='U5', name='Evaluaciones de medio término y final', group='Componente III', tipo='servicio', method='Análoga',
          qty=None, unit_name='global', unit=(90_000, 150_000, 172_500), split={'3.5.3': 1}, src=['EVALSV', 'MEL'],
-         note='O: intermedia de ES-L1151 (US$50,000) más la final de un programa del MOPT (US$40,000). M: intermedia y final de ES-L1151 (US$50,000 y 100,000). P: intermedia de ES-L1075 (US$72,500) más la final de ES-L1151.'),
+         note='O: intermedia de ES-L1151 (US$50,000) más la final de un programa del MOPT (US$40,000). M: intermedia y final de ES-L1151 (US$50,000 y 100,000). P: intermedia de ES-L1075 (US$72,500) más la final de ES-L1151. Se reparte entre las dos evaluaciones en 1/3 y 2/3, la proporción de M.'),
 ]
 
 # Referencia del Anexo III / EEO#3 para comparar (no entra en la estimación), en US$
@@ -236,25 +286,119 @@ REFERENCE = {
 }
 
 
+# ---- Reparto del costo entre las actividades de quien cobra (ver la regla en la cabecera) ----
+PAYEES = {'Contratista de obra', 'Firma de supervisión', 'Firma consultora', 'Auditor externo'}
+UEP_INDIRECT = '3.1.1-06'  # única actividad de la UEP con costo: el costo indirecto de U1, U2 y U3
+UEP_ELEMENTS = ('U1', 'U2', 'U3')
+# Contrato de supervisión de cada actividad (T terminal, E estacionamiento, P plataformas y Foxtrot, S SSEI) y obras que supervisa
+SUP_CONTRACT = {'1.7.1-01': 'T', '1.7.1-02': 'T', '1.7.1-05': 'T', '1.7.1-03': 'E', '1.7.1-04': 'E', '1.7.1-06': 'E',
+                '1.7.2-01': 'P', '1.7.2-02': 'P', '1.7.2-05': 'P', '1.7.2-03': 'S', '1.7.2-04': 'S', '1.7.2-06': 'S'}
+SUP_WORKS = {'T': ('1.2.',), 'E': ('1.5.',), 'P': ('1.3.', '1.4.'), 'S': ('1.6.',)}
+SUP_ELEMENTS = ('V1', 'V2')
+# Porcentajes pequeños y explícitos por la forma de la actividad (inicio del nombre): movilización 2 %, pruebas 2 %, informe final
+# de la supervisión 4 % (incluye el apoyo a las recepciones, que antes se cargaba al paquete 1.7.4).
+AUTO = (('Movilizar', 0.02), ('Probar', 0.02), ('Realizar las pruebas', 0.02), ('Presentar el informe final', 0.04))
+# Reglas particulares (elemento, paquete): fixed fija el peso de algunas actividades; rest limita el resto del reparto a esas
+# actividades (por duración); auto=False desactiva los porcentajes de AUTO.
+RULES = {
+    ('T1', '1.2.4'): dict(fixed={'1.2.4-05': 0.03}, rest=['1.2.4-04']),  # mobiliario: se instala y se prueba
+    ('T2', '1.2.4'): dict(fixed={'1.2.4-01': 0.02, '1.2.4-03': 0.11, '1.2.4-05': 0.02}, rest=['1.2.4-02']),  # puentes: 85 % fabricación y entrega
+    ('T4', '1.2.4'): dict(fixed={'1.2.4-05': 0.03}, rest=['1.2.4-04']),  # sistemas: a su instalación
+    ('A1', '1.3.2'): dict(rest=['1.3.2-01', '1.3.2-02', '1.3.2-03', '1.3.2-04']),  # el pavimento asfáltico (-05) lo lleva A2
+    ('A2', '1.3.2'): dict(rest=['1.3.2-05']),
+    ('C7', '2.6.1'): dict(fixed={'2.6.1-03': 0.15}),  # el acompañamiento dura 441 dl pero son pocas horas: 15 %
+    ('U5', '3.5.3'): dict(fixed={'3.5.3-02': 1 / 3}, rest=['3.5.3-04']),  # intermedia US$50,000 y final US$100,000 (EVALSV)
+    ('V2', '1.7.1'): dict(auto=False),
+    ('V2', '1.7.2'): dict(auto=False),
+}
+
+
+def payees(ctx: dict, pkg: str) -> list[str]:
+    return [c for c, a in ctx['acts'].items() if a['pkg'] == pkg and a['owner'] in PAYEES]
+
+
+def act_weights(el: str, pkg: str, ctx: dict, subset: list[str] | None = None) -> dict[str, float]:
+    """Peso de cada actividad que cobra en el costo del elemento el dentro del paquete pkg (suma 1)."""
+    if el in UEP_ELEMENTS:
+        assert pkg == '3.1.1' and UEP_INDIRECT in ctx['acts']
+        return {UEP_INDIRECT: 1.0}
+    acts = payees(ctx, pkg) if subset is None else subset
+    assert acts, f'el paquete {pkg} tiene costo ({el}) pero ninguna actividad de quien cobra el contrato'
+    rule = RULES.get((el, pkg), {})
+    fixed = dict(rule.get('fixed', {}))
+    cand = [c for c in rule.get('rest', acts) if c not in fixed]
+    assert all(c in acts for c in list(fixed) + cand), (el, pkg)
+    if rule.get('auto', True):
+        for c in list(cand):
+            share = next((x for pre, x in AUTO if ctx['acts'][c]['name'].startswith(pre)), None)
+            if share is not None and len(cand) > 1:
+                fixed[c] = share
+                cand.remove(c)
+    rest = 1 - sum(fixed.values())
+    w = dict(fixed)
+    if cand:
+        tot = sum(ctx['acts'][c]['dur'] for c in cand)
+        for c in cand:
+            w[c] = rest * ctx['acts'][c]['dur'] / tot
+    else:
+        w = {c: x / sum(fixed.values()) for c, x in fixed.items()}
+    assert abs(sum(w.values()) - 1) < 1e-9, (el, pkg, w)
+    return w
+
+
+def mid_ord(a: dict) -> float:
+    return a['start'].toordinal() + (a['finish'] - a['start']).days / 2
+
+
 def esc(mid: date, k: int, servicio: bool = False) -> float:
     rate = (ESC_SERV if servicio else ESC)[k]
     return (1 + rate) ** ((mid - BASE_DATE).days / 365.25)
 
 
-def months_between(a: date, b: date) -> int:
-    return (b.year - a.year) * 12 + b.month - a.month + 1
+def months_from(a: date, b: date) -> float:
+    """Meses de contrato entre dos fechas (cero si b es anterior)."""
+    return max(0.0, (b - a).days / MONTH_DAYS)
 
 
-def estimate(spans: dict[str, tuple[date, date]], start: date, end: date, escalate: bool = True) -> dict:
-    """spans: código -> (inicio, fin) del cronograma. Devuelve elementos, costos por paquete y reservas (US$).
-    Con escalate=False deja los valores en US$ de 2025 (para compararlos con el estudio de costos del préstamo)."""
-    n_months = months_between(start, end)
+def uep_detail(ctx: dict) -> dict:
+    """Puestos y procesos de la UEP con su inicio real y sus meses hasta el fin de 3.1.1-06 (ctx['uep'])."""
+    u = ctx['uep']
+    posts = []
+    for name, rates, st in UEP:
+        st = st or u['tech_start']
+        posts.append({'puesto': name, 'O': rates[0], 'M': rates[1], 'P': rates[2], 'inicio': st, 'meses': months_from(st, u['end'])})
+    lots = []
+    for n, code, procs in PLANTILLA:
+        sign = u['lot_sign'][code]
+        for pid, name, amount, pa_sign in procs:
+            monthly = amount / months_from(pa_sign, PA_HORIZON)
+            lots.append({'lote': n, 'proceso': pid, 'puesto': name, 'monto_pa': amount, 'firma_pa': pa_sign, 'firma_modelo': sign,
+                         'mensual': monthly, 'meses': months_from(sign, u['end'])})
+    return {'posts': posts, 'lots': lots, 'start': u['start'], 'end': u['end']}
+
+
+def uep_fraction(det: dict, d: date) -> dict[str, float]:
+    """Fracción planificada de cada elemento de la UEP al cierre de la fecha d (costo mensual por puesto desde su inicio)."""
+    out = {}
+    tot = sum(p['M'] * p['meses'] for p in det['posts'])
+    out['U1'] = sum(p['M'] * min(p['meses'], months_from(p['inicio'], d)) for p in det['posts']) / tot
+    out['U2'] = min(1.0, months_from(det['start'], d) / months_from(det['start'], det['end']))
+    tot3 = sum(x['mensual'] * x['meses'] for x in det['lots'])
+    out['U3'] = sum(x['mensual'] * min(x['meses'], months_from(x['firma_modelo'], d)) for x in det['lots']) / tot3
+    return out
+
+
+def estimate(ctx: dict, escalate: bool = True) -> dict:
+    """ctx: actividades del cronograma (ctx['acts']: código -> paquete, nombre, duración, inicio, fin, responsable) y fechas de la UEP
+    (ctx['uep']). Devuelve elementos, costos por paquete y reservas (US$). Con escalate=False deja los valores en US$ de 2025
+    (para compararlos con el estudio de costos del préstamo)."""
+    det = uep_detail(ctx)
     els = []
 
-    def mid_of(split):
-        # punto medio ponderado por el peso de cada paquete en el elemento
-        days = sum(s * ((spans[c][0] - BASE_DATE).days + (spans[c][1] - spans[c][0]).days / 2) for c, s in split.items())
-        return BASE_DATE + timedelta(days=days / sum(split.values()))
+    def mid_of(e):
+        # punto medio ponderado por el peso de cada paquete y de cada actividad que ejecuta el elemento
+        tot = sum(s * w * mid_ord(ctx['acts'][a]) for c, s in e['split'].items() for a, w in act_weights(e['id'], c, ctx).items())
+        return date.fromordinal(round(tot / sum(e['split'].values())))
 
     obra_total = [0.0, 0.0, 0.0]
     for e in ELEMENTS:
@@ -262,17 +406,26 @@ def estimate(spans: dict[str, tuple[date, date]], start: date, end: date, escala
         if 'method_override' in e:
             e['method'] = e.pop('method_override')
         if e['id'] == 'U1':
-            e['unit'] = tuple(sum(p[1][k] for p in UEP) * n_months for k in range(3))
-            e['note'] += f' {n_months} meses; total mensual US${sum(p[1][1] for p in UEP):,} (M).'
+            e['unit'] = tuple(sum(p[('O', 'M', 'P')[k]] * p['meses'] for p in det['posts']) for k in range(3))
+            e['note'] += f' {sum(p["meses"] for p in det["posts"]) / len(det["posts"]):.1f} meses en promedio por puesto; total mensual US${sum(p["M"] for p in det["posts"]):,} (M).'
         if e['id'] == 'U2':
-            e['unit'] = (UEP_OPEX[0] * n_months + UEP_SETUP[0], UEP_OPEX_M, UEP_OPEX[2] * n_months + UEP_SETUP[2])
+            n = months_from(det['start'], det['end'])
+            e['unit'] = (UEP_OPEX[0] * n + UEP_SETUP[0], UEP_OPEX_M, UEP_OPEX[2] * n + UEP_SETUP[2])
+        if e['id'] == 'U3':
+            m = sum(x['mensual'] * x['meses'] for x in det['lots'])
+            e['unit'] = (PLANTILLA_O * m, m, PLANTILLA_P * m)
+            e['note'] += f' Resultado: US${m / 1e6:.2f} M frente a US${PLANTILLA_TOTAL / 1e6:.2f} M del PA.'
         if e['tipo'] in ('pct_obras', 'pct_lado_aire'):
             els.append(e)
             continue
-        codes = list(e['split'])
-        # La UEP se paga durante todo el programa y 3.5.3 aún no tiene fechas finales al estimar (se fijan con la curva):
-        # ambos se escalan al punto medio del programa.
-        mid = start + (end - start) / 2 if codes in (['3.5.3'], ['3.1.1']) else mid_of(e['split'])
+        if e['id'] == 'U3':
+            tot3 = sum(x['mensual'] * x['meses'] for x in det['lots'])
+            mid = date.fromordinal(round(sum(x['mensual'] * x['meses'] * (x['firma_modelo'].toordinal() + (det['end'] - x['firma_modelo']).days / 2)
+                                              for x in det['lots']) / tot3))
+        elif e['id'] in UEP_ELEMENTS:
+            mid = det['start'] + (det['end'] - det['start']) / 2
+        else:
+            mid = mid_of(e)
         base = [(e['qty'] or 1) * e['unit'][k] for k in range(3)]
         tax = 1 + IVA if e['tipo'] == 'obra' else 1
         e['mid'] = mid
@@ -301,8 +454,9 @@ def estimate(spans: dict[str, tuple[date, date]], start: date, end: date, escala
         if e['tipo'] != 'pct_obras':
             continue
         e['omp'] = [obra_E * e['unit'][k] for k in range(3)]
-        if e['id'] == 'V1':  # supervisión: 98 % repartido según la obra supervisada, 2 % para la recepción (1.7.4)
-            e['split'] = {'1.7.1': 0.98 * land / obra_E, '1.7.2': 0.98 * (1 - land / obra_E), '1.7.4': 0.02}
+        # supervisión (V1) y seguimiento del PGAS (V2): ambos van a los contratos de supervisión, repartidos según la obra
+        # supervisada (terminal y estacionamiento en 1.7.1; plataformas, Foxtrot y SSEI en 1.7.2)
+        e['split'] = {'1.7.1': land / obra_E, '1.7.2': 1 - land / obra_E}
 
     for e in els:
         o, m, p = e['omp']
@@ -312,8 +466,8 @@ def estimate(spans: dict[str, tuple[date, date]], start: date, end: date, escala
     total_E = sum(e['E'] for e in els)
     sig_ind = math.sqrt(sum(e['sigma'] ** 2 for e in els))
     sig_cor = sum(e['sigma'] for e in els)
-    # Los elementos de obra comparten precios de insumos y el escalamiento, así que no son independientes, pero tampoco
-    # se mueven juntos en todo: se usa una correlación uniforme explícita (RHO) y se informa la reserva para otros valores.
+    # Los elementos de obra comparten precios de insumos y el escalamiento, así que no son independientes, pero tampoco se
+    # mueven juntos en todo: se usa una correlación uniforme explícita (RHO) y se informa la reserva para otros valores.
     # Con correlación uniforme rho: sigma_total^2 = suma(sigma_i^2) + rho * suma_{i != j}(sigma_i * sigma_j)
     def sig_rho(rho):
         return math.sqrt(sig_ind ** 2 + rho * (sig_cor ** 2 - sig_ind ** 2))
@@ -332,23 +486,58 @@ def estimate(spans: dict[str, tuple[date, date]], start: date, end: date, escala
     return {
         'elements': els, 'packages': pkg, 'package_reserve': pkg_res, 'total_E': total_E, 'sigma_independiente': sig_ind,
         'sigma_correlacionada': sig_cor, 'sigma_total': sigma_total, 'rho': rho, 'contingencia_por_rho': reserve_by_rho, 'contingencia': contingency, 'linea_base': baseline,
-        'reserva_gestion': baseline * MGMT_RESERVE, 'presupuesto': baseline * (1 + MGMT_RESERVE), 'meses': n_months,
+        'reserva_gestion': baseline * MGMT_RESERVE, 'presupuesto': baseline * (1 + MGMT_RESERVE), 'uep': det,
         'total_O': sum(e['omp'][0] for e in els), 'total_M': sum(e['omp'][1] for e in els), 'total_P': sum(e['omp'][2] for e in els),
         'obras_E': obra_E,
     }
 
 
-def sensitivity(spans, start, end) -> list[dict]:
+def allocate(res: dict, ctx: dict) -> dict:
+    """Reparte el costo de cada elemento entre las actividades de quien cobra. Devuelve, por actividad, la estimación (base), la
+    contingencia y los elementos que la forman. Verifica con assert que el costo de las actividades de cada paquete sea el del
+    paquete y que solo cobren los pagadores y el costo indirecto de la UEP."""
+    pk = res['packages']
+    works = {g: sum(v for c, v in pk.items() if c.startswith(pre)) for g, pre in SUP_WORKS.items()}
+    base, cont, parts = {}, {}, {}
+    for e in res['elements']:
+        for c, s in e['split'].items():
+            if e['id'] in SUP_ELEMENTS:
+                pay = payees(ctx, c)
+                groups = sorted({SUP_CONTRACT[a] for a in pay})
+                tot = sum(works[g] for g in groups)
+                w = {}
+                for g in groups:
+                    for a, x in act_weights(e['id'], c, ctx, [a for a in pay if SUP_CONTRACT[a] == g]).items():
+                        w[a] = works[g] / tot * x
+            else:
+                w = act_weights(e['id'], c, ctx)
+            assert abs(sum(w.values()) - 1) < 1e-9
+            for a, x in w.items():
+                base[a] = base.get(a, 0.0) + e['E'] * s * x
+                cont[a] = cont.get(a, 0.0) + e['reserve'] * s * x
+                parts.setdefault(a, {})
+                parts[a][e['id']] = parts[a].get(e['id'], 0.0) + e['E'] * s * x
+    for a in base:
+        assert ctx['acts'][a]['owner'] in PAYEES or a == UEP_INDIRECT, f'{a} no debería tener costo'
+    for c in pk:
+        sub = [a for a in base if ctx['acts'][a]['pkg'] == c]
+        assert abs(sum(base[a] for a in sub) - pk[c]) < 1e-3, c
+        assert abs(sum(cont[a] for a in sub) - res['package_reserve'][c]) < 1e-3, c
+    assert abs(sum(base.values()) - res['total_E']) < 1e-2 and abs(sum(cont.values()) - res['contingencia']) < 1e-2
+    return {'base': base, 'cont': cont, 'parts': parts}
+
+
+def sensitivity(ctx) -> list[dict]:
     """Paso 7: cambia un supuesto a la vez y devuelve la estimación PERT y el presupuesto resultantes (US$)."""
     global ESC
-    base = estimate(spans, start, end)
+    base = estimate(ctx)
     cases = []
 
     def run(label, change, mutate):
         global ESC
         saved_el, saved_esc = [dict(e) for e in ELEMENTS], ESC
         mutate()
-        r = estimate(spans, start, end)
+        r = estimate(ctx)
         ELEMENTS[:] = saved_el
         ESC = saved_esc
         cases.append({'supuesto': label, 'cambio': change, 'estimacion': r['total_E'], 'diferencia': r['total_E'] - base['total_E'],
@@ -379,7 +568,7 @@ def sensitivity(spans, start, end) -> list[dict]:
     return cases
 
 
-def write_outputs(res: dict, out: Path, spans=None, start=None, end=None) -> None:
+def write_outputs(res: dict, out: Path, ctx=None) -> None:
     fields = ['id', 'grupo', 'elemento', 'metodo', 'cantidad', 'unidad', 'unit_O', 'unit_M', 'unit_P', 'punto_medio', 'esc_M',
               'O_usd', 'M_usd', 'P_usd', 'E_usd', 'sigma_usd', 'reserva_usd', 'paquetes', 'fuentes', 'nota']
     with (out / 'estimacion_costos.csv').open('w', encoding='utf-8-sig', newline='') as f:
@@ -390,7 +579,7 @@ def write_outputs(res: dict, out: Path, spans=None, start=None, end=None) -> Non
                         *(round(x, 4) for x in e['unit']), e.get('mid', ''), round(e['esc'][1], 4) if 'esc' in e else '',
                         *(round(x) for x in e['omp']), round(e['E']), round(e['sigma']), round(e['reserve']),
                         '; '.join(f'{c} {s:.1%}' for c, s in e['split'].items()), ', '.join(e['src']), e['note']])
-    summary = {k: v for k, v in res.items() if k not in ('elements', 'packages', 'package_reserve')}
+    summary = {k: v for k, v in res.items() if k not in ('elements', 'packages', 'package_reserve', 'uep')}
     summary['por_grupo'] = {}
     for e in res['elements']:
         g = summary['por_grupo'].setdefault(e['group'], {'O': 0, 'M': 0, 'P': 0, 'E': 0, 'reserva': 0, 'referencia': REFERENCE.get(e['group'])})
@@ -399,14 +588,18 @@ def write_outputs(res: dict, out: Path, spans=None, start=None, end=None) -> Non
         g['E'] += e['E']
         g['reserva'] += e['reserve']
     summary['paquetes'] = {c: {'E': res['packages'][c], 'reserva': res['package_reserve'][c]} for c in sorted(res['packages'], key=lambda c: [int(p) for p in c.split('.')])}
-    summary['uep'] = [{'puesto': n, 'O': v[0], 'M': v[1], 'P': v[2]} for n, v in UEP]
-    if spans is not None:
-        flat = estimate(spans, start, end, escalate=False)
+    det = res['uep']
+    summary['uep'] = [{**p, 'inicio': str(p['inicio'])} for p in det['posts']]
+    summary['plantilla'] = [{**x, 'firma_pa': str(x['firma_pa']), 'firma_modelo': str(x['firma_modelo'])} for x in det['lots']]
+    summary['uep_periodo'] = {'inicio': str(det['start']), 'fin': str(det['end'])}
+    if ctx is not None:
+        flat = estimate(ctx, escalate=False)
         summary['sin_escalamiento'] = {
             'total_E': flat['total_E'], 'contingencia': flat['contingencia'], 'linea_base': flat['linea_base'],
             'por_grupo': {g: sum(e['E'] + e['reserve'] for e in flat['elements'] if e['group'] == g) for g in summary['por_grupo']}}
-        summary['sensibilidad'] = sensitivity(spans, start, end)
+        summary['sensibilidad'] = sensitivity(ctx)
     summary['fuentes'] = SOURCES
     summary['supuestos'] = {'base': str(BASE_DATE), 'escalamiento_OMP': ESC, 'iva': IVA, 'z80': Z80, 'reserva_gestion': MGMT_RESERVE,
-                            'tarifa_internacional_mp': INTL, 'tarifa_nacional_mp': NAC, 'reparto_terminal': TERMINAL_SPLIT}
+                            'tarifa_internacional_mp': INTL, 'tarifa_nacional_mp': NAC, 'reparto_terminal': TERMINAL_SPLIT,
+                            'plantilla_OP': (PLANTILLA_O, PLANTILLA_P), 'horizonte_pa': str(PA_HORIZON)}
     (out / 'estimacion_costos.json').write_text(json.dumps(summary, ensure_ascii=False, indent=1, default=str), encoding='utf-8')

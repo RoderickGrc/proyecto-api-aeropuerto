@@ -1,231 +1,222 @@
 {
- "total_E": 139063055.9618534,
- "sigma_independiente": 8576146.0281174,
- "sigma_correlacionada": 21239842.820034638,
- "sigma_total": 13668374.936064959,
+ "total_E": 148191471.1276,
+ "sigma_independiente": 9043624.829861639,
+ "sigma_correlacionada": 22318420.288827293,
+ "sigma_total": 14376528.450948244,
  "rho": 0.3,
  "contingencia_por_rho": {
-  "0.00": 7217684.497263604,
-  "0.25": 10906611.327597504,
-  "0.30": 11503304.346192269,
-  "0.50": 13631337.858057698,
-  "1.00": 17875451.71734115
+  "0.00": 7611114.656811556,
+  "0.25": 11473830.488900505,
+  "0.30": 12099286.344318042,
+  "0.50": 14330684.068002962,
+  "1.00": 18783182.51507705
  },
- "contingencia": 11503304.346192269,
- "linea_base": 150566360.3080457,
- "reserva_gestion": 7528318.015402284,
- "presupuesto": 158094678.32344797,
- "meses": 51,
- "total_O": 89844830.30897258,
- "total_M": 131812404.55824186,
- "total_P": 217283887.2291804,
- "obras_E": 128231258.56022789,
+ "contingencia": 12099286.344318042,
+ "linea_base": 160290757.47191805,
+ "reserva_gestion": 8014537.873595903,
+ "presupuesto": 168305295.34551397,
+ "total_O": 96107635.92075211,
+ "total_M": 140755758.29778305,
+ "total_P": 230018157.65371585,
+ "obras_E": 135631074.07068193,
  "por_grupo": {
   "Terminal": {
-   "O": 46054185.45941148,
-   "M": 68816220.01277642,
-   "P": 102712789.88020723,
-   "E": 70671975.89845406,
-   "reserva": 5114296.8743954925,
+   "O": 50921184.95204237,
+   "M": 75984361.36673132,
+   "P": 113058286.53472587,
+   "E": 77986152.82561557,
+   "reserva": 5614305.544668763,
    "referencia": 78992537.1
   },
   "Lado aire": {
-   "O": 12103971.923087955,
-   "M": 15326612.784535263,
-   "P": 22226579.91569289,
-   "E": 15939500.496153649,
-   "reserva": 913718.6301452345,
+   "O": 12111429.45095006,
+   "M": 15346131.399473373,
+   "P": 22285729.523102548,
+   "E": 15963614.095324349,
+   "reserva": 919283.7749633351,
    "referencia": 23206512.9
   },
   "Estacionamiento": {
-   "O": 23535603.476517525,
-   "M": 33584571.45007636,
-   "P": 62672728.29912752,
-   "E": 36757769.59599174,
-   "reserva": 3532718.061082971,
+   "O": 23551631.181891758,
+   "M": 33629342.562356524,
+   "P": 62830068.10289546,
+   "E": 36816511.58903555,
+   "reserva": 3548944.8425281667,
    "referencia": 64202613.69
   },
   "SSEI": {
-   "O": 2370072.2066025618,
-   "M": 4020887.1669593495,
-   "P": 10718454.543330628,
-   "E": 4862012.569628431,
-   "reserva": 753567.9024828908,
+   "O": 2370555.9071967714,
+   "M": 4022582.9185000025,
+   "P": 10727885.783041952,
+   "E": 4864795.560706455,
+   "reserva": 755114.1309375049,
    "referencia": 9473574.43
   },
   "Supervisión": {
-   "O": 2564625.1712045576,
-   "M": 3846937.7568068365,
-   "P": 6411562.928011395,
-   "E": 4060656.521073883,
-   "reserva": 347244.37615004176,
+   "O": 2712621.4814136387,
+   "M": 4068932.222120458,
+   "P": 6781553.7035340965,
+   "E": 4294984.012238261,
+   "reserva": 367642.3288771255,
    "referencia": 8793761.91
   },
   "Gestión socioambiental": {
-   "O": 423163.153248752,
-   "M": 923265.0616336408,
-   "P": 2308162.654084102,
-   "E": 1070731.0089779028,
-   "reserva": 170149.7443135204,
+   "O": 447582.5444332504,
+   "M": 976543.7333089098,
+   "P": 2441359.3332722746,
+   "E": 1132519.468490194,
+   "reserva": 180144.7411497915,
    "referencia": null
   },
   "Componente II": {
-   "O": 1058982.1135114513,
-   "M": 2583782.439908007,
-   "P": 6945526.272411224,
-   "E": 3056606.3575924514,
-   "reserva": 531349.7340891501,
+   "O": 1058842.6890276175,
+   "M": 2582422.1010101815,
+   "P": 6940337.668600374,
+   "E": 3054811.46027812,
+   "reserva": 531413.7453099205,
    "referencia": 5000000
   },
   "Componente III": {
-   "O": 1734226.8053883088,
-   "M": 2710127.8855459895,
-   "P": 3288082.736315427,
-   "E": 2643803.513981282,
-   "reserva": 140259.02353296702,
+   "O": 2933787.7137966375,
+   "M": 4145441.9942823006,
+   "P": 4952937.004543286,
+   "E": 4078082.115911521,
+   "reserva": 182437.2358834337,
    "referencia": 5331000
   }
  },
  "paquetes": {
   "1.2.1": {
-   "E": 26074911.20338874,
-   "reserva": 1959313.0123762037
+   "E": 29704438.851234242,
+   "reserva": 2238272.41828016
   },
   "1.2.2": {
-   "E": 7789397.823040256,
-   "reserva": 457687.4468752248
+   "E": 8869073.367303446,
+   "reserva": 522124.04656273354
   },
   "1.2.3": {
-   "E": 18048363.41421841,
-   "reserva": 1060481.125626436
+   "E": 20550017.205050275,
+   "reserva": 1209783.4458772654
   },
   "1.2.4": {
-   "E": 18520148.488976568,
-   "reserva": 1622763.0829699538
+   "E": 18590319.55866308,
+   "reserva": 1628095.0545741888
   },
   "1.2.5": {
-   "E": 239154.9688300854,
-   "reserva": 14052.20654767424
+   "E": 272303.843364534,
+   "reserva": 16030.579374415816
   },
   "1.3.1": {
-   "E": 6955646.934208545,
-   "reserva": 339299.12798085914
+   "E": 6969510.596812917,
+   "reserva": 342227.7767806639
   },
   "1.3.2": {
-   "E": 4788837.359798899,
-   "reserva": 226088.39670083558
+   "E": 4796289.88672478,
+   "reserva": 227685.44985515813
   },
   "1.3.3": {
-   "E": 962038.782990005,
-   "reserva": 149526.12477718302
+   "E": 963935.0701659552,
+   "reserva": 150156.301961284
   },
   "1.4.1": {
-   "E": 2990121.8333394956,
-   "reserva": 161058.8364874678
+   "E": 2990867.620740062,
+   "reserva": 161359.39250209896
   },
   "1.4.2": {
-   "E": 242855.5858167045,
-   "reserva": 37746.14419888903
+   "E": 243010.92088063475,
+   "reserva": 37854.853864130164
   },
   "1.5.1": {
-   "E": 30365535.337212294,
-   "reserva": 3009433.062626404
+   "E": 30392408.148257975,
+   "reserva": 3018749.343470863
   },
   "1.5.2": {
-   "E": 3600387.8587746117,
-   "reserva": 356823.1595507817
+   "E": 3603574.1204869635,
+   "reserva": 357927.7745054938
   },
   "1.5.3": {
-   "E": 2791846.4000048363,
-   "reserva": 166461.83890578485
+   "E": 2820529.32029061,
+   "reserva": 172267.72455180975
   },
   "1.6.1": {
-   "E": 4618911.94114701,
-   "reserva": 715889.5073587461
+   "E": 4621555.782671132,
+   "reserva": 717358.4243906296
   },
   "1.6.2": {
-   "E": 243100.6284814216,
-   "reserva": 37678.39512414454
+   "E": 243239.7780353228,
+   "reserva": 37755.70654687525
   },
   "1.7.1": {
-   "E": 3333903.101844301,
-   "reserva": 285096.5346949496
+   "E": 4594019.95432629,
+   "reserva": 463665.2448701571
   },
   "1.7.2": {
-   "E": 645540.2888081039,
-   "reserva": 55202.95393209134
-  },
-  "1.7.3": {
-   "E": 1070731.0089779028,
-   "reserva": 170149.7443135204
-  },
-  "1.7.4": {
-   "E": 81213.13042147766,
-   "reserva": 6944.887523000835
+   "E": 833483.5264021658,
+   "reserva": 84121.8251567599
   },
   "2.1": {
-   "E": 702258.7507659253,
-   "reserva": 171362.99727614934
+   "E": 701676.8700439567,
+   "reserva": 171362.16920334494
   },
   "2.2.1": {
-   "E": 1291145.148161617,
-   "reserva": 216167.68302188176
+   "E": 1289332.3129506267,
+   "reserva": 215975.13561812692
   },
   "2.2.2": {
-   "E": 29628.719661451167,
-   "reserva": 4263.860634833852
+   "E": 29639.41945813118,
+   "reserva": 4270.222322196081
   },
   "2.3.1": {
-   "E": 181066.49349617757,
-   "reserva": 23656.74801442546
+   "E": 181529.80430565772,
+   "reserva": 23773.357032308304
   },
   "2.3.2": {
-   "E": 77599.9257840761,
-   "reserva": 10138.606291896625
+   "E": 77798.4875595676,
+   "reserva": 10188.581585274987
   },
   "2.4": {
-   "E": 222801.82731829665,
-   "reserva": 34458.70243789902
+   "E": 222626.38658435814,
+   "reserva": 34455.089771891726
   },
   "2.5": {
-   "E": 177291.78784935953,
-   "reserva": 13668.923561485637
+   "E": 177332.74514717876,
+   "reserva": 13688.152410555147
   },
   "2.6.1": {
-   "E": 18116.640194237556,
-   "reserva": 2094.4029193819592
+   "E": 18128.481277466373,
+   "reserva": 2098.472036694129
   },
   "2.6.2": {
-   "E": 3197.0541519242747,
-   "reserva": 369.6005151850516
+   "E": 3199.143754847007,
+   "reserva": 370.31859471072863
   },
   "2.7": {
-   "E": 159964.0406967142,
-   "reserva": 24898.997150377018
+   "E": 160022.2483888673,
+   "reserva": 24935.81311049147
   },
   "2.8": {
-   "E": 160070.77156396097,
-   "reserva": 24921.782911286282
+   "E": 160119.30998516918,
+   "reserva": 24956.556420677345
   },
   "2.9": {
-   "E": 33465.19794871046,
-   "reserva": 5347.42935434802
+   "E": 33406.25082229303,
+   "reserva": 5339.8772036487035
   },
   "3.1.1": {
-   "E": 2272860.425858554,
-   "reserva": 114320.26255568875
+   "E": 3703701.628678782,
+   "reserva": 156057.6353784754
   },
   "3.5.2": {
-   "E": 164224.31360484252,
-   "reserva": 13172.153815223839
+   "E": 164651.26157829826,
+   "reserva": 13249.70887502249
   },
   "3.5.3": {
-   "E": 151977.33664960464,
-   "reserva": 8375.889223646474
+   "E": 154845.47179500785,
+   "reserva": 8713.322004928317
   },
   "3.5.4": {
-   "E": 54741.43786828084,
-   "reserva": 4390.717938407946
+   "E": 54883.753859432756,
+   "reserva": 4416.569625007497
   }
  },
  "uep": [
@@ -233,122 +224,354 @@
    "puesto": "Coordinador del Programa",
    "O": 6000,
    "M": 7042,
-   "P": 8098
+   "P": 8098,
+   "inicio": "2026-04-16",
+   "meses": 47.04722792607803
   },
   {
    "puesto": "Coordinador general de obra",
    "O": 4000,
    "M": 6733,
-   "P": 7743
+   "P": 7743,
+   "inicio": "2026-04-16",
+   "meses": 47.04722792607803
   },
   {
    "puesto": "Especialista de adquisiciones",
    "O": 3300,
    "M": 5509,
-   "P": 6335
+   "P": 6335,
+   "inicio": "2026-04-23",
+   "meses": 46.81724845995893
   },
   {
    "puesto": "Especialista financiero",
    "O": 3000,
    "M": 4550,
-   "P": 5233
+   "P": 5233,
+   "inicio": "2026-05-04",
+   "meses": 46.455852156057496
   },
   {
    "puesto": "Especialista de planificación y monitoreo",
    "O": 3000,
    "M": 4550,
-   "P": 5233
+   "P": 5233,
+   "inicio": "2026-04-16",
+   "meses": 47.04722792607803
   },
   {
-   "puesto": "Especialista técnico aeroportuario",
+   "puesto": "Especialista en ingeniería aeroportuaria",
    "O": 3000,
    "M": 5417,
-   "P": 6229
+   "P": 6229,
+   "inicio": "2026-05-04",
+   "meses": 46.455852156057496
   },
   {
    "puesto": "Especialista socioambiental",
    "O": 3200,
    "M": 4333,
-   "P": 4983
+   "P": 4983,
+   "inicio": "2026-05-04",
+   "meses": 46.455852156057496
   },
   {
    "puesto": "Técnico en apoyo administrativo (ROP 3.1.2)",
    "O": 1200,
    "M": 1500,
-   "P": 2000
+   "P": 2000,
+   "inicio": "2026-09-15",
+   "meses": 42.053388090349074
   }
  ],
+ "plantilla": [
+  {
+   "lote": 1,
+   "proceso": "P00011",
+   "puesto": "Administrador 1 de Proyectos",
+   "monto_pa": 220350.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 4299.296875,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00013",
+   "puesto": "Especialista Legal",
+   "monto_pa": 114833.33,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 2240.538129407051,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00015",
+   "puesto": "Ordenanza / Mensajero",
+   "monto_pa": 40191.67,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 784.1884330929487,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00016",
+   "puesto": "Analista en Adquisiciones",
+   "monto_pa": 86125.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1680.4036458333333,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00017",
+   "puesto": "Analista Financiero",
+   "monto_pa": 86125.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1680.4036458333333,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00018",
+   "puesto": "Técnico en Planificación y Monitoreo",
+   "monto_pa": 78000.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1521.875,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00029",
+   "puesto": "Ingeniero Estructurista",
+   "monto_pa": 85800.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1674.0625,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00030",
+   "puesto": "Ingeniero Electricista",
+   "monto_pa": 85800.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1674.0625,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00031",
+   "puesto": "Ingeniero Hidráulico",
+   "monto_pa": 85800.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1674.0625,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 1,
+   "proceso": "P00032",
+   "puesto": "Especialista en Seguridad Industrial y Salud Ocupacional",
+   "monto_pa": 97500.0,
+   "firma_pa": "2026-09-07",
+   "firma_modelo": "2026-10-15",
+   "mensual": 1902.34375,
+   "meses": 41.06776180698152
+  },
+  {
+   "lote": 2,
+   "proceso": "P00040",
+   "puesto": "Pavimentos Aeroportuarios",
+   "monto_pa": 65000.0,
+   "firma_pa": "2026-10-01",
+   "firma_modelo": "2026-11-05",
+   "mensual": 1288.0452473958333,
+   "meses": 40.37782340862423
+  },
+  {
+   "lote": 3,
+   "proceso": "P00033",
+   "puesto": "Analista Social",
+   "monto_pa": 46800.0,
+   "firma_pa": "2026-10-15",
+   "firma_modelo": "2026-11-17",
+   "mensual": 935.9231274638634,
+   "meses": 39.983572895277206
+  },
+  {
+   "lote": 4,
+   "proceso": "P00012",
+   "puesto": "Analista Técnico 1",
+   "monto_pa": 61750.0,
+   "firma_pa": "2027-02-09",
+   "firma_modelo": "2027-03-17",
+   "mensual": 1337.7335409252669,
+   "meses": 36.04106776180698
+  },
+  {
+   "lote": 4,
+   "proceso": "P00020",
+   "puesto": "Gestor Documental",
+   "monto_pa": 52000.0,
+   "firma_pa": "2027-02-01",
+   "firma_modelo": "2027-03-17",
+   "mensual": 1120.134465675867,
+   "meses": 36.04106776180698
+  },
+  {
+   "lote": 4,
+   "proceso": "P00039",
+   "puesto": "Arquitecto",
+   "monto_pa": 85800.0,
+   "firma_pa": "2027-02-09",
+   "firma_modelo": "2027-03-17",
+   "mensual": 1858.7455516014234,
+   "meses": 36.04106776180698
+  },
+  {
+   "lote": 5,
+   "proceso": "P00034",
+   "puesto": "Administrador 2 de Proyectos",
+   "monto_pa": 156000.0,
+   "firma_pa": "2027-04-16",
+   "firma_modelo": "2027-05-24",
+   "mensual": 3546.116504854369,
+   "meses": 33.80698151950719
+  },
+  {
+   "lote": 5,
+   "proceso": "P00035",
+   "puesto": "Analista Técnico 2",
+   "monto_pa": 58500.0,
+   "firma_pa": "2027-04-16",
+   "firma_modelo": "2027-05-24",
+   "mensual": 1329.7936893203885,
+   "meses": 33.80698151950719
+  },
+  {
+   "lote": 5,
+   "proceso": "P00036",
+   "puesto": "Administrador 3 de Proyectos",
+   "monto_pa": 156000.0,
+   "firma_pa": "2027-04-16",
+   "firma_modelo": "2027-05-24",
+   "mensual": 3546.116504854369,
+   "meses": 33.80698151950719
+  },
+  {
+   "lote": 5,
+   "proceso": "P00037",
+   "puesto": "Analista Técnico 3",
+   "monto_pa": 58500.0,
+   "firma_pa": "2027-04-16",
+   "firma_modelo": "2027-05-24",
+   "mensual": 1329.7936893203885,
+   "meses": 33.80698151950719
+  },
+  {
+   "lote": 5,
+   "proceso": "P00038",
+   "puesto": "Ingeniero Mecánico",
+   "monto_pa": 85800.0,
+   "firma_pa": "2027-04-16",
+   "firma_modelo": "2027-05-24",
+   "mensual": 1950.364077669903,
+   "meses": 33.80698151950719
+  },
+  {
+   "lote": 6,
+   "proceso": "P00041",
+   "puesto": "Administrador 4 de Proyectos",
+   "monto_pa": 113750.0,
+   "firma_pa": "2027-09-23",
+   "firma_modelo": "2027-10-29",
+   "mensual": 2936.6120653095845,
+   "meses": 28.61601642710472
+  }
+ ],
+ "uep_periodo": {
+  "inicio": "2026-04-16",
+  "fin": "2030-03-18"
+ },
  "sin_escalamiento": {
-  "total_E": 128391932.83351156,
-  "contingencia": 9330128.795641089,
-  "linea_base": 137722061.62915266,
+  "total_E": 136711909.14877722,
+  "contingencia": 9766314.69373303,
+  "linea_base": 146478223.84251025,
   "por_grupo": {
-   "Terminal": 68869817.68842554,
-   "Lado aire": 15304896.20388015,
-   "Estacionamiento": 37161794.024491325,
-   "SSEI": 5149567.6835403405,
-   "Supervisión": 4064285.064719606,
-   "Gestión socioambiental": 1144025.7909884737,
-   "Componente II": 3404730.5766486977,
-   "Componente III": 2622944.596458513
+   "Terminal": 75960197.10092485,
+   "Lado aire": 15304938.367593478,
+   "Estacionamiento": 37161979.79223482,
+   "SSEI": 5149608.616824878,
+   "Supervisión": 4295059.968365892,
+   "Gestión socioambiental": 1208989.367112994,
+   "Componente II": 3404761.881457614,
+   "Componente III": 3992688.747995729
   }
  },
  "sensibilidad": [
   {
    "supuesto": "Precios unitarios de las obras",
    "cambio": "+10%",
-   "estimacion": 151087399.0782871,
-   "diferencia": 12024343.11643368,
-   "presupuesto": 171738332.89187676
+   "estimacion": 160869702.75438997,
+   "diferencia": 12678231.626789957,
+   "presupuesto": 182681441.15194833
   },
   {
    "supuesto": "Precios unitarios de las obras",
    "cambio": "−10%",
-   "estimacion": 127038712.84541972,
-   "diferencia": -12024343.116433695,
-   "presupuesto": 144453331.72531262
+   "estimacion": 135513239.5008101,
+   "diferencia": -12678231.626789927,
+   "presupuesto": 153931740.6459505
   },
   {
    "supuesto": "Escalamiento de obras más probable",
    "cambio": "5.5% anual",
-   "estimacion": 145448286.76021013,
-   "diferencia": 6385230.798356712,
-   "presupuesto": 164819148.17351344
+   "estimacion": 155036971.84207842,
+   "diferencia": 6845500.714478403,
+   "presupuesto": 175514476.18318245
   },
   {
    "supuesto": "Escalamiento de obras más probable",
    "cambio": "1.25% anual",
-   "estimacion": 136189805.67681774,
-   "diferencia": -2873250.28503567,
-   "presupuesto": 155068795.69421086
+   "estimacion": 145113039.2042631,
+   "diferencia": -3078431.923336923,
+   "presupuesto": 165063337.47828996
   },
   {
    "supuesto": "Costo más probable de la terminal",
    "cambio": "US$2,900/m²",
-   "estimacion": 147977503.15983534,
-   "diferencia": 8914447.197981924,
-   "presupuesto": 167482755.23655978
+   "estimacion": 158340872.93147758,
+   "diferencia": 10149401.803877562,
+   "presupuesto": 178993926.82227588
   },
   {
    "supuesto": "Estacionamiento más probable",
    "cambio": "US$31,318 por plaza (estimado del Plan de Adquisiciones 2026)",
-   "estimacion": 164770826.3899404,
-   "diferencia": 25707770.428086996,
-   "presupuesto": 185168634.97226995
+   "estimacion": 173917313.90207607,
+   "diferencia": 25725842.77447605,
+   "presupuesto": 195398212.22472095
   },
   {
    "supuesto": "Estacionamiento más probable",
    "cambio": "US$22,497 por plaza (diseño de CEPA 2022)",
-   "estimacion": 155895941.11625963,
-   "diferencia": 16832885.15440622,
-   "presupuesto": 175822002.63562348
+   "estimacion": 165036189.65869242,
+   "diferencia": 16844718.531092405,
+   "presupuesto": 186045039.5301881
   },
   {
    "supuesto": "Supervisión más probable",
    "cambio": "5% (Plan de Adquisiciones 2026)",
-   "estimacion": 140772806.07598978,
-   "diferencia": 1709750.114136368,
-   "presupuesto": 159889915.94329116
+   "estimacion": 149999885.44854245,
+   "diferencia": 1808414.3209424317,
+   "presupuesto": 170204130.3825035
   }
  ],
  "fuentes": {
@@ -376,7 +599,8 @@
   "CASALCO": "CASALCO, precios promedio de materiales y mano de obra, Área Metropolitana de San Salvador, 2019 a 2025 (concreto 210 US$135.35/m³, hierro, cemento, bloque, mezcla asfáltica US$97.34/t, obrero calificado US$17.41/día con prestaciones en dic-2025); El Mundo, 27-08-2026, alzas del primer semestre de 2026. https://www.casalco.org.sv/precios-promedio-materiales ; https://diario.elmundo.sv/economia/asfalto-cemento-bloques-y-otros-materiales-de-construccion-reportan-incrementos-entre-en-primer-semestre-del-ano",
   "CEPA2026": "BID, Anuncio Específico de Adquisiciones IDB-6073OCES-P00001-SPN, 04-sep-2026: LPI de obras del edificio de estacionamiento (ofertas el 16-oct-2026); El Mundo, 07-09-2026: 4 niveles y 2,050 plazas, con US$29,662,050 en el presupuesto de 2026 (primer tramo, no el costo total). https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-93 ; https://diario.elmundo.sv/economia/cepa-licita-construccion-de-nuevo-edificio-de-estacionamiento-en-el-aeropuerto",
   "SEICR": "Delfino.cr, 12-11-2021: estación SEI del aeropuerto Juan Santamaría (Costa Rica), más de US$9 M por 2,630 m², 7 bahías. https://delfino.cr/2021/11/aeropuerto-internacional-juan-santamaria-estrena-nueva-estacion-de-bomberos",
-  "PA2026": "BID, Plan de Adquisiciones ES-L1173 2026-2 (15-jul-2026) y PEP/POA/PA (EER#3, nov-2025): contratos de los 7 consultores de la UEP (US$52,000 a 84,500 al año, abril a mayo de 2026), métodos y montos estimados de cada proceso, y plantilla de 19 plazas de la UEP en el PEP. https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-69 ; https://www.iadb.org/es/viewer/EZIDB0003440-654689410-14",
+  "PA2026": "BID, Plan de Adquisiciones ES-L1173 2026-2 (15-jul-2026): contratos de los 7 consultores de la UEP (US$52,000 a 84,500 al año, abril a mayo de 2026), métodos y montos estimados de cada proceso, y los 21 procesos 3CV de la plantilla ampliada de la UEP (P00011 a P00041, US$1.92 M, firmas estimadas de septiembre de 2026 a septiembre de 2027). https://www.iadb.org/es/viewer/EZIDB0003440-1039777545-69",
+  "PEP": "BID, PEP/POA/PA (EER#3, nov-2025), hojas Payments y Payments Flow Output: plantilla de 19 plazas de la UEP (US$4.07 M) y pagos estimados por semestre. https://www.iadb.org/es/viewer/EZIDB0003440-654689410-14",
   "SUPSV": "Contratos de supervisión en El Salvador (Portal de Transparencia): bandas de equipaje del AIES, US$1,131,905 por una obra de US$46,074,937 (Reg. 211014 y 211000, 2025); maternidad El Nido de MINSAL (Reg. 220102 y 214699); CENT (Reg. 199367 y 202701); pavimentos del AIES 2024-2025 (Reg. 205607, 215641 y 214286). Arancel del CFIA de Costa Rica (inspección 3 %, dirección técnica 5 %). https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjExMDE0&inst=211014 ; https://cfia.or.cr/site/wp-content/uploads/2024/pdf/descargas/reglamentos/ejercicio/arancel-de-servicios-profesionales-de-consultoria-para-edificaciones.pdf",
   "TARSV": "Honorarios en El Salvador: UEP de ES-L1155 (US$3,000 a 3,900 al mes, Plan de Adquisiciones 5620/OC-ES 2026), coordinador de ES-L1151 (US$7,000), consultores de las CT ES-T1289, ES-T1314 y ES-T1315 (US$3,750 a 10,500), tarifas horarias de PwC en la auditoría de ES-L1155 (Reg. 214521). Multiplicador: cargas patronales salvadoreñas (ISSS 7.5 %, AFP 8.75 %, INCAF 1 %, aguinaldo y vacaciones) y estructura del arancel del CFIA (gastos generales y utilidad). https://www.iadb.org/document.cfm?id=EZIDB0000251-1515765089-1993 ; https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjE0NTIx&inst=214521",
   "AUDSV": "Auditorías en El Salvador: PwC para ES-L1155, US$140,541 por 3 ejercicios con IVA (Reg. 214521, 2025); Cornejo & Umaña para CEPA (CAF), US$87,575 por 2 auditorías (Reg. 214288, 2025); presupuesto de auditoría de ES-L1151, US$400,000 a 5 años. https://www.transparencia.gob.sv/mostrarDocContratacionesDescarga.php?id=MjE0Mjg4&inst=214288 ; https://www.iadb.org/document.cfm?id=EZSHARE-1501734583-48",
@@ -418,6 +642,11 @@
    "1.2.3": 0.3975331160245819,
    "1.2.4": 0.014477057884249276,
    "1.2.5": 0.005267625534229233
-  }
+  },
+  "plantilla_OP": [
+   0.85,
+   1.15
+  ],
+  "horizonte_pa": "2030-12-15"
  }
 }
