@@ -1,55 +1,55 @@
-﻿code,name,dur,deps,start,finish,float,critical,budget,base,contingency,profile
-1.1.1,Diseños de la terminal revisados y aprobados,90,3.1.1,2026-04-13,2026-08-14,15,,0.00000000,0.00000000,0.00000000,operations
-1.1.2,Diseños de plataformas y calle Foxtrot revisados y aprobados,100,3.1.1,2026-04-13,2026-08-28,5,,0.00000000,0.00000000,0.00000000,operations
-1.1.3,Diseños del estacionamiento y del sistema solar revisados y aprobados,105,3.1.1,2026-04-13,2026-09-04,0,si,0.00000000,0.00000000,0.00000000,operations
-1.1.4,Diseños del SSEI revisados y aprobados,70,3.1.1,2026-04-13,2026-07-17,35,,0.00000000,0.00000000,0.00000000,operations
-1.2.1,Estructura y envolvente de la terminal construidas,330,"3.4.1,3.4.2,1.1.1,3.3.2",2027-06-07,2028-09-08,5,,28.11481736,26.13965798,1.97515938,civil
-1.2.2,"Salas de espera, circulación y áreas de apoyo terminadas",240,1.2.1:SS+150,2028-01-03,2028-12-01,25,,8.26460136,7.80369154,0.46090982,civil
-1.2.3,"Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas",250,1.2.1:SS+160,2028-01-17,2028-12-29,5,,19.14943007,18.08148256,1.06794751,civil
-1.2.4,"Puentes de abordaje, mobiliario y equipos instalados",130,"1.2.2,1.2.3",2029-01-01,2029-06-29,5,,20.72746548,18.99693596,1.73052951,equipment
-1.2.5,"Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados",135,1.2.2:SS+100,2028-05-22,2028-11-24,160,,0.25374497,0.23959382,0.01415114,civil
-1.3.1,Plataforma de posiciones de contacto construida,250,"1.1.2,3.3.2,3.4.1,3.4.2",2027-06-07,2028-05-19,195,,7.27663020,6.93994631,0.33668390,civil
-1.3.2,Plataforma de posiciones remotas construida,220,"1.6.2,1.1.2,3.3.2,3.4.1,3.4.2",2028-04-17,2029-02-16,0,si,5.01142711,4.78568994,0.22573717,civil
-1.3.3,"Señalización, luces y torres de iluminación de plataforma instaladas",110,"1.3.1,1.3.2",2029-02-19,2029-07-20,0,si,1.10791139,0.95930187,0.14860952,equipment
-1.4.1,Pavimento y hombros de la calle Foxtrot construidos,220,"1.1.2,3.3.2,3.4.1,3.4.2",2027-06-07,2028-04-07,265,,3.08610859,2.93530227,0.15080632,civil
-1.4.2,Señalización y balizamiento de la calle Foxtrot instalados,70,1.4.1,2028-04-10,2028-07-14,265,,0.27570311,0.23872171,0.03698139,equipment
-1.5.1,Edificio de estacionamiento construido,370,"1.1.3,3.4.1,3.4.2",2027-06-07,2028-11-03,165,,33.94183027,30.82077746,3.12105281,civil
-1.5.2,"Sistemas de acceso, tráfico y áreas de alquiler instalados",140,1.5.1:SS+250,2028-05-22,2028-12-01,165,,4.02442283,3.65436511,0.37005772,equipment
-1.5.3,Sistema de generación solar instalado,160,1.5.1:SS+195,2028-03-06,2028-10-13,190,,3.01986618,2.84310819,0.17675800,equipment
-1.6.1,Edificio del SSEI y vías de acceso construidos,190,"1.1.4,3.3.2,3.4.1,3.4.2",2027-06-07,2028-02-25,0,si,5.35209025,4.63170703,0.72038322,civil
-1.6.2,SSEI en funcionamiento en la nueva ubicación,35,1.6.1,2028-02-28,2028-04-14,0,si,0.28168896,0.24377405,0.03791491,equipment
-1.7.1,Supervisión de la terminal y del estacionamiento ejecutada,540,"3.4.1,3.4.2",2027-06-07,2029-06-29,15,,3.65804718,3.36958731,0.28845987,operations
-1.7.2,"Supervisión de plataformas, calle Foxtrot y SSEI ejecutada",555,"3.4.1,3.4.2",2027-06-07,2029-07-20,0,si,0.69854340,0.64345889,0.05508451,operations
-1.7.3,PGAS de construcción implementado,555,"3.4.1,3.4.2,3.3.1",2027-06-07,2029-07-20,0,si,1.25154456,1.07977237,0.17177219,operations
-1.7.4,Planos de obra ejecutada y actas de recepción aprobados,90,"1.2.1,1.2.4,1.2.5,1.3.3,1.4.2,1.5.1,1.5.2,1.5.3,1.6.2,1.7.1,1.7.2,1.7.3",2029-07-23,2029-11-23,0,si,0.08891001,0.08189890,0.00701111,operations
-2.1,Plan estratégico del sistema aeronáutico aprobado,150,"3.4.3,3.2.1",2026-12-21,2027-07-16,360,,0.86598818,0.69619577,0.16979241,consulting
-2.2.1,Plan Maestro Aeroportuario actualizado y aprobado,210,"3.4.3,2.1",2027-07-19,2028-05-05,360,,1.50928418,1.29256573,0.21671846,consulting
-2.2.2,"Funcionarios capacitados en planificación, gestión y operación",45,2.2.1,2028-05-08,2028-07-07,360,,0.03393372,0.02965905,0.00427467,consulting
-2.3.1,Estrategia BIM aprobada,95,3.4.3,2026-12-21,2027-04-30,605,,0.20351142,0.18003659,0.02347483,consulting
-2.3.2,Personal de ingeniería capacitado en BIM,65,2.3.1,2027-05-03,2027-07-30,605,,0.08721918,0.07715854,0.01006064,consulting
-2.4,Estudio de conectividad terrestre entregado,160,3.4.3,2026-12-21,2027-07-30,605,,0.25508056,0.22097352,0.03410705,consulting
-2.5,Estudio de diversificación de destinos entregado,160,3.4.3,2026-12-21,2027-07-30,605,,0.19004190,0.17647472,0.01356718,consulting
-2.6.1,Auditoría para la certificación EDGE realizada,100,"1.2.4,1.2.5,1.5.1,1.5.3",2029-07-02,2029-11-16,5,,0.02082725,0.01864087,0.00218638,consulting
-2.6.2,Personal capacitado en certificación EDGE,50,2.6.1:SS,2029-07-02,2029-09-07,55,,0.00367540,0.00328957,0.00038583,consulting
-2.7,Estudio de separación de flujos entregado,160,3.4.3,2026-12-21,2027-07-30,605,,0.18424367,0.15943149,0.02481218,consulting
-2.8,Estudio de movilidad interna entregado,135,3.4.3,2026-12-21,2027-06-25,630,,0.18404437,0.15926726,0.02477711,consulting
-2.9,Programa de igualdad e inclusión ejecutado,150,3.4.3,2026-12-21,2027-07-16,615,,0.03778539,0.03261595,0.00516944,consulting
-3.1.1,Unidad ejecutora conformada y en funciones,50,,2026-02-02,2026-04-10,0,si,2.34270056,2.23054783,0.11215274,operations
-3.1.2,Reglamento operativo vigente,35,3.3.1,2026-06-15,2026-07-31,25,,0.00000000,0.00000000,0.00000000,operations
-3.1.3,Convenio de transferencia de recursos vigente,25,3.1.2,2026-08-03,2026-09-04,85,,0.00000000,0.00000000,0.00000000,operations
-3.1.4,Cuenta especial aperturada,15,3.1.3,2026-09-07,2026-09-25,85,,0.00000000,0.00000000,0.00000000,operations
-3.2.1,Plan de ejecución plurianual aprobado,35,3.1.1,2026-04-13,2026-05-29,35,,0.00000000,0.00000000,0.00000000,operations
-3.2.2,Planes operativos anuales aprobados,910,3.2.1,2026-06-01,2029-11-23,85,,0.00000000,0.00000000,0.00000000,operations
-3.2.3,Plan de adquisiciones aprobado,35,3.2.1,2026-06-01,2026-07-17,35,,0.00000000,0.00000000,0.00000000,operations
-3.3.1,Sistema de gestión ambiental y social y plan de acción vigentes,45,3.1.1,2026-04-13,2026-06-12,25,,0.00000000,0.00000000,0.00000000,operations
-3.3.2,Protocolo de seguridad operacional aprobado por la AAC,45,"1.1.2,3.3.1",2026-08-31,2026-10-30,155,,0.00000000,0.00000000,0.00000000,operations
-3.3.3,Mecanismo de quejas y reclamos en operación,810,3.3.1,2026-06-15,2029-07-20,90,,0.00000000,0.00000000,0.00000000,operations
-3.3.4,Informes de cumplimiento socioambiental presentados,555,"3.4.1,3.4.2,3.3.1",2027-06-07,2029-07-20,90,,0.00000000,0.00000000,0.00000000,operations
-3.4.1,Contratos de obras del Componente I firmados,195,"1.1.1,1.1.2,1.1.3,1.1.4,3.2.3,3.1.2",2026-09-07,2027-06-04,0,si,0.00000000,0.00000000,0.00000000,operations
-3.4.2,Contrato de supervisión firmado,85,"3.2.3,3.3.1,3.1.2",2026-08-03,2026-11-27,135,,0.00000000,0.00000000,0.00000000,operations
-3.4.3,Contratos de consultorías del Componente II firmados,100,"3.2.3,3.1.2",2026-08-03,2026-12-18,360,,0.00000000,0.00000000,0.00000000,operations
-3.4.4,"Contratos de la unidad ejecutora, evaluación y auditoría firmados",815,3.1.1,2026-04-13,2029-05-25,130,,0.00000000,0.00000000,0.00000000,operations
-3.5.1,Desembolsos justificados e informes financieros presentados,825,3.1.4,2026-09-28,2029-11-23,85,,0.00000000,0.00000000,0.00000000,operations
-3.5.2,Auditorías externas emitidas,825,3.1.4,2026-09-28,2029-11-23,85,,0.17820894,0.16491751,0.01329143,audit
-3.5.3,Evaluaciones de medio término y de cierre realizadas,560,3.4.1,2027-06-07,2029-07-27,170,,0.16031390,0.15193391,0.00837999,operations
-3.5.4,Informe de terminación y cierre administrativo del programa,85,"1.7.4,2.2.2,2.3.2,2.4,2.5,2.6.1,2.6.2,2.7,2.8,2.9,3.3.3,3.3.4,3.4.4",2029-11-26,2030-03-22,0,si,0.05940298,0.05497250,0.00443048,consulting
+﻿code,name,activities,dur,deps,start,finish,float,critical,budget,base,contingency,profile
+1.1.1,Diseños de la terminal revisados y aprobados,5,96,"1.2.5,3.1.1",2026-05-18,2026-09-28,41,,0.00000000,0.00000000,0.00000000,operations
+1.1.2,Diseños de plataformas y calle Foxtrot revisados y aprobados,6,127,"1.1.1,3.1.1",2026-05-18,2026-11-10,82,,0.00000000,0.00000000,0.00000000,operations
+1.1.3,Diseños del estacionamiento y del sistema solar revisados y aprobados,5,71,3.1.1,2026-05-18,2026-08-24,161,,0.00000000,0.00000000,0.00000000,operations
+1.1.4,Diseños del SSEI revisados y aprobados,5,70,"1.1.3,3.1.1",2026-07-01,2026-10-06,161,,0.00000000,0.00000000,0.00000000,operations
+1.2.1,Estructura y envolvente de la terminal construidas,5,278,"1.1.1,1.7.1,1.7.3,3.3.1,3.3.2,3.4.1,3.4.2",2027-05-27,2028-06-19,32,,28.03422422,26.07491120,1.95931301,civil
+1.2.2,"Salas de espera, circulación y áreas de apoyo terminadas",3,162,1.2.1,2028-03-10,2028-10-23,32,,8.24708527,7.78939782,0.45768745,civil
+1.2.3,"Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas",4,192,"1.2.1,1.2.2",2028-02-25,2028-11-20,32,,19.10884454,18.04836341,1.06048113,civil
+1.2.4,"Puentes de abordaje, mobiliario y equipos instalados",6,411,"1.2.1,1.2.2,1.2.3,1.2.5,1.3.1",2027-08-20,2029-03-16,0,si,20.14291157,18.52014849,1.62276308,equipment
+1.2.5,"Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados",4,598,"1.1.1,1.2.2,1.2.3",2026-08-13,2028-11-27,41,,0.25320718,0.23915497,0.01405221,civil
+1.3.1,Plataforma de posiciones de contacto construida,6,319,"1.1.2,1.7.2,1.7.3,3.3.1,3.3.2,3.4.1,3.4.2",2027-08-11,2028-10-30,0,si,7.29494606,6.95564693,0.33929913,civil
+1.3.2,Plataforma de posiciones remotas construida,5,135,"1.3.1,1.6.2",2028-02-16,2028-08-22,187,,5.01492576,4.78883736,0.22608840,civil
+1.3.3,"Señalización, luces y torres de iluminación de plataforma instaladas",5,136,"1.3.1,1.3.2",2028-07-11,2029-01-16,118,,1.11156491,0.96203878,0.14952612,equipment
+1.4.1,Pavimento y hombros de la calle Foxtrot construidos,3,104,1.3.1,2028-04-05,2028-08-28,189,,3.15118067,2.99012183,0.16105884,civil
+1.4.2,Señalización y balizamiento de la calle Foxtrot instalados,4,54,1.4.1,2028-08-29,2028-11-10,189,,0.28060173,0.24285559,0.03774614,equipment
+1.5.1,Edificio de estacionamiento construido,6,296,"1.1.3,1.7.1,1.7.3,3.3.1,3.4.1,3.4.2",2027-02-16,2028-04-04,221,,33.37496840,30.36553534,3.00943306,civil
+1.5.2,"Sistemas de acceso, tráfico y áreas de alquiler instalados",3,77,1.5.1,2027-11-24,2028-03-09,336,,3.95721102,3.60038786,0.35682316,equipment
+1.5.3,Sistema de generación solar instalado,4,277,"1.5.1,1.5.2",2027-05-11,2028-05-31,303,,2.95830824,2.79184640,0.16646184,equipment
+1.6.1,Edificio del SSEI y vías de acceso construidos,5,137,"1.1.4,1.7.2,1.7.3,3.3.1,3.3.2,3.4.1,3.4.2",2027-06-18,2027-12-27,187,,5.33480145,4.61891194,0.71588951,civil
+1.6.2,SSEI en funcionamiento en la nueva ubicación,4,123,"1.6.1,1.7.4",2027-08-27,2028-02-15,187,,0.28077902,0.24310063,0.03767840,equipment
+1.7.1,Supervisión de la terminal y del estacionamiento ejecutada,6,647,"1.7.4,3.4.2",2027-02-04,2029-07-27,32,,3.61899964,3.33390310,0.28509653,operations
+1.7.2,"Supervisión de plataformas, calle Foxtrot y SSEI ejecutada",6,489,"1.7.4,3.4.2",2027-06-11,2029-04-25,4,,0.70074324,0.64554029,0.05520295,operations
+1.7.3,PGAS de construcción implementado,6,594,"1.7.4,3.3.1,3.4.1",2027-01-28,2029-05-08,0,si,1.24088075,1.07073101,0.17014974,operations
+1.7.4,Planos de obra ejecutada y actas de recepción aprobados,8,398,"1.2.4,1.3.3,1.4.2,1.5.3,1.6.1",2027-12-28,2029-07-05,75,,0.08815802,0.08121313,0.00694489,operations
+2.1,Plan estratégico del sistema aeronáutico aprobado,6,120,3.4.3,2027-05-26,2027-11-09,315,,0.87362175,0.70225875,0.17136300,consulting
+2.2.1,Plan Maestro Aeroportuario actualizado y aprobado,6,260,"2.1,2.4,3.4.3",2027-05-26,2028-05-23,311,,1.50731283,1.29114515,0.21616768,consulting
+2.2.2,"Funcionarios capacitados en planificación, gestión y operación",4,115,2.2.1,2028-03-02,2028-08-09,311,,0.03389258,0.02962872,0.00426386,consulting
+2.3.1,Estrategia BIM aprobada,6,88,3.4.3,2027-04-05,2027-08-04,518,,0.20472324,0.18106649,0.02365675,consulting
+2.3.2,Personal de ingeniería capacitado en BIM,4,65,2.3.1,2027-07-27,2027-10-25,518,,0.08773853,0.07759993,0.01013861,consulting
+2.4,Estudio de conectividad terrestre entregado,6,130,3.4.3,2027-05-26,2027-11-23,417,,0.25726053,0.22280183,0.03445870,consulting
+2.5,Estudio de diversificación de destinos entregado,6,124,3.4.3,2027-04-05,2027-09-23,540,,0.19096071,0.17729179,0.01366892,consulting
+2.6.1,Auditoría para la certificación EDGE realizada,6,568,"1.1.1,1.1.3,1.2.4,1.5.3,3.4.3",2027-04-05,2029-06-06,96,,0.02021104,0.01811664,0.00209440,consulting
+2.6.2,Personal capacitado en certificación EDGE,4,508,2.6.1,2027-06-23,2029-06-01,99,,0.00356665,0.00319705,0.00036960,consulting
+2.7,Estudio de separación de flujos entregado,6,88,"1.1.1,3.4.3",2027-04-05,2027-08-04,576,,0.18486304,0.15996404,0.02489900,consulting
+2.8,Estudio de movilidad interna entregado,6,103,"1.1.3,3.4.3",2027-04-05,2027-08-25,561,,0.18499255,0.16007077,0.02492178,consulting
+2.9,Programa de igualdad e inclusión ejecutado,6,603,3.4.3,2027-04-05,2029-07-25,61,,0.03881263,0.03346520,0.00534743,consulting
+3.1.1,Unidad ejecutora conformada y en funciones,5,22,3.4.4,2026-04-16,2026-05-15,41,,2.38718069,2.27286043,0.11432026,operations
+3.1.2,Reglamento operativo vigente,3,30,"3.1.1,3.3.1",2026-06-01,2026-07-10,92,,0.00000000,0.00000000,0.00000000,operations
+3.1.3,Convenio de transferencia de recursos vigente,3,35,3.1.1,2026-05-18,2026-07-03,676,,0.00000000,0.00000000,0.00000000,operations
+3.1.4,Cuenta especial aperturada,3,25,3.1.1,2026-04-30,2026-06-03,698,,0.00000000,0.00000000,0.00000000,operations
+3.2.1,Plan de ejecución plurianual aprobado,3,35,"3.1.1,3.2.3",2026-04-23,2026-06-10,538,,0.00000000,0.00000000,0.00000000,operations
+3.2.2,Planes operativos anuales aprobados,8,808,3.2.1,2026-11-02,2029-12-05,73,,0.00000000,0.00000000,0.00000000,operations
+3.2.3,Plan de adquisiciones aprobado,5,908,,2026-02-02,2029-07-25,50,,0.00000000,0.00000000,0.00000000,operations
+3.3.1,Sistema de gestión ambiental y social y plan de acción vigentes,6,169,"1.1.1,1.1.2,1.1.3,1.1.4,3.1.1,3.1.2",2026-05-11,2026-12-31,92,,0.00000000,0.00000000,0.00000000,operations
+3.3.2,Protocolo de seguridad operacional aprobado por la AAC,4,87,"1.1.2,3.3.1",2026-11-11,2027-03-11,86,,0.00000000,0.00000000,0.00000000,operations
+3.3.3,Mecanismo de quejas y reclamos en operación,3,695,3.3.1,2026-07-20,2029-03-16,261,,0.00000000,0.00000000,0.00000000,operations
+3.3.4,Informes de cumplimiento socioambiental presentados,3,789,"1.5.1,1.7.4,3.3.1",2026-07-20,2029-07-26,142,,0.00000000,0.00000000,0.00000000,operations
+3.4.1,Contratos de obras del Componente I firmados,24,283,"1.1.1,1.1.2,1.1.3,1.1.4,3.1.1,3.1.2,3.2.3,3.3.1",2026-06-23,2027-07-22,0,si,0.00000000,0.00000000,0.00000000,operations
+3.4.2,Contrato de supervisión firmado,24,321,"3.1.2,3.2.3,3.3.1",2026-05-06,2027-07-28,4,,0.00000000,0.00000000,0.00000000,operations
+3.4.3,Contratos de consultorías del Componente II firmados,50,147,"3.1.2,3.2.3",2026-11-02,2027-05-25,61,,0.00000000,0.00000000,0.00000000,operations
+3.4.4,"Contratos de la unidad ejecutora, evaluación y auditoría firmados",40,908,"1.2.4,3.1.1,3.1.2,3.2.3,3.5.3",2026-02-02,2029-07-25,0,si,0.00000000,0.00000000,0.00000000,operations
+3.5.1,Desembolsos justificados e informes financieros presentados,10,808,"3.1.1,3.1.2,3.1.3,3.1.4,3.3.1",2026-07-20,2029-08-22,142,,0.00000000,0.00000000,0.00000000,operations
+3.5.2,Auditorías externas emitidas,9,576,"3.1.4,3.4.4",2027-01-01,2029-03-16,194,,0.17739647,0.16422431,0.01317215,audit
+3.5.3,Evaluaciones de medio término y de cierre realizadas,5,534,"1.7.4,3.2.2,3.4.4",2027-11-01,2029-11-15,0,si,0.16035323,0.15197734,0.00837589,operations
+3.5.4,Informe de terminación y cierre administrativo del programa,6,178,"1.7.1,1.7.2,1.7.3,1.7.4,2.1,2.2.1,2.2.2,2.3.1,2.3.2,2.4,2.5,2.6.1,2.6.2,2.7,2.8,2.9,3.2.2,3.2.3,3.3.3,3.3.4,3.4.4,3.5.1,3.5.2,3.5.3",2029-07-26,2030-04-01,0,si,0.05913216,0.05474144,0.00439072,consulting

@@ -1,0 +1,585 @@
+﻿sucesora,predecesora,tipo,desfase,clase,justificacion
+1.1.1-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado para revisar
+1.1.1-02,1.1.1-01,FI,0,Obligatoria,Los ajustes responden a las observaciones de la revisión
+1.1.1-03,1.1.1-01,II,10,Discrecional,La revisión BIM arranca con la revisión técnica avanzada
+1.1.1-03,1.1.1-02,FF,0,Discrecional,La revisión BIM termina con los ajustes
+1.1.1-04,1.1.1-02,FI,0,Obligatoria,Se aprueba el diseño ya ajustado
+1.1.1-04,1.1.1-03,FI,0,Obligatoria,Se aprueba con el modelo BIM coordinado
+1.1.1-04,1.2.5-01,FI,0,Discrecional,Accesibilidad verificada antes de aprobar (EDT 1.2.5)
+1.1.1-04,1.2.5-02,FI,0,Discrecional,Metas EDGE verificadas antes de aprobar (EDT 1.2.5)
+1.1.1-05,1.1.1-04,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
+1.1.2-01,3.1.1-05,FI,0,Obligatoria,Servicio contratado por la UEP
+1.1.2-02,1.1.1-01,FI,0,Discrecional,Mismo especialista técnico: primero la terminal
+1.1.2-02,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.2-03,1.1.2-02,FI,0,Obligatoria,La AAC revisa la geometría ya revisada por CEPA
+1.1.2-04,1.1.2-01,FI,0,Obligatoria,El sondeo alimenta el diseño de pavimentos
+1.1.2-04,1.1.2-03,FI,0,Obligatoria,Se incorporan observaciones de la AAC
+1.1.2-05,1.1.2-04,FI,0,Obligatoria,Se aprueba el diseño ajustado
+1.1.2-06,1.1.2-05,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
+1.1.3-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.3-02,1.1.3-01,II,10,Discrecional,La revisión fotovoltaica arranca con la revisión técnica avanzada
+1.1.3-03,1.1.3-01,FI,0,Obligatoria,Los ajustes responden a las observaciones
+1.1.3-03,1.1.3-02,FI,0,Obligatoria,Los ajustes incluyen el sistema fotovoltaico
+1.1.3-04,1.1.3-03,FI,0,Obligatoria,Se aprueba el diseño ajustado
+1.1.3-05,1.1.3-04,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
+1.1.4-01,1.1.3-01,FI,0,Discrecional,Mismo especialista técnico: primero el estacionamiento
+1.1.4-01,3.1.1-05,FI,0,Obligatoria,El especialista técnico debe estar contratado
+1.1.4-02,1.1.4-01,FI,0,Obligatoria,La AAC valida el diseño ya revisado
+1.1.4-03,1.1.4-02,FI,0,Obligatoria,Se incorporan observaciones de la AAC
+1.1.4-04,1.1.4-03,FI,0,Obligatoria,Se aprueba el diseño ajustado
+1.1.4-05,1.1.4-04,FI,0,Obligatoria,El BID revisa lo aprobado por CEPA (ROP anexo 7.1)
+1.2.1-01,1.1.1-05,FI,0,Obligatoria,Diseño aprobado antes de construir
+1.2.1-01,1.7.1-01,II,5,Obligatoria,La supervisión debe estar movilizada antes de la orden de inicio
+1.2.1-01,1.7.3-02,FI,0,Obligatoria,PGAS de construcción aprobado antes de movilizar
+1.2.1-01,3.3.2-04,FI,0,Obligatoria,PP 4.6: protocolo aprobado antes de obras del lado aire
+1.2.1-01,3.4.1-12,FI,10,Obligatoria,"Garantías, anticipo y orden de inicio tras la firma"
+1.2.1-01,3.4.2-12,FI,0,Obligatoria,La firma de supervisión ocurre antes o junto con el inicio de su obra (EDT 3.4.2: firma en condiciones de iniciar con las obras)
+1.2.1-02,1.2.1-01,FI,0,Obligatoria,Se cimenta con el sitio movilizado
+1.2.1-03,1.2.1-02,II,40,Obligatoria,La estructura inicia al terminar las primeras zapatas
+1.2.1-04,1.2.1-03,II,95,Obligatoria,La cubierta se monta al completar la losa del nivel 2
+1.2.1-05,1.2.1-04,II,30,Obligatoria,Las fachadas inician con la cubierta montada en un frente
+1.2.2-01,1.2.1-04,II,40,Obligatoria,Las divisiones inician bajo cubierta
+1.2.2-02,1.2.1-05,II,30,Obligatoria,Acabados con la envolvente cerrada
+1.2.2-02,1.2.2-01,II,50,Discrecional,Los acabados siguen las divisiones por frentes
+1.2.2-03,1.2.2-02,FF,5,Obligatoria,La integración no termina antes que los acabados
+1.2.3-01,1.2.1-03,II,60,Obligatoria,Redes por nivel con la estructura de ese nivel terminada
+1.2.3-01,1.2.2-01,FF,10,Discrecional,Las redes terminan con las divisiones
+1.2.3-02,1.2.1-04,FI,0,Obligatoria,Equipos en cuartos técnicos y cubierta ya cubiertos
+1.2.3-02,1.2.3-01,II,40,Discrecional,Equipos tras avanzar las redes
+1.2.3-03,1.2.2-01,FF,20,Obligatoria,Se completan una vez cerrados los cielos
+1.2.3-03,1.2.3-01,II,50,Discrecional,Sistemas especiales tras avanzar las redes
+1.2.3-04,1.2.2-02,II,80,Obligatoria,Pruebas con los acabados avanzados
+1.2.3-04,1.2.3-02,FI,0,Obligatoria,Se prueba lo instalado
+1.2.3-04,1.2.3-03,FI,0,Obligatoria,Se prueba lo instalado
+1.2.4-01,1.2.1-01,FI,30,Obligatoria,Planos de taller con el contrato en marcha
+1.2.4-02,1.2.4-01,FI,0,Obligatoria,Se fabrica con planos aprobados
+1.2.4-03,1.2.1-05,FI,0,Obligatoria,Puentes conectados a una fachada terminada
+1.2.4-03,1.2.4-02,FI,0,Obligatoria,Se instala lo entregado
+1.2.4-03,1.3.1-05,FI,0,Obligatoria,Puentes sobre la plataforma de contacto pavimentada
+1.2.4-04,1.2.2-02,FF,25,Obligatoria,Los equipos se instalan al cierre de los acabados
+1.2.4-05,1.2.3-04,FI,0,Obligatoria,Equipos probados con las instalaciones en marcha
+1.2.4-05,1.2.4-03,FI,0,Obligatoria,Se prueba lo instalado
+1.2.4-05,1.2.4-04,FI,0,Obligatoria,Se prueba lo instalado
+1.2.4-06,1.2.2-03,FI,0,Obligatoria,La terminal debe estar conectada con la Etapa 1
+1.2.4-06,1.2.4-05,FI,0,Obligatoria,Las pruebas integradas siguen a las pruebas de equipos
+1.2.4-06,1.2.5-03,FI,0,Obligatoria,Accesibilidad verificada antes de operar
+1.2.4-06,1.2.5-04,FI,0,Obligatoria,Evidencias de eficiencia reunidas
+1.2.4-06,1.3.1-06,FI,0,Obligatoria,Servicios de la plataforma de contacto listos
+1.2.5-01,1.1.1-02,FI,0,Obligatoria,Se verifica el diseño ajustado
+1.2.5-02,1.1.1-02,FI,0,Obligatoria,Se verifica el diseño ajustado
+1.2.5-03,1.2.2-01,II,30,Discrecional,Verificación por frentes
+1.2.5-03,1.2.2-02,FF,10,Obligatoria,Se verifica al cierre de los acabados
+1.2.5-04,1.2.3-02,FI,0,Obligatoria,Se verifican los equipos ya instalados
+1.2.5-04,1.2.3-04,FF,5,Obligatoria,Se verifica con las instalaciones en marcha
+1.3.1-01,1.1.2-06,FI,0,Obligatoria,Diseño aprobado antes de construir
+1.3.1-01,1.7.2-01,II,5,Obligatoria,La supervisión debe estar movilizada antes de la orden de inicio
+1.3.1-01,1.7.3-04,FI,0,Obligatoria,PGAS de construcción aprobado antes de movilizar
+1.3.1-01,3.3.2-04,FI,0,Obligatoria,PP 4.6: protocolo aprobado antes de obras del lado aire
+1.3.1-01,3.4.1-24,FI,10,Obligatoria,"Garantías, anticipo y orden de inicio tras la firma"
+1.3.1-01,3.4.2-24,FI,0,Obligatoria,La firma de supervisión ocurre antes o junto con el inicio de su obra (EDT 3.4.2: firma en condiciones de iniciar con las obras)
+1.3.1-02,1.3.1-01,FI,0,Obligatoria,Obra tras movilizar
+1.3.1-03,1.3.1-02,FI,0,Obligatoria,Pavimento sobre la base terminada
+1.3.1-04,1.3.1-03,FI,5,Obligatoria,Fase 2 solo cuando la fase 1 reabre a las aeronaves
+1.3.1-05,1.3.1-04,FI,0,Obligatoria,Pavimento sobre la base terminada
+1.3.1-06,1.3.1-05,FF,5,Obligatoria,Los servicios no terminan antes que el pavimento
+1.3.2-01,1.3.1-01,FI,0,Obligatoria,Contratista ya movilizado
+1.3.2-01,1.6.2-04,FI,0,Obligatoria,PP 4.6: SSEI reubicado y operando antes de obras en la plataforma remota
+1.3.2-02,1.3.2-01,FI,0,Obligatoria,Terracería sobre la huella despejada
+1.3.2-03,1.3.2-02,II,20,Discrecional,Drenaje en paralelo con la terracería
+1.3.2-04,1.3.2-02,FI,0,Obligatoria,Pavimento sobre la base terminada
+1.3.2-04,1.3.2-03,FI,0,Obligatoria,Pavimento con el drenaje terminado
+1.3.2-05,1.3.2-04,FF,5,Obligatoria,Los márgenes no terminan antes que el concreto
+1.3.3-01,1.3.1-05,FF,20,Obligatoria,Las luces terminan tras el pavimento de la fase 2
+1.3.3-02,1.3.2-04,FF,10,Obligatoria,Las luces terminan tras el pavimento
+1.3.3-03,1.3.1-05,FI,25,Obligatoria,Curado del concreto de 28 días antes de pintar
+1.3.3-03,1.3.2-05,FI,0,Obligatoria,La pintura va tras el pavimento
+1.3.3-04,1.3.3-01,FI,0,Obligatoria,Se prueba lo instalado
+1.3.3-04,1.3.3-02,FI,0,Obligatoria,Se prueba lo instalado
+1.3.3-04,1.3.3-03,FI,0,Obligatoria,Se prueba lo instalado
+1.3.3-05,1.3.3-04,FI,0,Obligatoria,La AAC autoriza lo probado
+1.4.1-01,1.3.1-01,FI,0,Obligatoria,Mismo contratista ya movilizado
+1.4.1-01,1.3.1-03,FI,0,Discrecional,Un segundo frente solo tras reabrir la fase 1 de la plataforma
+1.4.1-02,1.4.1-01,FI,0,Obligatoria,Pavimento sobre la base terminada
+1.4.1-03,1.4.1-02,II,20,Discrecional,Intersección con Alfa al avanzar el pavimento
+1.4.2-01,1.4.1-02,II,10,Discrecional,Ductos y luces al avanzar el pavimento
+1.4.2-01,1.4.1-03,FI,0,Obligatoria,Luces de la intersección tras construirla
+1.4.2-02,1.4.1-03,FI,0,Obligatoria,La pintura va tras el pavimento
+1.4.2-03,1.4.2-01,FI,0,Obligatoria,Se prueba lo instalado
+1.4.2-03,1.4.2-02,FI,0,Obligatoria,Se prueba lo instalado
+1.4.2-04,1.4.2-03,FI,0,Obligatoria,La AAC autoriza lo probado
+1.5.1-01,1.1.3-05,FI,0,Obligatoria,Diseño aprobado antes de construir
+1.5.1-01,1.7.1-03,II,5,Obligatoria,La supervisión debe estar movilizada antes de la orden de inicio
+1.5.1-01,1.7.3-01,FI,0,Obligatoria,PGAS de construcción aprobado antes de movilizar
+1.5.1-01,3.4.1-06,FI,10,Obligatoria,"Garantías, anticipo y orden de inicio tras la firma"
+1.5.1-01,3.4.2-06,FI,0,Obligatoria,La firma de supervisión ocurre antes o junto con el inicio de su obra (EDT 3.4.2: firma en condiciones de iniciar con las obras)
+1.5.1-02,1.5.1-01,FI,0,Obligatoria,Se cimenta con el sitio movilizado
+1.5.1-03,1.5.1-02,II,30,Obligatoria,La estructura inicia al terminar las primeras zapatas
+1.5.1-04,1.5.1-03,II,85,Obligatoria,Niveles superiores al completar zonas de los niveles 1 y 2
+1.5.1-05,1.5.1-03,II,55,Discrecional,Instalaciones por nivel tras la estructura de ese nivel
+1.5.1-05,1.5.1-04,FF,15,Obligatoria,Las redes terminan tras la estructura
+1.5.1-06,1.5.1-04,II,45,Discrecional,Acabados por nivel tras la estructura
+1.5.1-06,1.5.1-05,FF,15,Obligatoria,Los acabados terminan tras las redes
+1.5.2-01,1.5.1-06,II,15,Discrecional,Equipos de acceso cuando los niveles inferiores están listos
+1.5.2-02,1.5.1-06,II,10,Discrecional,Áreas de alquiler cuando el nivel de calle está listo
+1.5.2-03,1.5.2-01,FI,0,Obligatoria,Se prueba lo instalado
+1.5.2-03,1.5.2-02,FI,0,Obligatoria,Se prueba lo habilitado
+1.5.3-01,1.5.1-01,II,60,Discrecional,El trámite se gestiona con el contrato ya en marcha
+1.5.3-02,1.5.1-04,II,50,Obligatoria,Paneles cuando la cubierta superior tiene losa
+1.5.3-02,1.5.1-06,FF,5,Discrecional,Los paneles se terminan con los acabados
+1.5.3-03,1.5.3-02,FF,10,Obligatoria,Terminan tras los paneles
+1.5.3-04,1.5.1-06,FI,0,Obligatoria,Se entrega con el edificio terminado
+1.5.3-04,1.5.2-03,FI,0,Obligatoria,Se entrega con los sistemas de acceso probados
+1.5.3-04,1.5.3-01,FI,0,Externa,No se energiza sin autorización de interconexión
+1.5.3-04,1.5.3-03,FI,0,Obligatoria,Se prueba lo instalado
+1.6.1-01,1.1.4-05,FI,0,Obligatoria,Diseño aprobado antes de construir
+1.6.1-01,1.7.2-03,II,5,Obligatoria,La supervisión debe estar movilizada antes de la orden de inicio
+1.6.1-01,1.7.3-03,FI,0,Obligatoria,PGAS de construcción aprobado antes de movilizar
+1.6.1-01,3.3.2-04,FI,0,Obligatoria,PP 4.6: protocolo aprobado antes de obras del lado aire (vías de salida a la plataforma)
+1.6.1-01,3.4.1-18,FI,10,Obligatoria,"Garantías, anticipo y orden de inicio tras la firma"
+1.6.1-01,3.4.2-18,FI,0,Obligatoria,La firma de supervisión ocurre antes o junto con el inicio de su obra (EDT 3.4.2: firma en condiciones de iniciar con las obras)
+1.6.1-02,1.6.1-01,FI,0,Obligatoria,Se construye con el sitio movilizado
+1.6.1-03,1.6.1-02,II,30,Discrecional,Cubierta al avanzar la estructura
+1.6.1-04,1.6.1-02,II,20,Discrecional,Vías con un segundo frente
+1.6.1-05,1.6.1-03,FI,-10,Discrecional,Acabados al cerrar la cubierta
+1.6.1-05,1.6.1-04,FI,0,Obligatoria,Probar con vías de salida construidas
+1.6.2-01,1.6.1-03,II,0,Discrecional,Planificar el traslado con la obra avanzada
+1.6.2-02,1.6.2-01,FI,0,Externa,La AAC revisa el plan presentado
+1.6.2-03,1.6.2-02,FI,0,Externa,Traslado con cobertura conforme de la AAC
+1.6.2-03,1.7.4-04,FI,0,Obligatoria,El traslado requiere el edificio recibido
+1.6.2-04,1.6.2-03,FI,0,Obligatoria,Se prueba tras trasladar
+1.7.1-01,3.4.2-12,FI,0,Obligatoria,La supervisión se moviliza tras firmar
+1.7.1-02,1.7.1-01,FI,0,Obligatoria,Supervisión tras movilizar
+1.7.1-03,3.4.2-06,FI,0,Obligatoria,La supervisión se moviliza tras firmar
+1.7.1-04,1.7.1-03,FI,0,Obligatoria,Supervisión tras movilizar
+1.7.2-01,3.4.2-24,FI,0,Obligatoria,La supervisión se moviliza tras firmar
+1.7.2-02,1.7.2-01,FI,0,Obligatoria,Supervisión tras movilizar
+1.7.2-03,3.4.2-18,FI,0,Obligatoria,La supervisión se moviliza tras firmar
+1.7.2-04,1.7.2-03,FI,0,Obligatoria,Supervisión tras movilizar
+1.7.3-01,3.3.1-04,FI,0,Obligatoria,El SGAS rige los PGAS de construcción
+1.7.3-01,3.4.1-06,FI,0,Obligatoria,El contratista presenta su PGAS tras firmar
+1.7.3-02,3.3.1-04,FI,0,Obligatoria,El SGAS rige los PGAS de construcción
+1.7.3-02,3.4.1-12,FI,0,Obligatoria,El contratista presenta su PGAS tras firmar
+1.7.3-03,3.3.1-04,FI,0,Obligatoria,El SGAS rige los PGAS de construcción
+1.7.3-03,3.4.1-18,FI,0,Obligatoria,El contratista presenta su PGAS tras firmar
+1.7.3-04,3.3.1-04,FI,0,Obligatoria,El SGAS rige los PGAS de construcción
+1.7.3-04,3.4.1-24,FI,0,Obligatoria,El contratista presenta su PGAS tras firmar
+1.7.3-05,1.7.3-01,FI,0,Obligatoria,Seguimiento desde el primer PGAS aprobado
+1.7.3-06,1.7.4-01,FI,0,Obligatoria,Cierre tras las recepciones provisionales
+1.7.3-06,1.7.4-02,FI,0,Obligatoria,Cierre tras las recepciones provisionales
+1.7.3-06,1.7.4-03,FI,0,Obligatoria,Cierre tras las recepciones provisionales
+1.7.3-06,1.7.4-04,FI,0,Obligatoria,Cierre tras las recepciones provisionales
+1.7.4-01,1.2.4-06,FI,0,Obligatoria,Se recibe la obra terminada
+1.7.4-01,1.3.3-05,FI,0,Obligatoria,La terminal opera con las plataformas autorizadas
+1.7.4-02,1.5.3-04,FI,0,Obligatoria,Se recibe la obra terminada
+1.7.4-03,1.3.3-05,FI,0,Obligatoria,Se recibe la obra terminada
+1.7.4-03,1.4.2-04,FI,0,Obligatoria,Se recibe la obra terminada
+1.7.4-04,1.6.1-05,FI,0,Obligatoria,Se recibe la obra terminada
+2.1-01,3.4.3-08,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.1-02,2.1-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo aprobado
+2.1-03,2.1-02,FI,0,Obligatoria,La propuesta parte del diagnóstico
+2.1-04,2.1-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.1-05,2.1-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.1-06,2.1-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.2.1-01,3.4.3-14,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.2.1-02,2.2.1-01,FI,0,Obligatoria,El inventario sigue al plan de trabajo
+2.2.1-03,2.1-03,FI,0,Discrecional,El borrador del plan estratégico orienta las alternativas del Plan Maestro; se acepta el borrador y no la aprobación para no frenar el plan maestro
+2.2.1-03,2.2.1-02,FI,0,Obligatoria,Los requerimientos y alternativas parten del diagnóstico y la demanda
+2.2.1-04,2.2.1-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.2.1-05,2.2.1-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.2.1-05,2.4-05,FI,0,Discrecional,"El informe final de conectividad aporta recomendaciones utilizables en el Plan Maestro (ToC y EDT 5.2, 2.4)"
+2.2.1-06,2.1-06,FF,10,Discrecional,El Plan Maestro no se aprueba antes que el plan estratégico que lo orienta; 10 dl para alinear su texto con el plan aprobado
+2.2.1-06,2.2.1-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.2.2-01,2.2.1-03,FI,0,Discrecional,El programa se diseña cuando el borrador del Plan Maestro ya define su contenido
+2.2.2-02,2.2.1-06,FI,0,Obligatoria,La capacitación se centra en implementar el Plan Maestro aprobado (MEL R2.1)
+2.2.2-02,2.2.2-01,FI,0,Obligatoria,Los cursos requieren el programa y la lista de participantes
+2.2.2-03,2.2.2-02,FI,0,Obligatoria,Se evalúa al terminar los cursos
+2.2.2-04,2.2.2-03,FI,0,Obligatoria,Se certifica a quienes aprueban la evaluación
+2.3.1-01,3.4.3-19,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.3.1-02,2.3.1-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo
+2.3.1-03,2.3.1-02,FI,0,Obligatoria,La estrategia parte del diagnóstico
+2.3.1-04,2.3.1-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.3.1-05,2.3.1-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.3.1-06,2.3.1-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.3.2-01,2.3.1-05,FI,0,Discrecional,El programa se prepara con la estrategia final entregada
+2.3.2-02,2.3.1-06,FI,0,Obligatoria,"La capacitación aplica la estrategia BIM ya aprobada (EDT 5.2, 2.3.2)"
+2.3.2-02,2.3.2-01,FI,0,Obligatoria,Los cursos requieren programa y materiales
+2.3.2-03,2.3.2-02,FI,0,Obligatoria,Se evalúa al terminar los cursos
+2.3.2-04,2.3.2-03,FI,0,Obligatoria,El registro se entrega con las evaluaciones
+2.4-01,3.4.3-25,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.4-02,2.4-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo
+2.4-03,2.4-02,FI,0,Obligatoria,Las alternativas parten del diagnóstico
+2.4-04,2.4-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.4-05,2.4-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.4-06,2.4-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.5-01,3.4.3-30,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.5-02,2.5-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo
+2.5-03,2.5-02,FI,0,Obligatoria,El análisis de mercados parte del diagnóstico
+2.5-04,2.5-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.5-05,2.5-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.5-06,2.5-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.6.1-01,1.1.1-05,FI,0,Obligatoria,La autoevaluación EDGE se hace sobre el diseño aprobado de la terminal
+2.6.1-01,1.1.3-05,FI,0,Obligatoria,La autoevaluación EDGE se hace sobre el diseño aprobado del estacionamiento
+2.6.1-01,3.4.3-35,FI,0,Obligatoria,Contractual: el auditor inicia con el contrato firmado
+2.6.1-02,2.6.1-01,FI,0,Obligatoria,EDGE-P 6.2: la auditoría de diseño parte de la autoevaluación y el registro
+2.6.1-03,2.6.1-02,FI,0,Discrecional,El acompañamiento en obra parte del certificado preliminar
+2.6.1-04,1.2.4-06,FI,0,Obligatoria,EDGE-P 6.3: el auditor verifica medidas instaladas en el edificio terminado
+2.6.1-04,1.5.3-04,FI,0,Obligatoria,EDGE-P 6.3: el auditor verifica medidas instaladas en el edificio terminado
+2.6.1-04,2.6.1-03,FI,0,Obligatoria,La auditoría en sitio sigue al acompañamiento
+2.6.1-05,2.6.1-04,FI,0,Obligatoria,La revisión del proveedor sigue a la auditoría en sitio
+2.6.1-06,2.6.1-05,FI,0,Obligatoria,El certificado se emite tras la revisión del proveedor
+2.6.2-01,2.6.1-02,FI,0,Discrecional,El material se prepara con los criterios EDGE ya verificados en el diseño
+2.6.2-02,2.6.1-04,FI,0,Discrecional,El curso se imparte con las medidas ya verificadas en sitio como caso real
+2.6.2-02,2.6.2-01,FI,0,Obligatoria,Los cursos requieren programa y materiales
+2.6.2-03,2.6.2-02,FI,0,Obligatoria,Se evalúa al terminar el curso
+2.6.2-04,2.6.2-03,FI,0,Obligatoria,El registro se entrega con las evaluaciones
+2.7-01,3.4.3-40,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.7-02,2.7-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo
+2.7-03,1.1.1-05,FI,0,Obligatoria,La separación de flujos en la terminal antigua debe ser compatible con el diseño aprobado de la nueva terminal
+2.7-03,2.7-02,FI,0,Obligatoria,Las intervenciones parten del diagnóstico
+2.7-04,2.7-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.7-05,2.7-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.7-06,2.7-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.8-01,3.4.3-45,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.8-02,2.8-01,FI,0,Obligatoria,El diagnóstico sigue al plan de trabajo
+2.8-03,1.1.3-05,FI,0,Obligatoria,"El estudio enfatiza el acceso al nuevo estacionamiento, cuyo diseño aprobado fija accesos y circulaciones"
+2.8-03,2.8-02,FI,0,Obligatoria,Las medidas parten del diagnóstico
+2.8-04,2.8-03,FI,0,Obligatoria,Se revisa el borrador entregado
+2.8-05,2.8-04,FI,0,Obligatoria,Se incorporan las observaciones recibidas
+2.8-06,2.8-05,FI,0,Obligatoria,Se aprueba la versión final entregada
+2.9-01,3.4.3-50,FI,0,Obligatoria,Contractual: el consultor inicia con el contrato firmado
+2.9-02,2.9-01,FI,0,Obligatoria,La primera cohorte requiere el programa y los materiales
+2.9-03,2.9-02,II,260,Discrecional,MEL: metas anuales de 100 funcionarios (una cohorte cada año de 260 dl)
+2.9-04,2.9-03,II,260,Discrecional,MEL: metas anuales de 100 funcionarios (una cohorte cada año de 260 dl)
+2.9-05,2.9-04,FI,0,Obligatoria,Las constancias de los 300 se emiten al terminar la última cohorte
+2.9-06,2.9-05,FI,0,Obligatoria,Se aprueba el informe final entregado
+3.1.1-01,3.4.4-05,FI,0,Obligatoria,Contrato 3CV firmado antes de que el consultor inicie
+3.1.1-02,3.4.4-05,FI,0,Obligatoria,Contrato 3CV firmado antes de que el consultor inicie
+3.1.1-03,3.4.4-05,FI,0,Obligatoria,Contrato 3CV firmado antes de que el consultor inicie
+3.1.1-04,3.1.1-01,FI,0,Obligatoria,Firmas autorizadas incluyen al Coordinador
+3.1.1-05,3.1.1-01,FI,0,Obligatoria,El expediente cubre los siete puestos y las firmas
+3.1.1-05,3.1.1-02,FI,0,Obligatoria,El expediente cubre los siete puestos y las firmas
+3.1.1-05,3.1.1-03,FI,0,Obligatoria,El expediente cubre los siete puestos y las firmas
+3.1.1-05,3.1.1-04,FI,0,Obligatoria,El expediente cubre los siete puestos y las firmas
+3.1.2-01,3.1.1-01,FI,0,Obligatoria,Coordinador en funciones
+3.1.2-01,3.3.1-01,FI,0,Obligatoria,El ROP lleva el SGAS ajustado como anexo
+3.1.2-02,3.1.2-01,FI,0,Externa,No objeción del BID sobre el texto ajustado
+3.1.2-03,3.1.2-02,FI,0,Obligatoria,CEPA aprueba con la no objeción
+3.1.3-02,3.1.3-01,FI,0,Externa,No objeción del BID
+3.1.3-03,3.1.3-02,FI,0,Obligatoria,Se suscribe el texto aceptado
+3.1.4-01,3.1.1-04,FI,0,Obligatoria,Firmas autorizadas necesarias para abrir la cuenta
+3.1.4-02,3.1.4-01,FI,0,Obligatoria,Se abre tras la solicitud
+3.1.4-03,3.1.4-02,FI,0,Obligatoria,Se registra la cuenta abierta
+3.2.1-01,3.1.1-01,FI,0,Obligatoria,Especialista de planificación en funciones
+3.2.1-02,3.2.1-01,FI,0,Obligatoria,Se integra sobre el PEP actualizado
+3.2.1-02,3.2.3-02,FI,0,Obligatoria,Requiere el PA aprobado
+3.2.1-03,3.2.1-02,FI,0,Obligatoria,Se aprueba el PEP completo
+3.2.2-01,3.2.1-03,FI,0,Obligatoria,El POA se deriva del PEP aprobado
+3.2.2-02,3.2.2-01,FI,0,Obligatoria,Se aprueba el POA elaborado
+3.2.2-03,3.2.2-02,FI,0,Discrecional,El siguiente POA parte del anterior aprobado
+3.2.2-04,3.2.2-03,FI,0,Obligatoria,Se aprueba el POA elaborado
+3.2.2-05,3.2.2-04,FI,0,Discrecional,El siguiente POA parte del anterior aprobado
+3.2.2-06,3.2.2-05,FI,0,Obligatoria,Se aprueba el POA elaborado
+3.2.2-07,3.2.2-06,FI,0,Discrecional,El siguiente POA parte del anterior aprobado
+3.2.2-08,3.2.2-07,FI,0,Obligatoria,Se aprueba el POA elaborado
+3.2.3-02,3.2.3-01,FI,0,Obligatoria,El BID revisa el plan ya elaborado
+3.2.3-03,3.2.3-02,FI,0,Obligatoria,Se actualiza sobre la versión aprobada
+3.2.3-04,3.2.3-03,FI,0,Obligatoria,Revisión del BID sobre el plan actualizado
+3.2.3-05,3.2.3-04,FI,0,Obligatoria,Se actualiza tras la última versión aprobada
+3.3.1-01,3.1.1-03,FI,0,Obligatoria,Especialista socioambiental en funciones
+3.3.1-02,3.3.1-01,FI,0,Obligatoria,Procedimientos sobre el SGAS ajustado
+3.3.1-03,3.3.1-02,FI,0,Externa,No objeción del BID sobre los instrumentos terminados
+3.3.1-04,3.1.2-03,FI,0,Obligatoria,Se anexan al ROP ya aprobado
+3.3.1-04,3.3.1-03,FI,0,Obligatoria,Se incorporan los instrumentos con no objeción
+3.3.2-01,1.1.2-06,FI,0,Obligatoria,El riesgo y las fases dependen de la geometría del lado aire (EDT 1.1.2)
+3.3.2-01,3.3.1-04,FI,0,Obligatoria,El protocolo se apoya en el SGAS vigente
+3.3.2-02,3.3.2-01,FI,0,Obligatoria,El protocolo recoge el análisis de riesgo
+3.3.2-03,3.3.2-02,FI,0,Obligatoria,Se presenta el protocolo terminado
+3.3.2-04,3.3.2-03,FI,0,Externa,Aprobación de la AAC
+3.3.3-01,3.3.1-04,FI,0,Obligatoria,El mecanismo es parte del SGAS vigente
+3.3.3-02,3.3.3-01,FI,0,Obligatoria,Se instala el procedimiento diseñado
+3.3.3-03,3.3.3-02,FI,0,Obligatoria,Se opera el mecanismo instalado
+3.3.4-01,3.3.1-04,FI,0,Obligatoria,El informe se basa en el SGAS vigente
+3.3.4-02,1.5.1-01,II,0,Obligatoria,Los informes comienzan con la primera obra
+3.3.4-02,3.3.4-01,FI,0,Obligatoria,Formato acordado
+3.3.4-03,3.3.4-02,FI,0,Obligatoria,El informe final cierra la serie semestral
+3.4.1-01,1.1.3-05,FF,0,Discrecional,Los documentos se preparan en paralelo con la revisión del diseño y cierran con su aprobación
+3.4.1-01,3.1.1-02,FI,0,Obligatoria,Especialista de adquisiciones en funciones
+3.4.1-01,3.2.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.1-02,3.3.1-04,FI,0,Obligatoria,Documentos con cláusulas del SGAS (contrato cláusula 4.06(d))
+3.4.1-02,3.4.1-01,FI,0,Obligatoria,Documentos completos antes de enviarlos
+3.4.1-03,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige el proceso
+3.4.1-03,3.4.1-02,FI,0,Externa,Publicación tras no objeción del BID
+3.4.1-04,3.4.1-03,FI,0,Obligatoria,Se evalúa tras la apertura
+3.4.1-05,3.4.1-04,FI,0,Externa,No objeción a la evaluación
+3.4.1-06,3.4.1-05,FI,0,Obligatoria,Adjudicación tras no objeción
+3.4.1-07,1.1.1-05,FF,0,Discrecional,Los documentos se preparan en paralelo con la revisión del diseño y cierran con su aprobación
+3.4.1-07,3.1.1-02,FI,0,Obligatoria,Especialista de adquisiciones en funciones
+3.4.1-07,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.1-08,3.3.1-04,FI,0,Obligatoria,Documentos con cláusulas del SGAS (contrato cláusula 4.06(d))
+3.4.1-08,3.4.1-07,FI,0,Obligatoria,Documentos completos antes de enviarlos
+3.4.1-09,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige el proceso
+3.4.1-09,3.4.1-08,FI,0,Externa,Publicación tras no objeción del BID
+3.4.1-10,3.4.1-09,FI,0,Obligatoria,Se evalúa tras la apertura
+3.4.1-11,3.4.1-10,FI,0,Externa,No objeción a la evaluación
+3.4.1-12,3.4.1-11,FI,0,Obligatoria,Adjudicación tras no objeción
+3.4.1-13,1.1.4-05,FF,0,Discrecional,Los documentos se preparan en paralelo con la revisión del diseño y cierran con su aprobación
+3.4.1-13,3.1.1-02,FI,0,Obligatoria,Especialista de adquisiciones en funciones
+3.4.1-13,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.1-14,3.3.1-04,FI,0,Obligatoria,Documentos con cláusulas del SGAS (contrato cláusula 4.06(d))
+3.4.1-14,3.4.1-13,FI,0,Obligatoria,Documentos completos antes de enviarlos
+3.4.1-15,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige el proceso
+3.4.1-15,3.4.1-14,FI,0,Externa,Publicación tras no objeción del BID
+3.4.1-16,3.4.1-15,FI,0,Obligatoria,Se evalúa tras la apertura
+3.4.1-17,3.4.1-16,FI,0,Externa,No objeción a la evaluación
+3.4.1-18,3.4.1-17,FI,0,Obligatoria,Adjudicación tras no objeción
+3.4.1-19,1.1.2-06,FF,0,Discrecional,Los documentos se preparan en paralelo con la revisión del diseño y cierran con su aprobación
+3.4.1-19,3.1.1-02,FI,0,Obligatoria,Especialista de adquisiciones en funciones
+3.4.1-19,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.1-20,3.3.1-04,FI,0,Obligatoria,Documentos con cláusulas del SGAS (contrato cláusula 4.06(d))
+3.4.1-20,3.4.1-19,FI,0,Obligatoria,Documentos completos antes de enviarlos
+3.4.1-21,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige el proceso
+3.4.1-21,3.4.1-20,FI,0,Externa,Publicación tras no objeción del BID
+3.4.1-22,3.4.1-21,FI,0,Obligatoria,Se evalúa tras la apertura
+3.4.1-23,3.4.1-22,FI,0,Externa,No objeción a la evaluación
+3.4.1-24,3.4.1-23,FI,0,Obligatoria,Adjudicación tras no objeción
+3.4.2-01,3.2.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado
+3.4.2-02,3.4.2-01,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-03,3.4.2-02,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-04,3.4.2-03,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-05,3.4.2-04,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-06,3.4.2-05,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-07,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección de firmas
+3.4.2-07,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado
+3.4.2-07,3.3.1-04,FI,0,Obligatoria,Los TdR incluyen la supervisión del SGAS (EDT 1.7.3)
+3.4.2-08,3.4.2-07,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-09,3.4.2-08,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-10,3.4.2-09,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-11,3.4.2-10,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-12,3.4.2-11,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-13,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección de firmas
+3.4.2-13,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado
+3.4.2-13,3.3.1-04,FI,0,Obligatoria,Los TdR incluyen la supervisión del SGAS (EDT 1.7.3)
+3.4.2-14,3.4.2-13,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-15,3.4.2-14,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-16,3.4.2-15,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-17,3.4.2-16,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-18,3.4.2-17,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-19,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección de firmas
+3.4.2-19,3.2.3-04,FI,0,Obligatoria,El proceso debe estar en el PA aprobado
+3.4.2-19,3.3.1-04,FI,0,Obligatoria,Los TdR incluyen la supervisión del SGAS (EDT 1.7.3)
+3.4.2-20,3.4.2-19,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-21,3.4.2-20,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-22,3.4.2-21,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.2-23,3.4.2-22,FI,0,Externa,Secuencia del proceso SBCC
+3.4.2-24,3.4.2-23,FI,0,Obligatoria,Secuencia del proceso SBCC
+3.4.3-01,3.2.3-04,FI,0,Obligatoria,Se actualiza sobre el PA 2026-2
+3.4.3-02,3.4.3-01,FI,0,Externa,No objeción del BID
+3.4.3-03,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-03,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-04,3.4.3-03,FI,0,Externa,Secuencia del proceso
+3.4.3-05,3.4.3-04,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-06,3.4.3-05,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-07,3.4.3-06,FI,0,Externa,Secuencia del proceso
+3.4.3-08,3.4.3-07,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-09,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-09,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-10,3.4.3-09,FI,0,Externa,Secuencia del proceso
+3.4.3-11,3.4.3-10,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-12,3.4.3-11,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-13,3.4.3-12,FI,0,Externa,Secuencia del proceso
+3.4.3-14,3.4.3-13,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-15,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-15,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-16,3.4.3-15,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-17,3.4.3-16,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-18,3.4.3-17,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-19,3.4.3-18,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-20,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-20,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-21,3.4.3-20,FI,0,Externa,Secuencia del proceso
+3.4.3-22,3.4.3-21,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-23,3.4.3-22,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-24,3.4.3-23,FI,0,Externa,Secuencia del proceso
+3.4.3-25,3.4.3-24,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-26,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-26,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-27,3.4.3-26,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-28,3.4.3-27,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-29,3.4.3-28,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-30,3.4.3-29,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-31,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-31,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-32,3.4.3-31,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-33,3.4.3-32,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-34,3.4.3-33,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-35,3.4.3-34,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-36,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-36,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-37,3.4.3-36,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-38,3.4.3-37,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-39,3.4.3-38,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-40,3.4.3-39,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-41,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-41,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-42,3.4.3-41,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-43,3.4.3-42,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-44,3.4.3-43,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-45,3.4.3-44,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-46,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.3-46,3.4.3-02,FI,0,Obligatoria,El proceso debe estar en el PA aprobado (ROP anexo 7.1 paso 3)
+3.4.3-47,3.4.3-46,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-48,3.4.3-47,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-49,3.4.3-48,FI,0,Obligatoria,Secuencia del proceso
+3.4.3-50,3.4.3-49,FI,0,Obligatoria,Secuencia del proceso
+3.4.4-02,3.4.4-01,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-03,3.4.4-02,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-04,3.4.4-03,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-05,3.4.4-04,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-06,3.1.1-02,FI,0,Obligatoria,El Especialista de adquisiciones conduce el proceso
+3.4.4-06,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-07,3.4.4-06,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-08,3.4.4-07,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-09,3.4.4-08,FI,0,Externa,Secuencia 3CV del ROP
+3.4.4-10,3.4.4-09,FI,0,Obligatoria,Secuencia 3CV del ROP
+3.4.4-11,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-11,3.2.3-02,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-12,3.4.4-11,FI,0,Externa,Secuencia SBMC
+3.4.4-13,3.4.4-12,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-14,3.4.4-13,FI,0,Externa,Secuencia SBMC
+3.4.4-15,3.4.4-14,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-16,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-16,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-17,3.4.4-16,FI,0,Externa,Secuencia SBMC
+3.4.4-18,3.4.4-17,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-19,3.4.4-18,FI,0,Externa,Secuencia SBMC
+3.4.4-20,3.4.4-19,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-21,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-21,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-22,3.4.4-21,FI,0,Externa,Secuencia SBMC
+3.4.4-23,3.4.4-22,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-24,3.4.4-23,FI,0,Externa,Secuencia SBMC
+3.4.4-25,3.4.4-24,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-26,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-26,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-27,3.4.4-26,FI,0,Externa,Secuencia SBMC
+3.4.4-28,3.4.4-27,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-29,3.4.4-28,FI,0,Externa,Secuencia SBMC
+3.4.4-30,3.4.4-29,FI,0,Obligatoria,Secuencia SBMC
+3.4.4-31,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-31,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-32,3.4.4-31,FI,0,Obligatoria,Secuencia SCC
+3.4.4-33,3.4.4-32,FI,0,Obligatoria,Secuencia SCC
+3.4.4-34,3.4.4-33,FI,0,Obligatoria,Secuencia SCC
+3.4.4-35,3.4.4-34,FI,0,Obligatoria,Secuencia SCC
+3.4.4-36,3.1.2-03,FI,0,Obligatoria,El ROP vigente rige la selección
+3.4.4-36,3.2.3-04,FI,0,Obligatoria,Proceso en el PA aprobado
+3.4.4-37,3.4.4-36,FI,0,Obligatoria,Secuencia SCC
+3.4.4-38,3.4.4-37,FI,0,Obligatoria,Secuencia SCC
+3.4.4-39,3.4.4-38,FI,0,Obligatoria,Secuencia SCC
+3.4.4-40,3.4.4-39,FI,0,Obligatoria,Secuencia SCC
+3.5.1-01,3.1.1-05,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
+3.5.1-01,3.1.2-03,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
+3.5.1-01,3.1.3-03,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
+3.5.1-01,3.1.4-03,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
+3.5.1-01,3.3.1-04,FI,0,Obligatoria,Condición previa al primer desembolso (contrato cláusula 3.01)
+3.5.1-02,3.5.1-01,FI,0,Obligatoria,Informe tras el primer desembolso
+3.5.1-03,3.5.1-02,FI,0,Discrecional,Un informe a la vez
+3.5.1-04,3.5.1-03,FI,0,Discrecional,Un informe a la vez
+3.5.1-05,3.5.1-04,FI,0,Discrecional,Un informe a la vez
+3.5.1-06,3.5.1-05,FI,0,Discrecional,Un informe a la vez
+3.5.1-07,3.5.1-06,FI,0,Discrecional,Un informe a la vez
+3.5.1-08,3.5.1-01,FI,0,Obligatoria,Se requiere el primer desembolso
+3.5.1-09,3.5.1-01,FI,0,Obligatoria,Se requiere el primer desembolso
+3.5.1-10,3.5.1-01,FI,0,Obligatoria,Se requiere el primer desembolso
+3.5.2-02,3.4.4-15,FI,0,Obligatoria,El auditor debe tener contrato firmado
+3.5.2-02,3.5.2-01,FI,0,Obligatoria,Se audita sobre los estados preparados
+3.5.2-03,3.5.2-02,FI,0,Obligatoria,Se presenta el dictamen emitido
+3.5.2-05,3.4.4-20,FI,0,Obligatoria,El auditor debe tener contrato firmado
+3.5.2-05,3.5.2-04,FI,0,Obligatoria,Se audita sobre los estados preparados
+3.5.2-06,3.5.2-05,FI,0,Obligatoria,Se presenta el dictamen emitido
+3.5.2-08,3.4.4-25,FI,0,Obligatoria,El auditor debe tener contrato firmado
+3.5.2-08,3.5.2-07,FI,0,Obligatoria,Se audita sobre los estados preparados
+3.5.2-09,3.5.2-08,FI,0,Obligatoria,Se presenta el dictamen emitido
+3.5.3-02,3.4.4-35,FI,0,Obligatoria,La firma consultora requiere contrato firmado
+3.5.3-03,3.5.3-02,FI,0,Obligatoria,Se revisa el informe terminado
+3.5.3-04,3.4.4-40,FI,0,Obligatoria,La firma consultora requiere contrato firmado
+3.5.3-04,3.5.3-03,FI,0,Obligatoria,La evaluación final parte de la de medio término
+3.5.3-05,3.5.3-04,FI,0,Obligatoria,Se revisa el informe terminado
+3.5.4-01,2.1-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.2.1-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.2.2-04,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.3.1-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.3.2-04,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.4-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.5-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.6.1-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.6.2-04,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.7-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.8-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-01,2.9-06,FI,0,Obligatoria,No se liquida antes de recibir las obras y los productos del Componente II
+3.5.4-02,3.5.4-01,FI,0,Obligatoria,Se justifica lo liquidado
+3.5.4-03,3.4.4-30,FI,0,Obligatoria,El auditor del año 4 emite los estados finales
+3.5.4-03,3.5.4-02,FI,0,Obligatoria,Estados finales tras el último desembolso
+3.5.4-04,3.3.4-03,FI,0,Obligatoria,Incluye el informe final ambiental y social
+3.5.4-04,3.5.3-05,FI,0,Obligatoria,El informe de terminación incorpora los resultados de la evaluación final
+3.5.4-04,3.5.4-03,FI,0,Obligatoria,Informe tras estados finales
+3.5.4-05,3.5.4-03,FI,0,Obligatoria,Se devuelven saldos tras los estados finales
+3.5.4-06,3.5.4-04,FI,0,Obligatoria,Cierre administrativo tras el informe
+3.5.4-06,3.5.4-05,FI,0,Obligatoria,Cierre administrativo tras cerrar la cuenta
+3.4.4-36,1.2.4-06,FI,-60,Discrecional,"La evaluación final se contrata para empezar al terminar la terminal, cuando el desembolso se acerca al 95% (contrato, cláusula 5.03)"
+3.5.4-02,3.5.3-05,FI,0,Obligatoria,El último desembolso incluye el pago de la evaluación final
+1.7.4-05,1.7.4-01,FI,0,Obligatoria,La recepción definitiva sigue a la provisional y a la lista de pendientes del mismo contrato
+1.7.1-05,1.7.4-05,FI,0,Obligatoria,El informe final de la supervisión incluye la recepción definitiva y los planos de obra ejecutada
+1.7.4-06,1.7.4-02,FI,0,Obligatoria,La recepción definitiva sigue a la provisional y a la lista de pendientes del mismo contrato
+1.7.1-06,1.7.4-06,FI,0,Obligatoria,El informe final de la supervisión incluye la recepción definitiva y los planos de obra ejecutada
+1.7.4-07,1.7.4-03,FI,0,Obligatoria,La recepción definitiva sigue a la provisional y a la lista de pendientes del mismo contrato
+1.7.2-05,1.7.4-07,FI,0,Obligatoria,El informe final de la supervisión incluye la recepción definitiva y los planos de obra ejecutada
+1.7.4-08,1.7.4-04,FI,0,Obligatoria,La recepción definitiva sigue a la provisional y a la lista de pendientes del mismo contrato
+1.7.2-06,1.7.4-08,FI,0,Obligatoria,El informe final de la supervisión incluye la recepción definitiva y los planos de obra ejecutada
+3.3.4-03,1.7.4-05,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.3.4-03,1.7.4-06,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.3.4-03,1.7.4-07,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.3.4-03,1.7.4-08,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.3-05,1.7.4-05,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.3-05,1.7.4-06,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.3-05,1.7.4-07,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.3-05,1.7.4-08,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.4-01,1.7.4-05,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.4-01,1.7.4-06,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.4-01,1.7.4-07,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.5.4-01,1.7.4-08,FI,0,Obligatoria,Requiere las cuatro obras recibidas
+3.3.1-05,3.3.1-04,FI,0,Obligatoria,El plan se integra al sistema de gestión ambiental y social vigente
+3.3.1-05,1.1.1-05,FI,0,Obligatoria,El plan final se elabora con los diseños aprobados de las obras
+3.3.1-05,1.1.2-06,FI,0,Obligatoria,El plan final se elabora con los diseños aprobados de las obras
+3.3.1-05,1.1.3-05,FI,0,Obligatoria,El plan final se elabora con los diseños aprobados de las obras
+3.3.1-05,1.1.4-05,FI,0,Obligatoria,El plan final se elabora con los diseños aprobados de las obras
+3.3.1-06,3.3.1-05,FI,0,Obligatoria,Se presenta el plan terminado
+1.2.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
+1.3.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
+1.5.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
+1.6.1-01,3.3.1-06,FI,0,Obligatoria,El contrato exige presentar el plan final previo al inicio de las obras (cláusula 4.06)
+3.5.3-01,3.2.2-03,II,0,Discrecional,La proyección del hito se hace al elaborar el POA 2028
+3.4.4-31,3.5.3-01,FI,0,Obligatoria,La contratación se inicia con el hito proyectado
+3.1.3-01,3.1.1-05,FI,0,Discrecional,La UEP conformada redacta el convenio en paralelo con el ROP
+3.5.2-01,3.1.4-03,FI,0,Obligatoria,Los estados financieros del programa parten de la cuenta especial
+3.5.2-04,3.5.2-03,FI,0,Discrecional,Un ejercicio auditado a la vez
+3.5.2-07,3.5.2-06,FI,0,Discrecional,Un ejercicio auditado a la vez
+3.5.4-03,3.5.2-09,FI,0,Obligatoria,Los estados financieros finales parten del último ejercicio auditado
+3.5.4-04,3.5.1-07,FI,0,Obligatoria,El informe de terminación recoge el último informe semestral
+3.5.4-06,1.7.1-02,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.1-04,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.1-05,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.1-06,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.2-02,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.2-04,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.2-05,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.2-06,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.3-05,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,1.7.3-06,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.2.2-08,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.2.3-05,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.3.3-03,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.4.4-10,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.5.1-08,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.5.1-09,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
+3.5.4-06,3.5.1-10,FI,0,Obligatoria,El cierre administrativo requiere todo el trabajo del programa terminado
