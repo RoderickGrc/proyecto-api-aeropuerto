@@ -1,0 +1,166 @@
+{
+  "inicio": "2026-02-02",
+  "fin": "2030-03-22",
+  "dias_laborables": 1080,
+  "ruta_critica": [
+    "3.1.1",
+    "1.1.3",
+    "3.4.1",
+    "1.6.1",
+    "1.7.2",
+    "1.7.3",
+    "1.6.2",
+    "1.3.2",
+    "1.3.3",
+    "1.7.4",
+    "3.5.4"
+  ],
+  "pico_mensual": {
+    "mes": "2028-05",
+    "gasto_mensual_musd": 14.899151,
+    "acumulado_linea_base_musd": 120.943422,
+    "avance_pct": 62.02,
+    "acumulado_sin_contingencia_musd": 111.56283,
+    "contingencia_acumulada_musd": 9.380593,
+    "c1_acumulado_musd": 113.362069,
+    "c2_acumulado_musd": 4.665,
+    "c3_acumulado_musd": 2.916354
+  },
+  "anual": [
+    {
+      "anio": 2026,
+      "gasto_anual_musd": 1.016,
+      "acumulado_musd": 1.016,
+      "avance_pct": 0.5
+    },
+    {
+      "anio": 2027,
+      "gasto_anual_musd": 58.024,
+      "acumulado_musd": 59.04,
+      "avance_pct": 30.3
+    },
+    {
+      "anio": 2028,
+      "gasto_anual_musd": 115.505,
+      "acumulado_musd": 174.545,
+      "avance_pct": 89.5
+    },
+    {
+      "anio": 2029,
+      "gasto_anual_musd": 20.136,
+      "acumulado_musd": 194.682,
+      "avance_pct": 99.8
+    },
+    {
+      "anio": 2030,
+      "gasto_anual_musd": 0.318,
+      "acumulado_musd": 195.0,
+      "avance_pct": 100.0
+    }
+  ],
+  "hitos": [
+    {
+      "id": "H01",
+      "name": "Unidad Ejecutora conformada",
+      "preds": [
+        "3.1.1"
+      ],
+      "date": "2026-04-10"
+    },
+    {
+      "id": "H02",
+      "name": "Condiciones previas al primer desembolso cumplidas (ROP, convenio, cuenta)",
+      "preds": [
+        "3.1.4"
+      ],
+      "date": "2026-09-25"
+    },
+    {
+      "id": "H03",
+      "name": "Contratos de obra y de supervisión firmados",
+      "preds": [
+        "3.4.1",
+        "3.4.2"
+      ],
+      "date": "2027-06-04"
+    },
+    {
+      "id": "H04",
+      "name": "Protocolo de seguridad operacional aprobado por la AAC",
+      "preds": [
+        "3.3.2"
+      ],
+      "date": "2026-10-30"
+    },
+    {
+      "id": "H05",
+      "name": "SSEI reubicado y en funcionamiento",
+      "preds": [
+        "1.6.2"
+      ],
+      "date": "2028-04-14"
+    },
+    {
+      "id": "H06",
+      "name": "Plataforma de posiciones remotas concluida",
+      "preds": [
+        "1.3.2"
+      ],
+      "date": "2029-02-16"
+    },
+    {
+      "id": "H07",
+      "name": "Terminal ampliada concluida y equipada",
+      "preds": [
+        "1.2.4",
+        "1.2.5"
+      ],
+      "date": "2029-06-29"
+    },
+    {
+      "id": "H08",
+      "name": "Estacionamiento con sistema solar concluido",
+      "preds": [
+        "1.5.2",
+        "1.5.3"
+      ],
+      "date": "2028-12-01"
+    },
+    {
+      "id": "H09",
+      "name": "Obras recibidas (planos de obra ejecutada y actas aprobados)",
+      "preds": [
+        "1.7.4"
+      ],
+      "date": "2029-11-23"
+    },
+    {
+      "id": "H10",
+      "name": "Cierre administrativo del programa",
+      "preds": [
+        "3.5.4",
+        "3.2.2",
+        "3.5.1",
+        "3.5.2",
+        "3.5.3"
+      ],
+      "date": "2030-03-22"
+    }
+  ],
+  "tareas_xml": 84,
+  "evaluaciones": [
+    {
+      "tipo": "Medio término",
+      "inicio_proceso": "2027-10-04",
+      "firma": "2027-12-27",
+      "informe": "2028-02-28"
+    },
+    {
+      "tipo": "Final",
+      "inicio_proceso": "2029-02-02",
+      "firma": "2029-04-27",
+      "informe": "2029-06-29"
+    }
+  ],
+  "nota": "Valor planificado acumulado; no corresponde a desembolsos ni pagos"
+}
