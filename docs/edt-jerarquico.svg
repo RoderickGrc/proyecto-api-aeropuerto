@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="2921" viewBox="0 0 3600 2921" role="img" aria-labelledby="title desc">
+<title id="title">Estructura jerárquica de la EDT del proyecto de aeropuerto</title>
+<desc id="desc">Objetivo general, tres componentes, resultados y productos de la estructura de desglose del trabajo.</desc>
+<rect width="100%" height="100%" fill="#F7F9FC"/>
+<defs><filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#17324D" flood-opacity=".12"/></filter></defs>
+<rect x="780" y="55" width="2040" height="105" rx="22" fill="#173B63" filter="url(#shadow)"/>
+<text x="1800.0" y="117.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500" fill="#FFFFFF"><tspan x="1800.0" dy="0">Objetivo: Mejorar la conectividad aérea del AIES para el desarrollo turístico</tspan></text>
+<path d="M 1800.0 160 V 205" stroke="#7890A8" stroke-width="5" fill="none"/>
+<path d="M 636.5 205 H 2962.5" stroke="#7890A8" stroke-width="5" fill="none"/>
+<path d="M 636.5 205 V 250" stroke="#7890A8" stroke-width="5" fill="none"/>
+<rect x="80" y="250" width="1113" height="95" rx="18" fill="#1565C0" filter="url(#shadow)"/>
+<text x="636.5" y="306.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="500" fill="#FFFFFF"><tspan x="636.5" dy="0">1. Obras y adecuaciones</tspan></text>
+<path d="M 636.5 345 V 402 H 106 V 2801" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<path d="M 106 471.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="420" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="442" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="479.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.1 Diseños de las obras aprobados</tspan></text>
+<path d="M 134 500 V 742.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 544.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="518" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="551.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.1.1 Diseños de la terminal revisados y aprobados</tspan></text>
+<path d="M 134 610.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="584" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="617.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.1.2 Diseños de plataformas y calle Foxtrot revisados y aprobados</tspan></text>
+<path d="M 134 676.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="650" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="683.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.1.3 Diseños del estacionamiento y del sistema solar revisados y aprobados</tspan></text>
+<path d="M 134 742.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="716" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="749.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.1.4 Diseños del SSEI revisados y aprobados</tspan></text>
+<path d="M 106 866.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="815" width="1085" height="437" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="837" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="874.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.2 Terminal de pasajeros ampliada</tspan></text>
+<path d="M 134 895 V 1203.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 939.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="913" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="946.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.2.1 Estructura y envolvente de la terminal construidas</tspan></text>
+<path d="M 134 1005.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="979" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1012.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.2.2 Salas de espera, circulación y áreas de apoyo terminadas</tspan></text>
+<path d="M 134 1071.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1045" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1078.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.2.3 Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas</tspan></text>
+<path d="M 134 1137.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1111" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1144.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.2.4 Puentes de abordaje, mobiliario y equipos instalados</tspan></text>
+<path d="M 134 1203.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1177" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1210.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.2.5 Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados</tspan></text>
+<path d="M 106 1327.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="1276" width="1085" height="305" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="1298" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="1335.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.3 Plataformas de contacto y remotas</tspan></text>
+<path d="M 134 1356 V 1532.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 1400.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1374" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1407.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.3.1 Plataforma de posiciones de contacto construida</tspan></text>
+<path d="M 134 1466.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1440" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1473.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.3.2 Plataforma de posiciones remotas construida</tspan></text>
+<path d="M 134 1532.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1506" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1539.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.3.3 Señalización, luces y torres de iluminación de plataforma instaladas</tspan></text>
+<path d="M 106 1656.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="1605" width="1085" height="239" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="1627" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="1664.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.4 Calle de rodaje Foxtrot</tspan></text>
+<path d="M 134 1685 V 1795.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 1729.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1703" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1736.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.4.1 Pavimento y hombros de la calle Foxtrot construidos</tspan></text>
+<path d="M 134 1795.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1769" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1802.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.4.2 Señalización y balizamiento de la calle Foxtrot instalados</tspan></text>
+<path d="M 106 1919.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="1868" width="1085" height="305" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="1890" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="1927.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.5 Estacionamiento y energía solar</tspan></text>
+<path d="M 134 1948 V 2124.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 1992.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="1966" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="1999.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.5.1 Edificio de estacionamiento construido</tspan></text>
+<path d="M 134 2058.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2032" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2065.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.5.2 Sistemas de acceso, tráfico y áreas de alquiler instalados</tspan></text>
+<path d="M 134 2124.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2098" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2131.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.5.3 Sistema de generación solar instalado</tspan></text>
+<path d="M 106 2248.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="2197" width="1085" height="239" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="2219" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="2256.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.6 SSEI reubicado y en operación</tspan></text>
+<path d="M 134 2277 V 2387.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 2321.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2295" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2328.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.6.1 Edificio del SSEI y vías de acceso construidos</tspan></text>
+<path d="M 134 2387.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2361" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2394.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.6.2 SSEI en funcionamiento en la nueva ubicación</tspan></text>
+<path d="M 106 2511.0 H 118" stroke="#1565C0" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="94" y="2460" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#1565C0" stroke-width="2" opacity=".98"/>
+<rect x="118" y="2482" width="1037" height="58" rx="13" fill="#EAF3FC" stroke="#1565C0" stroke-width="2.5"/>
+<text x="140.0" y="2519.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#1565C0"><tspan x="140.0" dy="0">1.7 Supervisión, PGAS de obra y recepción</tspan></text>
+<path d="M 134 2540 V 2782.5" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 134 2584.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2558" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2591.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.7.1 Supervisión de la terminal y del estacionamiento ejecutada</tspan></text>
+<path d="M 134 2650.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2624" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2657.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.7.2 Supervisión de plataformas, calle Foxtrot y SSEI ejecutada</tspan></text>
+<path d="M 134 2716.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2690" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2723.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.7.3 PGAS de construcción implementado</tspan></text>
+<path d="M 134 2782.5 H 152" stroke="#1565C0" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="152" y="2756" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="171.0" y="2789.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="171.0" dy="0">1.7.4 Planos de obra ejecutada y actas de recepción aprobados</tspan></text>
+<path d="M 1799.5 205 V 250" stroke="#7890A8" stroke-width="5" fill="none"/>
+<rect x="1243" y="250" width="1113" height="95" rx="18" fill="#2E7D32" filter="url(#shadow)"/>
+<text x="1799.5" y="306.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="500" fill="#FFFFFF"><tspan x="1799.5" dy="0">2. Fortalecimiento institucional</tspan></text>
+<path d="M 1799.5 345 V 402 H 1269 V 1911" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<path d="M 1269 471.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="420" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="442" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="479.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.1 Plan estratégico del sistema aeronáutico aprobado</tspan></text>
+<path d="M 1269 597.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="546" width="1085" height="239" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="568" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="605.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.2 Plan Maestro actualizado y funcionarios capacitados</tspan></text>
+<path d="M 1297 626 V 736.5" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 1297 670.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="644" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="677.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.2.1 Plan Maestro Aeroportuario actualizado y aprobado</tspan></text>
+<path d="M 1297 736.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="710" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="743.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.2.2 Funcionarios capacitados en planificación, gestión y operación</tspan></text>
+<path d="M 1269 860.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="809" width="1085" height="239" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="831" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="868.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.3 Estrategia y capacitación BIM</tspan></text>
+<path d="M 1297 889 V 999.5" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 1297 933.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="907" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="940.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.3.1 Estrategia BIM aprobada</tspan></text>
+<path d="M 1297 999.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="973" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="1006.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.3.2 Personal de ingeniería capacitado en BIM</tspan></text>
+<path d="M 1269 1123.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1072" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1094" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1131.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.4 Estudio de conectividad terrestre entregado</tspan></text>
+<path d="M 1269 1249.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1198" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1220" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1257.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.5 Estudio de diversificación de destinos entregado</tspan></text>
+<path d="M 1269 1375.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1324" width="1085" height="239" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1346" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1383.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.6 Auditoría y capacitación EDGE</tspan></text>
+<path d="M 1297 1404 V 1514.5" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 1297 1448.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="1422" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="1455.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.6.1 Auditoría para la certificación EDGE realizada</tspan></text>
+<path d="M 1297 1514.5 H 1315" stroke="#2E7D32" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="1315" y="1488" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="1334.0" y="1521.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="1334.0" dy="0">2.6.2 Personal capacitado en certificación EDGE</tspan></text>
+<path d="M 1269 1638.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1587" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1609" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1646.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.7 Estudio de separación de flujos entregado</tspan></text>
+<path d="M 1269 1764.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1713" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1735" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1772.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.8 Estudio de movilidad interna entregado</tspan></text>
+<path d="M 1269 1890.0 H 1281" stroke="#2E7D32" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="1257" y="1839" width="1085" height="102" rx="18" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" opacity=".98"/>
+<rect x="1281" y="1861" width="1037" height="58" rx="13" fill="#EBF6EC" stroke="#2E7D32" stroke-width="2.5"/>
+<text x="1303.0" y="1898.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#2E7D32"><tspan x="1303.0" dy="0">2.9 Programa de igualdad e inclusión ejecutado</tspan></text>
+<path d="M 2962.5 205 V 250" stroke="#7890A8" stroke-width="5" fill="none"/>
+<rect x="2406" y="250" width="1113" height="95" rx="18" fill="#AD5A00" filter="url(#shadow)"/>
+<text x="2962.5" y="306.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="500" fill="#FFFFFF"><tspan x="2962.5" dy="0">3. Administración, evaluación y auditorías</tspan></text>
+<path d="M 2962.5 345 V 402 H 2432 V 2275" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<path d="M 2432 471.0 H 2444" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="2420" y="420" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#AD5A00" stroke-width="2" opacity=".98"/>
+<rect x="2444" y="442" width="1037" height="58" rx="13" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+<text x="2466.0" y="479.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#AD5A00"><tspan x="2466.0" dy="0">3.1 Condiciones de arranque cumplidas</tspan></text>
+<path d="M 2460 500 V 742.5" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 2460 544.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="518" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="551.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.1.1 Unidad ejecutora conformada y en funciones</tspan></text>
+<path d="M 2460 610.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="584" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="617.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.1.2 Reglamento operativo vigente</tspan></text>
+<path d="M 2460 676.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="650" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="683.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.1.3 Convenio de transferencia de recursos vigente</tspan></text>
+<path d="M 2460 742.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="716" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="749.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.1.4 Cuenta especial aperturada</tspan></text>
+<path d="M 2432 866.0 H 2444" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="2420" y="815" width="1085" height="305" rx="18" fill="#FFFFFF" stroke="#AD5A00" stroke-width="2" opacity=".98"/>
+<rect x="2444" y="837" width="1037" height="58" rx="13" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+<text x="2466.0" y="874.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#AD5A00"><tspan x="2466.0" dy="0">3.2 Planes de ejecución aprobados</tspan></text>
+<path d="M 2460 895 V 1071.5" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 2460 939.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="913" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="946.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.2.1 Plan de ejecución plurianual aprobado</tspan></text>
+<path d="M 2460 1005.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="979" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1012.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.2.2 Planes operativos anuales aprobados</tspan></text>
+<path d="M 2460 1071.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1045" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1078.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.2.3 Plan de adquisiciones aprobado</tspan></text>
+<path d="M 2432 1195.0 H 2444" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="2420" y="1144" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#AD5A00" stroke-width="2" opacity=".98"/>
+<rect x="2444" y="1166" width="1037" height="58" rx="13" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+<text x="2466.0" y="1203.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#AD5A00"><tspan x="2466.0" dy="0">3.3 Condiciones socioambientales y de seguridad operacional</tspan></text>
+<path d="M 2460 1224 V 1466.5" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 2460 1268.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1242" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1275.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.3.1 Sistema de gestión ambiental y social y plan de acción vigentes</tspan></text>
+<path d="M 2460 1334.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1308" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1341.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.3.2 Protocolo de seguridad operacional aprobado por la AAC</tspan></text>
+<path d="M 2460 1400.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1374" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1407.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.3.3 Mecanismo de quejas y reclamos en operación</tspan></text>
+<path d="M 2460 1466.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1440" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1473.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.3.4 Informes de cumplimiento socioambiental presentados</tspan></text>
+<path d="M 2432 1590.0 H 2444" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="2420" y="1539" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#AD5A00" stroke-width="2" opacity=".98"/>
+<rect x="2444" y="1561" width="1037" height="58" rx="13" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+<text x="2466.0" y="1598.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#AD5A00"><tspan x="2466.0" dy="0">3.4 Contratos del programa firmados</tspan></text>
+<path d="M 2460 1619 V 1861.5" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 2460 1663.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1637" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1670.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.4.1 Contratos de obras del Componente I firmados</tspan></text>
+<path d="M 2460 1729.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1703" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1736.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.4.2 Contrato de supervisión firmado</tspan></text>
+<path d="M 2460 1795.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1769" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1802.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.4.3 Contratos de consultorías del Componente II firmados</tspan></text>
+<path d="M 2460 1861.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="1835" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="1868.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.4.4 Contratos de la unidad ejecutora, evaluación y auditoría firmados</tspan></text>
+<path d="M 2432 1985.0 H 2444" stroke="#AD5A00" stroke-width="4" fill="none" opacity=".72"/>
+<rect x="2420" y="1934" width="1085" height="371" rx="18" fill="#FFFFFF" stroke="#AD5A00" stroke-width="2" opacity=".98"/>
+<rect x="2444" y="1956" width="1037" height="58" rx="13" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+<text x="2466.0" y="1993.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="500" fill="#AD5A00"><tspan x="2466.0" dy="0">3.5 Control financiero, evaluación y cierre</tspan></text>
+<path d="M 2460 2014 V 2256.5" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<path d="M 2460 2058.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="2032" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="2065.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.5.1 Desembolsos justificados e informes financieros presentados</tspan></text>
+<path d="M 2460 2124.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="2098" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="2131.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.5.2 Auditorías externas emitidas</tspan></text>
+<path d="M 2460 2190.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="2164" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="2197.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.5.3 Evaluaciones de medio término y de cierre realizadas</tspan></text>
+<path d="M 2460 2256.5 H 2478" stroke="#AD5A00" stroke-width="3" fill="none" opacity=".52"/>
+<rect x="2478" y="2230" width="1007" height="53" rx="11" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="2"/>
+<text x="2497.0" y="2263.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#263746"><tspan x="2497.0" dy="0">3.5.4 Informe de terminación y cierre administrativo del programa</tspan></text>
+</svg>
