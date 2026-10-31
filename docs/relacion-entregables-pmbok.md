@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S y la matriz de adquisiciones, y se completará con la EDT, el cronograma, la matriz de riesgos, la matriz de comunicaciones y la matriz de asignación de responsabilidades.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones y la estructura de funciones, y se completará con la EDT, el cronograma, la matriz de riesgos y la matriz de asignación de responsabilidades.
 
 ## Acta de constitución del proyecto
 
@@ -53,3 +53,35 @@ La matriz (`docs/matriz-adquisiciones.md`) documenta las decisiones de compra de
 - **Planificación:** estrategia de contratación y calendario de procesos alineado con la ruta crítica.
 - **Interesados:** identifica a las áreas requirentes, al BID como revisor y a los contratistas y consultores.
 - **Entrega:** cada contrato se vincula con los paquetes de la EDT que abastece y con su fecha de entrega requerida.
+
+## Identificación de involucrados y matriz de comunicaciones
+
+**Procesos relacionados:** 13.1. Identificar a los Interesados; 10.1. Planificar la Gestión de las Comunicaciones.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Inicio y de Planificación, áreas de conocimiento de Gestión de los Interesados y de Gestión de las Comunicaciones del Proyecto.
+
+La identificación (`docs/matriz-comunicaciones.md`, sección 1) corresponde al proceso 13.1: parte de los interesados del acta, los clasifica por tipo, interés y poder, y asigna la estrategia de cada cuadrante (gestionar de cerca, mantener satisfecho, mantener informado o monitorear). Esa tabla es la entrada que la clase 9 pide para armar la matriz.
+
+La matriz (`docs/matriz-comunicaciones.md`, sección 2) corresponde al proceso 10.1: fija qué información se produce, quién la recibe, quién la prepara, por qué medio y con qué frecuencia. Las filas salen de las obligaciones del ROP, del MEL y del PGAS, y de la coordinación de obra y de lado aire. No sustituye a los procesos 10.2, Gestionar las Comunicaciones, ni 10.3, Monitorear las Comunicaciones, que se aplican en la ejecución.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Interesados:** identifica actores, necesidades de información y estrategias de relacionamiento.
+- **Equipo:** asigna la emisión de cada comunicación a los roles de la UEP, la supervisión y los consultores ya usados en la EDT.
+- **Planificación:** la matriz es el artefacto tabular del enfoque predictivo del programa.
+
+En la octava edición, la matriz se usa como instrumento de planificación que une las necesidades de los interesados, la coordinación del equipo y el seguimiento de resultados. El formato sigue siendo tabular porque el programa ES-L1173 se planifica de forma predictiva.
+
+## Estructura de funciones
+
+**Proceso relacionado:** 9.1. Planificar la Gestión de los Recursos.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
+
+La estructura (`docs/estructura-organizacional.md`) documenta los roles, la jerarquía y las funciones que el ROP asigna a CEPA, a la UEP y a la Gerencia de Ingeniería, y las completa con el coordinador general de obra y los contratistas que exige la Propuesta de Préstamo. Es el marco de recursos humanos de la EDT: el diccionario nombra al responsable de cada paquete; este documento dice qué hace ese rol. No sustituye al proceso 9.3, Adquirir los Recursos, ni a la matriz RACI.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Equipo:** define composición, dependencia jerárquica y funcional, y límites entre UEP, supervisión y contratistas.
+- **Planificación:** alinea los perfiles del préstamo con los paquetes de trabajo y con las áreas requirentes de las adquisiciones.
+- **Interesados:** sitúa a CEPA, BID, AAC y ejecutores contratados en la línea de mando o fuera de ella.
