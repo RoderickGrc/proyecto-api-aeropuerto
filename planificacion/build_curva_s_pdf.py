@@ -26,10 +26,21 @@ MESES_L = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agos
 # Paleta del Gantt exportado de Open Planner Studio (la misma del anexo del cronograma).
 BLUE, PURPLE, GRAY, INK, MUTED, GRID = '#2563eb', '#7c3aed', '#8b909a', '#1f2430', '#5b6270', '#e3e6ea'
 RES = json.loads((HERE / 'resumen.json').read_text(encoding='utf-8'))
-START, FINISH, BAC = date.fromisoformat(RES['inicio']), date.fromisoformat(RES['fin']), 195.0
+START, FINISH = date.fromisoformat(RES['inicio']), date.fromisoformat(RES['fin'])
+BAC, LOAN, CONT, PRES = RES['bac_musd'], RES['prestamo_musd'], RES['contingencia_musd'], RES['presupuesto_musd']
+EST, GEST = RES['estimacion_pert_musd'], RES['reserva_gestion_musd']
+COST = json.loads((HERE / 'estimacion_costos.json').read_text(encoding='utf-8'))
 
 mensual = list(csv.DictReader((HERE / 'curva_s_mensual.csv').open(encoding='utf-8-sig')))
 anual = list(csv.DictReader((HERE / 'curva_s_anual.csv').open(encoding='utf-8-sig')))
+CORTE = date(2026, 10, 31)  # fecha a reportar
+# Requisitos de financiamiento: escalones anuales (uno por POA) que cubren el valor planificado del año más la reserva de
+# gestión en proporción, disponibles desde el inicio de cada año (PMBOK 6, 7.3.3.2; clase 6, línea base y financiamiento).
+FUND = []
+_acc = 0.0
+for a in anual:
+    _acc += float(a['gasto_anual_musd']) * (1 + GEST / BAC)
+    FUND.append((max(date(int(a['anio']), 1, 1), START), _acc))
 hitos = {h['id']: h for h in csv.DictReader((HERE / 'hitos.csv').open(encoding='utf-8-sig'))}
 
 
@@ -58,6 +69,8 @@ def money(v: float) -> str:
 
 
 months = [r['mes'] for r in mensual]
+PV_CORTE = float(next(r['acumulado_linea_base_musd'] for r in mensual if r['mes'] == f'{CORTE.year}-{CORTE.month:02d}'))
+AC_TXT = 'Sin desembolsos publicados (UEP en funciones desde abr-2026)'
 ends = [min(month_end(m), FINISH) for m in months]
 pv = [float(r['gasto_mensual_musd']) for r in mensual]
 cum = [float(r['acumulado_linea_base_musd']) for r in mensual]
@@ -71,33 +84,40 @@ def make_chart(w_pt: float, h_pt: float) -> bytes:
     fig = plt.figure(figsize=(w_pt / 72, h_pt / 72))
     gs = fig.add_gridspec(2, 1, height_ratios=[3.1, 1], hspace=0.12)
     ax, bx = fig.add_subplot(gs[0]), fig.add_subplot(gs[1])
-    x0, x1 = START - timedelta(days=18), FINISH + timedelta(days=60)
+    x0, x1 = START - timedelta(days=18), FINISH + timedelta(days=135)
 
     # Curva S acumulada: línea base de costos (con contingencia) y estimación de los paquetes (sin contingencia).
     xs, ys, ys_sc = [START] + ends, [0.0] + cum, [0.0] + cum_sc
-    ax.axhline(BAC, color=MUTED, lw=0.8, ls=(0, (4, 3)), zorder=1)
-    ax.text(x0 + timedelta(days=20), BAC + 3, 'Presupuesto autorizado (BAC): US$195.0 M', fontsize=7.5, color=MUTED, va='bottom')
+    ax.axhline(LOAN, color=MUTED, lw=0.8, ls=(0, (4, 3)), zorder=1)
+    ax.text(x0 + timedelta(days=20), LOAN + 3, f'Préstamo: US${LOAN:.1f} M', fontsize=7.5, color=MUTED, va='bottom')
+    ax.axhline(PRES, color=MUTED, lw=0.8, ls=(0, (1, 2)), zorder=1)
+    ax.text(x1 - timedelta(days=10), PRES + 1.5, f'Presupuesto del proyecto: US${PRES:.1f} M', fontsize=7.5, color=MUTED, va='bottom', ha='right')
     for k in ('H03', 'H05', 'H07', 'H09'):
         hd = date.fromisoformat(hitos[k]['date'])
         ax.axvline(hd, color=PURPLE, lw=0.8, ls=(0, (2, 2)), alpha=0.75, zorder=1)
         bx.axvline(hd, color=PURPLE, lw=0.8, ls=(0, (2, 2)), alpha=0.75, zorder=1)
         ax.text(hd + timedelta(days=12), 6, k, color=PURPLE, fontsize=7.5, fontweight='bold', va='bottom')
-    ax.plot(xs, ys_sc, color=GRAY, lw=1.6, ls=(0, (5, 2)), zorder=2, label='Estimación de los paquetes de trabajo (sin contingencia)')
-    ax.plot(xs, ys, color=BLUE, lw=2.2, zorder=3, label='Línea base de costos (incluye contingencia)')
-    ax.text(FINISH + timedelta(days=12), ys[-1] + 2, 'US$195.0 M', color=INK, fontsize=7.5, fontweight='bold', va='bottom')
-    ax.text(FINISH + timedelta(days=12), ys_sc[-1], 'US$179.9 M', color=MUTED, fontsize=7.5, va='center')
+    ax.plot(xs, ys_sc, color=GRAY, lw=1.6, ls=(0, (5, 2)), zorder=2, label='Estimación PERT (sin reserva)')
+    ax.plot(xs, ys, color=BLUE, lw=2.2, zorder=3, label='Línea base (BAC, con reserva de contingencia)')
+    fx = [d for d, _ in FUND] + [FINISH]
+    fy = [v for _, v in FUND] + [FUND[-1][1]]
+    ax.step(fx, fy, where='post', color='#0d9488', lw=1.1, alpha=0.8, zorder=2, label='Requisitos de financiamiento (anuales, con reserva de gestión)')
+    ax.axvline(CORTE, color=INK, lw=0.8, ls=(0, (1, 1.5)), zorder=1)
+    ax.text(CORTE + timedelta(days=8), 60, 'Fecha a reportar\n31-10-2026', fontsize=7, color=INK, va='bottom')
+    ax.text(FINISH + timedelta(days=12), ys[-1] + 2, f'US${ys[-1]:.1f} M', color=INK, fontsize=7.5, fontweight='bold', va='bottom')
+    ax.text(FINISH + timedelta(days=12), ys_sc[-1] - 4, f'US${ys_sc[-1]:.1f} M', color=MUTED, fontsize=7.5, va='center')
     for q, i in quart.items():
         ax.plot(ends[i], cum[i], 'o', ms=5.5, color=BLUE, mec='white', mew=1.3, zorder=4)
         ax.annotate(f'{q}%  {mlabel(months[i])}', (ends[i], cum[i]), xytext=(-8, 0), textcoords='offset points', ha='right', va='center', fontsize=7.5, color=INK)
     ax.set_ylim(0, 212)
     ax.set_ylabel('Valor planificado acumulado (US$ M)')
-    ax.legend(loc='upper left', bbox_to_anchor=(0.0, 0.93), frameon=False, fontsize=7.8, handlelength=2.6)
+    ax.legend(loc='upper left', bbox_to_anchor=(0.0, 0.72), frameon=False, fontsize=7.8, handlelength=2.6)
 
     # Valor planificado de cada mes, en un panel aparte con su propio eje (no se mezcla con la escala acumulada).
     bx.bar([d - timedelta(days=14) for d in ends], pv, width=20, color=BLUE, alpha=0.55, zorder=2)
     bx.annotate(f'Pico: US${pv[peak]:.1f} M ({mlabel(months[peak])})', (ends[peak] - timedelta(days=14), pv[peak]), xytext=(10, -2),
                 textcoords='offset points', fontsize=7.5, color=INK, va='top')
-    bx.set_ylim(0, 17)
+    bx.set_ylim(0, max(pv) * 1.15)
     bx.set_ylabel('Mensual (US$ M)')
 
     for a in (ax, bx):
@@ -139,8 +159,9 @@ tr.t td {{ background-color: #f3effd; color: {PURPLE}; font-weight: bold; border
 table.id td {{ border-bottom: 0; padding: 0.8pt 6pt 0.8pt 0; font-size: 7.8pt; }}
 '''
 ID = f'''<table class="id">
-<tr><td class="k">Proyecto</td><td>Programa de Modernización del Aeropuerto Internacional de El Salvador</td><td class="k">Fecha inicial</td><td>{START:%d-%m-%Y}</td><td class="k">Presupuesto (BAC)</td><td>US$195,000,000</td></tr>
+<tr><td class="k">Proyecto</td><td>Programa de Modernización del Aeropuerto Internacional de El Salvador</td><td class="k">Fecha inicial</td><td>{START:%d-%m-%Y}</td><td class="k">Línea base (BAC)</td><td>US${BAC * 1e6:,.0f}</td></tr>
 <tr><td class="k">Código</td><td>ES-L1173 (BID / CEPA)</td><td class="k">Fecha final</td><td>{FINISH:%d-%m-%Y}</td><td class="k">Unidad de tiempo</td><td>Mes ({len(months)} períodos)</td></tr>
+<tr><td class="k">Fecha a reportar</td><td>{CORTE:%d-%m-%Y}</td><td class="k">Valor planificado a la fecha</td><td>US${PV_CORTE:.2f} M</td><td class="k">Costo real a la fecha</td><td>{AC_TXT}</td></tr>
 </table>'''
 P1 = f'''<h1>Curva S del programa ES-L1173: valor planificado acumulado</h1>{ID}'''
 
@@ -169,9 +190,39 @@ P2 = f'''<h1>Curva S del programa ES-L1173: distribución mensual del valor plan
 <ul>
 <li>Arranque lento ({mlong(START.isoformat())} a {mlong(H03)}): el gasto acumulado llega a US${data[H03][1]:.1f} millones ({data[H03][1] / BAC:.1%} del total) porque corresponde a la conformación de la UEP, la revisión de diseños y la contratación. El tramo inclinado de la S empieza con la firma de los contratos de obra y supervisión (H03, {mlong(H03)}).</li>
 <li>Aceleración ({mlong(mnext(H03))} a {mlong(Q90)}): las obras concentran el gasto; se alcanza {qtxt}. El mayor valor mensual es de US${pv[peak]:.1f} millones en {mlabel(months[peak])}, cuando coinciden la terminal, el estacionamiento y las plataformas; es el período de mayor exigencia de liquidez y de supervisión.</li>
-<li>Desaceleración ({mlong(mnext(Q90))} a {mlong(FINISH.isoformat())}): tras el SSEI (H05) y el estacionamiento (H08), se concluyen la plataforma remota (H06) y la terminal (H07); después de {mlong(H07)} restan US${BAC - data[H07][1]:.1f} millones ({(BAC - data[H07][1]) / BAC:.1%} del presupuesto) para la señalización de plataformas, supervisión, recepción de obras (H09) y cierre.</li>
-<li>La línea base de costos incluye la reserva para contingencias de US$15.10 millones (imprevistos del EEO#3), prorrateada en las obras físicas, y cierra en el presupuesto autorizado de US$195 millones. La estimación sin contingencia termina en US$179.9 millones; la diferencia entre ambas curvas es el margen disponible para riesgos de costo de las obras.</li>
+<li>Desaceleración ({mlong(mnext(Q90))} a {mlong(FINISH.isoformat())}): con el SSEI (H05), el estacionamiento (H08) y la plataforma remota (H06) ya concluidos, termina la terminal (H07); después de {mlong(H07)} restan US${BAC - data[H07][1]:.1f} millones ({(BAC - data[H07][1]) / BAC:.1%} de la línea base) para la señalización de plataformas, supervisión, recepción de obras (H09) y cierre.</li>
+<li>La línea base de costos (US${BAC:.1f} millones) es la estimación PERT de los paquetes de trabajo (US${EST:.1f} millones) más la reserva de contingencia (US${CONT:.1f} millones, percentil 80), asignada a cada paquete según su incertidumbre. La distancia entre las dos curvas es esa reserva, que se consume solo si se materializan los riesgos de costo.</li>
 <li>Una vez aprobada, esta curva se fija como línea base: en cada fecha de corte se le superpone el costo real acumulado del trabajo realizado y la diferencia entre ambas curvas indica si el desempeño requiere ajustes (PMBOK 6, cap. 7; dominio de medición de PMBOK 7).</li>
+</ul>'''
+
+GROUPS = [('Terminal', 'Obra civil 3t²−2t³; puentes, sistemas y mobiliario: 70 % a la entrega y 30 % de instalación'),
+          ('Lado aire', 'Obra civil 3t²−2t³; balizamiento: 70 % a la entrega y 30 % de instalación'),
+          ('Estacionamiento', 'Obra civil 3t²−2t³; accesos y sistema solar: 70 % a la entrega y 30 % de instalación'),
+          ('SSEI', 'Obra civil 3t²−2t³; puesta en marcha: 70 % a la entrega y 30 % de instalación'),
+          ('Supervisión', 'Lineal durante las obras (honorarios por tiempo trabajado)'),
+          ('Gestión socioambiental', 'Lineal durante las obras'),
+          ('Componente II', 'Escalones contra productos: 20 % al 25 % del plazo, 40 % al 65 % y 40 % al final'),
+          ('Componente III', 'UEP lineal en todo el programa; auditoría en cada 30 de abril y estados financieros finales en el cierre; evaluaciones al entregar cada informe')]
+G = COST['por_grupo']
+crow = []
+for g, perfil in GROUPS:
+    v = G[g]
+    crow.append(f'<tr><td class="k">{g}</td><td class="n">{money(v["E"] / 1e6)}</td><td class="n">{money(v["reserva"] / 1e6)}</td>'
+                f'<td class="n">{money((v["E"] + v["reserva"]) / 1e6)}</td><td class="n">{(v["E"] + v["reserva"]) / 1e6 / BAC:.1%}</td><td>{perfil}</td></tr>')
+crow.append(f'<tr class="t"><td>Línea base (BAC)</td><td class="n">{money(EST)}</td><td class="n">{money(CONT)}</td><td class="n">{money(BAC)}</td><td class="n">100.0%</td><td></td></tr>')
+obras = sum(G[g]['E'] + G[g]['reserva'] for g in ('Terminal', 'Lado aire', 'Estacionamiento', 'SSEI')) / 1e6
+SD = RES['sensibilidad_dhss']
+P3 = f'''<h1>Curva S del programa ES-L1173: composición y fundamento de la forma</h1>
+<p>La curva suma, mes a mes, el costo de los 54 paquetes de trabajo distribuido según el tipo de trabajo. El costo de cada paquete sale de la estimación de costos del programa (paramétrica, análoga, por tarifas, ascendente y de tres puntos PERT); el detalle está en el documento de estimación de costos.</p>
+<table><tr><th style="width:15%">Grupo</th><th style="width:10%;text-align:right">Estimación PERT (US$ M)</th><th style="width:10%;text-align:right">Reserva de contingencia (US$ M)</th><th style="width:10%;text-align:right">Línea base (US$ M)</th><th style="width:7%;text-align:right">Peso</th><th style="width:48%">Perfil de distribución en el tiempo</th></tr>{"".join(crow)}</table>
+<h2>Por qué la curva tiene esta forma</h2>
+<ul>
+<li>Las obras físicas pesan el {obras / BAC:.0%} de la línea base, así que la forma de la S la dan las obras: casi no hay gasto hasta la firma de los contratos (H03) y la pendiente máxima coincide con la construcción simultánea de la terminal, el estacionamiento y las plataformas.</li>
+<li>Obra civil: 3t²−2t³ sobre la duración de cada paquete, una aproximación simétrica al modelo logit de Kenley y Wilson (1986) con α = 0 y β ≈ 1.5. Ejecuta el 15.6% del valor en el primer cuarto del plazo y el 15.6% en el último, dentro del rango de los modelos publicados (12% a 26% en el primer cuarto; Skitmore, 1992; Kenley, 2003; RICS GN 79/2011). Con la curva DHSS del Reino Unido para contratos grandes (Hudson, 1978; C = 0.063, K = 3.344), la curva acumulada cambia como máximo US${abs(RES['sensibilidad_dhss_dif_max_musd']):.1f} millones y el 25%, 50%, 75% y 90% se alcanzan en {", ".join(mlabel(v['dhss']) for v in SD.values())}: la forma elegida no condiciona la lectura de la curva.</li>
+<li>Equipos (puentes de abordaje, balizamiento, sistema solar, accesos y puesta en marcha del SSEI): el suministro se reconoce con las entregas, escalonadas entre el 30% y el 60% del plazo del paquete, y la instalación se distribuye en todo el plazo, como separan los términos de pago del documento estándar del Banco Mundial para planta (2015). La partición 70/30 es un supuesto.</li>
+<li>Supervisión, UEP y gestión socioambiental: gasto lineal, porque son contratos por tiempo trabajado que se pagan por honorario mensual (GN-2350-15, párr. 4.2 y 4.9). Consultorías del Componente II: escalones al entregar cada producto (GN-2350-15, párr. 4.1); los porcentajes por producto se negocian en cada contrato y aquí son un supuesto. Auditoría: un escalón por ejercicio, al vencer el plazo de los estados financieros auditados (120 días después del cierre del ejercicio, Anexo III de la Propuesta de Préstamo).</li>
+<li>La curva representa valor planificado, no flujo de caja: no incluye anticipos, retenciones ni el desfase de pago de los certificados, que son condiciones de pago de los contratos (FIDIC 2017, cláusula 14) y no trabajo ejecutado.</li>
+<li>Presupuesto frente al préstamo: con la reserva de gestión (US${GEST:.1f} millones, 5% de la línea base) el presupuesto del proyecto suma US${PRES:.1f} millones, US${LOAN - PRES:.1f} millones por debajo del préstamo de US${LOAN:.0f} millones. La diferencia viene sobre todo del estacionamiento, que el estudio del préstamo extrapoló de un diseño de 700 plazas (US$64.2 millones, monto que conserva el Plan de Adquisiciones de 2026), y de una terminal estimada con obras de CEPA en el mismo aeropuerto; el escalamiento de precios hasta los años de ejecución, que el estudio del préstamo no incluye, compensa una parte.</li>
 </ul>'''
 
 mediabox = fitz.paper_rect('a4-l')
@@ -179,7 +230,7 @@ where = mediabox + (30, 28, -30, -34)
 buf = io.BytesIO()
 writer = fitz.DocumentWriter(buf)
 heights = []
-for html in (P1, P2):
+for html in (P1, P2, P3):
     story = fitz.Story(html=f'<html><head><style>{CSS}</style></head><body>{html}</body></html>')
     dev = writer.begin_page(mediabox)
     more, filled = story.place(where)
@@ -196,7 +247,7 @@ legend_y = mediabox.height - 50
 src = fitz.open('pdf', make_chart(mediabox.width - 60, legend_y - 4 - top))
 p1.show_pdf_page(fitz.Rect(30, top, mediabox.width - 30, legend_y - 4), src, 0)
 p1.insert_htmlbox(fitz.Rect(30, legend_y, mediabox.width - 30, mediabox.height - 26),
-                  f'<p style="font-family:sans-serif;font-size:7pt;color:{MUTED};margin:0">Hitos (líneas moradas): H03 contratos de obra y supervisión firmados ({mlabel(hitos["H03"]["date"][:7])}); H05 SSEI reubicado ({mlabel(hitos["H05"]["date"][:7])}); H07 terminal ampliada concluida ({mlabel(hitos["H07"]["date"][:7])}); H09 obras recibidas ({mlabel(hitos["H09"]["date"][:7])}). Puntos azules: mes en que la línea base alcanza el 25%, 50%, 75% y 90% del presupuesto. Valores al cierre de cada mes.</p>')
+                  f'<p style="font-family:sans-serif;font-size:7pt;color:{MUTED};margin:0">Hitos (líneas moradas): H03 contratos de obra y supervisión firmados ({mlabel(hitos["H03"]["date"][:7])}); H05 SSEI reubicado ({mlabel(hitos["H05"]["date"][:7])}); H07 terminal ampliada concluida ({mlabel(hitos["H07"]["date"][:7])}); H09 obras recibidas ({mlabel(hitos["H09"]["date"][:7])}). Puntos azules: mes en que la línea base alcanza el 25%, 50%, 75% y 90% de su total. Valores al cierre de cada mes.</p>')
 for k, page in enumerate(doc, start=1):
     page.insert_text((mediabox.width - 90, mediabox.height - 18), f'Página {k} de {len(doc)}', fontsize=7, color=(0.4, 0.42, 0.45))
     page.insert_text((30, mediabox.height - 18), 'ES-L1173 | Curva S del programa', fontsize=7, color=(0.4, 0.42, 0.45))

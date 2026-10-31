@@ -12,11 +12,11 @@ Cambios respecto a la v3 del traspaso previo:
    auditorias y evaluaciones duran lo que duran los paquetes que acompanan y no fijan el fin del proyecto.
    La ruta critica pasa por contratacion y obra.
 3. Se agregan 10 hitos (no son paquetes de la EDT).
-4. Componente III: la UEP se fija en US$4,071,000 (Anexo III, consultores individuales). Los paquetes de gestion que
-   ejecuta el personal de la UEP (3.1.2 a 3.1.4, 3.2.x, 3.3.1, 3.4.x, 3.5.1) quedan en costo 0 para no duplicar,
-   igual que las revisiones de diseno 1.1.x. Se conservan 3.3.2 a 3.3.4, 3.5.2, 3.5.3 y 3.5.4 (suman US$0.96M + 0.30M).
-5. La curva S incluye la contingencia (US$15,098,589.16, EEO3) y cierra en US$195M. Se reporta tambien la serie
-   sin contingencia para comparacion.
+4. Costos: estimacion propia por paquete (estimacion_costos.py: parametrica, analoga, tarifas, ascendente y PERT).
+   Los paquetes de gestion que ejecuta el personal de la UEP (3.1.2 a 3.1.4, 3.2.x, 3.3.1, 3.4.x, 3.5.1) y las
+   revisiones de diseno 1.1.x quedan en costo 0 para no duplicar el costo de la UEP (3.1.1).
+5. La curva S es la linea base de costos: estimacion PERT mas la reserva de contingencia (P80), asignada a cada paquete
+   segun su incertidumbre. La reserva de gestion y el monto del prestamo (US$195M) se muestran como referencia.
 Las duraciones y precedencias son estimaciones de planificacion. Calendario lunes a viernes, 8 h/dia, sin feriados.
 """
 from __future__ import annotations
@@ -25,68 +25,70 @@ from datetime import date, timedelta
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+import sys
+sys.dont_write_bytecode = True  # no dejar __pycache__ en el repositorio
+import estimacion_costos  # noqa: E402
+
 OUT = Path(__file__).resolve().parent
 PROJECT_START = date(2026, 2, 2)
-TOTAL_MUSD = 195.0
-CONTINGENCY_MUSD = 15.09858916
-WORKS_TOTAL_MUSD = 175.87523812
+LOAN_MUSD = 195.0  # monto autorizado del prestamo, solo como referencia
 
-# codigo|duracion (dias laborables)|precedencias|costo MUSD (con contingencia)|nombre
+# codigo|duracion (dias laborables)|precedencias|nombre (el costo sale de estimacion_costos.py)
 RAW = '''
-1.1.1|90|3.1.1|0|Diseños de la terminal revisados y aprobados
-1.1.2|100|3.1.1|0|Diseños de plataformas y calle Foxtrot revisados y aprobados
-1.1.3|105|3.1.1|0|Diseños del estacionamiento y del sistema solar revisados y aprobados
-1.1.4|70|3.1.1|0|Diseños del SSEI revisados y aprobados
-1.2.1|330|3.4.1,3.4.2,1.1.1,3.3.2|31.824|Estructura y envolvente de la terminal construidas
-1.2.2|240|1.2.1:SS+150|8.860|Salas de espera, circulación y áreas de apoyo terminadas
-1.2.3|250|1.2.1:SS+160|22.484|Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas
-1.2.4|130|1.2.2,1.2.3|15.495|Puentes de abordaje, mobiliario y equipos instalados
-1.2.5|135|1.2.2:SS+100|0.330|Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados
-1.3.1|250|1.1.2,3.3.2,3.4.1,3.4.2|7.610|Plataforma de posiciones de contacto construida
-1.3.2|220|1.6.2,1.1.2,3.3.2,3.4.1,3.4.2|7.081|Plataforma de posiciones remotas construida
-1.3.3|110|1.3.1,1.3.2|0.390|Señalización, luces y torres de iluminación de plataforma instaladas
-1.4.1|220|1.1.2,3.3.2,3.4.1,3.4.2|7.800|Pavimento y hombros de la calle Foxtrot construidos
-1.4.2|70|1.4.1|0.325|Señalización y balizamiento de la calle Foxtrot instalados
-1.5.1|370|1.1.3,3.4.1,3.4.2|53.99923812|Edificio de estacionamiento construido
-1.5.2|140|1.5.1:SS+250|6.401|Sistemas de acceso, tráfico y áreas de alquiler instalados
-1.5.3|160|1.5.1:SS+195|3.802|Sistema de generación solar instalado
-1.6.1|190|1.1.4,3.3.2,3.4.1,3.4.2|9.000|Edificio del SSEI y vías de acceso construidos
-1.6.2|35|1.6.1|0.474|SSEI en funcionamiento en la nueva ubicación
-1.7.1|0|3.4.1,3.4.2|6.659|Supervisión de la terminal y del estacionamiento ejecutada
-1.7.2|0|3.4.1,3.4.2|1.520|Supervisión de plataformas, calle Foxtrot y SSEI ejecutada
-1.7.3|0|3.4.1,3.4.2,3.3.1|0.440|PGAS de construcción implementado
-1.7.4|90|1.2.1,1.2.4,1.2.5,1.3.3,1.4.2,1.5.1,1.5.2,1.5.3,1.6.2,1.7.1,1.7.2,1.7.3|0.17476188|Planos de obra ejecutada y actas de recepción aprobados
-2.1|150|3.4.3,3.2.1|0.800|Plan estratégico del sistema aeronáutico aprobado
-2.2.1|210|3.4.3,2.1|2.700|Plan Maestro Aeroportuario actualizado y aprobado
-2.2.2|45|2.2.1|0.300|Funcionarios capacitados en planificación, gestión y operación
-2.3.1|95|3.4.3|0.120|Estrategia BIM aprobada
-2.3.2|65|2.3.1|0.060|Personal de ingeniería capacitado en BIM
-2.4|160|3.4.3|0.350|Estudio de conectividad terrestre entregado
-2.5|160|3.4.3|0.350|Estudio de diversificación de destinos entregado
-2.6.1|100|1.2.4,1.2.5,1.5.1,1.5.3|0.060|Auditoría para la certificación EDGE realizada
-2.6.2|50|2.6.1:SS|0.035|Personal capacitado en certificación EDGE
-2.7|160|3.4.3|0.100|Estudio de separación de flujos entregado
-2.8|135|3.4.3|0.100|Estudio de movilidad interna entregado
-2.9|150|3.4.3|0.025|Programa de igualdad e inclusión ejecutado
-3.1.1|50||4.071|Unidad ejecutora conformada y en funciones
-3.1.2|35|3.3.1|0|Reglamento operativo vigente
-3.1.3|25|3.1.2|0|Convenio de transferencia de recursos vigente
-3.1.4|15|3.1.3|0|Cuenta especial aperturada
-3.2.1|35|3.1.1|0|Plan de ejecución plurianual aprobado
-3.2.2|0|3.2.1|0|Planes operativos anuales aprobados
-3.2.3|35|3.2.1|0|Plan de adquisiciones aprobado
-3.3.1|45|3.1.1|0|Sistema de gestión ambiental y social y plan de acción vigentes
-3.3.2|45|1.1.2,3.3.1|0.090|Protocolo de seguridad operacional aprobado por la AAC
-3.3.3|0|3.3.1|0.140|Mecanismo de quejas y reclamos en operación
-3.3.4|0|3.4.1,3.4.2,3.3.1|0.260|Informes de cumplimiento socioambiental presentados
-3.4.1|195|1.1.1,1.1.2,1.1.3,1.1.4,3.2.3,3.1.2|0|Contratos de obras del Componente I firmados
-3.4.2|85|3.2.3,3.3.1,3.1.2|0|Contrato de supervisión firmado
-3.4.3|100|3.2.3,3.1.2|0|Contratos de consultorías del Componente II firmados
-3.4.4|0|3.1.1|0|Contratos de la unidad ejecutora, evaluación y auditoría firmados
-3.5.1|0|3.1.4|0|Desembolsos justificados e informes financieros presentados
-3.5.2|0|3.1.4|0.350|Auditorías externas emitidas
-3.5.3|0|3.4.1|0.300|Evaluaciones de medio término y de cierre realizadas
-3.5.4|85|1.7.4,2.2.2,2.3.2,2.4,2.5,2.6.1,2.6.2,2.7,2.8,2.9,3.3.3,3.3.4,3.4.4|0.12|Informe de terminación y cierre administrativo del programa
+1.1.1|90|3.1.1|Diseños de la terminal revisados y aprobados
+1.1.2|100|3.1.1|Diseños de plataformas y calle Foxtrot revisados y aprobados
+1.1.3|105|3.1.1|Diseños del estacionamiento y del sistema solar revisados y aprobados
+1.1.4|70|3.1.1|Diseños del SSEI revisados y aprobados
+1.2.1|330|3.4.1,3.4.2,1.1.1,3.3.2|Estructura y envolvente de la terminal construidas
+1.2.2|240|1.2.1:SS+150|Salas de espera, circulación y áreas de apoyo terminadas
+1.2.3|250|1.2.1:SS+160|Instalaciones eléctricas, hidráulicas, climatización y contra incendio recibidas
+1.2.4|130|1.2.2,1.2.3|Puentes de abordaje, mobiliario y equipos instalados
+1.2.5|135|1.2.2:SS+100|Accesibilidad universal, movilidad del cuidado y criterios de sostenibilidad incorporados
+1.3.1|250|1.1.2,3.3.2,3.4.1,3.4.2|Plataforma de posiciones de contacto construida
+1.3.2|220|1.6.2,1.1.2,3.3.2,3.4.1,3.4.2|Plataforma de posiciones remotas construida
+1.3.3|110|1.3.1,1.3.2|Señalización, luces y torres de iluminación de plataforma instaladas
+1.4.1|220|1.1.2,3.3.2,3.4.1,3.4.2|Pavimento y hombros de la calle Foxtrot construidos
+1.4.2|70|1.4.1|Señalización y balizamiento de la calle Foxtrot instalados
+1.5.1|370|1.1.3,3.4.1,3.4.2|Edificio de estacionamiento construido
+1.5.2|140|1.5.1:SS+250|Sistemas de acceso, tráfico y áreas de alquiler instalados
+1.5.3|160|1.5.1:SS+195|Sistema de generación solar instalado
+1.6.1|190|1.1.4,3.3.2,3.4.1,3.4.2|Edificio del SSEI y vías de acceso construidos
+1.6.2|35|1.6.1|SSEI en funcionamiento en la nueva ubicación
+1.7.1|0|3.4.1,3.4.2|Supervisión de la terminal y del estacionamiento ejecutada
+1.7.2|0|3.4.1,3.4.2|Supervisión de plataformas, calle Foxtrot y SSEI ejecutada
+1.7.3|0|3.4.1,3.4.2,3.3.1|PGAS de construcción implementado
+1.7.4|90|1.2.1,1.2.4,1.2.5,1.3.3,1.4.2,1.5.1,1.5.2,1.5.3,1.6.2,1.7.1,1.7.2,1.7.3|Planos de obra ejecutada y actas de recepción aprobados
+2.1|150|3.4.3,3.2.1|Plan estratégico del sistema aeronáutico aprobado
+2.2.1|210|3.4.3,2.1|Plan Maestro Aeroportuario actualizado y aprobado
+2.2.2|45|2.2.1|Funcionarios capacitados en planificación, gestión y operación
+2.3.1|95|3.4.3|Estrategia BIM aprobada
+2.3.2|65|2.3.1|Personal de ingeniería capacitado en BIM
+2.4|160|3.4.3|Estudio de conectividad terrestre entregado
+2.5|160|3.4.3|Estudio de diversificación de destinos entregado
+2.6.1|100|1.2.4,1.2.5,1.5.1,1.5.3|Auditoría para la certificación EDGE realizada
+2.6.2|50|2.6.1:SS|Personal capacitado en certificación EDGE
+2.7|160|3.4.3|Estudio de separación de flujos entregado
+2.8|135|3.4.3|Estudio de movilidad interna entregado
+2.9|150|3.4.3|Programa de igualdad e inclusión ejecutado
+3.1.1|50||Unidad ejecutora conformada y en funciones
+3.1.2|35|3.3.1|Reglamento operativo vigente
+3.1.3|25|3.1.2|Convenio de transferencia de recursos vigente
+3.1.4|15|3.1.3|Cuenta especial aperturada
+3.2.1|35|3.1.1|Plan de ejecución plurianual aprobado
+3.2.2|0|3.2.1|Planes operativos anuales aprobados
+3.2.3|35|3.2.1|Plan de adquisiciones aprobado
+3.3.1|45|3.1.1|Sistema de gestión ambiental y social y plan de acción vigentes
+3.3.2|45|1.1.2,3.3.1|Protocolo de seguridad operacional aprobado por la AAC
+3.3.3|0|3.3.1|Mecanismo de quejas y reclamos en operación
+3.3.4|0|3.4.1,3.4.2,3.3.1|Informes de cumplimiento socioambiental presentados
+3.4.1|195|1.1.1,1.1.2,1.1.3,1.1.4,3.2.3,3.1.2|Contratos de obras del Componente I firmados
+3.4.2|85|3.2.3,3.3.1,3.1.2|Contrato de supervisión firmado
+3.4.3|100|3.2.3,3.1.2|Contratos de consultorías del Componente II firmados
+3.4.4|0|3.1.1|Contratos de la unidad ejecutora, evaluación y auditoría firmados
+3.5.1|0|3.1.4|Desembolsos justificados e informes financieros presentados
+3.5.2|0|3.1.4|Auditorías externas emitidas
+3.5.3|0|3.4.1|Evaluaciones de medio término y de cierre realizadas
+3.5.4|85|1.7.4,2.2.2,2.3.2,2.4,2.5,2.6.1,2.6.2,2.7,2.8,2.9,3.3.3,3.3.4,3.4.4|Informe de terminación y cierre administrativo del programa
 '''
 
 # Paquetes de nivel de esfuerzo (duracion 0 en RAW): empiezan con sus precedencias y terminan con el ultimo de sus
@@ -107,7 +109,8 @@ HAMMOCKS = {
 }
 # Evaluaciones (3.5.3), segun el plan MEL (EER#2): la de medio termino se presenta al cumplirse el 50% del tiempo de
 # ejecucion o 60 dias despues de ejecutado el 50% de los recursos, lo que ocurra primero; la final, 90 dias despues de
-# ejecutado el 95%. El contrato se firma EVAL_FIRMA dias laborables antes del informe y el proceso (SCC) inicia
+# ejecutado el 95%. El MEL mide los recursos del prestamo; aqui se miden contra la linea base, con el supuesto de que el
+# financiamiento se ajusta al presupuesto estimado. El contrato se firma EVAL_FIRMA dias laborables antes del informe y el proceso (SCC) inicia
 # EVAL_PROCESO dias laborables antes de la firma.
 EVAL_FIRMA, EVAL_PROCESO = 45, 60
 
@@ -141,8 +144,8 @@ MILESTONES = [
 
 rows = []
 for line in RAW.strip().splitlines():
-    code, dur, deps, cost, name = line.split('|', 4)
-    rows.append({'code': code, 'name': name, 'dur': int(dur), 'deps': deps, 'budget': float(cost)})
+    code, dur, deps, name = line.split('|', 3)
+    rows.append({'code': code, 'name': name, 'dur': int(dur), 'deps': deps})
 byid = {r['code']: r for r in rows}
 assert len(rows) == len(byid) == 54
 
@@ -228,30 +231,47 @@ for hid, name, preds in MILESTONES:
     idx = max(byid[p]['ef'] for p in preds) - 1
     milestones.append({'id': hid, 'name': name, 'preds': preds, 'date': workday(idx)})
 
-# ---- costos: contingencia prorrateada en obras fisicas 1.2 a 1.6 ----
+# ---- costos: estimacion propia (estimacion_costos.py) con la reserva de contingencia asignada por incertidumbre ----
 is_works = lambda c: any(c.startswith(f'1.{i}.') for i in range(2, 7))
-factor = (WORKS_TOTAL_MUSD - CONTINGENCY_MUSD) / WORKS_TOTAL_MUSD
+COST = estimacion_costos.estimate({r['code']: (r['start'], r['finish']) for r in rows}, PROJECT_START, PROJECT_END)
+estimacion_costos.write_outputs(COST, OUT, {r['code']: (r['start'], r['finish']) for r in rows}, PROJECT_START, PROJECT_END)
 for r in rows:
     c = r['code']
-    r['base'] = r['budget'] * (factor if is_works(c) else 1)
-    r['contingency'] = r['budget'] - r['base']
+    r['base'] = COST['packages'].get(c, 0.0) / 1e6
+    r['contingency'] = COST['package_reserve'].get(c, 0.0) / 1e6
+    r['budget'] = r['base'] + r['contingency']
+TOTAL_MUSD = COST['linea_base'] / 1e6
+CONTINGENCY_MUSD = COST['contingencia'] / 1e6
 assert abs(sum(r['budget'] for r in rows) - TOTAL_MUSD) < 1e-7
-for k, v in (('1', 184.669), ('2', 5.0), ('3', 5.331)):
-    assert abs(sum(r['budget'] for r in rows if r['code'][0] == k) - v) < 1e-7, k
 assert abs(sum(r['contingency'] for r in rows) - CONTINGENCY_MUSD) < 1e-7
+assert set(COST['packages']) <= set(byid), set(COST['packages']) - set(byid)
 
-SUPPLY = {'1.2.4', '1.3.3', '1.4.2', '1.5.2', '1.5.3', '1.6.2', '1.7.4'}
-ONGOING = {'1.7.1', '1.7.2', '1.7.3', '3.3.4', '3.3.3', '3.1.1'}
+# Perfiles de distribucion del valor planificado (fundamento en docs/estimacion-costos.md):
+# civil: 3t^2 - 2t^3, aproximacion simetrica al logit de Kenley y Wilson (alfa 0, beta ~1.5); DHSS como sensibilidad.
+# equipment: suministro (70 %) reconocido a la entrega, escalonada entre el 30 y el 60 % del paquete, e instalacion (30 %) lineal
+#   (WB SBD Plant 2015).
+# consulting: pagos contra productos (GN-2350-15 4.1): 20 % al 25 % del plazo, 40 % al 65 % y 40 % al final.
+# audit: un escalon por ejercicio auditado, al vencer el plazo de los estados financieros (30 de abril).
+# operations: lineal, honorarios mensuales (GN-2350-15 4.2 y 4.9).
+SUPPLY = {'1.2.4', '1.3.3', '1.4.2', '1.5.2', '1.5.3', '1.6.2'}
+ONGOING = {'1.7.1', '1.7.2', '1.7.3', '1.7.4', '3.3.4', '3.3.3', '3.1.1'}
 for r in rows:
     c = r['code']
     typ = 'civil' if is_works(c) else ('consulting' if c.startswith('2.') else 'operations')
     if c in SUPPLY: typ = 'equipment'
     if c in ONGOING: typ = 'operations'
-    if c in ('3.5.2', '3.5.3'): typ = 'audit'
+    if c == '3.5.2': typ = 'audit'
     if c == '3.5.4': typ = 'consulting'
     r['profile'] = typ
-    # la UEP se paga durante todo el programa, no solo los 35 dias de su conformacion
+    # la UEP se paga durante todo el programa, no solo los 50 dias de su conformacion
     r['cf_es'], r['cf_ef'] = (0, END) if c == '3.1.1' else (r['es'], r['ef'])
+
+def apr30(y):
+    d = date(y, 4, 30)
+    while d.weekday() >= 5: d -= timedelta(days=1)
+    return d
+_a = byid['3.5.2']
+AUDIT_DATES = [apr30(y) for y in range(_a['start'].year + 1, _a['finish'].year + 1)]
 
 def piece(t, anchors):
     if t <= 0: return 0
@@ -260,13 +280,19 @@ def piece(t, anchors):
         if t <= x1: return y0 + (y1 - y0) * (t - x0) / (x1 - x0)
     return 1
 
-def profile(r, t):
+def civil_curve(t, model):
+    if model == 'dhss':  # Hudson (1978), banda de contratos grandes (Kenley 2003, tabla 3.11): C = 0.063, K = 3.344
+        C, K = 0.063, 3.344
+        return t + C * (t * t - t) - (6 * t ** 3 - 9 * t * t + 3 * t) / K
+    return t * t * (3 - 2 * t)
+
+def profile(r, t, model='smooth'):
     p = r['profile']
-    if p == 'civil': return t * t * (3 - 2 * t)
-    if p == 'equipment': return piece(t, [(0, 0), (.15, .15), (.4, .5), (.8, .85), (1, 1)])
+    if t <= 0: return 0.0
+    if t >= 1: return 1.0
+    if p == 'civil': return civil_curve(t, model)
+    if p == 'equipment': return 0.3 * t + 0.7 * min(1.0, max(0.0, (t - 0.3) / 0.3))
     if p == 'consulting': return piece(t, [(0, 0), (.249, 0), (.25, .2), (.649, .2), (.65, .6), (.999, .6), (1, 1)])
-    if p == 'audit':
-        return piece(t, [(0, 0), (.2, 0), (.201, .25), (.45, .25), (.451, .5), (.7, .5), (.701, .75), (.95, .75), (.951, 1), (1, 1)])
     return t
 
 def frac(r, d: date) -> float:
@@ -283,8 +309,9 @@ while (y, m) <= (PROJECT_END.year, PROJECT_END.month):
 
 def month_end(y, m): return date(y + (m == 12), 1 if m == 12 else m + 1, 1) - timedelta(days=1)
 
-def build_monthly(eval_idx):
-    """Curva mensual. El costo de 3.5.3 se reparte por mitades al presentar cada informe de evaluacion."""
+def build_monthly(eval_idx, model='smooth'):
+    """Curva mensual. El costo de 3.5.3 se reparte por mitades al presentar cada informe de evaluacion y el de 3.5.2 por
+    partes iguales en cada fecha de entrega de estados financieros auditados."""
     out, prev = [], 0.0
     for y, m in months:
         last = month_end(y, m)
@@ -292,7 +319,12 @@ def build_monthly(eval_idx):
         comp = {k: 0.0 for k in '123'}
         base = cont = 0.0
         for r in rows:
-            f = sum(0.5 for i in eval_idx if done > i) if r['code'] == '3.5.3' else profile(r, frac(r, last))
+            if r['code'] == '3.5.3':
+                f = sum(0.5 for i in eval_idx if done > i)
+            elif r['profile'] == 'audit':
+                f = sum(1 for d in AUDIT_DATES if d <= last) / len(AUDIT_DATES)
+            else:
+                f = profile(r, frac(r, last), model)
             comp[r['code'][0]] += r['budget'] * f
             base += r['base'] * f
             cont += r['contingency'] * f
@@ -350,6 +382,14 @@ for h in milestones:
     h['date'] = workday(max(byid[p]['ef'] for p in h['preds']) - 1)
 assert abs(monthly[-1]['acumulado_linea_base_musd'] - TOTAL_MUSD) < 1e-4, monthly[-1]
 assert all(b['acumulado_linea_base_musd'] >= a['acumulado_linea_base_musd'] for a, b in zip(monthly, monthly[1:]))
+# Sensibilidad de la forma de la curva: obras civiles con la curva DHSS en lugar de 3t^2 - 2t^3.
+for x, s in zip(monthly, build_monthly(eval_idx, 'dhss')):
+    x['acumulado_dhss_musd'] = s['acumulado_linea_base_musd']
+
+def reach(key, p):
+    return next(x['mes'] for x in monthly if x[key] >= TOTAL_MUSD * p - 1e-6)
+SENS = {f'{int(p * 100)}%': {'base': reach('acumulado_linea_base_musd', p), 'dhss': reach('acumulado_dhss_musd', p)} for p in (.25, .5, .75, .9)}
+SENS_MAX = max((x['acumulado_dhss_musd'] - x['acumulado_linea_base_musd'] for x in monthly), key=abs)
 
 annual = []
 for yr in sorted({int(x['mes'][:4]) for x in monthly}):
@@ -466,6 +506,9 @@ summary = {'inicio': PROJECT_START, 'fin': PROJECT_END, 'dias_laborables': END, 
            'tareas_xml': 1 + len(nodes) + 1 + len(milestones),
            'evaluaciones': [{'tipo': e['tipo'], 'inicio_proceso': workday(e['inicio']), 'firma': workday(e['firma']),
                              'informe': workday(e['informe'])} for e in evals],
+           'bac_musd': TOTAL_MUSD, 'contingencia_musd': CONTINGENCY_MUSD, 'estimacion_pert_musd': COST['total_E'] / 1e6,
+           'reserva_gestion_musd': COST['reserva_gestion'] / 1e6, 'presupuesto_musd': COST['presupuesto'] / 1e6, 'prestamo_musd': LOAN_MUSD,
+           'sensibilidad_dhss': SENS, 'sensibilidad_dhss_dif_max_musd': SENS_MAX,
            'nota': 'Valor planificado acumulado; no corresponde a desembolsos ni pagos'}
 (OUT / 'resumen.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2, default=str), encoding='utf-8')
 
@@ -477,11 +520,11 @@ try:
     import matplotlib.dates as mdates
     xs = [date(int(r['mes'][:4]), int(r['mes'][5:]), 15) for r in monthly]
     fig, ax = plt.subplots(figsize=(11, 5.2))
-    ax.plot(xs, [r['acumulado_linea_base_musd'] for r in monthly], color='#1f4e79', linewidth=2, label='Línea base con contingencia')
-    ax.plot(xs, [r['acumulado_sin_contingencia_musd'] for r in monthly], color='#8a8f98', linewidth=2, label='Sin contingencia')
-    ax.axhline(TOTAL_MUSD, color='#c9cdd3', linewidth=1, linestyle=(0, (4, 3)))
-    ax.text(xs[0], TOTAL_MUSD + 2.5, 'Presupuesto autorizado US$195 M', fontsize=9, color='#4a4f57')
-    ax.annotate(f"US$195.0 M", (xs[-1], TOTAL_MUSD), xytext=(-6, -14), textcoords='offset points', ha='right', fontsize=9, color='#1f4e79')
+    ax.plot(xs, [r['acumulado_linea_base_musd'] for r in monthly], color='#1f4e79', linewidth=2, label='Línea base de costos (con contingencia)')
+    ax.plot(xs, [r['acumulado_sin_contingencia_musd'] for r in monthly], color='#8a8f98', linewidth=2, label='Estimación PERT (sin contingencia)')
+    ax.axhline(LOAN_MUSD, color='#c9cdd3', linewidth=1, linestyle=(0, (4, 3)))
+    ax.text(xs[0], LOAN_MUSD + 2.5, f'Préstamo autorizado US${LOAN_MUSD:.0f} M', fontsize=9, color='#4a4f57')
+    ax.annotate(f"US${TOTAL_MUSD:.1f} M", (xs[-1], TOTAL_MUSD), xytext=(-6, 6), textcoords='offset points', ha='right', fontsize=9, color='#1f4e79')
     ax.annotate(f"US${monthly[-1]['acumulado_sin_contingencia_musd']:.1f} M", (xs[-1], monthly[-1]['acumulado_sin_contingencia_musd']),
                 xytext=(-6, -14), textcoords='offset points', ha='right', fontsize=9, color='#4a4f57')
     ax.set_ylabel('US$ millones acumulados'); ax.set_ylim(0, 210)

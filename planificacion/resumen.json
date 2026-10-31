@@ -17,44 +17,45 @@
   ],
   "pico_mensual": {
     "mes": "2028-05",
-    "gasto_mensual_musd": 14.899151,
-    "acumulado_linea_base_musd": 120.943422,
-    "avance_pct": 62.02,
-    "acumulado_sin_contingencia_musd": 111.56283,
-    "contingencia_acumulada_musd": 9.380593,
-    "c1_acumulado_musd": 113.362069,
-    "c2_acumulado_musd": 4.665,
-    "c3_acumulado_musd": 2.916354
+    "gasto_mensual_musd": 11.255558,
+    "acumulado_linea_base_musd": 86.500574,
+    "avance_pct": 56.95,
+    "acumulado_sin_contingencia_musd": 79.575236,
+    "contingencia_acumulada_musd": 6.925338,
+    "c1_acumulado_musd": 81.458772,
+    "c2_acumulado_musd": 3.523986,
+    "c3_acumulado_musd": 1.517817,
+    "acumulado_dhss_musd": 84.890418
   },
   "anual": [
     {
       "anio": 2026,
-      "gasto_anual_musd": 1.016,
-      "acumulado_musd": 1.016,
-      "avance_pct": 0.5
+      "gasto_anual_musd": 0.518,
+      "acumulado_musd": 0.518,
+      "avance_pct": 0.3
     },
     {
       "anio": 2027,
-      "gasto_anual_musd": 58.024,
-      "acumulado_musd": 59.04,
-      "avance_pct": 30.3
+      "gasto_anual_musd": 40.64,
+      "acumulado_musd": 41.158,
+      "avance_pct": 27.1
     },
     {
       "anio": 2028,
-      "gasto_anual_musd": 115.505,
-      "acumulado_musd": 174.545,
-      "avance_pct": 89.5
+      "gasto_anual_musd": 86.139,
+      "acumulado_musd": 127.297,
+      "avance_pct": 83.8
     },
     {
       "anio": 2029,
-      "gasto_anual_musd": 20.136,
-      "acumulado_musd": 194.682,
-      "avance_pct": 99.8
+      "gasto_anual_musd": 24.429,
+      "acumulado_musd": 151.726,
+      "avance_pct": 99.9
     },
     {
       "anio": 2030,
-      "gasto_anual_musd": 0.318,
-      "acumulado_musd": 195.0,
+      "gasto_anual_musd": 0.176,
+      "acumulado_musd": 151.901,
       "avance_pct": 100.0
     }
   ],
@@ -157,10 +158,35 @@
     },
     {
       "tipo": "Final",
-      "inicio_proceso": "2029-02-02",
-      "firma": "2029-04-27",
-      "informe": "2029-06-29"
+      "inicio_proceso": "2029-03-02",
+      "firma": "2029-05-25",
+      "informe": "2029-07-27"
     }
   ],
+  "bac_musd": 151.9010448865984,
+  "contingencia_musd": 11.763590819336077,
+  "estimacion_pert_musd": 140.13745406726233,
+  "reserva_gestion_musd": 7.595052244329921,
+  "presupuesto_musd": 159.49609713092835,
+  "prestamo_musd": 195.0,
+  "sensibilidad_dhss": {
+    "25%": {
+      "base": "2027-12",
+      "dhss": "2027-12"
+    },
+    "50%": {
+      "base": "2028-05",
+      "dhss": "2028-05"
+    },
+    "75%": {
+      "base": "2028-08",
+      "dhss": "2028-09"
+    },
+    "90%": {
+      "base": "2029-03",
+      "dhss": "2029-03"
+    }
+  },
+  "sensibilidad_dhss_dif_max_musd": -1.649944000000005,
   "nota": "Valor planificado acumulado; no corresponde a desembolsos ni pagos"
 }

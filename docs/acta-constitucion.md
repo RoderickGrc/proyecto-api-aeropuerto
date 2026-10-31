@@ -10,7 +10,7 @@
 | Prestatario | República de El Salvador |
 | Organismo ejecutor | Comisión Ejecutiva Portuaria Autónoma (CEPA) |
 | Organismo financiador | Banco Interamericano de Desarrollo (BID) |
-| Presupuesto total | US$195,000,000 |
+| Financiamiento autorizado | US$195,000,000 |
 | Período de desembolso | 5 años |
 | Dirección del programa | Unidad Ejecutora del Programa (UEP), mediante su Coordinador |
 
@@ -59,9 +59,9 @@ El proyecto comprende la ejecución de obras de infraestructura aeroportuaria, e
 
 ## 5. Presupuesto y plazo
 
-El presupuesto total del programa asciende a US$195,000,000, financiados por el BID mediante un Préstamo para Proyectos Específicos.
+El financiamiento autorizado del programa asciende a US$195,000,000, otorgados por el BID mediante un Préstamo para Proyectos Específicos.
 
-| Componente | Presupuesto |
+| Componente | Financiamiento |
 |---|---:|
 | Obras y adecuaciones | US$184,669,000 |
 | Fortalecimiento institucional | US$5,000,000 |
@@ -69,6 +69,8 @@ El presupuesto total del programa asciende a US$195,000,000, financiados por el 
 | **Total** | **US$195,000,000** |
 
 Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras, que incluyen costos indirectos, IVA e imprevistos por US$15,098,589, y US$8,793,762 para la supervisión (EEO#3, valores de 2025).
+
+La estimación de costos propia del programa (`docs/estimacion-costos.md`) da una línea base de costos de US$151.9 millones y, con la reserva de gestión, un presupuesto del proyecto de US$159.5 millones, dentro del financiamiento autorizado.
 
 El período previsto para el desembolso de los recursos es de cinco años. La programación de ejecución se organiza mediante el Plan de Ejecución del Proyecto (PEP), los Planes Operativos Anuales (POA) y el Plan de Adquisiciones (PA). El plazo de desembolso no constituye por sí mismo un cronograma de ejecución de las obras.
 
