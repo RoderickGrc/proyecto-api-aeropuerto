@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera la matriz de adquisiciones del programa (CSV, PDF A4 horizontal y tabla de docs/matriz-adquisiciones.md).
 
-Base: Anexo III y Anexo III.i de la Propuesta de Préstamo, los avisos de 2026 (docs/ingest/adquisiciones-2026/), el Plan de Adquisiciones 2026-2,
+Base: Anexo III y Anexo III.i de la Propuesta de Préstamo, los avisos de 2026, el Plan de Adquisiciones 2026-2,
 la EDT (docs/edt.md) y el cronograma por actividades (cronograma_actividades.csv). Una fila por contrato (o por grupo de contratos homogéneo),
 con los campos mínimos de la clase 7 (código EDT, paquete, bien/servicio/obra, cantidad, presupuesto, fuente y porcentaje, modalidad, fechas de
 inicio, publicación, firma y término, fecha requerida de entrega, responsable y estado) y las actividades del cronograma de cada contrato
@@ -518,7 +518,7 @@ P2 = CUADRE + f'''<h2>Criterios de la matriz</h2>
 <tr><td><b>SBMC</b></td><td>Selección basada en el menor costo</td><td>Los cuatro contratos anuales de auditoría externa (GN-2350-15, párr. 3.21).</td></tr>
 <tr><td><b>3CV</b></td><td>Comparación de calificaciones de al menos tres candidatos</td><td>Consultores individuales de la UEP: los puestos clave, el técnico de apoyo y la plantilla ampliada (GN-2350-15, sección V).</td></tr>
 </table>
-<p class="nota" style="margin-top:6pt">Fuentes: Propuesta de Préstamo ES-L1173, Anexos III y III.i; avisos P00001, P00002, P00023 y P00024 (docs/ingest/adquisiciones-2026/); Plan de Adquisiciones 2026-2; EDT; cronograma por actividades; estimación de costos del programa; contrato de préstamo, cláusulas 5.02 y 5.03; GN-2350-15.</p>'''
+<p class="nota" style="margin-top:6pt">Fuentes: Propuesta de Préstamo ES-L1173, Anexos III y III.i; avisos P00001, P00002, P00023 y P00024; Plan de Adquisiciones 2026-2; EDT; cronograma por actividades; estimación de costos del programa; contrato de préstamo, cláusulas 5.02 y 5.03; GN-2350-15.</p>'''
 
 mediabox = fitz.paper_rect('a4-l')
 where = mediabox + (24, 26, -24, -32)

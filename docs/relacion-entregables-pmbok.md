@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones, la matriz de riesgos y la matriz de asignación de responsabilidades, y se completará con la EDT y el cronograma.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye el listado de actividades y el cronograma, la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones, la matriz de riesgos y la matriz de asignación de responsabilidades, y se completará con la EDT.
 
 ## Acta de constitución del proyecto
 
@@ -30,7 +30,7 @@ El acta constituye el marco de referencia para los siete entregables de planific
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión del Cronograma del Proyecto.
 
-El listado de actividades (`docs/listado-actividades.md`) es la salida de los procesos 6.2 a 6.4: descompone cada paquete de trabajo de la EDT en actividades nombradas con verbos de acción, les asigna fase y responsable, estima su duración por tres valores (PERT) con la técnica y la fuente de cada estimación y registra sus dependencias (tipo de relación, desfase y clase). El cronograma (`docs/cronograma-y-curva-s.md`, `planificacion/cronograma_ES-L1173_gantt.pdf` y el anexo en tabla) es la salida del proceso 6.5: calcula fechas, holguras y ruta crítica, fija los hitos y la reserva de contingencia del cronograma, y es la referencia del proceso 6.6, Controlar el Cronograma.
+El listado de actividades es la salida de los procesos 6.2 a 6.4: descompone cada paquete de trabajo de la EDT en actividades nombradas con verbos de acción, les asigna fase y responsable, estima su duración por tres valores (PERT) con la técnica y la fuente de cada estimación y registra sus dependencias (tipo de relación, desfase y clase). El cronograma (el documento del cronograma y la curva S, con el diagrama de Gantt y la tabla completa como anexos) es la salida del proceso 6.5: calcula fechas, holguras y ruta crítica, fija los hitos y la reserva de contingencia del cronograma, y es la referencia del proceso 6.6, Controlar el Cronograma.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
@@ -44,9 +44,9 @@ El listado de actividades (`docs/listado-actividades.md`) es la salida de los pr
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Costos del Proyecto.
 
-La estimación (`docs/estimacion-costos.md`) corresponde al proceso 7.2: obtiene el costo de cada paquete de trabajo de la EDT con estimación análoga, paramétrica, por determinación de tarifas, ascendente y de tres puntos, y documenta sus bases, supuestos y rango. Las reglas de moneda, escalamiento, unidades, reservas y actualización que fija el documento son el plan de gestión de costos del proceso 7.1.
+La estimación de costos corresponde al proceso 7.2: obtiene el costo de cada paquete de trabajo de la EDT con estimación análoga, paramétrica, por determinación de tarifas, ascendente y de tres puntos, y documenta sus bases, supuestos y rango. Las reglas de moneda, escalamiento, unidades, reservas y actualización que fija el documento son el plan de gestión de costos del proceso 7.1.
 
-La curva S (`docs/cronograma-y-curva-s.md`) es la salida del proceso 7.3: asigna el costo de cada paquete a sus actividades, suma mes a mes el costo de las actividades según el cronograma, agrega la reserva de contingencia y fija la línea base de costos; además compara los requisitos de financiamiento con los desembolsos previstos del préstamo. La reserva de gestión queda fuera de la línea base y forma, con ella, el presupuesto del proyecto y los requisitos de financiamiento. Una vez aprobada, la curva es la referencia del proceso 7.4, Controlar los Costos, en el que se compara con el costo real y el valor ganado en cada fecha de corte.
+La curva S es la salida del proceso 7.3: asigna el costo de cada paquete a sus actividades, suma mes a mes el costo de las actividades según el cronograma, agrega la reserva de contingencia y fija la línea base de costos; además compara los requisitos de financiamiento con los desembolsos previstos del préstamo. La reserva de gestión queda fuera de la línea base y forma, con ella, el presupuesto del proyecto y los requisitos de financiamiento. Una vez aprobada, la curva es la referencia del proceso 7.4, Controlar los Costos, en el que se compara con el costo real y el valor ganado en cada fecha de corte.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
@@ -60,7 +60,7 @@ La curva S (`docs/cronograma-y-curva-s.md`) es la salida del proceso 7.3: asigna
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de las Adquisiciones del Proyecto.
 
-La matriz (`docs/matriz-adquisiciones.md`) documenta las decisiones de compra del programa: qué obras, servicios y consultorías se contratan, su justificación, la modalidad y el tipo de revisión según las políticas del BID y la tabla 10 del ROP, el monto estimado, el responsable y las fechas de inicio del proceso, firma y entrega requerida, programadas con el cronograma. Es la base del Plan de Adquisiciones que el BID revisa y de los procesos 12.2, Efectuar las Adquisiciones, y 12.3, Controlar las Adquisiciones.
+La matriz de adquisiciones documenta las decisiones de compra del programa: qué obras, servicios y consultorías se contratan, su justificación, la modalidad y el tipo de revisión según las políticas del BID y la tabla 10 del ROP, el monto estimado, el responsable y las fechas de inicio del proceso, firma y entrega requerida, programadas con el cronograma. Es la base del Plan de Adquisiciones que el BID revisa y de los procesos 12.2, Efectuar las Adquisiciones, y 12.3, Controlar las Adquisiciones.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
@@ -74,9 +74,9 @@ La matriz (`docs/matriz-adquisiciones.md`) documenta las decisiones de compra de
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Inicio y de Planificación, áreas de conocimiento de Gestión de los Interesados y de Gestión de las Comunicaciones del Proyecto.
 
-La identificación (`docs/matriz-comunicaciones.md`, sección 1) corresponde al proceso 13.1: parte de los interesados del acta, los clasifica por tipo, interés y poder, y asigna la estrategia de cada cuadrante (gestionar de cerca, mantener satisfecho, mantener informado o monitorear). Esa tabla es la entrada que la clase 9 pide para armar la matriz.
+La identificación de involucrados (sección 1 de la matriz de comunicaciones) corresponde al proceso 13.1: parte de los interesados del acta, los clasifica por tipo, interés y poder, y asigna la estrategia de cada cuadrante (gestionar de cerca, mantener satisfecho, mantener informado o monitorear). Esa tabla es la entrada que la clase 9 pide para armar la matriz.
 
-La matriz (`docs/matriz-comunicaciones.md`, sección 2) corresponde al proceso 10.1: fija qué información se produce, quién la recibe, quién la prepara, por qué medio y con qué frecuencia. Las filas salen de las obligaciones del ROP, del MEL y del PGAS, y de la coordinación de obra y de lado aire. No sustituye a los procesos 10.2, Gestionar las Comunicaciones, ni 10.3, Monitorear las Comunicaciones, que se aplican en la ejecución.
+La matriz de comunicaciones (sección 2) corresponde al proceso 10.1: fija qué información se produce, quién la recibe, quién la prepara, por qué medio y con qué frecuencia. Las filas salen de las obligaciones del ROP, del MEL y del PGAS, y de la coordinación de obra y de lado aire. No sustituye a los procesos 10.2, Gestionar las Comunicaciones, ni 10.3, Monitorear las Comunicaciones, que se aplican en la ejecución.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
@@ -92,7 +92,7 @@ En la octava edición, la matriz se usa como instrumento de planificación que u
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
 
-La estructura (`docs/estructura-organizacional.md`) documenta los roles, la jerarquía y las funciones que el ROP asigna a CEPA, a la UEP y a la Gerencia de Ingeniería, y las completa con el coordinador general de obra y los contratistas que exige la Propuesta de Préstamo. Es el marco de recursos humanos de la EDT: el diccionario nombra al responsable de cada paquete; este documento dice qué hace ese rol. No sustituye al proceso 9.3, Adquirir los Recursos, ni a la matriz RACI.
+La estructura organizacional documenta los roles, la jerarquía y las funciones que el ROP asigna a CEPA, a la UEP y a la Gerencia de Ingeniería, y las completa con el coordinador general de obra y los contratistas que exige la Propuesta de Préstamo. Es el marco de recursos humanos de la EDT: el diccionario nombra al responsable de cada paquete; este documento dice qué hace ese rol. No sustituye al proceso 9.3, Adquirir los Recursos, ni a la matriz RACI.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
@@ -106,7 +106,7 @@ La estructura (`docs/estructura-organizacional.md`) documenta los roles, la jera
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Riesgos del Proyecto.
 
-La matriz (`docs/matriz-riesgos.md`) corresponde a esos tres procesos. Identifica diecisiete riesgos de la sección III de la Propuesta de Préstamo (11.2), los califica con probabilidad e impacto de 1 a 5 y obtiene el nivel como producto de ambos (11.3), y asigna a cada uno una estrategia y un responsable. El plan de respuesta, con acciones, momento y efecto esperado (11.5), se desarrolla para tres: la reubicación del SSEI, la seguridad operacional del lado aire y los cambios de diseño durante la ejecución. Esos tres pueden detener el Componente I o las obras del lado aire. Las acciones usan paquetes y precedencias que ya están en la EDT y en el cronograma.
+La matriz de riesgos corresponde a esos tres procesos. Identifica veinte riesgos (11.2): diecisiete de la sección III de la Propuesta de Préstamo y tres que salen del cronograma, de la matriz de adquisiciones y de los requisitos de financiamiento, los califica con probabilidad e impacto de 1 a 5 y obtiene el nivel como producto de ambos (11.3), y asigna a cada uno una estrategia y un responsable. El plan de respuesta, con acciones, momento y efecto esperado (11.5), se desarrolla para tres: la reubicación del SSEI, la seguridad operacional del lado aire y los cambios de diseño durante la ejecución. Esos tres pueden detener el Componente I o las obras del lado aire. Las acciones usan paquetes y precedencias que ya están en la EDT y en el cronograma.
 
 La matriz no sustituye el análisis cuantitativo de costos ni la reserva de contingencia de la línea base. Esa reserva sigue siendo la salida de la estimación de costos; aquí solo se indica cuál riesgo ayuda a absorber.
 
@@ -121,7 +121,7 @@ La matriz no sustituye el análisis cuantitativo de costos ni la reserva de cont
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
 
-La matriz RACI (`docs/matriz-raci.md`) es la salida de asignación de responsabilidades de ese proceso. Cruza los 54 paquetes de trabajo de la EDT con los roles del ROP y de la estructura de funciones. En cada paquete hay un ejecutor (R) y un aprobador (A). Consultado (C) e informado (I) se usan cuando el reglamento, el préstamo o el criterio de aceptación nombran a alguien más. La estructura de funciones sigue siendo el marco de roles; esta matriz es la asignación paquete por paquete.
+La matriz RACI es la salida de asignación de responsabilidades de ese proceso. Cruza los 54 paquetes de trabajo de la EDT con los roles del ROP y de la estructura de funciones. En cada paquete hay un ejecutor (R) y un aprobador (A). Consultado (C) e informado (I) se usan cuando el reglamento, el préstamo o el criterio de aceptación nombran a alguien más. La estructura de funciones sigue siendo el marco de roles; esta matriz es la asignación paquete por paquete.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 

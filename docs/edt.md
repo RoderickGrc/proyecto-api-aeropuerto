@@ -237,4 +237,4 @@ El nivel 1 tiene un solo elemento: el objetivo del proyecto. No es un paquete de
 
 Cada paquete del Componente I y del Componente II apunta a un producto de la matriz de resultados. Los del tercer componente cubren las condiciones del préstamo y la gestión que el programa necesita para llegar a esos productos. El cronograma, la curva S, las adquisiciones, los riesgos, las comunicaciones y la matriz RACI deben salir de esta lista, sin agregar obras ni estudios que no estén aquí.
 
-Los roles que aparecen como responsables en el diccionario se definen en `docs/estructura-organizacional.md`: niveles del ROP, funciones de cada perfil de la UEP y relación con la supervisión, los contratistas y el BID.
+Los roles que aparecen como responsables en el diccionario se definen en la estructura organizacional: niveles del ROP, funciones de cada perfil de la UEP y relación con la supervisión, los contratistas y el BID.
