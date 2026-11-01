@@ -2,7 +2,7 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP.
 
-La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI de la clase 10. Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizacional, tomados del capítulo 3 del ROP y completados con el coordinador general de obra y los ejecutores que exige la Propuesta de Préstamo.
+La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI de la clase 10 (Góchez de Peñate, 2026). Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizacional, tomados del capítulo 3 del ROP y completados con el coordinador general de obra y los ejecutores que exige la Propuesta de Préstamo.
 
 ## 1. Leyenda
 
@@ -114,4 +114,4 @@ El técnico de apoyo administrativo no tiene columna: asiste a la UEP y no rinde
 - **Adquisiciones y cierre financiero.** Adquisiciones conduce los procesos de 3.4 y el Coordinador los aprueba. El BID queda en C donde la modalidad es de revisión ex ante. Finanzas ejecuta la cuenta, los desembolsos y la gestión de la auditoría; la firma auditora es C en 3.5.2 porque emite el dictamen y finanzas lo presenta. En 3.5.3 el consultor de evaluación ejecuta y planificación aprueba.
 - **El BID no aprueba paquetes.** Donde hay no objeción es C. Donde solo recibe un informe o un plan es I. La responsabilidad de la entrega permanece en CEPA o en la UEP.
 
-*Fuente: elaboración con base en el Reglamento Operativo del Programa (EEO#1, capítulo 3), la Propuesta de Préstamo ES-L1173, el diccionario de la EDT, la estructura de funciones del programa y la clase 10.*
+*Fuente: elaboración propia con base en el Reglamento Operativo del Programa (BID y CEPA, 2025, capítulo 3), la propuesta de préstamo (BID, 2025g), el diccionario de la EDT (sección 4.2), la estructura de funciones del programa (sección 4.8) y el material de la clase 10 (Góchez de Peñate, 2026).*

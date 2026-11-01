@@ -12,3 +12,6 @@ Tarea de aplicación de Administración de Proyectos Informáticos (Escuela de I
 
 - `indicaciones.md`: enunciado de la tarea.
 - `docs/ingest/`: documentos fuente del estudio de factibilidad en Markdown.
+- `docs/documento-final/`: secciones del documento final que no son entregables (introducción, objetivos, descripción del proyecto, conclusiones, recomendaciones, glosario, referencias y anexos).
+- `scripts/build_documento.py`: arma el documento final en Word y PDF sobre la plantilla `docs/Proyecto API Base.docx` a partir de los `.md` de `docs/`, genera los anexos C y D, y deja todo en `entrega/` junto con los demás anexos y el cronograma en XML. Las correcciones se hacen en los `.md` y se vuelve a ejecutar `python -B scripts/build_documento.py` (requiere Word y Edge en Windows).
+- `entrega/`: el documento final (`.docx` y `.pdf`), los anexos A a F en PDF y el cronograma para MS Project y Open Planner Studio.

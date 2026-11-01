@@ -2,7 +2,7 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP. Fuente de financiamiento: préstamo del BID.
 
-La clase 9 pide identificar a los interesados y sus necesidades de información antes de armar la matriz. La identificación parte de la lista del acta de constitución y usa los campos de la clase 3 (interés, poder, impactos y estrategia). La matriz cubre los campos de la consigna: información, interesados o destinatarios, responsable, medio o formato y frecuencia. Los responsables son los mismos roles del diccionario de la EDT y de la matriz de adquisiciones.
+La clase 9 (Góchez de Peñate, 2026) pide identificar a los interesados y sus necesidades de información antes de armar la matriz. La identificación parte de la lista del acta de constitución y usa los campos de la clase 3: interés, poder, impactos y estrategia. La matriz cubre los campos de la consigna: información, interesados o destinatarios, responsable, medio o formato y frecuencia. Los responsables son los mismos roles del diccionario de la EDT y de la matriz de adquisiciones.
 
 ## 1. Identificación de involucrados
 
@@ -28,8 +28,8 @@ Los interesados son las personas u organizaciones que el programa afecta o que p
 
 ```mermaid
 quadrantChart
-    title Clasificacion poder interes
-    x-axis Bajo interes --> Alto interes
+    title Clasificación de los interesados por poder e interés
+    x-axis Bajo interés --> Alto interés
     y-axis Bajo poder --> Alto poder
     quadrant-1 Gestionar de cerca
     quadrant-2 Mantener satisfecho
@@ -40,12 +40,12 @@ quadrantChart
     UEP: [0.85, 0.80]
     AAC: [0.70, 0.78]
     Gobierno: [0.30, 0.84]
-    TitularCEPA: [0.38, 0.80]
-    TesoreriaBCR: [0.22, 0.76]
-    EspecialistasUEP: [0.80, 0.48]
-    Supervision: [0.75, 0.42]
+    Titular de CEPA: [0.38, 0.80]
+    Tesorería y BCR: [0.22, 0.76]
+    Especialistas de la UEP: [0.80, 0.48]
+    Supervisión: [0.75, 0.42]
     Contratistas: [0.72, 0.40]
-    Aerolineas: [0.70, 0.36]
+    Aerolíneas: [0.70, 0.36]
     Comunidades: [0.68, 0.28]
     Trabajadores: [0.66, 0.24]
     Pasajeros: [0.52, 0.16]
@@ -93,4 +93,4 @@ La matriz no incluye mensajes de marca, redes sociales ni diferenciación demogr
 - **Confirmación de recepción.** En los informes al financiador y en las no objeciones, la carga en el portal y la respuesta del BID constituyen el acuse. En obra, el acta firmada. En el MGQR, el registro de ingreso y de cierre del caso.
 - **Ajuste.** La matriz se revisa en el taller de arranque, con la evaluación de medio término y si cambia un interesado o una obligación de reporte.
 
-*Fuente: elaboración con base en el acta de constitución, la EDT, el cronograma, la matriz de adquisiciones, el Reglamento Operativo del Programa (EEO#1, secciones 6.1 a 6.4), el Plan de Monitoreo, Evaluación y Aprendizaje (EER#2), el PGAS (NDAS 10 y MGQR) y el material de las clases 3 y 9.*
+*Fuente: elaboración propia con base en el acta de constitución (sección 3), la EDT (sección 4.2), el cronograma (sección 4.3), la matriz de adquisiciones (sección 4.5), el Reglamento Operativo del Programa (BID y CEPA, 2025, secciones 6.1 a 6.4), el plan de monitoreo, evaluación y aprendizaje (BID, 2025f), el Plan de Gestión Ambiental y Social (CEPA, 2025, NDAS 10 y MGQR) y el material de las clases 3 y 9 (Góchez de Peñate, 2026).*

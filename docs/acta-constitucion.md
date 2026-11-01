@@ -68,7 +68,7 @@ El financiamiento autorizado del programa asciende a US$195,000,000, otorgados p
 | Administración, evaluación y auditorías | US$5,331,000 |
 | **Total** | **US$195,000,000** |
 
-Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras y US$8,793,762 para la supervisión (EEO#3, cuadros 23 y 24, valores de 2025). El costo de las obras incluye los costos indirectos (30% de los costos directos), el IVA (13%) y los imprevistos (US$15,098,589).
+Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras y US$8,793,762 para la supervisión (BID, 2025a, cuadros 23 y 24; valores de 2025). El costo de las obras incluye los costos indirectos (30% de los costos directos), el IVA (13%) y los imprevistos (US$15,098,589).
 
 La estimación de costos propia del programa da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
 
@@ -138,4 +138,4 @@ El cumplimiento del proyecto se determinará a partir de:
 4. El cumplimiento de las metas de productos y la evaluación de los indicadores de resultados establecidos en la Matriz de Resultados.
 5. La realización de las evaluaciones, auditorías y actividades de cierre correspondientes.
 
-*Fuente: elaboración con base en la Propuesta de Préstamo ES-L1173, el Reglamento Operativo del Programa (EEO#1), la Teoría del Cambio (EER#1), el Plan de Monitoreo, Evaluación y Aprendizaje (EER#2) y los estudios técnicos complementarios del BID y CEPA.*
+*Fuente: elaboración propia con base en la propuesta de préstamo (BID, 2025g), el Reglamento Operativo del Programa (BID y CEPA, 2025), la teoría del cambio (BID, 2025h), el plan de monitoreo, evaluación y aprendizaje (BID, 2025f) y los análisis de costos y de demanda del programa (BID, 2025a, 2025b).*

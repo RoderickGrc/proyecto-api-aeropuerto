@@ -111,4 +111,4 @@ Estos actores no están en la plantilla de la UEP. Aparecen en la EDT como ejecu
 - **Doble dependencia técnica.** El especialista en ingeniería aeroportuaria y el especialista socioambiental reportan al Coordinador y, en lo funcional, a la Gerencia de Ingeniería. Las decisiones de diseño y salvaguardias no se toman solo en la UEP.
 - **Lo que no cubre este documento.** No sustituye los términos de referencia de cada consultor ni la matriz RACI. Si el ROP o el préstamo cambian un perfil, se actualizan esta estructura y, en cascada, la EDT, las adquisiciones y las comunicaciones.
 
-*Fuente: elaboración con base en el Reglamento Operativo del Programa (EEO#1, secciones 3.1 a 3.3 y tablas 2 a 8), la Propuesta de Préstamo ES-L1173 (párrafo 4.5 y tabla 5 de riesgos) y el diccionario de la EDT.*
+*Fuente: elaboración propia con base en el Reglamento Operativo del Programa (BID y CEPA, 2025, secciones 3.1 a 3.3 y tablas 2 a 8), la propuesta de préstamo (BID, 2025g, párrafo 4.5 y tabla 5) y el diccionario de la EDT (sección 4.2).*
