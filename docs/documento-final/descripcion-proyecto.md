@@ -40,7 +40,7 @@ Al 31 de octubre de 2026 el programa está en la etapa de contratación:
 - Las expresiones de interés para la supervisión del estacionamiento cerraron el 20 de mayo de 2026 y las de la supervisión de la terminal, el 6 de octubre de 2026 (BID, 2026d; CEPA, 2026a).
 - Las consultorías del Componente II no figuran en el Plan de Adquisiciones 2026-2 y van atrasadas (BID, 2026c).
 
-El costo real a la fecha de corte se estima en US$0.24 millones, frente a un valor planificado de US$0.30 millones (sección 4.4).
+El costo real a la fecha de corte se estima en US$0.24 millones, frente a un valor planificado de US$0.30 millones (sección 4.5).
 
 ## Alcance de esta planificación
 

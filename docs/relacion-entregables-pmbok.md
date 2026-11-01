@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK (Project Management Institute [PMI], 2017, 2021, 2025). Se presenta por separado del acta de constitución. Incluye el acta de constitución, la EDT, el listado de actividades y el cronograma, la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura organizativa, la matriz de riesgos y la matriz de asignación de responsabilidades.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK (Project Management Institute [PMI], 2017, 2021, 2025). Se presenta por separado del acta de constitución. Incluye el acta de constitución, la estructura organizativa, la EDT, el listado de actividades y el cronograma, la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la matriz de riesgos y la matriz de asignación de responsabilidades.
 
 ## Acta de constitución del proyecto
 
@@ -22,13 +22,27 @@ La información incorporada también apoya el proceso **13.1. Identificar a los 
 
 El acta constituye el marco de referencia para los siete entregables de planificación, pero no sustituye sus respectivos desarrollos ni las vinculaciones específicas de cada uno, que se desarrollan en las secciones siguientes.
 
+## Estructura organizativa del proyecto
+
+**Proceso relacionado:** 9.1. Planificar la Gestión de los Recursos.
+
+**Referencia:** Guía del PMBOK, sexta edición (PMI, 2017), Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
+
+La estructura organizativa (sección 4.2) documenta los roles, la jerarquía y las funciones que el ROP asigna a CEPA, a la UEP y a la Gerencia de Ingeniería, y las completa con el coordinador general de obra y los contratistas que exige la propuesta de préstamo. Su organigrama es una de las representaciones jerárquicas que el proceso 9.1 usa para documentar roles y responsabilidades (PMI, 2017, sección 9.1.2.2). Es el marco de recursos humanos de la EDT: el diccionario nombra al responsable de cada paquete; la estructura organizativa dice qué hace ese rol. No sustituye al proceso 9.3, Adquirir los Recursos, ni a la matriz RACI.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición (PMI, 2021):**
+
+- **Equipo:** define composición, dependencia jerárquica y funcional, y límites entre UEP, supervisión y contratistas.
+- **Planificación:** alinea los perfiles del préstamo con los paquetes de trabajo y con las áreas requirentes de las adquisiciones.
+- **Interesados:** sitúa a CEPA, BID, AAC y ejecutores contratados en la línea de mando o fuera de ella.
+
 ## Estructura de desglose del trabajo (EDT)
 
 **Proceso relacionado:** 5.4. Crear la EDT/WBS.
 
 **Referencia:** Guía del PMBOK, sexta edición (PMI, 2017), Grupo de Procesos de Planificación, área de conocimiento de Gestión del Alcance del Proyecto.
 
-La EDT es la salida del proceso 5.4: descompone el alcance del acta en el objetivo del programa, sus tres componentes, sus productos y 54 paquetes de trabajo, nombrados como entregables terminados y sin actividades, duraciones ni costos. El diccionario da para cada paquete su descripción, el criterio de aceptación, el responsable y la referencia en los documentos del préstamo. Con el alcance general del acta, la EDT y su diccionario forman la línea base del alcance, y los criterios de aceptación son la referencia del proceso 5.5, Validar el Alcance, al recibir cada entregable. El nivel de descomposición sigue la técnica de descomposición del proceso 5.4 (PMI, 2017, sección 5.4.2.2): el paquete llega hasta donde la UEP lo controla, y el detalle de las obras queda en los programas de trabajo de los contratistas y en cada POA (sección 4.2).
+La EDT es la salida del proceso 5.4: descompone el alcance del acta en el objetivo del programa, sus tres componentes, sus productos y 54 paquetes de trabajo, nombrados como entregables terminados y sin actividades, duraciones ni costos. El diccionario da para cada paquete su descripción, el criterio de aceptación, el responsable y la referencia en los documentos del préstamo. Con el alcance general del acta, la EDT y su diccionario forman la línea base del alcance, y los criterios de aceptación son la referencia del proceso 5.5, Validar el Alcance, al recibir cada entregable. El nivel de descomposición sigue la técnica de descomposición del proceso 5.4 (PMI, 2017, sección 5.4.2.2): el paquete llega hasta donde la UEP lo controla, y el detalle de las obras queda en los programas de trabajo de los contratistas y en cada POA (sección 4.3).
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición (PMI, 2021):**
 
@@ -96,20 +110,6 @@ La matriz de comunicaciones (sección 2) corresponde al proceso 10.1: fija qué 
 - **Planificación:** la matriz es el artefacto tabular del enfoque predictivo del programa.
 
 En la octava edición (PMI, 2025), la matriz se usa como instrumento de planificación que une las necesidades de los interesados, la coordinación del equipo y el seguimiento de resultados. El formato sigue siendo tabular porque el programa ES-L1173 se planifica de forma predictiva.
-
-## Estructura organizativa del proyecto
-
-**Proceso relacionado:** 9.1. Planificar la Gestión de los Recursos.
-
-**Referencia:** Guía del PMBOK, sexta edición (PMI, 2017), Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
-
-La estructura organizativa (sección 4.8) documenta los roles, la jerarquía y las funciones que el ROP asigna a CEPA, a la UEP y a la Gerencia de Ingeniería, y las completa con el coordinador general de obra y los contratistas que exige la propuesta de préstamo. Su organigrama es una de las representaciones jerárquicas que el proceso 9.1 usa para documentar roles y responsabilidades (PMI, 2017, sección 9.1.2.2). Es el marco de recursos humanos de la EDT: el diccionario nombra al responsable de cada paquete; la estructura organizativa dice qué hace ese rol. No sustituye al proceso 9.3, Adquirir los Recursos, ni a la matriz RACI.
-
-**Correspondencia con los dominios de desempeño del PMBOK, séptima edición (PMI, 2021):**
-
-- **Equipo:** define composición, dependencia jerárquica y funcional, y límites entre UEP, supervisión y contratistas.
-- **Planificación:** alinea los perfiles del préstamo con los paquetes de trabajo y con las áreas requirentes de las adquisiciones.
-- **Interesados:** sitúa a CEPA, BID, AAC y ejecutores contratados en la línea de mando o fuera de ella.
 
 ## Matriz de riesgos
 

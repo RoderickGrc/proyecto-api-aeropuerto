@@ -118,7 +118,7 @@ Los principales riesgos identificados para la implementación del proyecto compr
 
 También constituye un riesgo crítico el retraso en la reubicación del SSEI, debido a su relación de precedencia con la construcción de la plataforma de posiciones remotas.
 
-Estos riesgos serán tratados mediante procedimientos de gestión, controles técnicos, supervisión especializada y medidas de mitigación, desarrollados en la matriz de riesgos del proyecto (sección 4.6).
+Estos riesgos serán tratados mediante procedimientos de gestión, controles técnicos, supervisión especializada y medidas de mitigación, desarrollados en la matriz de riesgos del proyecto (sección 4.7).
 
 ## 9. Gobernabilidad y responsabilidad de la dirección
 

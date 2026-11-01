@@ -2,7 +2,7 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP.
 
-La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI, una de las formas de la matriz de asignación de responsabilidades (PMI, 2017, sección 9.1.2.2). Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizativa (sección 4.8), tomados del capítulo 3 del ROP (BID y CEPA, 2025) y completados con el coordinador general de obra y los ejecutores que exige la propuesta de préstamo (BID, 2025g, párrafos 3.3 y 4.5).
+La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI, una de las formas de la matriz de asignación de responsabilidades (PMI, 2017, sección 9.1.2.2). Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizativa (sección 4.2), tomados del capítulo 3 del ROP (BID y CEPA, 2025) y completados con el coordinador general de obra y los ejecutores que exige la propuesta de préstamo (BID, 2025g, párrafos 3.3 y 4.5).
 
 ## 1. Leyenda
 

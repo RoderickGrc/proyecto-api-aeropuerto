@@ -60,6 +60,7 @@ PARTES = [
     dict(h1='Acta de constitución del proyecto', md=DOCS / 'acta-constitucion.md', quitar_numeros=True),
     dict(h1='Desarrollo del proyecto', subpartes=[
         dict(h2='Descripción del proyecto seleccionado', md=DF / 'descripcion-proyecto.md'),
+        dict(h2='Estructura organizativa del proyecto', md=DOCS / 'estructura-organizacional.md'),
         dict(h2='Creación de la EDT (Estructura de Desglose del Trabajo)', md=DOCS / 'edt.md',
              leyendas=['EDT del programa: objetivo, componentes y productos',
                        'EDT del Componente I. Obras y adecuaciones',
@@ -80,7 +81,6 @@ PARTES = [
                       'La matriz completa, con todas sus columnas, está en el Anexo F.'}),
         dict(h2='Elaboración de la matriz de riesgos', md=DOCS / 'matriz-riesgos.md'),
         dict(h2='Información de los interesados y matriz de comunicaciones', md=DOCS / 'matriz-comunicaciones.md'),
-        dict(h2='Estructura organizativa del proyecto', md=DOCS / 'estructura-organizacional.md'),
         dict(h2='Creación de la matriz de asignación de responsabilidades (MAR)', md=DOCS / 'matriz-raci.md'),
         dict(h2='Relación de cada entregable con los procesos del PMBOK', md=DOCS / 'relacion-entregables-pmbok.md'),
     ]),
