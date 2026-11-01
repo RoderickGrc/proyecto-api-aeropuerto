@@ -68,9 +68,9 @@ El financiamiento autorizado del programa asciende a US$195,000,000, otorgados p
 | Administración, evaluación y auditorías | US$5,331,000 |
 | **Total** | **US$195,000,000** |
 
-Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras, que incluyen costos indirectos, IVA e imprevistos por US$15,098,589, y US$8,793,762 para la supervisión (EEO#3, valores de 2025).
+Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras y US$8,793,762 para la supervisión (EEO#3, cuadros 23 y 24, valores de 2025). El costo de las obras incluye los costos indirectos (30% de los costos directos), el IVA (13%) y los imprevistos (US$15,098,589).
 
-La estimación de costos propia del programa (`docs/estimacion-costos.md`) da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
+La estimación de costos propia del programa da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
 
 El período previsto para el desembolso de los recursos es de cinco años. La programación de ejecución se organiza mediante el Plan de Ejecución del Proyecto (PEP), los Planes Operativos Anuales (POA) y el Plan de Adquisiciones (PA). El plazo de desembolso no constituye por sí mismo un cronograma de ejecución de las obras.
 
