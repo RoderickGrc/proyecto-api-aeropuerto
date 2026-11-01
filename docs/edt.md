@@ -15,6 +15,8 @@ El primer nivel es el objetivo del proyecto, el impacto esperado del conjunto de
 
 Queda fuera de esta EDT la ejecución de las demás fases del Plan Maestro, la apertura de rutas o frecuencias aéreas y cualquier adquisición de tierras o reasentamiento. Esas exclusiones están en el acta de constitución.
 
+**Criterio de tamaño de los paquetes.** El nivel de detalle de los paquetes depende del control que necesita la dirección y del tamaño del proyecto (PMI, 2017, sección 5.4.2.2). Aquí el paquete es la unidad que controla la UEP: un producto verificable, un responsable y un costo propio; sus 449 actividades duran de 5 a 130 días laborables. El detalle por horas lo planifica cada contratista en su programa de trabajo, que el pliego de la terminal le exige detallar por actividad y actualizar cada 30 días (CEPA, 2026b, cláusula 28), y la UEP lo integra en el PEP y en cada POA (BID y CEPA, 2025, secciones 3.4 y 6.1.2).
+
 ## 1. Diagrama general
 
 ```mermaid
@@ -237,4 +239,4 @@ El nivel 1 tiene un solo elemento: el objetivo del proyecto. No es un paquete de
 
 Cada paquete del Componente I y del Componente II apunta a un producto de la matriz de resultados. Los del tercer componente cubren las condiciones del préstamo y la gestión que el programa necesita para llegar a esos productos. El cronograma, la curva S, las adquisiciones, los riesgos, las comunicaciones y la matriz RACI deben salir de esta lista, sin agregar obras ni estudios que no estén aquí.
 
-Los roles que aparecen como responsables en el diccionario se definen en la estructura organizacional: niveles del ROP, funciones de cada perfil de la UEP y relación con la supervisión, los contratistas y el BID.
+Los roles que aparecen como responsables en el diccionario se definen en la estructura organizativa del proyecto (sección 4.8): niveles del ROP, funciones de cada perfil de la UEP y relación con la supervisión, los contratistas y el BID.

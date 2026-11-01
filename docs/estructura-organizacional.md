@@ -1,12 +1,12 @@
-# Estructura de funciones del programa
+# Estructura organizativa del proyecto
 
-Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Este documento detalla los roles y responsabilidades que usan la EDT, las adquisiciones y las comunicaciones. Sale del Reglamento Operativo del Programa (ROP, capítulo 3) y se completa con el personal clave que exige la Propuesta de Préstamo.
+Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Esta sección detalla los roles y responsabilidades que usan la EDT, las adquisiciones y las comunicaciones. Sale del Reglamento Operativo del Programa (BID y CEPA, 2025, capítulo 3) y se completa con el personal clave que exige la propuesta de préstamo (BID, 2025g, párrafo 4.5).
 
 La EDT descompone el trabajo. Aquí se define quién rinde cuentas de ese trabajo. La asignación paquete por paquete queda para la matriz RACI.
 
 ## 1. Niveles de la organización
 
-El ROP organiza la ejecución en tres niveles. CEPA es el organismo ejecutor. La UEP depende de la Gerencia General y conduce el día a día. La calidad técnica de las obras la respaldan la Gerencia de Ingeniería y los especialistas de dedicación exclusiva.
+El ROP organiza la ejecución en tres niveles (BID y CEPA, 2025, sección 3.1). CEPA es el organismo ejecutor. La UEP depende de la Gerencia General y conduce el día a día. La calidad técnica de las obras la respaldan la Gerencia de Ingeniería y los especialistas de dedicación exclusiva.
 
 | Nivel | Quién | Qué decide o ejecuta |
 |---|---|---|
@@ -16,13 +16,13 @@ El ROP organiza la ejecución en tres niveles. CEPA es el organismo ejecutor. La
 
 El BID no forma parte de la línea de mando. Revisa, da no objeción y desembolsa. La AAC aprueba el protocolo de lado aire. Los contratistas, la firma de supervisión y los consultores ejecutan por contrato; no sustituyen a la UEP.
 
-![Estructura organizacional del Programa de Modernización del Aeropuerto Internacional de El Salvador](estructura-organizacional.svg)
+![Estructura organizativa del Programa de Modernización del Aeropuerto Internacional de El Salvador](estructura-organizacional.svg)
 
-El organigrama del ROP (ilustración 1) coloca bajo el Coordinador al técnico de apoyo, al financiero, al de adquisiciones, al de planificación y monitoreo, al especialista socioambiental y al especialista en ingeniería aeroportuaria, con línea funcional punteada hacia la Gerencia de Ingeniería. Aquí se agrega el **coordinador general de obra**, que la Propuesta de Préstamo exige como personal clave de la UEP y que el ROP no desglosa en una tabla propia.
+El organigrama del ROP (BID y CEPA, 2025, ilustración 1) coloca bajo el Coordinador al técnico de apoyo, al financiero, al de adquisiciones, al de planificación y monitoreo, al especialista socioambiental y al especialista en ingeniería aeroportuaria, con línea funcional punteada hacia la Gerencia de Ingeniería. Aquí se agrega el **coordinador general de obra**, que la propuesta de préstamo exige como personal clave de la UEP (BID, 2025g, párrafos 3.3 y 4.5) y que el ROP no desglosa en una tabla propia.
 
 ## 2. Correspondencia de nombres
 
-Los documentos del préstamo no usan siempre el mismo título. En este trabajo se unifica así:
+Los documentos del préstamo no usan siempre el mismo título (BID y CEPA, 2025, tablas 2 a 8; BID, 2025g, párrafo 4.5). En este trabajo se unifica así:
 
 | Nombre en este trabajo | Nombre en el ROP | Nombre en la Propuesta de Préstamo |
 |---|---|---|
@@ -39,15 +39,15 @@ Los siete primeros, más el técnico de apoyo, son el personal de dedicación ex
 
 ## 3. Nivel estratégico: CEPA
 
-CEPA representa al Gobierno ante el BID, coordina a sus direcciones y gerencias, ejecuta el programa conforme al contrato de préstamo y a este ROP, y presenta al Banco los informes, auditorías y evaluaciones. Supervisa la contratación y el funcionamiento de la UEP, y garantiza el acceso del BID a registros y obras.
+CEPA representa al Gobierno ante el BID, coordina a sus direcciones y gerencias, ejecuta el programa conforme al contrato de préstamo y a este ROP, y presenta al Banco los informes, auditorías y evaluaciones. Supervisa la contratación y el funcionamiento de la UEP, y garantiza el acceso del BID a registros y obras (BID y CEPA, 2025, sección 3.2.1).
 
 El titular de CEPA aprueba el POA a más tardar el 30 de noviembre de cada año y respalda los informes que se remiten al Banco. La Gerencia General es la jefatura jerárquica de la UEP.
 
-Apoyan a la UEP, sin formar parte de su plantilla exclusiva, la Unidad de Planificación, la Unidad de Compras Públicas, la Dirección Financiera y el Departamento de Seguimiento y Supervisión de la Gerencia de Ingeniería.
+Apoyan a la UEP, sin formar parte de su plantilla exclusiva, la Unidad de Planificación, la Unidad de Compras Públicas, la Dirección Financiera y el Departamento de Seguimiento y Supervisión de la Gerencia de Ingeniería (BID y CEPA, 2025, sección 3.3).
 
 ## 4. Nivel administrativo: Unidad Ejecutora
 
-La UEP elabora y actualiza el PEP, el POA y el Plan de Adquisiciones; lleva el monitoreo físico, técnico y financiero; prepara el PMR y los demás informes; inicia y adjudica las licitaciones; tramita desembolsos y pagos; registra la ejecución financiera; y atiende evaluaciones y auditorías. La administración técnica de cada contrato la delega en el área requirente.
+La UEP elabora y actualiza el PEP, el POA y el Plan de Adquisiciones; lleva el monitoreo físico, técnico y financiero; prepara el PMR y los demás informes; inicia y adjudica las licitaciones; tramita desembolsos y pagos; registra la ejecución financiera; y atiende evaluaciones y auditorías. La administración técnica de cada contrato la delega en el área requirente (BID y CEPA, 2025, sección 3.2.2).
 
 ### Coordinador del Programa
 
@@ -73,13 +73,13 @@ Asiste a los especialistas, redacta notas e informes, apoya el archivo físico y
 
 ### Coordinador general de obra
 
-La Propuesta de Préstamo lo exige en la UEP con enfoque de oficina de gestión de proyectos, para articular a los distintos contratistas y reducir desfases, en especial en lado aire. En este trabajo es el área requirente de los cuatro contratos de obra y del de supervisión, y el responsable de los paquetes de construcción y de recepción (1.2 a 1.6 y 1.7.4), del protocolo de la AAC (3.3.2) y de las reuniones semanales de obra.
+La propuesta de préstamo lo exige en la UEP con enfoque de oficina de gestión de proyectos, para articular a los distintos contratistas y reducir desfases, en especial en lado aire (BID, 2025g, párrafo 3.3). En este trabajo es el área requirente de los cuatro contratos de obra y del de supervisión, y el responsable de los paquetes de construcción y de recepción (1.2 a 1.6 y 1.7.4), del protocolo de la AAC (3.3.2) y de las reuniones semanales de obra.
 
 No sustituye a la firma de supervisión ni al especialista en ingeniería aeroportuaria. Coordina frentes, interferencias operativas y el cumplimiento de plazo; la supervisión certifica calidad y estimaciones; el especialista en ingeniería aeroportuaria responde por diseños y especificaciones.
 
 ### Especialista en ingeniería aeroportuaria
 
-Prepara y revisa la información técnica de los componentes, inspecciona obras, emite reportes de avance físico, aplica normas OACI/FAA, articula con la AAC y los contratistas, e incorpora sostenibilidad, eficiencia energética y accesibilidad. Es el responsable de la revisión de diseños (1.1), de BIM y EDGE (2.3 y 2.6) y de los estudios técnicos del Componente II que no lleva planificación (2.7 y 2.8). Depende jerárquicamente de la UEP y funcionalmente de la Gerencia de Ingeniería. En la Propuesta de Préstamo este puesto aparece como especialista técnico.
+Prepara y revisa la información técnica de los componentes, inspecciona obras, emite reportes de avance físico, aplica normas OACI/FAA, articula con la AAC y los contratistas, e incorpora sostenibilidad, eficiencia energética y accesibilidad (BID y CEPA, 2025, sección 3.2.3). Es el responsable de la revisión de diseños (1.1), de BIM y EDGE (2.3 y 2.6) y de los estudios técnicos del Componente II que no lleva planificación (2.7 y 2.8). Depende jerárquicamente de la UEP y funcionalmente de la Gerencia de Ingeniería. En la propuesta de préstamo este puesto aparece como especialista técnico.
 
 ### Especialista socioambiental
 
@@ -110,5 +110,3 @@ Estos actores no están en la plantilla de la UEP. Aparecen en la EDT como ejecu
 - **Área requirente y adquisiciones.** El especialista de adquisiciones conduce el proceso. El área requirente prepara términos de referencia o especificaciones y administra el contrato, como en la matriz de adquisiciones.
 - **Doble dependencia técnica.** El especialista en ingeniería aeroportuaria y el especialista socioambiental reportan al Coordinador y, en lo funcional, a la Gerencia de Ingeniería. Las decisiones de diseño y salvaguardias no se toman solo en la UEP.
 - **Lo que no cubre este documento.** No sustituye los términos de referencia de cada consultor ni la matriz RACI. Si el ROP o el préstamo cambian un perfil, se actualizan esta estructura y, en cascada, la EDT, las adquisiciones y las comunicaciones.
-
-*Fuente: elaboración propia con base en el Reglamento Operativo del Programa (BID y CEPA, 2025, secciones 3.1 a 3.3 y tablas 2 a 8), la propuesta de préstamo (BID, 2025g, párrafo 4.5 y tabla 5) y el diccionario de la EDT (sección 4.2).*

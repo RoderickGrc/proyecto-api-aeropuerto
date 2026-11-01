@@ -4,7 +4,7 @@ Este documento descompone los 54 paquetes de trabajo de la EDT en 449 actividade
 
 ## 1. Cómo se obtuvo el listado
 
-La EDT termina en paquetes de trabajo, que son entregables; las actividades se definen en el cronograma (clase 4, EDT: "La EDT no debe llegar al nivel de actividades"). El desglose sigue los tres pasos de la clase 5 ("Desglose de paquetes en actividades"):
+La EDT termina en paquetes de trabajo, que son entregables; las actividades se definen en el cronograma, al descomponer cada paquete en las acciones que lo producen (PMI, 2017, sección 6.2). El desglose sigue tres pasos:
 
 1. **Identificar las actividades necesarias.** Para cada paquete se listaron las acciones que producen su entregable, a partir del diccionario de la EDT (sección 5) y de los documentos del programa: el Reglamento Operativo (ROP), el contrato de préstamo, el Plan de Ejecución (PEP), el Plan de Adquisiciones 2026-2, los avisos de licitación, el análisis de costos (EEO#3), la evaluación y el plan de gestión ambiental y social (PGAS) y el plan de monitoreo y evaluación (MEL).
 2. **Usar verbos de acción.** Cada actividad empieza con un verbo en infinitivo y nombra un objeto concreto ("Construir la estructura de concreto de los niveles 1 a 3 de la terminal", "Obtener la no objeción del BID a los documentos de licitación del SSEI").
@@ -19,7 +19,7 @@ Criterios adicionales:
 
 ### Fases
 
-Cada actividad se asigna a una de las cinco fases de la administración de proyectos de la clase 1, las mismas que agrupan las actividades en la plantilla RACI de la clase 10:
+Cada actividad se asigna a una de cinco fases, que siguen los grupos de procesos de la dirección de proyectos (PMI, 2017): inicio, planificación, ejecución, monitoreo y control, y cierre.
 
 | Fase | Qué incluye | Actividades |
 |---|---|---:|
@@ -32,16 +32,16 @@ Cada actividad se asigna a una de las cinco fases de la administración de proye
 
 ## 2. Estimación de las duraciones
 
-Todas las duraciones están en días laborables (dl), de lunes a viernes, sin feriados; un mes equivale a unos 21.7 dl. Cada actividad tiene tres valores, según la estimación por tres valores de la clase 5:
+Todas las duraciones están en días laborables (dl), de lunes a viernes, sin feriados; un mes equivale a unos 21.7 dl. Cada actividad tiene tres valores, según la estimación por tres valores (PMI, 2017, sección 6.4.2.4):
 
 - **O (optimista):** la duración si todo sale bien.
 - **M (más probable):** la duración en condiciones normales.
 - **P (pesimista):** la duración si se presentan los problemas razonables de ese tipo de trabajo (lluvias, revisiones adicionales, reprocesos).
 - **Estimada (De):** De = (O + 4M + P) / 6. El cronograma usa De redondeada al día laborable entero.
 
-La clase 5 pide además una reserva por contingencia. No se agrega a cada actividad: con O y P se obtiene la desviación de cada actividad, σ = (P − O) / 6, y el cronograma fija con la desviación de la ruta crítica una reserva de tiempo explícita para el programa.
+El análisis de reservas agrega además una reserva de contingencia (PMI, 2017, sección 6.4.2.6). No se agrega a cada actividad: con O y P se obtiene la desviación de cada actividad, σ = (P − O) / 6, y el cronograma fija con la desviación de la ruta crítica una reserva de tiempo explícita para el programa.
 
-Los tres valores se fijaron con las técnicas de la clase 5. La columna "Técnica" de cada actividad indica cuál se usó y la columna "Fuente" su fundamento:
+Los tres valores se fijaron con las técnicas de estimación de la duración (PMI, 2017, sección 6.4.2). La columna "Técnica" de cada actividad indica cuál se usó y la columna "Fuente" su fundamento:
 
 | Técnica | Cuándo se usó | Actividades |
 |---|---|---:|
@@ -54,7 +54,7 @@ Los tres valores se fijaron con las técnicas de la clase 5. La columna "Técnic
 
 ## 3. Dependencias
 
-La tabla de dependencias (sección 7) tiene una fila por cada par de actividades relacionadas. Usa los tipos de relación y las clases de dependencia de la clase 5:
+La tabla de dependencias (sección 7) tiene una fila por cada par de actividades relacionadas. Usa los tipos de relación del método de diagramación por precedencia y las clases de dependencia (PMI, 2017, secciones 6.3.2.1 y 6.3.2.2):
 
 - **Tipo de relación:** FI, fin a inicio (618); II, inicio a inicio (38); FF, fin a fin (21); IF, inicio a fin (0). El desfase está en días laborables; un desfase positivo es una espera y uno negativo, un adelanto. Las relaciones II con desfase permiten superponer etapas de obra, como las instalaciones con la estructura.
 - **Clase:** obligatoria (550), cuando la impone la lógica técnica, el contrato o la norma; discrecional (57), cuando la decide el equipo; externa (70), cuando depende de un tercero (BID, AAC u otra autoridad).

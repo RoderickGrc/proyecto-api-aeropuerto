@@ -2,7 +2,7 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP.
 
-La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI de la clase 10 (Góchez de Peñate, 2026). Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizacional, tomados del capítulo 3 del ROP y completados con el coordinador general de obra y los ejecutores que exige la Propuesta de Préstamo.
+La matriz asigna, para cada paquete de trabajo de la EDT, quién ejecuta y quién aprueba. Usa la estructura RACI, una de las formas de la matriz de asignación de responsabilidades (PMI, 2017, sección 9.1.2.2). Las filas son los 54 paquetes del diccionario de la EDT: 23 de obras, 12 de fortalecimiento y 19 de administración. No baja a las actividades del cronograma. Los roles son los de la estructura organizativa (sección 4.8), tomados del capítulo 3 del ROP (BID y CEPA, 2025) y completados con el coordinador general de obra y los ejecutores que exige la propuesta de préstamo (BID, 2025g, párrafos 3.3 y 4.5).
 
 ## 1. Leyenda
 
@@ -113,5 +113,3 @@ El técnico de apoyo administrativo no tiene columna: asiste a la UEP y no rinde
 - **Arranque.** En 3.1.1 CEPA nombra al equipo, porque la UEP todavía no existe, y el Coordinador responde por que ese equipo quede en funciones. En 3.1.4 el financiero abre la gestión y Tesorería con el BCR son consultados. En 3.3.2 la AAC es el aprobador, porque el criterio de aceptación es su autorización del protocolo.
 - **Adquisiciones y cierre financiero.** Adquisiciones conduce los procesos de 3.4 y el Coordinador los aprueba. El BID queda en C donde la modalidad es de revisión ex ante. Finanzas ejecuta la cuenta, los desembolsos y la gestión de la auditoría; la firma auditora es C en 3.5.2 porque emite el dictamen y finanzas lo presenta. En 3.5.3 el consultor de evaluación ejecuta y planificación aprueba.
 - **El BID no aprueba paquetes.** Donde hay no objeción es C. Donde solo recibe un informe o un plan es I. La responsabilidad de la entrega permanece en CEPA o en la UEP.
-
-*Fuente: elaboración propia con base en el Reglamento Operativo del Programa (BID y CEPA, 2025, capítulo 3), la propuesta de préstamo (BID, 2025g), el diccionario de la EDT (sección 4.2), la estructura de funciones del programa (sección 4.8) y el material de la clase 10 (Góchez de Peñate, 2026).*

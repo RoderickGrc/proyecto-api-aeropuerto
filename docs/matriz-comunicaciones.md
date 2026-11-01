@@ -2,11 +2,11 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP. Fuente de financiamiento: préstamo del BID.
 
-La clase 9 (Góchez de Peñate, 2026) pide identificar a los interesados y sus necesidades de información antes de armar la matriz. La identificación parte de la lista del acta de constitución y usa los campos de la clase 3: interés, poder, impactos y estrategia. La matriz cubre los campos de la consigna: información, interesados o destinatarios, responsable, medio o formato y frecuencia. Los responsables son los mismos roles del diccionario de la EDT y de la matriz de adquisiciones.
+Antes de armar la matriz se identifican los interesados y sus necesidades de información (PMI, 2017, procesos 13.1 y 10.1). La identificación parte de la lista del acta de constitución (sección 3) y registra para cada interesado su interés, su poder, sus impactos y la estrategia. La matriz cubre los campos de la consigna: información, interesados o destinatarios, responsable, medio o formato y frecuencia. Los responsables son los mismos roles del diccionario de la EDT y de la matriz de adquisiciones.
 
 ## 1. Identificación de involucrados
 
-Los interesados son las personas u organizaciones que el programa afecta o que pueden afectar su resultado. Se clasifican como internos (organismo ejecutor, unidad ejecutora y su personal) o externos (financiador, regulador, prestatario, contratistas, operadores, comunidades y beneficiarios). El poder y el interés determinan la estrategia: gestionar de cerca, mantener satisfecho, mantener informado o monitorear.
+Los interesados son las personas u organizaciones que el programa afecta o que pueden afectar su resultado (PMI, 2017, sección 13.1). Se clasifican como internos (organismo ejecutor, unidad ejecutora y su personal) o externos (financiador, regulador, prestatario, contratistas, operadores, comunidades y beneficiarios). El poder y el interés determinan la estrategia, como en la matriz de poder e interés (PMI, 2017, sección 13.1.2.4): gestionar de cerca, mantener satisfecho, mantener informado o monitorear.
 
 | Interesado | Tipo | Objetivo o resultado relacionado | Interés | Poder | Impacto positivo | Impacto negativo | Estrategia |
 |---|---|---|---|---|---|---|---|
@@ -56,6 +56,8 @@ La clasificación no es un plan de relaciones públicas ni de redes sociales. Si
 
 ## 2. Matriz de comunicaciones
 
+Las obligaciones de información salen del Reglamento Operativo del Programa (BID y CEPA, 2025, secciones 6.1 a 6.4), del plan de monitoreo, evaluación y aprendizaje (BID, 2025f) y del Plan de Gestión Ambiental y Social, con su mecanismo de gestión de quejas y reclamos (CEPA, 2025).
+
 | N.º | Información | Interesados / destinatarios | Responsable | Medio / formato | Frecuencia |
 |---:|---|---|---|---|---|
 | 1 | Informe de seguimiento del progreso (PMR), con notas de desviación respecto de lo planificado (EDT 3.5.1; ROP 6.3.1) | BID; CEPA | Especialista de planificación y monitoreo; el Coordinador del Programa aprueba el envío | Informe escrito en el Portal del Cliente BID | Semestral, dentro de los 60 días siguientes al cierre de cada semestre |
@@ -88,9 +90,7 @@ La matriz no incluye mensajes de marca, redes sociales ni diferenciación demogr
 - **Alcance de la comunicación.** Solo se genera información que contribuya al éxito del programa o que cumpla una obligación contractual, fiduciaria o de salvaguardias. No se duplican reportes: el PMR semestral consolida el avance ante el BID; el informe mensual cubre la dirección de CEPA.
 - **Destinatarios.** Salen de la identificación de la sección 1. No se agregan actores que no figuren en el acta, el ROP, el MEL o el PGAS.
 - **Responsables.** Son los roles del diccionario de la EDT y de la matriz de adquisiciones. El Coordinador del Programa es el responsable de que la matriz se cumpla. Quien prepara el informe no siempre es quien lo firma o lo carga al portal.
-- **Frecuencias.** Las obligaciones con el BID salen del ROP (PMR a 60 días, POA al 30 de noviembre, PA al menos cada tres meses, auditorías a 120 días) y del MEL (evaluaciones de medio término y de cierre). Las internas de obra siguen el ritmo semanal y mensual de la supervisión. Los hitos usan las fechas del cronograma.
+- **Frecuencias.** Las obligaciones con el BID salen del ROP (PMR a 60 días, POA al 30 de noviembre, PA al menos cada tres meses, auditorías a 120 días; BID y CEPA, 2025) y del MEL (evaluaciones de medio término y de cierre; BID, 2025f). Las internas de obra siguen el ritmo semanal y mensual de la supervisión. Los hitos usan las fechas del cronograma.
 - **Medios.** El canal formal con el BID es el Portal del Cliente. Las decisiones de obra quedan en acta. Las afectaciones operativas van por circular. Las quejas se registran por escrito y se responde al interesado.
 - **Confirmación de recepción.** En los informes al financiador y en las no objeciones, la carga en el portal y la respuesta del BID constituyen el acuse. En obra, el acta firmada. En el MGQR, el registro de ingreso y de cierre del caso.
 - **Ajuste.** La matriz se revisa en el taller de arranque, con la evaluación de medio término y si cambia un interesado o una obligación de reporte.
-
-*Fuente: elaboración propia con base en el acta de constitución (sección 3), la EDT (sección 4.2), el cronograma (sección 4.3), la matriz de adquisiciones (sección 4.5), el Reglamento Operativo del Programa (BID y CEPA, 2025, secciones 6.1 a 6.4), el plan de monitoreo, evaluación y aprendizaje (BID, 2025f), el Plan de Gestión Ambiental y Social (CEPA, 2025, NDAS 10 y MGQR) y el material de las clases 3 y 9 (Góchez de Peñate, 2026).*

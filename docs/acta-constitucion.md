@@ -18,24 +18,26 @@
 
 El Aeropuerto Internacional de El Salvador San Óscar Arnulfo Romero y Galdámez constituye una infraestructura estratégica para la conectividad aérea, el turismo y el desarrollo económico nacional. Sin embargo, el crecimiento sostenido de la demanda de pasajeros ha generado presiones sobre la capacidad de sus instalaciones, afectando los niveles de servicio y evidenciando la necesidad de nuevas inversiones.
 
-De acuerdo con los estudios de demanda del programa ES-L1173, durante 2024 el aeropuerto atendió aproximadamente 5.3 millones de pasajeros, superando los niveles anteriores a la pandemia. Las principales limitaciones identificadas comprenden la disponibilidad de espacio para pasajeros en horas pico, la capacidad de estacionamiento vehicular, las posiciones para aeronaves y los tiempos de rodaje.
+De acuerdo con el análisis de demanda del programa (BID, 2025b), durante 2024 el aeropuerto atendió aproximadamente 5.3 millones de pasajeros, superando los niveles anteriores a la pandemia. Las principales limitaciones identificadas comprenden la disponibilidad de espacio para pasajeros en horas pico, la capacidad de estacionamiento vehicular, las posiciones para aeronaves y los tiempos de rodaje.
 
-En respuesta, el Gobierno de El Salvador, mediante CEPA y con financiamiento del BID, desarrolla el Programa de Modernización del Aeropuerto Internacional de El Salvador, orientado a ampliar la infraestructura, mejorar la calidad del servicio y fortalecer la capacidad institucional para la planificación, operación y gestión del transporte aéreo.
+En respuesta, el Gobierno de El Salvador, mediante CEPA y con financiamiento del BID, desarrolla el Programa de Modernización del Aeropuerto Internacional de El Salvador, orientado a ampliar la infraestructura, mejorar la calidad del servicio y fortalecer la capacidad institucional para la planificación, operación y gestión del transporte aéreo (BID, 2025g; BID, 2025h).
 
 ## 3. Objetivos del proyecto
 
 ### Objetivo general
 
-Contribuir al desarrollo económico de El Salvador, con énfasis en el sector turístico, mediante el mejoramiento de la conectividad aérea para los pasajeros que utilizan el Aeropuerto Internacional de El Salvador.
+Contribuir al desarrollo económico de El Salvador, con énfasis en el sector turístico, mediante el mejoramiento de la conectividad aérea para los pasajeros que utilizan el Aeropuerto Internacional de El Salvador (BID, 2025g, párrafo 1.1).
 
 ### Objetivos específicos
+
+La propuesta de préstamo fija dos objetivos específicos (BID, 2025g, párrafo 1.1):
 
 1. Mejorar la calidad del servicio del lado aire y lado tierra del aeropuerto mediante la ampliación y modernización de su infraestructura.
 2. Fortalecer la capacidad institucional de CEPA para la planificación, operación y gestión del transporte aéreo de El Salvador.
 
 ### Resultados esperados
 
-Los resultados del programa se medirán mediante los indicadores establecidos en la Matriz de Resultados del BID.
+Los resultados del programa se medirán mediante los indicadores establecidos en la Matriz de Resultados del BID (BID, 2025g; BID, 2025f).
 
 | Indicador | Línea base | Meta |
 |---|---|---|
@@ -49,17 +51,17 @@ Los resultados del programa se medirán mediante los indicadores establecidos en
 
 El proyecto comprende la ejecución de obras de infraestructura aeroportuaria, el fortalecimiento institucional y las actividades necesarias para su administración, seguimiento y evaluación.
 
-**Componente I. Obras y adecuaciones.** Incluye la segunda etapa de ampliación de la terminal de pasajeros, con nuevas salas de espera y posiciones de contacto para aeronaves; la construcción de plataformas de contacto y remotas; la calle de rodaje Foxtrot; un edificio de estacionamiento vehicular con infraestructura de generación solar; y la reubicación del Servicio de Salvamento y Extinción de Incendios (SSEI). Comprende además el equipamiento de las nuevas instalaciones y los servicios de supervisión técnica, ambiental y social.
+**Componente I. Obras y adecuaciones** (BID, 2025g, párrafo 2.1). Incluye la segunda etapa de ampliación de la terminal de pasajeros, con nuevas salas de espera y posiciones de contacto para aeronaves; la construcción de plataformas de contacto y remotas; la calle de rodaje Foxtrot; un edificio de estacionamiento vehicular con infraestructura de generación solar; y la reubicación del Servicio de Salvamento y Extinción de Incendios (SSEI). Comprende además el equipamiento de las nuevas instalaciones y los servicios de supervisión técnica, ambiental y social.
 
-**Componente II. Fortalecimiento institucional.** Contempla la formulación del Plan Estratégico para el Desarrollo del Sistema Aeronáutico de El Salvador, la actualización del Plan Maestro Aeroportuario, una estrategia y capacitaciones BIM, estudios de movilidad y conectividad, estudios de diversificación de destinos internacionales, actividades relacionadas con la certificación EDGE y programas de formación en igualdad de oportunidades e inclusión.
+**Componente II. Fortalecimiento institucional** (BID, 2025g, párrafo 2.2). Contempla la formulación del Plan Estratégico para el Desarrollo del Sistema Aeronáutico de El Salvador, la actualización del Plan Maestro Aeroportuario, una estrategia y capacitaciones BIM, estudios de movilidad y conectividad, estudios de diversificación de destinos internacionales, actividades relacionadas con la certificación EDGE y programas de formación en igualdad de oportunidades e inclusión.
 
-**Administración, evaluación y auditorías.** Comprende la coordinación técnica y administrativa de la ejecución, el seguimiento de los resultados, las evaluaciones y las auditorías correspondientes.
+**Administración, evaluación y auditorías** (BID, 2025g, párrafo 2.3). Comprende la coordinación técnica y administrativa de la ejecución, el seguimiento de los resultados, las evaluaciones y las auditorías correspondientes.
 
 **Límites del alcance.** El programa se circunscribe a las intervenciones previstas en la segunda etapa de ampliación del aeropuerto. No incluye la ejecución integral de las demás fases del Plan Maestro Aeroportuario ni la apertura directa de nuevas rutas y frecuencias aéreas, las cuales dependen de decisiones comerciales y factores externos.
 
 ## 5. Presupuesto y plazo
 
-El financiamiento autorizado del programa asciende a US$195,000,000, otorgados por el BID mediante un Préstamo para Proyectos Específicos.
+El financiamiento autorizado del programa asciende a US$195,000,000, otorgados por el BID mediante un Préstamo para Proyectos Específicos (BID, 2025g).
 
 | Componente | Financiamiento |
 |---|---:|
@@ -70,13 +72,13 @@ El financiamiento autorizado del programa asciende a US$195,000,000, otorgados p
 
 Los US$184,669,000 del Componente I comprenden US$175,875,238 para la construcción de las cinco obras y US$8,793,762 para la supervisión (BID, 2025a, cuadros 23 y 24; valores de 2025). El costo de las obras incluye los costos indirectos (30% de los costos directos), el IVA (13%) y los imprevistos (US$15,098,589).
 
-La estimación de costos propia del programa da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
+La estimación de costos propia del programa (anexo D) da una línea base de costos de US$160.3 millones y, con la reserva de gestión, un presupuesto del proyecto de US$168.3 millones, dentro del financiamiento autorizado.
 
-El período previsto para el desembolso de los recursos es de cinco años. La programación de ejecución se organiza mediante el Plan de Ejecución del Proyecto (PEP), los Planes Operativos Anuales (POA) y el Plan de Adquisiciones (PA). El plazo de desembolso no constituye por sí mismo un cronograma de ejecución de las obras.
+El período previsto para el desembolso de los recursos es de cinco años. La programación de ejecución se organiza mediante el Plan de Ejecución del Proyecto (PEP), los Planes Operativos Anuales (POA) y el Plan de Adquisiciones (PA) (BID y CEPA, 2025). El plazo de desembolso no constituye por sí mismo un cronograma de ejecución de las obras.
 
 Los hitos principales comprenden la conformación de la Unidad Ejecutora, la validación de estudios y diseños, la contratación de obras y servicios, la construcción de infraestructura, la instalación y puesta en funcionamiento de los sistemas, la recepción de las obras y el cierre del programa.
 
-Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero de 2026, fecha estimada de arranque de la contratación de la Unidad Ejecutora según el Anexo III de la Propuesta de Préstamo, y concluye el 1 de abril de 2030, dentro del período de desembolso de cinco años.
+Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero de 2026, fecha estimada de arranque de la contratación de la Unidad Ejecutora según el anexo III de la propuesta de préstamo (BID, 2025g), y concluye el 1 de abril de 2030, dentro del período de desembolso de cinco años.
 
 ## 6. Principales interesados
 
@@ -97,10 +99,10 @@ Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero
 ### Restricciones
 
 - El costo de implementación deberá ajustarse al financiamiento aprobado de US$195 millones y a las disposiciones contractuales aplicables.
-- Las adquisiciones y contrataciones deberán cumplir las políticas y procedimientos establecidos para operaciones financiadas por el BID.
-- Las obras en el lado aire requerirán un protocolo de seguridad operacional aprobado por la Autoridad de Aviación Civil.
-- La infraestructura del SSEI deberá estar reubicada y en funcionamiento antes de iniciar las obras de la plataforma de posiciones remotas.
-- La ejecución deberá cumplir las condiciones ambientales y sociales aplicables, garantizando la seguridad y continuidad de las operaciones aeroportuarias.
+- Las adquisiciones y contrataciones deberán cumplir las políticas y procedimientos establecidos para operaciones financiadas por el BID (BID, 2019a, 2019b).
+- Las obras en el lado aire requerirán un protocolo de seguridad operacional aprobado por la Autoridad de Aviación Civil (BID, 2025g, párrafo 4.6).
+- La infraestructura del SSEI deberá estar reubicada y en funcionamiento antes de iniciar las obras de la plataforma de posiciones remotas (BID, 2025g, párrafo 4.6).
+- La ejecución deberá cumplir las condiciones ambientales y sociales aplicables (CEPA, 2025), garantizando la seguridad y continuidad de las operaciones aeroportuarias.
 
 ### Supuestos
 
@@ -112,15 +114,15 @@ Para efectos de este trabajo, la planificación toma como inicio el 2 de febrero
 
 ## 8. Riesgos generales
 
-Los principales riesgos identificados para la implementación del proyecto comprenden retrasos en los procesos de contratación, variaciones de costos y plazos derivadas de modificaciones técnicas, dificultades de coordinación institucional, afectaciones a la seguridad operacional durante las obras y el incumplimiento de requisitos ambientales y sociales.
+Los principales riesgos identificados para la implementación del proyecto comprenden retrasos en los procesos de contratación, variaciones de costos y plazos derivadas de modificaciones técnicas, dificultades de coordinación institucional, afectaciones a la seguridad operacional durante las obras y el incumplimiento de requisitos ambientales y sociales (BID, 2025g, párrafos 3.1 a 3.10).
 
 También constituye un riesgo crítico el retraso en la reubicación del SSEI, debido a su relación de precedencia con la construcción de la plataforma de posiciones remotas.
 
-Estos riesgos serán tratados mediante procedimientos de gestión, controles técnicos, supervisión especializada y medidas de mitigación, desarrollados posteriormente en la matriz de riesgos del proyecto.
+Estos riesgos serán tratados mediante procedimientos de gestión, controles técnicos, supervisión especializada y medidas de mitigación, desarrollados en la matriz de riesgos del proyecto (sección 4.6).
 
 ## 9. Gobernabilidad y responsabilidad de la dirección
 
-La Comisión Ejecutiva Portuaria Autónoma (CEPA) es el organismo responsable de la ejecución del programa. La conducción y coordinación operativa corresponden a la Unidad Ejecutora del Programa (UEP), bajo la estructura institucional de CEPA.
+La Comisión Ejecutiva Portuaria Autónoma (CEPA) es el organismo responsable de la ejecución del programa (BID y CEPA, 2025). La conducción y coordinación operativa corresponden a la Unidad Ejecutora del Programa (UEP), bajo la estructura institucional de CEPA.
 
 La UEP estará encabezada por el Coordinador del Programa y contará con especialistas en adquisiciones, gestión financiera, planificación y monitoreo, infraestructura y aspectos socioambientales, además de la coordinación general de obras.
 
@@ -137,5 +139,3 @@ El cumplimiento del proyecto se determinará a partir de:
 3. La ejecución de los recursos conforme al presupuesto y los procedimientos financieros y contractuales aplicables.
 4. El cumplimiento de las metas de productos y la evaluación de los indicadores de resultados establecidos en la Matriz de Resultados.
 5. La realización de las evaluaciones, auditorías y actividades de cierre correspondientes.
-
-*Fuente: elaboración propia con base en la propuesta de préstamo (BID, 2025g), el Reglamento Operativo del Programa (BID y CEPA, 2025), la teoría del cambio (BID, 2025h), el plan de monitoreo, evaluación y aprendizaje (BID, 2025f) y los análisis de costos y de demanda del programa (BID, 2025a, 2025b).*

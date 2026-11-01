@@ -2,23 +2,23 @@
 
 Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173). Organismo ejecutor: CEPA, mediante la UEP. Fuente de financiamiento: préstamo del BID.
 
-La matriz recoge los riesgos que nombra la sección III de la Propuesta de Préstamo, más tres que salen del cronograma, de la matriz de adquisiciones y de los requisitos de financiamiento de este trabajo (R18 a R20), y los califica en una escala de 1 a 5. Cubre los campos de la consigna: riesgo, causa, probabilidad, impacto, nivel o prioridad, respuesta y responsable. El identificador, el tipo de riesgo y el paquete de la EDT conservan la trazabilidad con el cronograma, las adquisiciones y la estructura de funciones. Los responsables son roles ya definidos en esa estructura.
+La matriz recoge los riesgos que nombra la sección III de la propuesta de préstamo (BID, 2025g, párrafos 3.1 a 3.10 y tablas 3 a 5), más tres que salen del cronograma, de la matriz de adquisiciones y de los requisitos de financiamiento de este trabajo (R18 a R20), y los califica en una escala de 1 a 5. Cubre los campos de la consigna: riesgo, causa, probabilidad, impacto, nivel o prioridad, respuesta y responsable. El identificador, el tipo de riesgo y el paquete de la EDT conservan la trazabilidad con el cronograma, las adquisiciones y la estructura organizativa. Los responsables son roles ya definidos en esa estructura.
 
 El plan de respuesta, con acciones, momento y efecto esperado, se desarrolla solo para tres riesgos: la reubicación del SSEI (R1), la seguridad operacional del lado aire (R2) y los cambios de diseño durante la ejecución (R3). Los demás quedan calificados, con la estrategia que ya trae el préstamo o, en R18 a R20, con la que sale del cronograma.
 
 ## 1. Criterio de selección del plan
 
-La Propuesta de Préstamo trata como medio-altos los riesgos de contexto, de capacidad y específicos del programa, como alto el de desastres y como críticos los cambios regulatorios o políticos. De ese conjunto, el plan de respuesta se reserva para los tres que pueden detener el Componente I o las obras del lado aire y que el préstamo ata a una condición de ejecución o a los costos y plazos del Componente I:
+La propuesta de préstamo trata como medio-altos los riesgos de contexto, de capacidad y específicos del programa, como alto el de desastres y como críticos los cambios regulatorios o políticos. De ese conjunto, el plan de respuesta se reserva para los tres que pueden detener el Componente I o las obras del lado aire y que el préstamo ata a una condición de ejecución o a los costos y plazos del Componente I:
 
-- R1. La reubicación del SSEI, marcada en la tabla 5 como riesgo alto y exigida por el párrafo 4.6 antes de la plataforma de posiciones remotas.
-- R2. La seguridad operacional del lado aire, también del párrafo 4.6: sin protocolo aprobado por la AAC no inician esas obras.
-- R3. Los cambios de diseños, cantidades y costos durante la ejecución, que la tabla 5 vincula con controversias y sobrecostos del Componente I.
+- R1. La reubicación del SSEI, marcada como riesgo alto y exigida antes de la plataforma de posiciones remotas (BID, 2025g, tabla 5 y párrafo 4.6).
+- R2. La seguridad operacional del lado aire, también condición de ejecución: sin protocolo aprobado por la AAC no inician esas obras (BID, 2025g, párrafo 4.6).
+- R3. Los cambios de diseños, cantidades y costos durante la ejecución, que el préstamo vincula con controversias y sobrecostos del Componente I (BID, 2025g, tabla 5).
 
 Los otros catorce del préstamo se registran, se califican y conservan su estrategia (aceptar, evitar o mitigar). Los tres que agrega este trabajo (R18 a R20) llevan la respuesta que proponen el listado de actividades y la curva S. Su seguimiento va en el PMR. Este trabajo no les abre un plan propio.
 
 ## 2. Escalas
 
-La probabilidad y el impacto van de 1 a 5. El nivel es el producto de ambos, de 1 a 25. La escala amplía la de tres niveles de la clase 8 (Góchez de Peñate, 2026): se conserva la idea de aceptar lo bajo, monitorear lo medio y gestionar lo alto, con dos peldaños más para distinguir prioridad.
+La probabilidad y el impacto van de 1 a 5. El nivel es el producto de ambos, de 1 a 25, como en la matriz de probabilidad e impacto del análisis cualitativo de riesgos (PMI, 2017, sección 11.3). Las franjas de nivel siguen la idea de aceptar lo bajo, monitorear lo medio y gestionar lo alto.
 
 | Probabilidad | Valor | Significado en este programa |
 |---|---:|---|
@@ -45,7 +45,7 @@ La probabilidad y el impacto van de 1 a 5. El nivel es el producto de ambos, de 
 
 ## 3. Matriz
 
-Ordenada por nivel. R1, R2 y R3 son los únicos con plan en la sección 4. El tipo sigue la clasificación de la clase 8 (Góchez de Peñate, 2026): técnico, alcance, cronograma, presupuesto, calidad y gestión. Se agrega externo para los riesgos de entorno que el préstamo sitúa fuera de la UEP (autoridades, norma y desastres).
+Ordenada por nivel. R1, R2 y R3 son los únicos con plan en la sección 4. El tipo agrupa los riesgos por categoría, como una estructura de desglose de riesgos (PMI, 2017, sección 11.1): técnico, alcance, cronograma, presupuesto, calidad y gestión. Se agrega externo para los riesgos de entorno que el préstamo sitúa fuera de la UEP (autoridades, norma y desastres).
 
 | Id | Tipo de riesgo | EDT | Riesgo | Causa | Probabilidad | Impacto | Nivel / prioridad | Respuesta | Responsable |
 |---|---|---|---|---|---|---|---|---|---|
@@ -70,7 +70,7 @@ Ordenada por nivel. R1, R2 y R3 son los únicos con plan en la sección 4. El ti
 | R11 | Técnico | 1.1 y 2.2 | La infraestructura o sus sistemas quedan obsoletos frente a la demanda y a la operación futura. | Diseños rígidos y un Plan Maestro que no se actualiza. | 2 (Baja) | 3 (Medio) | 6 (Medio) | Mitigar. Diseños modulares, actualización del Plan Maestro y auditorías periódicas. | Especialista en ingeniería aeroportuaria |
 | R16 | Calidad | 3.3.1 | En la operación aumentan el ruido, las emisiones, el consumo de agua y los residuos. | Mayor frecuencia de aterrizajes y más trabajadores, viajeros y concesionarios en la terminal ampliada. | 3 (Media) | 2 (Bajo) | 6 (Medio) | Mitigar. Seguimiento de ruido, consumos y residuos dentro del SGAS, con foco en los receptores sensibles. | Especialista socioambiental |
 
-R2 es la primera prioridad: nivel 20. Entre los de nivel alto, R1 va por delante de los otros de producto 15 porque es condición de ejecución del préstamo (párrafo 4.6) y, sin el SSEI reubicado, no puede iniciarse la plataforma de posiciones remotas. Su cadena no está hoy en la ruta crítica: tiene 180 días laborables de holgura, y solo un atraso mayor movería la fecha de cierre. R15 comparte ese producto y se monitorea con la medida del párrafo 3.10, sin plan propio en este trabajo. R18 también suma 15: su probabilidad es la más alta porque el incumplimiento ya está en el plan oficial, pero su respuesta es un trámite de la UEP y no detiene las obras.
+R2 es la primera prioridad: nivel 20. Entre los de nivel alto, R1 va por delante de los otros de producto 15 porque es condición de ejecución del préstamo (BID, 2025g, párrafo 4.6) y, sin el SSEI reubicado, no puede iniciarse la plataforma de posiciones remotas. Su cadena no está hoy en la ruta crítica: tiene 180 días laborables de holgura, y solo un atraso mayor movería la fecha de cierre. R15 comparte ese producto y se monitorea con la medida del párrafo 3.10, sin plan propio en este trabajo. R18 también suma 15: su probabilidad es la más alta porque el incumplimiento ya está en el plan oficial, pero su respuesta es un trámite de la UEP y no detiene las obras.
 
 ## 4. Planes de respuesta
 
@@ -116,7 +116,7 @@ El plan se desarrolla solo para R1, R2 y R3. Cada uno usa trabajo que ya está e
 **Acciones.**
 
 - Revisar y aprobar los expedientes 1.1.1 a 1.1.4 antes de lanzar las licitaciones de obra (3.4.1). Ninguna de esas revisiones está hoy en la ruta crítica: la de menor holgura es la de la terminal (1.1.1, 41 días laborables), seguida de la de plataformas y calle Foxtrot (1.1.2, 82); la del estacionamiento (1.1.3) tiene 161 y la del SSEI (1.1.4) también 161.
-- Revisar la coordinación BIM de la terminal (1.1.1-03) y avanzar la estrategia BIM (2.3). La tabla 5 pide validar los diseños con BIM y con los entes reguladores antes de la licitación.
+- Revisar la coordinación BIM de la terminal (1.1.1-03) y avanzar la estrategia BIM (2.3). El préstamo pide validar los diseños con BIM y con los entes reguladores antes de la licitación (BID, 2025g, tabla 5).
 - Cerrar, dentro de esa revisión, el alcance de equipaje, uso común y escáneres de la terminal, y la categoría OACI y el programa de necesidades del SSEI. La estimación de costos ya identifica esas dos definiciones como la respuesta a los elementos de mayor incertidumbre.
 - Actualizar la estimación cuando se aprueben los diseños y se conozcan las ofertas, con la regla ya escrita en la estimación de costos. La reserva de contingencia de la línea base (US$12.1 millones, percentil 80) queda disponible si una variación de costo ocurre de todos modos.
 
@@ -128,11 +128,9 @@ El plan se desarrolla solo para R1, R2 y R3. Cada uno usa trabajo que ya está e
 
 ## 5. Criterios
 
-- **Veinte riesgos, tres planes.** La matriz lista los diecisiete que la sección III formula como riesgo y tres que salen de este trabajo: la auditoría del ejercicio 2026 fuera de plazo (R18), el desembolso acelerado frente al plazo de medio término (R19) y la reprogramación del PEP y del presupuesto (R20). El plan de la sección 4 cubre R1, R2 y R3. En los otros, la columna Respuesta reproduce la estrategia del préstamo o la del listado de actividades y basta para el monitoreo.
+- **Veinte riesgos, tres planes.** La matriz lista los diecisiete que la sección III formula como riesgo y tres que salen de este trabajo: la auditoría del ejercicio 2026 fuera de plazo (R18; República de El Salvador y BID, 2026, cláusula 5.02), el desembolso acelerado frente al plazo de medio término (R19; República de El Salvador y BID, 2026, cláusula 5.03) y la reprogramación del PEP y del presupuesto (R20). El plan de la sección 4 cubre R1, R2 y R3. En los otros, la columna Respuesta reproduce la estrategia del préstamo o la del listado de actividades y basta para el monitoreo.
 - **Dueño de cada riesgo.** La columna Responsable nombra a quien rinde cuentas del seguimiento. Quien ejecuta una actividad (AAC, contratista o supervisión) sigue el diccionario de la EDT y se precisará en la matriz RACI.
 - **Probabilidad de R6 y R7.** Quedan en 2 porque la UEP ya está contratada y el enlace con el BID forma parte de las funciones del Coordinador. El impacto sigue alto si la articulación falla.
-- **Seguimiento.** El especialista de planificación y monitoreo actualiza esta matriz y reporta los riesgos en el PMR semestral, como ya lo establece la estructura de funciones. El seguimiento no sustituye al responsable de cada fila.
+- **Seguimiento.** El especialista de planificación y monitoreo actualiza esta matriz y reporta los riesgos en el PMR semestral, como ya lo establece la estructura organizativa (sección 4.8). El seguimiento no sustituye al responsable de cada fila.
 - **Reservas.** La reserva de contingencia de costos cubre desviación de precio. Esta matriz la vincula con R3. No crea otra reserva ni mueve la línea base.
 - **Actualización.** La matriz se revisa al aprobar los diseños (1.1), al obtener el protocolo de la AAC (H04), al entrar en operación el SSEI (H05), al proyectar el hito de medio término (3.5.3-01) y en cada POA.
-
-*Fuente: elaboración propia con base en la propuesta de préstamo (BID, 2025g, sección III, tablas 3 a 5 y párrafos 3.5 a 3.10 y 4.6), el contrato de préstamo (República de El Salvador y BID, 2026, cláusulas 5.02 y 5.03), el material de la clase 8, gestión de riesgos (Góchez de Peñate, 2026), y los demás entregables de este documento: la EDT (sección 4.2), el cronograma (sección 4.3), la curva S (sección 4.4 y anexo E), la matriz de adquisiciones (sección 4.5), la estructura de funciones (sección 4.8), el listado de actividades (anexo C, supuestos S-III.10, S-III.19 y S-III.21) y la estimación de costos (anexo D).*
