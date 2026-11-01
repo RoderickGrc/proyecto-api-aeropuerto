@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones y la matriz de riesgos, y se completará con la EDT, el cronograma y la matriz de asignación de responsabilidades.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones, la matriz de riesgos y la matriz de asignación de responsabilidades, y se completará con la EDT y el cronograma.
 
 ## Acta de constitución del proyecto
 
@@ -114,3 +114,16 @@ La matriz no sustituye el análisis cuantitativo de costos ni la reserva de cont
 
 - **Incertidumbre:** identifica amenazas del Componente I y del lado aire, las prioriza y fija la respuesta de cada una.
 - **Planificación:** enlaza cada riesgo con paquetes de la EDT, hitos del cronograma y roles de la UEP.
+
+## Matriz de asignación de responsabilidades
+
+**Proceso relacionado:** 9.1. Planificar la Gestión de los Recursos.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de los Recursos del Proyecto.
+
+La matriz RACI (`docs/matriz-raci.md`) es la salida de asignación de responsabilidades de ese proceso. Cruza los 54 paquetes de trabajo de la EDT con los roles del ROP y de la estructura de funciones. En cada paquete hay un ejecutor (R) y un aprobador (A). Consultado (C) e informado (I) se usan cuando el reglamento, el préstamo o el criterio de aceptación nombran a alguien más. La estructura de funciones sigue siendo el marco de roles; esta matriz es la asignación paquete por paquete.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Equipo:** fija quién ejecuta, quién aprueba y quién se consulta en cada paquete, dentro de la UEP y con los contratistas.
+- **Planificación:** deja la responsabilidad alineada con el diccionario de la EDT y con las aprobaciones que el ROP reserva a CEPA, a la Gerencia de Ingeniería y a la AAC.

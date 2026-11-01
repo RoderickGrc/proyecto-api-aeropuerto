@@ -16,36 +16,7 @@ El ROP organiza la ejecución en tres niveles. CEPA es el organismo ejecutor. La
 
 El BID no forma parte de la línea de mando. Revisa, da no objeción y desembolsa. La AAC aprueba el protocolo de lado aire. Los contratistas, la firma de supervisión y los consultores ejecutan por contrato; no sustituyen a la UEP.
 
-```mermaid
-flowchart TD
-    GG["Gerencia General CEPA"]
-    Coord["Coordinador del Programa"]
-    Apoyo["Tecnico de apoyo administrativo"]
-    Fin["Especialista financiero"]
-    Adq["Especialista de adquisiciones"]
-    Plan["Especialista de planificacion y monitoreo"]
-    CGO["Coordinador general de obra"]
-    Tec["Especialista en ingenieria aeroportuaria"]
-    Soc["Especialista socioambiental"]
-    Ing["Gerencia de Ingenieria"]
-    Sup["Firma de supervision"]
-    Obr["Contratistas de obra"]
-    Cons["Consultores del Componente II"]
-
-    GG --> Coord
-    Coord --> Apoyo
-    Coord --> Fin
-    Coord --> Adq
-    Coord --> Plan
-    Coord --> CGO
-    Coord --> Tec
-    Coord --> Soc
-    Ing -.-> Tec
-    Ing -.-> Soc
-    CGO --> Sup
-    CGO --> Obr
-    Tec --> Cons
-```
+![Estructura organizacional del Programa de Modernización del Aeropuerto Internacional de El Salvador](estructura-organizacional.svg)
 
 El organigrama del ROP (ilustración 1) coloca bajo el Coordinador al técnico de apoyo, al financiero, al de adquisiciones, al de planificación y monitoreo, al especialista socioambiental y al especialista en ingeniería aeroportuaria, con línea funcional punteada hacia la Gerencia de Ingeniería. Aquí se agrega el **coordinador general de obra**, que la Propuesta de Préstamo exige como personal clave de la UEP y que el ROP no desglosa en una tabla propia.
 

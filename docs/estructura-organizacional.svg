@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="2100" viewBox="0 0 3600 2100" role="img" aria-labelledby="title desc">
+  <title id="title">Estructura organizacional del Programa de Modernización del Aeropuerto Internacional de El Salvador</title>
+  <desc id="desc">Organigrama de CEPA, la Unidad Ejecutora del Programa, la Gerencia de Ingeniería y los actores contratados y externos.</desc>
+  <rect width="3600" height="2100" fill="#F7F9FC"/>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="135%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#17324D" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#AD5A00"/>
+    </marker>
+  </defs>
+
+  <!-- Encabezado -->
+  <text x="1800" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#17324D">Estructura organizacional del programa</text>
+  <text x="1800" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#53687C">Modernización del Aeropuerto Internacional de El Salvador (ES-L1173)</text>
+
+  <!-- Conectores jerárquicos principales -->
+  <path d="M 1800 300 V 360" stroke="#7890A8" stroke-width="6" fill="none"/>
+  <path d="M 1800 510 V 575" stroke="#1565C0" stroke-width="6" fill="none" marker-end="url(#arrowBlue)"/>
+  <path d="M 1800 735 V 790 H 335 V 855" stroke="#1565C0" stroke-width="5" fill="none"/>
+  <path d="M 1800 790 H 2925 V 855" stroke="#1565C0" stroke-width="5" fill="none"/>
+  <path d="M 765 790 V 855 M 1205 790 V 855 M 1635 790 V 855 M 2065 790 V 855 M 2495 790 V 855" stroke="#1565C0" stroke-width="5" fill="none"/>
+
+  <!-- Conectores contratados -->
+  <path d="M 2065 1055 V 1175 H 1205 V 1240" stroke="#AD5A00" stroke-width="4" fill="none" marker-end="url(#arrowOrange)"/>
+  <path d="M 2065 1175 H 2065 V 1240" stroke="#AD5A00" stroke-width="4" fill="none" marker-end="url(#arrowOrange)"/>
+  <path d="M 2495 1055 V 1175 H 2925 V 1240" stroke="#AD5A00" stroke-width="4" fill="none" marker-end="url(#arrowOrange)"/>
+
+  <!-- CEPA y UEP -->
+  <rect x="1050" y="170" width="1500" height="130" rx="24" fill="#173B63" filter="url(#shadow)"/>
+  <text x="1800" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#FFFFFF">CEPA · Gerencia General y titular</text>
+  <text x="1800" y="266" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#DCE8F4">Nivel estratégico · supervisión, aprobación y representación ante el BID</text>
+
+  <rect x="1190" y="360" width="1220" height="150" rx="22" fill="#1565C0" filter="url(#shadow)"/>
+  <text x="1800" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Unidad Ejecutora del Programa (UEP)</text>
+  <text x="1800" y="463" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#EAF3FC">Planifica, contrata, desembolsa, informa y coordina la ejecución</text>
+
+  <rect x="1300" y="575" width="1000" height="160" rx="22" fill="#2878C7" filter="url(#shadow)"/>
+  <text x="1800" y="638" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#FFFFFF">Coordinador del Programa</text>
+  <text x="1800" y="681" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#EAF3FC">Dirige la UEP · controla alcance, cronograma, presupuesto y calidad</text>
+
+  <!-- Equipo UEP -->
+  <rect x="110" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="110" y="855" width="450" height="62" rx="20" fill="#EAF3FC"/>
+  <path d="M 110 897 V 875 Q 110 855 130 855 H 540 Q 560 855 560 875 V 917 H 110 Z" fill="#EAF3FC"/>
+  <text x="335" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1565C0">Apoyo administrativo</text>
+  <text x="335" y="958" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Técnico de apoyo</text>
+  <text x="335" y="990" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">administrativo</text>
+  <text x="335" y="1023" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Asistencia, archivo y reportes</text>
+
+  <rect x="540" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="540" y="855" width="450" height="62" rx="20" fill="#EAF3FC"/>
+  <path d="M 540 897 V 875 Q 540 855 560 855 H 970 Q 990 855 990 875 V 917 H 540 Z" fill="#EAF3FC"/>
+  <text x="765" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1565C0">Gestión financiera</text>
+  <text x="765" y="972" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Especialista financiero</text>
+  <text x="765" y="1010" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Desembolsos, registros y auditoría</text>
+
+  <rect x="980" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="980" y="855" width="450" height="62" rx="20" fill="#EAF3FC"/>
+  <path d="M 980 897 V 875 Q 980 855 1000 855 H 1410 Q 1430 855 1430 875 V 917 H 980 Z" fill="#EAF3FC"/>
+  <text x="1205" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1565C0">Adquisiciones</text>
+  <text x="1205" y="972" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Especialista de adquisiciones</text>
+  <text x="1205" y="1010" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Licitaciones, contratos y expedientes</text>
+
+  <rect x="1410" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="1410" y="855" width="450" height="62" rx="20" fill="#EAF3FC"/>
+  <path d="M 1410 897 V 875 Q 1410 855 1430 855 H 1840 Q 1860 855 1860 875 V 917 H 1410 Z" fill="#EAF3FC"/>
+  <text x="1635" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1565C0">Planificación</text>
+  <text x="1635" y="958" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Especialista de planificación</text>
+  <text x="1635" y="990" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">y monitoreo</text>
+  <text x="1635" y="1023" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">PEP, POA, PMR, indicadores y riesgos</text>
+
+  <rect x="1840" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="1840" y="855" width="450" height="62" rx="20" fill="#EAF3FC"/>
+  <path d="M 1840 897 V 875 Q 1840 855 1860 855 H 2270 Q 2290 855 2290 875 V 917 H 1840 Z" fill="#EAF3FC"/>
+  <text x="2065" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1565C0">Gestión de obras</text>
+  <text x="2065" y="958" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Coordinador general</text>
+  <text x="2065" y="990" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">de obra</text>
+  <text x="2065" y="1023" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Frentes, plazos e interferencias</text>
+
+  <rect x="2270" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#2E7D32" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="2270" y="855" width="450" height="62" rx="20" fill="#EBF6EC"/>
+  <path d="M 2270 897 V 875 Q 2270 855 2290 855 H 2700 Q 2720 855 2720 875 V 917 H 2270 Z" fill="#EBF6EC"/>
+  <text x="2495" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#2E7D32">Calidad técnica</text>
+  <text x="2495" y="958" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Especialista en ingeniería</text>
+  <text x="2495" y="990" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">aeroportuaria</text>
+  <text x="2495" y="1023" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Diseños, normas e inspección</text>
+
+  <rect x="2700" y="855" width="450" height="200" rx="20" fill="#FFFFFF" stroke="#2E7D32" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="2700" y="855" width="450" height="62" rx="20" fill="#EBF6EC"/>
+  <path d="M 2700 897 V 875 Q 2700 855 2720 855 H 3130 Q 3150 855 3150 875 V 917 H 2700 Z" fill="#EBF6EC"/>
+  <text x="2925" y="896" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#2E7D32">Salvaguardias</text>
+  <text x="2925" y="972" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#263746">Especialista socioambiental</text>
+  <text x="2925" y="1010" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">SGAS, PAAS, PGAS e inclusión</text>
+
+  <!-- Gerencia de Ingeniería y dependencia funcional -->
+  <rect x="3200" y="855" width="340" height="200" rx="20" fill="#2E7D32" filter="url(#shadow)"/>
+  <text x="3370" y="925" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Gerencia de</text>
+  <text x="3370" y="960" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Ingeniería</text>
+  <text x="3370" y="1005" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#EBF6EC">Calidad técnica y</text>
+  <text x="3370" y="1033" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#EBF6EC">aprobación de planes</text>
+  <path d="M 3200 925 H 2720" stroke="#2E7D32" stroke-width="4" stroke-dasharray="14 10" fill="none" marker-end="url(#arrowGreen)"/>
+  <path d="M 3200 995 H 3150" stroke="#2E7D32" stroke-width="4" stroke-dasharray="14 10" fill="none" marker-end="url(#arrowGreen)"/>
+
+  <!-- Roles contratados -->
+  <text x="1800" y="1210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#AD5A00">Ejecución por contrato</text>
+
+  <rect x="940" y="1240" width="530" height="170" rx="20" fill="#FFFFFF" stroke="#AD5A00" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1205" y="1305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#AD5A00">Firma de supervisión</text>
+  <text x="1205" y="1347" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">Control independiente de calidad,</text>
+  <text x="1205" y="1378" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">estimaciones, PGAS y recepción</text>
+
+  <rect x="1800" y="1240" width="530" height="170" rx="20" fill="#FFFFFF" stroke="#AD5A00" stroke-width="3" filter="url(#shadow)"/>
+  <text x="2065" y="1305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#AD5A00">Contratistas de obra</text>
+  <text x="2065" y="1347" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">Terminal, plataformas, Foxtrot,</text>
+  <text x="2065" y="1378" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">estacionamiento, sistema solar y SSEI</text>
+
+  <rect x="2660" y="1240" width="530" height="170" rx="20" fill="#FFFFFF" stroke="#AD5A00" stroke-width="3" filter="url(#shadow)"/>
+  <text x="2925" y="1305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#AD5A00">Consultores del Componente II</text>
+  <text x="2925" y="1347" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">Planes, estudios, auditoría EDGE</text>
+  <text x="2925" y="1378" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#263746">y capacitaciones institucionales</text>
+
+  <!-- Actores externos -->
+  <rect x="80" y="1515" width="3440" height="410" rx="26" fill="#FFFFFF" stroke="#CBD6E2" stroke-width="3"/>
+  <text x="1800" y="1575" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#53687C">Actores externos y de control · no forman parte de la línea de mando</text>
+
+  <rect x="130" y="1620" width="620" height="230" rx="20" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+  <text x="440" y="1680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#AD5A00">BID</text>
+  <text x="440" y="1726" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#263746">Financiador</text>
+  <text x="440" y="1761" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">No objeciones · desembolsos · PMR</text>
+  <text x="440" y="1792" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">misiones e inspecciones</text>
+
+  <rect x="805" y="1620" width="620" height="230" rx="20" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+  <text x="1115" y="1680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#AD5A00">AAC</text>
+  <text x="1115" y="1726" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#263746">Regulador</text>
+  <text x="1115" y="1761" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Aprueba el protocolo de seguridad</text>
+  <text x="1115" y="1792" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">operacional del lado aire</text>
+
+  <rect x="1480" y="1620" width="620" height="230" rx="20" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+  <text x="1790" y="1680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#AD5A00">Auditoría externa</text>
+  <text x="1790" y="1726" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#263746">Control fiduciario independiente</text>
+  <text x="1790" y="1761" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Estados financieros auditados</text>
+  <text x="1790" y="1792" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">anuales y finales</text>
+
+  <rect x="2155" y="1620" width="620" height="230" rx="20" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+  <text x="2465" y="1680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#AD5A00">Consultores de evaluación</text>
+  <text x="2465" y="1726" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#263746">Evaluación independiente</text>
+  <text x="2465" y="1761" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Medio término y evaluación final</text>
+  <text x="2465" y="1792" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">conforme al MEL</text>
+
+  <rect x="2830" y="1620" width="620" height="230" rx="20" fill="#FFF3E5" stroke="#AD5A00" stroke-width="2.5"/>
+  <text x="3140" y="1680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#AD5A00">Tesorería y BCR</text>
+  <text x="3140" y="1726" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#263746">Canal fiduciario</text>
+  <text x="3140" y="1761" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">Cuenta especial y procesamiento</text>
+  <text x="3140" y="1792" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#607487">de los fondos del préstamo</text>
+
+  <!-- Leyenda -->
+  <path d="M 960 2010 H 1080" stroke="#1565C0" stroke-width="5" fill="none"/>
+  <text x="1100" y="2018" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#53687C">Dependencia jerárquica</text>
+  <path d="M 1540 2010 H 1660" stroke="#2E7D32" stroke-width="5" stroke-dasharray="14 10" fill="none"/>
+  <text x="1680" y="2018" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#53687C">Dependencia funcional técnica</text>
+  <path d="M 2310 2010 H 2430" stroke="#AD5A00" stroke-width="5" fill="none"/>
+  <text x="2450" y="2018" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#53687C">Relación contractual</text>
+</svg>
