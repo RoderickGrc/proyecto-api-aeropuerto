@@ -1,6 +1,6 @@
 # Relación de cada entregable con los procesos del PMBOK
 
-Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Ya incluye el listado de actividades y el cronograma, la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones, la matriz de riesgos y la matriz de asignación de responsabilidades, y se completará con la EDT.
+Esta sección reúne la correspondencia entre los instrumentos elaborados para la planificación de la implementación del Programa de Modernización del Aeropuerto Internacional de El Salvador (ES-L1173) y los procesos o dominios de desempeño del PMBOK. Se presenta por separado del acta de constitución. Incluye el acta de constitución, la EDT, el listado de actividades y el cronograma, la estimación de costos con la curva S, la matriz de adquisiciones, la matriz de comunicaciones, la estructura de funciones, la matriz de riesgos y la matriz de asignación de responsabilidades.
 
 ## Acta de constitución del proyecto
 
@@ -18,11 +18,24 @@ La información incorporada también apoya el proceso **13.1. Identificar a los 
 
 - **Interesados:** identifica los actores principales y sus intereses respecto del programa.
 - **Equipo:** define la estructura inicial de dirección y las responsabilidades institucionales de CEPA y la UEP.
-- **Planificación:** establece las condiciones de partida para desarrollar la EDT, el cronograma, la estimación temporal de costos y los demás instrumentos de gestión.
+- **Planificación:** establece las condiciones de partida para desarrollar la EDT, el cronograma, la estimación de costos con su distribución en el tiempo y los demás instrumentos de gestión.
 
 El acta constituye el marco de referencia para los siete entregables de planificación, pero no sustituye sus respectivos desarrollos ni las vinculaciones específicas de cada uno, que se desarrollan en las secciones siguientes.
 
 **Fuentes:** Propuesta de Préstamo ES-L1173; Reglamento Operativo del Programa (EEO#1); Teoría del Cambio (EER#1); Plan de Monitoreo, Evaluación y Aprendizaje (EER#2); material de clase «Inicio del proyecto»; Guía del PMBOK (sexta y séptima ediciones).
+
+## Estructura de desglose del trabajo (EDT)
+
+**Proceso relacionado:** 5.4. Crear la EDT/WBS.
+
+**Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión del Alcance del Proyecto.
+
+La EDT es la salida del proceso 5.4: descompone el alcance del acta en el objetivo del programa, sus tres componentes, sus productos y 54 paquetes de trabajo, nombrados como entregables terminados y sin actividades, duraciones ni costos. El diccionario da para cada paquete su descripción, el criterio de aceptación, el responsable y la referencia en los documentos del préstamo. Con el alcance general del acta, la EDT y su diccionario forman la línea base del alcance, y los criterios de aceptación son la referencia del proceso 5.5, Validar el Alcance, al recibir cada entregable.
+
+**Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
+
+- **Planificación:** la EDT es la base de la que salen el cronograma, la estimación de costos, las adquisiciones, los riesgos y la matriz RACI.
+- **Entrega:** cada paquete tiene un entregable y un criterio de aceptación verificable.
 
 ## Listado de actividades y cronograma
 
@@ -60,7 +73,7 @@ La curva S es la salida del proceso 7.3: asigna el costo de cada paquete a sus a
 
 **Referencia:** PMBOK, sexta edición, Grupo de Procesos de Planificación, área de conocimiento de Gestión de las Adquisiciones del Proyecto.
 
-La matriz de adquisiciones documenta las decisiones de compra del programa: qué obras, servicios y consultorías se contratan, su justificación, la modalidad y el tipo de revisión según las políticas del BID y la tabla 10 del ROP, el monto estimado, el responsable y las fechas de inicio del proceso, firma y entrega requerida, programadas con el cronograma. Es la base del Plan de Adquisiciones que el BID revisa y de los procesos 12.2, Efectuar las Adquisiciones, y 12.3, Controlar las Adquisiciones.
+La matriz de adquisiciones documenta las decisiones de compra del programa: qué obras, servicios y consultorías se contratan, su justificación, la modalidad y el tipo de revisión según las políticas del BID y la tabla 10 del ROP, el monto estimado, el responsable y las fechas de inicio del proceso, firma y entrega requerida, programadas con el cronograma. Cada contrato indica las actividades del cronograma que lo componen (proceso de compra y ejecución), de modo que las adquisiciones responden a las actividades planificadas. Es la base del Plan de Adquisiciones que el BID revisa y de los procesos 12.2, Efectuar las Adquisiciones, y 12.3, Controlar las Adquisiciones.
 
 **Correspondencia con los dominios de desempeño del PMBOK, séptima edición:**
 
